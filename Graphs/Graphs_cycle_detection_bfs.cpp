@@ -1,4 +1,4 @@
-// Graphs Cycle detection
+// Graphs Cycle detection using BFS
 // Program Author : Abhisek Kumar Gupta
 #include<bits/stdc++.h>
 using namespace std;
