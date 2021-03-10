@@ -1,4 +1,4 @@
-// Post-Order Traversal of a Binary-Tree
+// Compute Height of a Binary-Tree
 // Program Author : Abhisek Kumar Gupta
 /*
             40
