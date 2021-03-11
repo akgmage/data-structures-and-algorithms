@@ -1,4 +1,4 @@
-// Binary Tree : Diameter of tree
+// Binary Tree : Diameter of tree O(n^2)
 // Program Author : Abhisek Kumar Gupta
 /*
             40
