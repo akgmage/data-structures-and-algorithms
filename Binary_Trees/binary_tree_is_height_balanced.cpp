@@ -25,7 +25,7 @@
    /\
  -1 -1
     Input : 40 10 5 1 1 -1 -1 -1 -1 -1 30 -1 28 15 -1 -1 20 -1 -1             
-    Output : Height : 3
+    Output : Height : 5
              No it's not Balanced
              
 */
