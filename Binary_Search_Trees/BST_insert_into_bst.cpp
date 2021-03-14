@@ -8,6 +8,9 @@
                3     9
               / \   / \ 
              2  4  8  10
+     Inorder   : 2 3 4 7 8 9 10 
+     Preorder  : 7 3 2 4 9 8 10
+     Postorder : 2 4 3 8 10 9 7        
 */
 #include<bits/stdc++.h>
 using namespace std;
@@ -83,14 +86,14 @@ void pre_order(Node*root){
     if(root == NULL)
         return;
     cout << root->data << "->";    
-    inorder(root->left);
-    inorder(root->right);    
+    pre_order(root->left);
+    pre_order(root->right);    
 }
 void post_order(Node*root){
     if(root == NULL)
         return;
-    inorder(root->left);
-    inorder(root->right);
+    post_order(root->left);
+    post_order(root->right);
     cout << root->data << "->";    
 }
 int main(){
@@ -101,6 +104,7 @@ int main(){
     pre_order(root);
     cout << endl << "Postorder Traversal";
     post_order(root);
+    cout << endl;
     bfs(root);
 
 }
