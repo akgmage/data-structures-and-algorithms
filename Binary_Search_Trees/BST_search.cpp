@@ -1,4 +1,4 @@
-// Binary Search Tree : Insert into Binary Search Tree
+// Binary Search Tree : Searching in Binary Search Tree
 // Program Author : Abhisek Kumar Gupta
 /*
     Input :  7 3 9 2 4 8 10 -1
