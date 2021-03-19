@@ -1,6 +1,16 @@
-// Minimum steps to reduce a number to one Recursive + Memoized
+// Minimum steps to reduce a number to one conditions are as follows
+// a) subtract 1 [one operation] 
+// b) divide by 2 [one operation] 
+// c) divide by 3 [one operation]
+// Recursive + Memoized solution
 // Program Author : Abhisek Kumar Gupta
-
+/*
+    Input  : 10
+    Output : 3
+    Explanation : 10 reduced to 9 reduced to 3 reduced to 1 [total 3 operations]
+    Input  : 15
+    Output : 4
+*/
 #include<bits/stdc++.h>
 using namespace std;
 int memoized[10004];
