@@ -8,7 +8,7 @@
            : 1   5   8   9  10  17  17  20
     Output : 22     
 */
-// Recursive solution
+// Recursive solution TC : O(2^n)
 // Program Author: Abhisek Kumar Gupta
 #include<bits/stdc++.h>
 using namespace std;
