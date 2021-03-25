@@ -6,8 +6,8 @@
     Find minimum number of operations required to convert ‘str1’ into ‘str2’. 
     For example if input strings are CAT AND CAR the edit distance is 1.
 
-    Input  : s1 : saturday  s2 : sunday 
-    Output : 3  
+    Input  :  s1 : saturday  s2 : sunday 
+    Output :  3  
 */
 // Dynamic Programming Solution : TC O(n^2)
 // Porgram Author : Abhisek Kumar Gupta
