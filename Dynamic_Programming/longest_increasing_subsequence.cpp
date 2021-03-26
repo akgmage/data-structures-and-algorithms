@@ -25,6 +25,7 @@ int find_longest_increasing_subsequence(vector<int> V, int n){
 }
 int main(){
     int n;
+    cout << "Enter a number";
     cin >> n;
     vector<int> V(n);
     for(int i = 0; i < n; i++){
