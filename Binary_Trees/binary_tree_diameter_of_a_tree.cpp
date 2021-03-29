@@ -2,7 +2,7 @@
 // Program Author : Abhisek Kumar Gupta
 /*
             40
-            /   \
+           /   \
         10      30
         / \     /  \
        5  -1  -1  28
