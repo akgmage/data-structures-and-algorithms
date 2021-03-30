@@ -1,5 +1,5 @@
-// Given two strings write a function to check if they are one edit(or zero edits) away
-// Program Author : Abhisek Kumar Gupta
+//  Given two strings write a function to check if they are one edit(or zero edits) away
+//  Program Author : Abhisek Kumar Gupta
 #include<bits/stdc++.h>
 using namespace std;
 bool one_edit_replace(string a, string b){
