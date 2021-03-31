@@ -1,4 +1,4 @@
-// Delete from Tail in a LinkedList
+// Delete from Tail in a  LinkedList
 // Program Author : Abhisek Kumar Gupta 
 #include<bits/stdc++.h>
 using namespace std;
