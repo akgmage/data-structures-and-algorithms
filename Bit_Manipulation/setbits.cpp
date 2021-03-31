@@ -9,7 +9,6 @@ int find_set_bits(int n){
     return set_bits;
 }
 int main(){
-    cout << find_set_bits(3) << endl;
     cout << find_set_bits(4) << endl;
     cout << find_set_bits(5) << endl;
     cout << find_set_bits(6) << endl;
