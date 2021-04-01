@@ -1,7 +1,7 @@
 /*
     Longest Increasing Subsequence 
-    Input : 1 2 1 3 1
-    Output : 3
+    Input : 1 2 1 3 1 4
+    Output : 4
 */
 // Dynamic Programming Approach : TC O(n^2)
 // Program Author :  Abhisek Kumar Gupta
