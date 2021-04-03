@@ -1,7 +1,7 @@
 // Minimum steps to reduce a number to one conditions are as follows
-// a) subtract 1 [one operation] 
-// b) divide by 2 [one operation] 
-// c) divide by 3 [one operation]
+// a)  subtract 1 [one operation] 
+// b)  divide by 2 [one operation] 
+// c)  divide by 3 [one operation]
 
 // Dynamic Programming solution
 // Program Author : Abhisek Kumar Gupta
