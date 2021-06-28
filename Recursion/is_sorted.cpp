@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+bool is_sorted(int A[], int m){
+    if(m == 0 || m == 1)
+        return true;       
+    if(A[0] > A[1])
+        return false;
+    bool small_array = is_sorted(A + 1, m - 1);
+    return small_array;        
+}
+int main(){
+    int A[7] = {1, 2, 3, 4, 4, 5, 3};
+    cout << is_sorted(A, 7);
+    return 0;
+}
