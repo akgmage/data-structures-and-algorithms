@@ -10,9 +10,5 @@ int find_set_bits(int n){
 }
 int main(){
     cout << find_set_bits(4) << endl;
-    cout << find_set_bits(5) << endl;
-    cout << find_set_bits(6) << endl;
-    cout << find_set_bits(7) << endl;
-    cout << find_set_bits(15) << endl;
     return 0;
 }
