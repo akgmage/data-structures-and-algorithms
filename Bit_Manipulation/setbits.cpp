@@ -1,4 +1,4 @@
-#include<bits/stdc++.H>
+#include<bits/stdc++.h>
 using namespace std;
 int find_set_bits(int n){
     int set_bits = 0;
