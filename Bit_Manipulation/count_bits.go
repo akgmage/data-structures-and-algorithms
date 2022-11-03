@@ -1,5 +1,5 @@
 // Program to count the number of bits that are set to 1 in an integer
-
+// The following program tests bits one at a time starting with the least-significant bit.
 package main
 
 import (
