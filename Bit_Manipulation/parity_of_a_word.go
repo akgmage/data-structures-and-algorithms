@@ -1,3 +1,7 @@
+// Computing the parity of a word
+// The parity of a binary word is 1 if the number of 1s in the word is odd
+// The parity of a binary word is 0 if the number of 1s in the word is even
+
 package main
 
 import "fmt"
