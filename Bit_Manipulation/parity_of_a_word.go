@@ -23,10 +23,23 @@ func Parity(x int) int {
 	return result
 }
 
+func ParityImproved(x int) int {
+	result := 0
+	for x > 0 {
+		result ^= 1
+		x &= (x - 1)
+	}
+	return result
+}
+
 func main() {
 	msg := Parity(11)
 	fmt.Println(msg)
 	msg = Parity(12)
+	fmt.Println(msg)
+	msg = ParityImproved(11)
+	fmt.Println(msg)
+	msg = ParityImproved(12)
 	fmt.Println(msg)
 }
 // The time complexity is O(n) where n is word size
