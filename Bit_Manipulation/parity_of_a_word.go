@@ -27,7 +27,7 @@ func ParityImproved(x int) int {
 	result := 0
 	for x > 0 {
 		result ^= 1
-		x &= (x - 1)
+		x &= (x - 1) // erase lowest set bit in a word in a single operation
 	}
 	return result
 }
