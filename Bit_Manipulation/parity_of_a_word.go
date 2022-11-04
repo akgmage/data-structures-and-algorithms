@@ -2,6 +2,12 @@
 // The parity of a binary word is 1 if the number of 1s in the word is odd
 // The parity of a binary word is 0 if the number of 1s in the word is even
 
+// Input : 11
+// Output : 1
+
+// Input : 12
+// Output : 0
+
 package main
 
 import "fmt"
@@ -17,6 +23,8 @@ func Parity(x int) int {
 }
 
 func main() {
-	msg := Parity(4)
+	msg := Parity(11)
+	fmt.Println(msg)
+	msg = Parity(12)
 	fmt.Println(msg)
 }
