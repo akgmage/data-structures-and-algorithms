@@ -12,12 +12,13 @@ package main
 
 import "fmt"
 
+// This algorithm iteratively tests the value of each bit while
+// tacking the number of 1's seen so far
 func Parity(x int) int {
 	result := 0
 	for x > 0 {
 		result ^= (x & 1)
 		x >>= 1
-		
 	}
 	return result
 }
@@ -28,3 +29,4 @@ func main() {
 	msg = Parity(12)
 	fmt.Println(msg)
 }
+// The time complexity is O(n) where n is word size
