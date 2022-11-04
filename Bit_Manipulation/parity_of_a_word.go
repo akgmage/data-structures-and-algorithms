@@ -27,6 +27,7 @@ func ParityImproved(x int) int {
 	result := 0
 	for x > 0 {
 		result ^= 1
+		// This can be used to improve the performance in the best and average cases.
 		x &= (x - 1) // erase lowest set bit in a word in a single operation
 	}
 	return result
