@@ -13,7 +13,7 @@ package main
 import "fmt"
 
 // This algorithm iteratively tests the value of each bit while
-// tacking the number of 1's seen so far
+// tacking the number of 1's seen so far (Brute Force)
 func Parity(x int) int {
 	result := 0
 	for x > 0 {
@@ -34,10 +34,12 @@ func ParityImproved(x int) int {
 }
 
 func main() {
+	fmt.Println("*********Brute Force*********")
 	msg := Parity(11)
 	fmt.Println(msg)
 	msg = Parity(12)
 	fmt.Println(msg)
+	fmt.Println("*********Improved*********")
 	msg = ParityImproved(11)
 	fmt.Println(msg)
 	msg = ParityImproved(12)
