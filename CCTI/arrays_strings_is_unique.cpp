@@ -11,7 +11,7 @@ bool is_unique_normal(string s){
     // TC O(min(c, n)) c being size of character set n = len of string
     // SC is O(1) here
     if(s.length() > 128)
-        return true;
+        return false;
     bool visited[128];
     for(int i = 0; i < s.length(); i++){
         int val = s[i] - 'a';
