@@ -27,14 +27,14 @@ func is_unique_normal(s string) bool {
 
 func IsUniqueUsingBitVector(s string) bool {
 	checker := 0
-	for i := 0; i < len(s); i++ {
-		val := int(s[i] - 'a')
-		fmt.Println(val)
-		fmt.Println((1 << val))
-		if (checker & (1 << val)) > 0 {
+	for _, s := range []rune(s){
+		val := s - 'a'
+		// fmt.Println(val)
+		// fmt.Println((1 << val))
+		if (checker & (1 << uint32(val))) > 0 {
 			return false
 		}
-		checker |= (1 << val)
+		checker |= (1 << uint32(val))
 	}
 	return true
 }
@@ -50,6 +50,6 @@ func main() {
     msg = is_unique_normal(u)
 	fmt.Println(msg)
 
-	msg = IsUniqueUsingBitVector("a")
+	msg = IsUniqueUsingBitVector("aa")
 	fmt.Println(msg)
 }
