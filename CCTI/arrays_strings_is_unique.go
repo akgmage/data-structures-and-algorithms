@@ -17,10 +17,10 @@ func is_unique_normal(s string) bool {
 	
 	for i := 0; i < len(s); i++ {
 		val := int(s[i]) // convert to ascii value
-		if(visited[val]) {
+		if(visited[val]) { // if already seen then duplicate exists hence return false
 			return false
 		}
-		visited[val] = true
+		visited[val] = true // mark seen as true so far
 	}
 	return true
 }
