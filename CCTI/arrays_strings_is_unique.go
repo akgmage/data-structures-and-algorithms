@@ -25,6 +25,20 @@ func is_unique_normal(s string) bool {
 	return true
 }
 
+func IsUniqueUsingBitVector(s string) bool {
+	checker := 0
+	for i := 0; i < len(s); i++ {
+		val := int(s[i] - 'a')
+		fmt.Println(val)
+		fmt.Println((1 << val))
+		if (checker & (1 << val)) > 0 {
+			return false
+		}
+		checker |= (1 << val)
+	}
+	return true
+}
+
 func main() {
 	s := "ABCDD"
     t := "ABCD"
@@ -34,5 +48,8 @@ func main() {
     msg = is_unique_normal(t)
 	fmt.Println(msg)
     msg = is_unique_normal(u)
+	fmt.Println(msg)
+
+	msg = IsUniqueUsingBitVector("a")
 	fmt.Println(msg)
 }
