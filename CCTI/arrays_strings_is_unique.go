@@ -29,8 +29,6 @@ func IsUniqueUsingBitVector(s string) bool {
 	checker := 0
 	for _, s := range []rune(s){
 		val := s - 'a'
-		// fmt.Println(val)
-		// fmt.Println((1 << val))
 		if (checker & (1 << uint32(val))) > 0 {
 			return false
 		}
