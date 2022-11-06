@@ -13,10 +13,11 @@ func Urlify(s string, length int) string {
 			spaceCount++
 		}
 	}
+	// string to rune
 	for _, v := range s {
 		r = append(r, v)
 	}
-	index := length + (spaceCount * 2)
+	index := length + (spaceCount * 3)
 	for i := length - 1; i >= 0; i-- {
 		if r[i] == ' ' {
 			r[index - 1] = '0'
@@ -28,7 +29,7 @@ func Urlify(s string, length int) string {
 			index--
 		}
 	}
-	return string(r)
+	return string(r[index:])
 }
 
 
