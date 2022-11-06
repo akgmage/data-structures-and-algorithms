@@ -1,4 +1,4 @@
-// Implement an algorithm to replace all spaces with %20.
+// Implement an algorithm to replace all spaces with %20, assumew we have extra buffer at the end.
 // Input : Mr Ashish Lala Output: Mr%20Ashish%20Lala
 // Program Author : Abhisek Kumar Gupta
 // Time complexity : O(n) Space complexity O(n)
