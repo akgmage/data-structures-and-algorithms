@@ -21,6 +21,7 @@ func Urlify(s string, length int) string {
 	// triple space count and find out how many extra characters will be there in final string 
 	index := length + (spaceCount * 3) // actual length of final string
 	for i := length - 1; i >= 0; i-- {
+		// if u encounter space then add %20
 		if r[i] == ' ' {
 			r[index - 1] = '0'
 			r[index - 2] = '2'
