@@ -3,7 +3,7 @@
 // that repeatedly steps through the input list element by element,
 // comparing the current element with the one after it, swapping their values if needed.
 //  These passes through the list are repeated until no swaps had to be performed during a pass,
-// meaning that the list has become fully sorted.
+// meaning that the list has become fully sorted. (Source wiki) https://en.wikipedia.org/wiki/Bubble_sort
 
 // Time Complexity worst-case and average complexity O(n^{2})
 // Bubble sort is O(n) on a list that is already sorted i.e. Best case
