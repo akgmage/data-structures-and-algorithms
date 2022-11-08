@@ -6,7 +6,7 @@ using namespace std;
 int count_zeros(int n){
     if(n == 0)
         return 0;
-        
+    // divide the number recursively and hit the base case    
     int small_no = count_zeros(n / 10);
     int last_digit = n % 10;
     if(last_digit == 0)
