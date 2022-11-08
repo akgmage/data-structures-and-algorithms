@@ -9,6 +9,7 @@ func CountDigits(n int) int {
 	if n == 0 {
 		return 0;
 	}
+	// recursively hit base case and keep adding 1 afterwards  
 	smallNo := CountDigits(n / 10)
 	return smallNo + 1
 }

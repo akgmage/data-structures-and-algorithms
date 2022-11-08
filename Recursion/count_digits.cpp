@@ -7,6 +7,7 @@ using namespace std;
 int count_digits(int n){
     if(n == 0)
         return 0;       
+    // recursively hit base case and keep adding 1 afterwards    
     int small_no = count_digits(n / 10);
     return small_no + 1;
 }
