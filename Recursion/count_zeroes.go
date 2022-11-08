@@ -9,6 +9,7 @@ func CountZeroes(n int) int {
 	if n == 0 {
 		return 0;
 	}
+	// divide the number recursively and hit the base case
 	smallNo := CountZeroes(n / 10)
 	lastDigit := n % 10
 	if lastDigit == 0 {
