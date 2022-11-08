@@ -1,3 +1,6 @@
+// Factorial of an integer
+// Sample Input: 5
+// Output: 120
 #include<iostream>
 using namespace std;
 int factorial(int n){
