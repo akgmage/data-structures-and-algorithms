@@ -1,3 +1,6 @@
+// Count the number of 0's in an integer
+// Sample Input : 10010
+// Output: 3
 package main
 
 import "fmt"
