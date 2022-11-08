@@ -1,4 +1,6 @@
 // Count the number of digits in an integer
+// Sample Input: 2003
+// Output: 4
 package main
 
 import "fmt"

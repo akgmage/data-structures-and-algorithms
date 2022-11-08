@@ -1,3 +1,7 @@
+// Count the number of digits in an integer
+// Sample Input: 2003
+// Output: 4
+
 #include<bits/stdc++.h>
 using namespace std;
 int count_digits(int n){
