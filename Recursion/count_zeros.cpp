@@ -1,3 +1,6 @@
+// Count the number of 0's in an integer
+// Sample Input : 10010
+// Output: 3
 #include<bits/stdc++.h>
 using namespace std;
 int count_zeros(int n){
