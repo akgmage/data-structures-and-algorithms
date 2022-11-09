@@ -9,17 +9,18 @@
 // Output: 5
 // Sample Input: 7
 // Output: 13
-#include<bits/stdc++.h>
-using namespace std;
-int fib(int n){
-	if(n <= 1)
-		return n;
-	return fib(n-1) + fib(n-2);
+package main
+
+import "fmt"
+
+func Fibonacci(n int) int {
+	if n <= 1 {
+		return n
+	}
+	return Fibonacci(n - 1) + Fibonacci(n - 2)
 }
-int main(){
-	int n;
-	cout << "Give me n : ";
-	cin >> n;
-	int result = fib(n);
-	cout << result << endl;
+
+func main() {
+	msg := Fibonacci(7)
+	fmt.Println(msg)
 }
