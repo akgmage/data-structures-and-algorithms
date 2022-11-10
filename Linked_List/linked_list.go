@@ -1,4 +1,6 @@
 // Basic implementation of a Singly Linked List PushBack function
+// Sample Input:  PushBack(10), PushBack(20), PushBack(30)
+// Output: 10 -> 20 -> 30 ->
 package main
 
 import "fmt"
