@@ -30,12 +30,14 @@ func (ll *linkedlist) PushBack(n *node) {
 		ll.length++
 	}
 }
+// Return's the head if its present or returns error
 func (ll linkedlist) Front() (int, error) {
 	if ll.head == nil {
 		return 0, fmt.Errorf("No Front value present")
 	}
 	return ll.head.data, nil
 }
+// Return's the tail if its present or returns error
 func (ll linkedlist) Back() (int, error) {
 	if ll.tail == nil {
 		return 0, fmt.Errorf("No tail found")
