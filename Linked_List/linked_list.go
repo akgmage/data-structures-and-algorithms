@@ -1,24 +1,28 @@
+// Basic implementation of a Singly Linked List PushBack function
 package main
 
 import "fmt"
 
+// has two fields [data] of type integer and [next] of type *node (holds the memory address of next node)
 type node struct {
 	data int
 	next *node
 }
-
+//has three fields length, head and tail node
 type linkedlist struct {
 	length int
 	head   *node
 	tail   *node
 }
-
+// Received in *node as an input and nadds it to linkedlist
 func (ll *linkedlist) PushBack(n *node) {
+	// make incoming *node as head and tail node
 	if ll.head == nil {
 		ll.head = n
 		ll.tail = n
 		ll.length++
 	} else {
+		// store memory address of incoming node and point tail to the incoming node
 		ll.tail.next = n
 		ll.tail = n
 		ll.length++
