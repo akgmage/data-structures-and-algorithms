@@ -28,6 +28,7 @@ func (ll *linkedlist) PushBack(n *node) {
 		ll.length++
 	}
 }
+// Traverse the linkedlist and print data
 func (ll linkedlist) Display() {
 	for ll.head != nil {
 		fmt.Printf("%v -> ", ll.head.data)
