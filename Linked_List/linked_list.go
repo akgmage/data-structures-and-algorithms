@@ -44,6 +44,15 @@ func (ll linkedlist) Back() (int, error) {
 	}
 	return ll.tail.data, nil
 }
+// Delete front node if any
+func (ll *linkedlist) DeleteFromFront() {
+	if ll.head == nil {
+		fmt.Println("Nothing to delete")
+		return
+	}
+	ll.head = ll.head.next
+	ll.length--;
+}
 
 // Traverse the linkedlist and print data
 func (ll linkedlist) Display() {
@@ -71,4 +80,6 @@ func main() {
 	fmt.Println("\n",msg, err)
 	msg, err = list.Back()
 	fmt.Println("\n",msg, err)
+	list.DeleteFromFront()
+	list.Display()
 }
