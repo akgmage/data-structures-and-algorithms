@@ -30,6 +30,13 @@ func (ll *linkedlist) PushBack(n *node) {
 		ll.length++
 	}
 }
+func (ll linkedlist) Front() (int, error){
+	if ll.head == nil {
+		return 0, fmt.Errorf("No Front value present")
+	}
+	return ll.head.data, nil
+}
+
 // Traverse the linkedlist and print data
 func (ll linkedlist) Display() {
 	for ll.head != nil {
@@ -46,4 +53,6 @@ func main() {
 	list.PushBack(node2)
 	list.PushBack(node3)
 	list.Display()
+	msg, err := list.Front()
+	fmt.Println("\n",msg, err)
 }
