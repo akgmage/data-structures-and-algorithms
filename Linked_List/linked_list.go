@@ -30,11 +30,17 @@ func (ll *linkedlist) PushBack(n *node) {
 		ll.length++
 	}
 }
-func (ll linkedlist) Front() (int, error){
+func (ll linkedlist) Front() (int, error) {
 	if ll.head == nil {
 		return 0, fmt.Errorf("No Front value present")
 	}
 	return ll.head.data, nil
+}
+func (ll linkedlist) Back() (int, error) {
+	if ll.tail == nil {
+		return 0, fmt.Errorf("No tail found")
+	}
+	return ll.tail.data, nil
 }
 
 // Traverse the linkedlist and print data
@@ -46,13 +52,21 @@ func (ll linkedlist) Display() {
 }
 func main() {
 	list := linkedlist{}
+	msg, err := list.Back()
+	fmt.Println("\n",msg, err)
+	msg, err = list.Front()
+	fmt.Println("\n",msg, err)
 	node1 := &node{data: 10}
 	node2 := &node{data: 20}
 	node3 := &node{data: 30}
+	node4 := &node{data: 40}
 	list.PushBack(node1)
 	list.PushBack(node2)
 	list.PushBack(node3)
+	list.PushBack(node4)
 	list.Display()
-	msg, err := list.Front()
+	msg, err = list.Front()
+	fmt.Println("\n",msg, err)
+	msg, err = list.Back()
 	fmt.Println("\n",msg, err)
 }
