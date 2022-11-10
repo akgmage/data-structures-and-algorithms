@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type node struct {
 	data int
 	next *node
@@ -22,6 +24,12 @@ func (ll *linkedlist) PushBack(n *node) {
 		ll.length++
 	}
 }
+func (ll linkedlist) Display() {
+	for ll.head != nil {
+		fmt.Printf("%v -> ", ll.head.data)
+		ll.head = ll.head.next
+	}
+}
 func main() {
 	list := linkedlist{}
 	node1 := &node{data: 10}
@@ -30,4 +38,5 @@ func main() {
 	list.PushBack(node1)
 	list.PushBack(node2)
 	list.PushBack(node3)
+	list.Display()
 }
