@@ -53,18 +53,36 @@ func (ll *linkedlist) DeleteFromFront() {
 	ll.head = ll.head.next
 	ll.length--;
 }
+// Delete from back 
+func (ll *linkedlist) DeleteFromBack() {
+	if ll.head == nil {
+		fmt.Println("Nothing to delete")
+		return
+	}
+	var prev *node = nil
+	var temp *node = ll.head
+	// traverse to second last element
+	for temp.next != nil {
+		prev = temp
+		temp = temp.next
+	}
+	// point second last to nil
+	prev.next = nil
+}
 
 // Traverse the linkedlist and print data
 func (ll linkedlist) Display() {
+	// go till last and keep printing, 
 	for ll.head != nil {
 		fmt.Printf("%v -> ", ll.head.data)
-		ll.head = ll.head.next
+		ll.head = ll.head.next // at some point this will point ti nil so loop terminates
 	}
 }
 func main() {
 	list := linkedlist{}
 	msg, err := list.Back()
 	fmt.Println("\n",msg, err)
+	list.DeleteFromBack()
 	msg, err = list.Front()
 	fmt.Println("\n",msg, err)
 	node1 := &node{data: 10}
@@ -81,5 +99,8 @@ func main() {
 	msg, err = list.Back()
 	fmt.Println("\n",msg, err)
 	list.DeleteFromFront()
+	list.Display()
+	list.DeleteFromBack()
+	fmt.Println("")
 	list.Display()
 }
