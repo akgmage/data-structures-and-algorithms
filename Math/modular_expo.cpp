@@ -1,3 +1,8 @@
+// Modular exponentiation is exponentiation performed over a modulus. 
+// It is useful in computer science, especially in the field of public-key cryptography, 
+// where it is used in both Diffie-Hellman Key Exchange and RSA public/private keys.
+// Sample Input : 10 3
+// Output : 1000
 #include<bits/stdc++.h>
 using namespace std;
 int modular_expo(int x, int n, int mod){
