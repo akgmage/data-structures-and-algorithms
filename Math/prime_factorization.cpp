@@ -1,6 +1,10 @@
 // Prime factorisation is a method to find the prime factors of a given number, say a composite number. 
 // These factors are nothing but the prime numbers. A prime number is a number 
 // which has only two factors, i.e. 1 and the number itself. For example, 2 is a prime number which has two factors, 2 × 1
+// Sample Input: 10
+// Output 
+// 2->1 Times
+// 5->1 Times
 #include<bits/stdc++.h>
 using namespace std;
 
