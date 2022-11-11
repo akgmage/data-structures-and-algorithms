@@ -53,7 +53,7 @@ func (ll *linkedlist) DeleteFromFront() {
 	ll.head = ll.head.next
 	ll.length--;
 }
-
+// Delete from back 
 func (ll *linkedlist) DeleteFromBack() {
 	if ll.head == nil {
 		fmt.Println("Nothing to delete")
@@ -61,10 +61,12 @@ func (ll *linkedlist) DeleteFromBack() {
 	}
 	var prev *node = nil
 	var temp *node = ll.head
+	// traverse to second last element
 	for temp.next != nil {
 		prev = temp
 		temp = temp.next
 	}
+	// point second last to nil
 	prev.next = nil
 }
 
