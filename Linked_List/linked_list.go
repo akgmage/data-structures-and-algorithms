@@ -72,9 +72,10 @@ func (ll *linkedlist) DeleteFromBack() {
 
 // Traverse the linkedlist and print data
 func (ll linkedlist) Display() {
+	// go till last and keep printing, 
 	for ll.head != nil {
 		fmt.Printf("%v -> ", ll.head.data)
-		ll.head = ll.head.next
+		ll.head = ll.head.next // at some point this will point ti nil so loop terminates
 	}
 }
 func main() {
