@@ -1,5 +1,7 @@
 // Finding Midpoint of a LinkedList
 // Program Author : Abhisek Kumar Gupta 
+// Naive Approach: Find the length of the linked list and return the (length/2)th node.
+// One pass Approach: Use two pointers, the 2nd pointer should traverse twice as fast at the first.
 #include<bits/stdc++.h>
 using namespace std;
 class node{
