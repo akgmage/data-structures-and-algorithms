@@ -5,6 +5,33 @@
 // This is the sieve's key distinction from using trial division to sequentially test each candidate 
 // number for divisibility by each prime. Once all the multiples of each discovered prime have been marked as composites, 
 // the remaining unmarked numbers are primes. Source(https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
+
+// Sample INput: 100
+// Output :  
+// 3 
+// 5 
+// 7 
+// 11 
+// 13 
+// 17 
+// 19
+// 23
+// 29
+// 31
+// 37
+// 41
+// 43
+// 47
+// 53
+// 59
+// 61
+// 67
+// 71
+// 73
+// 79
+// 83
+// 89
+// 97
 #include<bits/stdc++.h>
 using namespace std;
 const int nmax = 100001;
