@@ -1,4 +1,4 @@
-// Reverse a linkedlist recursively
+// Given the head of a singly linked list, reverse the list, and return the reversed list recursively
 // Program Author : Abhisek Kumar Gupta 
 #include<bits/stdc++.h>
 using namespace std;
