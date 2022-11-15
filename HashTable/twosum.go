@@ -11,6 +11,8 @@ package main
 
 import "fmt"
 
+// Bruteforce method continuously scan the array
+// for every i run j len(array) times, if target sum is found then return
 func TwoNUmberSumBruteForce(array []int, target int) []int {
 	var result []int
 	for i := 0; i < len(array) - 1; i++ {
