@@ -35,7 +35,8 @@ func TwoNUmberSumBruteForce(array []int, target int) []int {
 // Two Pointer approach
 // sort the given array, set i as initial index and j as last
 // add element at i and j and compate with target, if it matches then return
-
+// if element is greater then target decrease index of j by 1
+// if element is lesser then target increase index of i by 1
 func TwoNumberSumTwoPointerMethod(array []int, target int) []int {
 	var result []int
 	sort.Ints(array)
