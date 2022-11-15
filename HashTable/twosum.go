@@ -64,15 +64,22 @@ func TwoNumberSumTwoPointerMethod(array []int, target int) []int {
 }
 
 func TwoNumberSum(array []int, target int) []int {
+	// Create map to keep track of what we ahve seen so far
 	m := make(map[int]int)
+	 // initialize empty array for result
 	var result []int
+	 // traverse array
 	for i := 0; i < len(array); i++ {
+		// lets say first element in our array is 3, and target sum is 10
+        // then we will look for 7 in our map, if its present then we simply return 7 and 3 
 		required := target - array[i]
+		// if the required value is found then store result
 		if _, ok := m[required]; ok {
 			result = append(result, required)
 			result = append(result, array[i])
 			return result
 		} else {
+			// keep track of what value in array we have seen so far
 			m[array[i]] = i
 		}
 	}
