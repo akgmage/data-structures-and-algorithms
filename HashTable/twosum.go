@@ -11,8 +11,26 @@ package main
 
 import "fmt"
 
+// Bruteforce method continuously scan the array
+// for every i run j len(array) times, if target sum is found then return
+func TwoNUmberSumBruteForce(array []int, target int) []int {
+	// nil array to hold result
+	var result []int
+	for i := 0; i < len(array) - 1; i++ {
+		for j := i + 1; j < len(array); j++ {
+			// look for target
+			if array[i] + array[j] == target {
+				// add found values in array
+				result = append(result, array[i])
+				result = append(result, array[j])
+				return result
+			}
+		}
+	}
+	return result 
+}
+
 func TwoNumberSum(array []int, target int) []int {
-	// Write your code here.
 	m := make(map[int]int)
 	var result []int
 	for i := 0; i < len(array); i++ {
@@ -31,5 +49,7 @@ func TwoNumberSum(array []int, target int) []int {
 func main() {
 	arr := []int{2, 1, 3, -1, 11, 5, 4, 0}
 	msg := TwoNumberSum(arr, 10)
+	fmt.Println(msg)
+	msg = TwoNUmberSumBruteForce(arr, 10)
 	fmt.Println(msg)
 }
