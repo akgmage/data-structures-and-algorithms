@@ -9,7 +9,10 @@
 */
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 // Bruteforce method continuously scan the array
 // for every i run j len(array) times, if target sum is found then return
@@ -28,6 +31,25 @@ func TwoNUmberSumBruteForce(array []int, target int) []int {
 		}
 	}
 	return result 
+}
+
+func TwoNumberSumTwoPointerMethod(array []int, target int) []int {
+	var result []int
+	sort.Ints(array)
+	j := len(array) - 1
+	i := 0
+	for i <= j {
+		if array[i] + array[j] == target {
+			result = append(result, array[i])
+			result = append(result, array[j])
+			return result
+		} else if array[i] + array[j] > target {
+			j--;
+		} else if array[i] + array[j] < target {
+			i++;
+		}
+	}
+	return result
 }
 
 func TwoNumberSum(array []int, target int) []int {
@@ -51,5 +73,8 @@ func main() {
 	msg := TwoNumberSum(arr, 10)
 	fmt.Println(msg)
 	msg = TwoNUmberSumBruteForce(arr, 10)
+	fmt.Println(msg)
+	arr = []int{2, 1, 3, -1, 11, 5, 4, 0, 44}
+	msg = TwoNumberSumTwoPointerMethod(arr, 9)
 	fmt.Println(msg)
 }
