@@ -11,8 +11,21 @@ package main
 
 import "fmt"
 
+func TwoNUmberSumBruteForce(array []int, target int) []int {
+	var result []int
+	for i := 0; i < len(array) - 1; i++ {
+		for j := i + 1; j < len(array); j++ {
+			if array[i] + array[j] == target {
+				result = append(result, array[i])
+				result = append(result, array[j])
+				return result
+			}
+		}
+	}
+	return result 
+}
+
 func TwoNumberSum(array []int, target int) []int {
-	// Write your code here.
 	m := make(map[int]int)
 	var result []int
 	for i := 0; i < len(array); i++ {
@@ -31,5 +44,7 @@ func TwoNumberSum(array []int, target int) []int {
 func main() {
 	arr := []int{2, 1, 3, -1, 11, 5, 4, 0}
 	msg := TwoNumberSum(arr, 10)
+	fmt.Println(msg)
+	msg = TwoNUmberSumBruteForce(arr, 10)
 	fmt.Println(msg)
 }
