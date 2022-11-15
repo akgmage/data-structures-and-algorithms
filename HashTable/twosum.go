@@ -4,6 +4,8 @@
   up to the target sum, the function should return them in an array, in any
   order. If no two numbers sum up to the target sum, the function should return
   an empty array.
+  Sample Input: [2, 1, 3, -1, 11, 5, 4, 0] Target: 10
+  Output: [-1 11]
 */
 package main
 
