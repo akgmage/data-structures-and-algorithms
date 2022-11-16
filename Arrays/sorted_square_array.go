@@ -19,6 +19,8 @@ func SortedSquaredArray(array []int) []int {
 	sq1 := 0
 	sq2 := 0
 	end := len(array) - 1
+	// using two pointer appraoch take the  absolute value's square 
+	// add the greatest at end of output array
 	for start <= end {
 		sq1 = array[start] * array[start]
 		sq2 = array[end] * array[end]
