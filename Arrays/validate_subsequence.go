@@ -5,6 +5,10 @@
   A subsequence of an array is a set of numbers that aren't necessarily adjacent
   in the array but that are in the same order as they appear in the array. For
   instance, the numbers
+
+  Sample Input : Array [1, 2, 3, 4, 5,] Seq [2, 4, 5]
+  Output : True
+
 */
 package main
 
