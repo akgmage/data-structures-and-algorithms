@@ -29,7 +29,7 @@ func SortedSquaredArray(array []int) []int {
 			start++ // square of start pointer is greater so increment start by 1 
 		} else {
 			result[end_pos] = sq2
-			end--
+			end-- // // square of end pointer is greater so decrement end by 1 
 		}
 		end_pos--
 	}
