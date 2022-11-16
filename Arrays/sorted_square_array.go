@@ -11,8 +11,9 @@ package main
 import "fmt"
 
 func SortedSquaredArray(array []int) []int {
-	// Write your code here.
+	// initialize empty result array of same length as original array
 	result := make([]int, len(array))
+	// mark start and end, and end_pos
 	end_pos := len(array) - 1
 	start := 0
 	sq1 := 0
