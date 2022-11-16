@@ -8,6 +8,9 @@
 
   Sample Input : Array [1, 2, 3, 4, 5,] Seq [2, 4, 5]
   Output : True
+  Sample Input : Array [77, 2, 3, 4, 5,] Seq [2, 77, 5]
+  Output : False
+
 
 */
 package main
