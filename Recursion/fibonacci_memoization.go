@@ -1,3 +1,12 @@
+/*
+	Implelement memoized fibonacci
+
+	Memoization is an enhancement procedure used to speed up computer programs by keeping the values
+	of distinct function calls and returning the stored input when the same function is invoked again.
+
+	Sample Input: 6
+	Output: 8
+*/
 package main
 
 import "fmt"
