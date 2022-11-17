@@ -1,5 +1,5 @@
 /*
-Implementation of Topological sort
+Implementation of Topological sort using DFS
 According to Introduction to Algorithms, given a directed acyclic graph (DAG), 
 a topological sort is a linear ordering of all vertices such that for any edge (u, v), u comes before v. Another way to describe 
 it is that when you put all vertices horizontally on a line, all of the edges are pointing from left to right.
