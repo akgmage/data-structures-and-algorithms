@@ -1,5 +1,9 @@
-// Graphs Topological sort using BFS
-// Program Author : Abhisek Kumar Gupta
+/*
+Implementation of Topological sort using BFS
+According to Introduction to Algorithms, given a directed acyclic graph (DAG), 
+a topological sort is a linear ordering of all vertices such that for any edge (u, v), u comes before v. Another way to describe 
+it is that when you put all vertices horizontally on a line, all of the edges are pointing from left to right.
+*/
 #include<bits/stdc++.h>
 using namespace std;
 template<typename T>
