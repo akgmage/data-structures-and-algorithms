@@ -13,7 +13,11 @@
   function that returns the winner of the tournament. The input arrays are named
   competitions and results, respectively. The competitions  array has elements in the
   form of [homeTeam, awayTeam], where each team is a string of at most 30
-  characters representing the name of the team.
+  characters representing the name of the team. The array
+  contains information about the winner of each corresponding competition in the
+  competitions  array. Specifically, results[i]  denotes the winner of competitions[i]
+  , where a 1 in the results  array means that the home team in the corresponding
+  competition won and a 0  means that the away team won.
 
 
 */
