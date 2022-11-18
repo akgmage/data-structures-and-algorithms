@@ -28,3 +28,10 @@ func TournamentWinner(competitions [][]string, results []int) string {
 	return winner
 }
 
+func main() {
+	competitions := [][]string{{"HTML", "C#"}, {"C#", "Python"}, {"Python", "HTML"}}
+	result := []int{0, 0, 1}
+	msg := TournamentWinner(competitions, result)
+	fmt.Println(msg)
+
+}
