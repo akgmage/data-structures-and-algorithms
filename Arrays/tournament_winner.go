@@ -34,6 +34,8 @@
   }
   Output: Python
 
+  O(n) time | O(k) space - where n is the number of competitions and k is the number of teams
+
 */
 package main
 
@@ -43,7 +45,9 @@ const HOME_TEAM_WON = 1
 const AWAY_TEAM_WON = 0
 
 func TournamentWinner(competitions [][]string, results []int) string {
-	// Write your code here.
+	// construct a hashmap which will keep track of team with number of matches won
+	// if name already exist in hashmap then add 1 to it
+	// if it doesn't then add new entry
 	mp := make(map[string]int)
 	winner := ""
 	max := 0
@@ -51,11 +55,13 @@ func TournamentWinner(competitions [][]string, results []int) string {
 		if results[i] == HOME_TEAM_WON {
 			mp[competitions[i][0]]++
 			if mp[competitions[i][0]] > max {
+				// keep track of max value and winner
 				max = mp[competitions[i][0]]
 				winner = competitions[i][0]
 			}
 		} else {
 			mp[competitions[i][1]]++
+			// keep track of max value and winner
 			if mp[competitions[i][1]] > max {
 				max = mp[competitions[i][1]]
 				winner = competitions[i][1]
