@@ -20,6 +20,20 @@
   competition won and a 0  means that the away team won.
 
 
+  It's guaranteed that exactly one team will win the tournament and that each
+  team will compete against all other teams exactly once. It's also guaranteed
+  that the tournament will always have at least two teams.
+  Sample Input :
+  {
+  "competitions": [
+    ["HTML", "C#"],
+    ["C#", "Python"],
+    ["Python", "HTML"]
+  ],
+  "results": [0, 0, 1]
+  }
+  Output: Python
+
 */
 package main
 
