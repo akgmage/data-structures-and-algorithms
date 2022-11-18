@@ -46,6 +46,8 @@ const AWAY_TEAM_WON = 0
 
 func TournamentWinner(competitions [][]string, results []int) string {
 	// construct a hashmap which will keep track of team with number of matches won
+	// if name already exist in hashmap then add 1 to it
+	// if it doesn't then add new entry
 	mp := make(map[string]int)
 	winner := ""
 	max := 0
