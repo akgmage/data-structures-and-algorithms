@@ -70,5 +70,8 @@ func main() {
 	result := []int{0, 0, 1}
 	msg := TournamentWinner(competitions, result)
 	fmt.Println(msg)
-
+	competitions = [][]string{{"HTML", "Java"},{"Java", "Python"},{"Python", "HTML"},{"C#", "Python"},{"Java", "C#"},{"C#", "HTML"}}
+	result = []int{0, 1, 1, 1, 0, 1}
+	msg = TournamentWinner(competitions, result)
+	fmt.Println(msg)
 }
