@@ -1,5 +1,9 @@
 // Write a function to check if it is a permutation of a pallindrome using bitvector
 // Program Author : Abhisek Kumar Gupta
+// Sample Input : aabcb
+// Output : Yes
+// Sample Input : ab
+// Output : No
 #include<bits/stdc++.h>
 using namespace std;
 bool check_exactly_for_one_set_bit(int bit_vector){
