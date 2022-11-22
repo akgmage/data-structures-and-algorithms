@@ -29,6 +29,7 @@ func GetNthFib(n int) int {
         return n - 1
     } 
     for i := 2; i < n; i++ {
+		// move first and second to to next iteration
         result = firstNo + secondNo
         firstNo = secondNo
         secondNo = result
