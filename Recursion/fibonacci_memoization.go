@@ -33,7 +33,6 @@ func GetNthFib(n int) int {
         firstNo = secondNo
         secondNo = result
     }
-	// Write your code here.
 	return result
 }
 func main() {
