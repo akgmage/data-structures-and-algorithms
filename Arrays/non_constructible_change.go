@@ -6,6 +6,9 @@
   For example, if you're given coins = [1, 2, 5] , the minimum
   amount of change that you can't create is 4, . If you're given no
   coins, the minimum amount of change that you can't create is 1
+
+  Sample Input: [1, 5, 1, 1, 1, 10, 15, 20, 100]
+  Output: 55
 */
 package main
 
