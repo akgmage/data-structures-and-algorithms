@@ -12,7 +12,7 @@ package main
 import "fmt"
 
 var F = make([]int, 51)
-
+// array based implementation 0th fib = 1
 func Fibonacci(n int) int {	
 	if F[n] != -1 {
 		return F[n]
