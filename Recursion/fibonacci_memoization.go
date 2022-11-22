@@ -20,12 +20,30 @@ func Fibonacci(n int) int {
 	F[n] = Fibonacci(n - 1) + Fibonacci(n - 2)
 	return F[n]
 }
+
+func GetNthFib(n int) int {
+    firstNo := 0
+    secondNo := 1
+    result := 0
+    if n <= 2 {
+        return n - 1
+    } 
+    for i := 2; i < n; i++ {
+        result = firstNo + secondNo
+        firstNo = secondNo
+        secondNo = result
+    }
+	// Write your code here.
+	return result
+}
 func main() {
 	for i := 0; i < 51; i++ {
 		F[i] = -1
 	}
 	F[0] = 0
 	F[1] = 1
-	msg := Fibonacci(7)
+	msg := Fibonacci(5)
+	fmt.Println(msg)
+	msg = GetNthFib(5)
 	fmt.Println(msg)
 }
