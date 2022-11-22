@@ -20,7 +20,7 @@ func Fibonacci(n int) int {
 	F[n] = Fibonacci(n - 1) + Fibonacci(n - 2)
 	return F[n]
 }
-
+// more optimized 1st fibonacci = 0, second = 1
 func GetNthFib(n int) int {
     firstNo := 0
     secondNo := 1
