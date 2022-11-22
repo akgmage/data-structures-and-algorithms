@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"sort"
 )
 
@@ -22,3 +23,9 @@ func NonConstructibleChange(coins []int) int {
 }
 
 
+func main() {
+	coins := []int{1, 5, 1, 1, 1, 10, 15, 20, 100}
+
+	msg := NonConstructibleChange(coins)
+	fmt.Println(msg)
+}
