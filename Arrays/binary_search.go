@@ -16,8 +16,14 @@ func BinarySearch(array []int, target int) int {
 
 	start := 0
 	end := len(array) - 1
+	// idea behind bs is, since array is already sorted we can use it to our advantage
+	// 1 compute mid
+	// 2 if mid value is less than target then we only need to search index less than mid 
+	// 3 if mid value is greater than target then we only need to search index greater than mid 
+	// and keep repeating from step 1
 	for start <= end {
-		mid := start + (end-start)/2
+		// compute mid, prevent overflow of integer
+		mid := start + (end-start) / 2
 		if array[mid] == target {
 			return mid
 		} else if array[mid] > target {
