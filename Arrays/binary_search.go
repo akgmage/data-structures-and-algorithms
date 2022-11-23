@@ -40,4 +40,6 @@ func main() {
 	target := 7
 	msg := BinarySearch(arr, target)
 	fmt.Println(msg)
+	msg = BinarySearch(arr, 700)
+	fmt.Println(msg)
 }
