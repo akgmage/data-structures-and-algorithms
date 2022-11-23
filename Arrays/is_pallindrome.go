@@ -26,4 +26,6 @@ func IsPalindrome(str string) bool {
 func main() {
 	msg := IsPalindrome("HelleH")
 	fmt.Println(msg)
+	msg = IsPalindrome("Hello")
+	fmt.Println(msg)
 }
