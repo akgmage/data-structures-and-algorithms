@@ -13,7 +13,7 @@ package main
 import "fmt"
 
 func BinarySearch(array []int, target int) int {
-
+	// mark start and end
 	start := 0
 	end := len(array) - 1
 	// idea behind bs is, since array is already sorted we can use it to our advantage
@@ -21,6 +21,7 @@ func BinarySearch(array []int, target int) int {
 	// 2 if mid value is less than target then we only need to search index less than mid 
 	// 3 if mid value is greater than target then we only need to search index greater than mid 
 	// and keep repeating from step 1
+	// make sure start and end dont cross each other
 	for start <= end {
 		// compute mid, prevent overflow of integer
 		mid := start + (end-start) / 2
