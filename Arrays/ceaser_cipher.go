@@ -6,6 +6,9 @@
 
   Note that letters should "wrap" around the alphabet; in other words, the
   letter z shifted by one returns the letter a
+
+  Sample Input : abz key: 3
+  Output: dec
 */
 package main
 
@@ -26,6 +29,6 @@ func CaesarCipherEncryptor(str string, key int) string {
 }
 
 func main() {
-	msg := CaesarCipherEncryptor("abcdzxc", 10)
+	msg := CaesarCipherEncryptor("abcadzxc", 10)
 	fmt.Println(msg)
 }
