@@ -1,3 +1,4 @@
+// Implementation of Depth First Search
 package main
 
 type Node struct {
