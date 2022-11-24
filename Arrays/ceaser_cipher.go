@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func CaesarCipherEncryptor(str string, key int) string {
 	key = key % 26 // mod with 26 just in case the key is not bigger
 	result := ""
@@ -12,4 +14,9 @@ func CaesarCipherEncryptor(str string, key int) string {
 		result += string(asciiValue)
 	}
 	return result
+}
+
+func main() {
+	msg := CaesarCipherEncryptor("abcdzxc", 10)
+	fmt.Println(msg)
 }
