@@ -31,17 +31,21 @@ func (q *Queue) DeQueue() (string, bool) {
 
 func main() {
 	var queue Queue
+
+	// DeQueue empty queue
 	ele, msg := queue.DeQueue()
 	if msg == true {
 		fmt.Printf("%s", ele)
 	} else {
 		fmt.Printf("Nothing to delete!\n")
 	}
-
+	
+	// EnQueue 3 values in queue
 	queue.EnQueue("Hello0")
 	queue.EnQueue("Hello1")
 	queue.EnQueue("Hello2")
 
+	// DeQueue all values
 	for len(queue) > 0 {
 		ele, msg := queue.DeQueue()
 		if msg == true {
