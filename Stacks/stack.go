@@ -29,10 +29,13 @@ func (s *Stack) Pop() (string, bool) {
 }
 func main() {
 	var stack Stack
+	
+	// push 3 values in stack
 	stack.Push("Hello0")
 	stack.Push("Hello1")
 	stack.Push("Hello2")
-
+	
+	// pop out all values from stack
 	for len(stack) > 0 {
 		x, y := stack.Pop()
 		if y == true {
