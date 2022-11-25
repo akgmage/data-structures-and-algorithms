@@ -21,7 +21,9 @@ func (q *Queue) DeQueue() (string, bool) {
 	if q.IsEmpty() {
 		return "", false
 	} else {
+		// pick first element from queue
 		element := (*q)[0]
+		// slice off the picked element
 		*q = (*q)[1:]
 		return element, true
 	}
