@@ -1,4 +1,4 @@
-// Implement Stack Data Structure
+// Implement Queue Data Structure
 
 package main
 
