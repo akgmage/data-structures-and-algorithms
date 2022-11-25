@@ -6,15 +6,17 @@ import "fmt"
 
 type Queue []string
 
+// IsEmpty func checks if the queue is empty
 func (q *Queue) IsEmpty() bool{
 	return len(*q) == 0
 }
 
+// EnQueue func enqueues a new value in the Queue
 func (q *Queue) EnQueue(str string) {
 	fmt.Printf("%s entered queue\n", str)
 	*q = append(*q, str)
 }
-
+// DeQueue func dequeues "first in" as in FIFO, value in the Queue
 func (q *Queue) DeQueue() (string, bool) {
 	if q.IsEmpty() {
 		return "", false
