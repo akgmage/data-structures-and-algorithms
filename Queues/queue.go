@@ -2,6 +2,8 @@
 
 package main
 
+import "fmt"
+
 type Queue []string
 
 func (q *Queue) IsEmpty() bool{
@@ -9,10 +11,11 @@ func (q *Queue) IsEmpty() bool{
 }
 
 func (q *Queue) EnQueue(str string) {
+	fmt.Printf("%s entered queue\n", str)
 	*q = append(*q, str)
 }
 
-func (q *Queue) DeQueue(str string) (string, bool) {
+func (q *Queue) DeQueue() (string, bool) {
 	if q.IsEmpty() {
 		return "", false
 	} else {
@@ -22,3 +25,18 @@ func (q *Queue) DeQueue(str string) (string, bool) {
 	}
 }
 
+func main() {
+	var queue Queue
+
+	queue.EnQueue("Hello0")
+	queue.EnQueue("Hello1")
+	queue.EnQueue("Hello2")
+
+	for len(queue) > 0 {
+		ele, msg := queue.DeQueue()
+		if msg == true {
+			fmt.Printf("%s deleted from queue\n", ele)
+		}
+	}
+
+}
