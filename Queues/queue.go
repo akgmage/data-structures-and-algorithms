@@ -27,6 +27,12 @@ func (q *Queue) DeQueue() (string, bool) {
 
 func main() {
 	var queue Queue
+	ele, msg := queue.DeQueue()
+	if msg == true {
+		fmt.Printf("%s", ele)
+	} else {
+		fmt.Printf("Nothing to delete!\n")
+	}
 
 	queue.EnQueue("Hello0")
 	queue.EnQueue("Hello1")
