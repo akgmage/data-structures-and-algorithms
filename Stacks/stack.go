@@ -1,18 +1,22 @@
+// Implement Stack Data Structure
+
 package main
 
 import "fmt"
 
 type Stack []string
 
+// IsEmpty func checks if the stack is empty
 func (s *Stack) IsEmpty() bool {
 	return len(*s) == 0
 }
 
+// Push func pushes a new value into the stack
 func (s *Stack) Push(str string) {
 	fmt.Printf("%s pushed into stack\n", str)
 	*s = append(*s, str)
 }
-
+// Pop func pops the top most value from stack if there is any
 func (s *Stack) Pop() (string, bool) {
 	if s.IsEmpty() {
 		return "", false
