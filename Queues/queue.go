@@ -1,4 +1,5 @@
 // Implement Queue Data Structure
+// TODO: Make Queue Generic
 
 package main
 
@@ -39,7 +40,7 @@ func main() {
 	} else {
 		fmt.Printf("Nothing to delete!\n")
 	}
-	
+
 	// EnQueue 3 values in queue
 	queue.EnQueue("Hello0")
 	queue.EnQueue("Hello1")
