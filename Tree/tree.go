@@ -42,7 +42,9 @@ func FindByID(root *Node, id string) *Node {
 		}
 		// if it has any children then queue it up
 		if len(curr.children) > 0 {
+			// dont care about the index, only care about the value
 			for _, child := range curr.children {
+				// add children in queue
 				queue = append(queue, child)
 			}
 		}
