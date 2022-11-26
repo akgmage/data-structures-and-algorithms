@@ -30,14 +30,17 @@ type Node struct {
 }
 
 func FindByID(root *Node, id string) *Node {
+	// make queue of type Node which will contain all the nodes 
 	queue := make([]*Node, 0)
 	queue = append(queue, root)
 	for len(queue) > 0 {
-		curr := queue[0]
-		queue = queue[1:]
+		curr := queue[0] // set curr as first node
+		queue = queue[1:] // remove first node from queue
+		// return if match is found
 		if curr.id == id {
 			return curr
 		}
+		// if it has any children then queue it up
 		if len(curr.children) > 0 {
 			for _, child := range curr.children {
 				queue = append(queue, child)
