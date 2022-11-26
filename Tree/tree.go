@@ -59,6 +59,7 @@ func FindByIDDFS(node *Node, id string) *Node {
 	// keep exploring children if it has any
 	if len(node.children) > 0 {
 		for _, child := range node.children {
+			// recursively call FindByIDBFS
 			FindByIDBFS(child, id)
 		}
 	}
