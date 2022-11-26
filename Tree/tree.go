@@ -18,6 +18,7 @@ package main
 		</body>
 	</html>
 */
+
 type Node struct {
 	tag string
 	text string
@@ -26,6 +27,24 @@ type Node struct {
 	class string
 	id string
 	children []*Node
+}
+
+func FindByID(root *Node, id string) *Node {
+	queue := make([]*Node, 0)
+	queue = append(queue, root)
+	for len(queue) > 0 {
+		curr := queue[0]
+		queue = queue[1:]
+		if curr.id == id {
+			return curr
+		}
+		if len(curr.children) > 0 {
+			for _, child := range curr.children {
+				queue = append(queue, child)
+			}
+		}
+	}
+	return nil
 }
 
 func main() {
