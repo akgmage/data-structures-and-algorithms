@@ -2,6 +2,8 @@
 
 package main
 
+import "strings"
+
 /*
 	<html>
 		<body>
@@ -63,6 +65,22 @@ func FindByIDDFS(node *Node, id string) *Node {
 			FindByIDBFS(child, id)
 		}
 	}
+	return nil
+}
+
+// hasClass returns true if given className is found in node class
+func (n *Node) hasClass(className string) bool {
+	// Fields splits the string s around each instance of one or more consecutive white space characters
+	classes := strings.Fields(n.class)
+	// range through slice of classes
+	for _, class := range classes {
+		// return trupe if classname matches
+		if class == className {
+			return true
+		}
+	}
+	// No match found
+	return false
 }
 
 func main() {
