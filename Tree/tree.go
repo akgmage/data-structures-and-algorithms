@@ -51,10 +51,12 @@ func FindByIDBFS(root *Node, id string) *Node {
 	}
 	return nil
 }
-func FindByIDBFS(node *Node, id string) *Node {
+func FindByIDDFS(node *Node, id string) *Node {
+	// return if match is found
 	if node.id == id {
 		return node
 	}
+	// keep exploring children if it has any
 	if len(node.children) > 0 {
 		for _, child := range node.children {
 			FindByIDBFS(child, id)
