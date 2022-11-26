@@ -29,7 +29,7 @@ type Node struct {
 	children []*Node
 }
 
-func FindByID(root *Node, id string) *Node {
+func FindByIDBFS(root *Node, id string) *Node {
 	// make queue of type Node which will contain all the nodes 
 	queue := make([]*Node, 0)
 	queue = append(queue, root)
@@ -50,6 +50,16 @@ func FindByID(root *Node, id string) *Node {
 		}
 	}
 	return nil
+}
+func FindByIDBFS(node *Node, id string) *Node {
+	if node.id == id {
+		return node
+	}
+	if len(node.children) > 0 {
+		for _, child := range node.children {
+			FindByIDBFS(child, id)
+		}
+	}
 }
 
 func main() {
