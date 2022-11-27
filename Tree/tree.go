@@ -83,6 +83,25 @@ func (n *Node) hasClass(className string) bool {
 	return false
 }
 
+func findAllByClassName(root *Node, className string) []*Node {
+	result := make([]*Node, 0)
+	queue := make([]*Node, 0)
+	queue = append(queue, root)
+	for len(queue) > 0 {
+		curr := queue[0]
+		queue = queue[1:]
+		if curr.hasClass(className) {
+			result = append(result, curr)
+		}
+		if len(curr.children) > 0 {
+			for _, child := range curr.children {
+				queue = append(queue, child)
+			}
+		}
+	}
+	return result
+}
+
 func main() {
 	span := Node {
 		tag: "span",
