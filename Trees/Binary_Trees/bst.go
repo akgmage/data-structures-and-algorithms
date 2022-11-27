@@ -30,3 +30,14 @@ func NewBinaryTree(n, k int) *BinaryTreeNode {
 	}
 }
 
+func insert(root * BinaryTreeNode, v int) *BinaryTreeNode {
+	if root == nil {
+		return &BinaryTreeNode{nil, v, nil}
+	}
+	if v < root.data {
+		root.left = insert(root.left, v)
+		return root
+	}
+	root.right = insert(root.right, v)
+	return root
+}
