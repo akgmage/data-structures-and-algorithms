@@ -32,15 +32,15 @@ func NewBinaryTree(n, k int) *BinaryTreeNode {
 
 func insert(root * BinaryTreeNode, v int) *BinaryTreeNode {
 	if root == nil {
-		fmt.Printf("%d root", v)
+		// fmt.Printf("%d root", v)
 		return &BinaryTreeNode{nil, v, nil}
 	}
 	if v < root.data {
-		fmt.Printf("%d left\n", v)
+		// fmt.Printf("%d left\n", v)
 		root.left = insert(root.left, v)
 		return root
 	}
-	fmt.Printf("%d right\n", v)
+	// fmt.Printf("%d right\n", v)
 	root.right = insert(root.right, v)
 	return root
 }
