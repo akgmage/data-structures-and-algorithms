@@ -99,6 +99,7 @@ func findAllByClassName(root *Node, className string) []*Node {
 		// keep exploring children if it has any
 		if len(curr.children) > 0 {
 			for _, child := range curr.children {
+				// add children to queue
 				queue = append(queue, child)
 			}
 		}
