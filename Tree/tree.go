@@ -83,6 +83,30 @@ func (n *Node) hasClass(className string) bool {
 	return false
 }
 
+func findAllByClassName(root *Node, className string) []*Node {
+	// make result of type Node which will contain all the resulting className nodes 
+	result := make([]*Node, 0)
+	// make queue of type Node which will contain all the nodes 
+	queue := make([]*Node, 0)
+	queue = append(queue, root)
+	for len(queue) > 0 {
+		curr := queue[0] // set curr as first node
+		queue = queue[1:] // remove first node from queue
+		// if match is found append it to result's slice
+		if curr.hasClass(className) {
+			result = append(result, curr)
+		}
+		// keep exploring children if it has any
+		if len(curr.children) > 0 {
+			for _, child := range curr.children {
+				// add children to queue
+				queue = append(queue, child)
+			}
+		}
+	}
+	return result
+}
+
 func main() {
 	span := Node {
 		tag: "span",
