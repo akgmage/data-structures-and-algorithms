@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 type BinaryTreeNode struct {
 	left  *BinaryTreeNode
@@ -18,3 +21,12 @@ func PreOrder(root *BinaryTreeNode) {
 	PreOrder(root.left)
 	PreOrder(root.right)
 }
+
+func NewBinaryTree(n, k int) *BinaryTreeNode {
+	var root * BinaryTreeNode
+
+	for _, v := range rand.Perm(n) {
+		root = insert(root, (1 + v) * k)
+	}
+}
+
