@@ -119,7 +119,14 @@ func Height(root *BinaryTreeNode) int {
 	}
 }
 
-func insert(root * BinaryTreeNode, v int) *BinaryTreeNode {
+func InvertTree(root *BinaryTreeNode) *BinaryTreeNode {
+	if root != nil {
+		root.left, root.right = InvertTree(root.right), InvertTree(root.left)
+	}
+	return root
+}
+
+func insert(root *BinaryTreeNode, v int) *BinaryTreeNode {
 	if root == nil {
 		// fmt.Printf("%d root", v)
 		return &BinaryTreeNode{nil, v, nil}
@@ -146,4 +153,6 @@ func main() {
 	fmt.Println(size)
 	height := Height(t1)
 	fmt.Println(height)
+	invert := InvertTree(t1)
+	fmt.Println(invert)
 }
