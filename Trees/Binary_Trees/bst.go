@@ -70,6 +70,23 @@ func FindMax(root *BinaryTreeNode) int {
 	return max
 }
 
+func SearchAnElement(root *BinaryTreeNode, data int) *BinaryTreeNode {
+	if root == nil {
+		return root
+	} else {
+		if data == root.data {
+			return root
+		} else {
+			temp := SearchAnElement(root.left, data)
+			if temp != nil {
+				return temp
+			} else {
+				return SearchAnElement(root.right, data)
+			}
+		}
+	}
+}
+
 func insert(root * BinaryTreeNode, v int) *BinaryTreeNode {
 	if root == nil {
 		// fmt.Printf("%d root", v)
@@ -91,4 +108,6 @@ func main() {
 	fmt.Println()
 	msg := FindMax(t1)
 	fmt.Println(msg)
+	res := SearchAnElement(t1, 1)
+	fmt.Println(res)
 }
