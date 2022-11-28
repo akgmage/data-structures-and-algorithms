@@ -22,14 +22,22 @@ func PreOrder(root *BinaryTreeNode) {
 	PreOrder(root.right)
 }
 
-func InOrder(root * BinaryTreeNode) {
+func InOrder(root *BinaryTreeNode) {
 	if root == nil {
 		return
 	}
 	InOrder(root.left)
 	fmt.Printf("%d", root.data)
 	InOrder(root.right)
+}
 
+func PostOrder(root *BinaryTreeNode) {
+	if root == nil {
+		return
+	}
+	PostOrder(root.left)
+	PostOrder(root.right)
+	fmt.Printf("%d", root.data)
 }
 
 func NewBinaryTree(n, k int) *BinaryTreeNode {
