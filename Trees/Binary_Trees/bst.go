@@ -48,7 +48,10 @@ func NewBinaryTree(n, k int) *BinaryTreeNode {
 	}
 	return root
 }
-
+// Time Complexity: O(n). Space Complexity: O(n).
+// Approach: find maximum in left sub tree, find maximum in right subtree
+// compare them with root data and select the one which is giving the max value
+// recursive appraoch
 func FindMax(root *BinaryTreeNode) int {
 	max := math.MinInt32
 	if root != nil {
