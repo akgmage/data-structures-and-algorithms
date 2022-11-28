@@ -118,7 +118,11 @@ func Height(root *BinaryTreeNode) int {
 
 	}
 }
-
+// Time Complexity: O(n). Space Complexity: O(n).
+// Approach: The inverse of an empty tree is an empty tree
+// The inverse of a tree with root r, and subtrees right and left is a tree with
+// root, whose right subtree is the inverse of left and whoose left subtree
+// is the inverse of right
 func InvertTree(root *BinaryTreeNode) *BinaryTreeNode {
 	if root != nil {
 		root.left, root.right = InvertTree(root.right), InvertTree(root.left)
