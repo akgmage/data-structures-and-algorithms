@@ -129,6 +129,16 @@ func InvertTree(root *BinaryTreeNode) *BinaryTreeNode {
 	}
 	return root
 }
+// Method2 : swap pointers
+func InvertTree2(root *BinaryTreeNode) *BinaryTreeNode {
+	if root == nil {
+		return root
+	}
+	root.left, root.right = root.right, root.left
+	InvertTree(root.left)
+	InvertTree(root.right)
+	return root
+}
 
 func insert(root *BinaryTreeNode, v int) *BinaryTreeNode {
 	if root == nil {
