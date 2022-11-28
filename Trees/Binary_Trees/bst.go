@@ -69,14 +69,18 @@ func FindMax(root *BinaryTreeNode) int {
 	}
 	return max
 }
-
+// Time Complexity: O(n). Space Complexity: O(n).
+// Approach: recurse down the tree choose left or right branch by comparing data with each node's data
 func SearchAnElement(root *BinaryTreeNode, data int) *BinaryTreeNode {
+	// base case empty tree
 	if root == nil {
 		return root
 	} else {
+		// if found return root
 		if data == root.data {
 			return root
 		} else {
+			// recurse down correct subtree
 			temp := SearchAnElement(root.left, data)
 			if temp != nil {
 				return temp
