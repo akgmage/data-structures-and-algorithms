@@ -90,7 +90,9 @@ func SearchAnElement(root *BinaryTreeNode, data int) *BinaryTreeNode {
 		}
 	}
 }
-
+// Time Complexity: O(n). Space Complexity: O(n).
+// Approach: calculate the size of left and right subtree recursively
+// add 1 (curr node) and return to its parent
 func Size(root *BinaryTreeNode) int {
 	if root == nil {
 		return 0
