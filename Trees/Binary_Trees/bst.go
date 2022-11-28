@@ -22,6 +22,16 @@ func PreOrder(root *BinaryTreeNode) {
 	PreOrder(root.right)
 }
 
+func InOrder(root * BinaryTreeNode) {
+	if root == nil {
+		return
+	}
+	InOrder(root.left)
+	fmt.Printf("%d", root.data)
+	InOrder(root.right)
+
+}
+
 func NewBinaryTree(n, k int) *BinaryTreeNode {
 	var root * BinaryTreeNode
 	for _, v := range rand.Perm(n) {
