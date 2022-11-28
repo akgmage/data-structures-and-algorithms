@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"math/rand"
 )
 
@@ -48,6 +49,24 @@ func NewBinaryTree(n, k int) *BinaryTreeNode {
 	return root
 }
 
+func FindMax(root *BinaryTreeNode) int {
+	max := math.MinInt32
+	if root != nil {
+		rootVal := root.data
+		left := FindMax(root.left)
+		right := FindMax(root.right)
+		if left > max {
+			max = left
+		} else {
+			max = right
+		}
+		if rootVal > max {
+			max = rootVal
+		}
+	}
+	return max
+}
+
 func insert(root * BinaryTreeNode, v int) *BinaryTreeNode {
 	if root == nil {
 		// fmt.Printf("%d root", v)
@@ -67,4 +86,6 @@ func main() {
 	t1 := NewBinaryTree(10, 1)
 	PreOrder(t1)
 	fmt.Println()
+	msg := FindMax(t1)
+	fmt.Println(msg)
 }
