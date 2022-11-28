@@ -101,6 +101,21 @@ func Size(root *BinaryTreeNode) int {
 	}
 }
 
+func Height(root *BinaryTreeNode) int {
+	if root == nil {
+		return 0
+	} else {
+		leftHeight := Height(root.left)
+		rightHeight := Height(root.right)
+		if leftHeight > rightHeight {
+			return leftHeight + 1
+		} else {
+			return rightHeight + 1
+		}
+
+	}
+}
+
 func insert(root * BinaryTreeNode, v int) *BinaryTreeNode {
 	if root == nil {
 		// fmt.Printf("%d root", v)
@@ -126,4 +141,6 @@ func main() {
 	fmt.Println(res)
 	size := Size(t1)
 	fmt.Println(size)
+	height := Height(t1)
+	fmt.Println(height)
 }
