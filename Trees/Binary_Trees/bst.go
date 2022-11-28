@@ -91,6 +91,14 @@ func SearchAnElement(root *BinaryTreeNode, data int) *BinaryTreeNode {
 	}
 }
 
+func Size(root *BinaryTreeNode) int {
+	if root == nil {
+		return 0
+	} else {
+		return Size(root.left) + 1 + Size(root.right)
+	}
+}
+
 func insert(root * BinaryTreeNode, v int) *BinaryTreeNode {
 	if root == nil {
 		// fmt.Printf("%d root", v)
@@ -114,4 +122,6 @@ func main() {
 	fmt.Println(msg)
 	res := SearchAnElement(t1, 1)
 	fmt.Println(res)
+	size := Size(t1)
+	fmt.Println(size)
 }
