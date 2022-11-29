@@ -25,4 +25,15 @@ func (ll *LinkedList) Display() error {
 	}
 	fmt.Println()
 	return nil
+	
+}
+
+func (ll *LinkedList) Length() int {
+	size := 0
+	current := ll.head
+	for current != nil {
+		size++
+		current = current.next
+	}
+	return size
 }
