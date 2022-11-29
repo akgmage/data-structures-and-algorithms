@@ -71,3 +71,9 @@ func (ll *LinkedList) InsertAtEnd(data interface{}) {
 	ll.size++
 	return
 }
+
+func (ll *LinkedList) InsertAtAnyPos(data interface{}, position int) error {
+	if position < 1 || position > ll.size + 1 {
+		return fmt.Errorf("insert: Error out of bounds")
+	}
+}
