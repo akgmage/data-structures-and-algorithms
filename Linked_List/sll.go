@@ -53,3 +53,20 @@ func (ll *LinkedList) InsertAtBeginning(data interface{}) {
 	ll.size++
 	return
 }
+
+func (ll *LinkedList) InsertAtEnd(data interface{}) {
+	node := &ListNode{
+		data: data,
+	}
+	if ll.head == nil {
+		ll.head = node
+	} else {
+		current := ll.head
+		for current.next != nil {
+			current = current.next
+		}
+		current.next = node
+	}
+	ll.size++
+	return
+}
