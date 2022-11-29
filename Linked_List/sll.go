@@ -27,7 +27,7 @@ func (ll *LinkedList) Display() error {
 	return nil
 	
 }
-
+// Length: returns the linked list size
 func (ll *LinkedList) Length() int {
 	size := 0
 	current := ll.head
@@ -36,4 +36,16 @@ func (ll *LinkedList) Length() int {
 		current = current.next
 	}
 	return size
+}
+
+func (ll *LinkedList) InsertAtBeginning(data interface{}) {
+	node := &ListNode{
+		data: data,
+	}
+	if ll.head == nil {
+		node.next = ll.head
+		ll.head = node
+	}
+	ll.size++
+	return
 }
