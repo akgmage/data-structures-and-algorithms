@@ -37,12 +37,16 @@ func (ll *LinkedList) Length() int {
 	}
 	return size
 }
-
+// InsertAtBeginning: Update the next pointer of new node to point to the current head
+// Update the head pointer to point to the new node
 func (ll *LinkedList) InsertAtBeginning(data interface{}) {
 	node := &ListNode{
 		data: data,
 	}
+	// if there is no head then set new node as head
 	if ll.head == nil {
+		ll.head = node
+	} else {
 		node.next = ll.head
 		ll.head = node
 	}
