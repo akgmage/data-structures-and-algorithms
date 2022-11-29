@@ -88,5 +88,8 @@ func (ll *LinkedList) InsertAtAnyPos(data interface{}, position int) error {
 	if prev != nil {
 		prev.next = newNode
 		newNode.next = current
+	} else {
+		newNode.next = current
+		ll.head = newNode
 	}
 }
