@@ -76,4 +76,14 @@ func (ll *LinkedList) InsertAtAnyPos(data interface{}, position int) error {
 	if position < 1 || position > ll.size + 1 {
 		return fmt.Errorf("insert: Error out of bounds")
 	}
+	newNode := &ListNode{data, nil}
+	var prev, current *ListNode
+	prev = nil
+	current = ll.head
+	for position > 1 {
+		prev = current
+		current = current.next
+		position--
+	}
+
 }
