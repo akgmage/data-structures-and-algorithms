@@ -53,7 +53,8 @@ func (ll *LinkedList) InsertAtBeginning(data interface{}) {
 	ll.size++
 	return
 }
-
+// InsertAtEnd: We need to modify two next pointers, new node next pointer points to nil
+// Last nodes next pointer points to the new node
 func (ll *LinkedList) InsertAtEnd(data interface{}) {
 	node := &ListNode{
 		data: data,
