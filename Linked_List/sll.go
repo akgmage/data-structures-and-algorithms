@@ -71,3 +71,29 @@ func (ll *LinkedList) InsertAtEnd(data interface{}) {
 	ll.size++
 	return
 }
+// InsertAtAnyPos: To add an element at pos 3 we stop at pos 2, That means we traverse 
+// 2 nodes and insert the new node.
+// Prev will point to the predecessor of new node and next pointer of new node 
+// points to the next node of the prev node
+func (ll *LinkedList) InsertAtAnyPos(data interface{}, position int) error {
+	// base case check position valid or not
+	if position < 1 || position > ll.size + 1 {
+		return fmt.Errorf("insert: Error out of bounds")
+	}
+	newNode := &ListNode{data, nil}
+	var prev, current *ListNode
+	prev = nil
+	current = ll.head
+	for position > 1 {
+		prev = current
+		current = current.next
+		position--
+	}
+	if prev != nil {
+		prev.next = newNode
+		newNode.next = current
+	} else {
+		newNode.next = current
+		ll.head = newNode
+	}
+}
