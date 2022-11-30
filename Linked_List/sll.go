@@ -132,7 +132,9 @@ func (ll *LinkedList) DeleteLast() (interface{}, error) {
 	ll.size--
 	return current.data, nil
 }
-
+// DeleteFromAnyPos: maintain the previous node while traversing the list.
+// Once we find the node to be deleted, 
+// change the previous node's next pointer to the next pointer of the node to be deleted
 func (ll *LinkedList) DeleteFromAnyPos(position int) (interface{}, error) {
 	if position < 1 || position > ll.size + 1 {
 		return nil, fmt.Errorf("insert: Index out of bounds")
