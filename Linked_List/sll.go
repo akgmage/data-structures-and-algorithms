@@ -96,4 +96,17 @@ func (ll *LinkedList) InsertAtAnyPos(data interface{}, position int) error {
 		newNode.next = current
 		ll.head = newNode
 	}
+	ll.size++
+	return nil
+}
+// DeleteFirst: create a temporaty node which will point to the same node as that of head
+// and move the head nodes pointer to the next node and dispose temporary node
+func (ll *LinkedList) DeleteFirst() (interface{}, error) {
+	if ll.head == nil {
+		return nil, fmt.Errorf("deleteFront: List is empty")
+	}
+	data := ll.head.data
+	ll.head = ll.head.next
+	ll.size--
+	return data, nil
 }
