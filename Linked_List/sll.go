@@ -143,10 +143,10 @@ func (ll *LinkedList) DeleteFromAnyPos(position int) (interface{}, error) {
 	prev = nil
 	current = ll.head
 	pos := 0
-
+	// delete head and set head as next node
 	if position == 1 {
 		ll.head = ll.head.next
-	} else {
+	} else { // maintain two nodes
 		for pos != position - 1 {
 			pos = pos + 1
 			prev = current
