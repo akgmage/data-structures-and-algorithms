@@ -1,3 +1,16 @@
+/*
+	The linked list consists of a series of structures called nodes. We can think of each node as a record. The first part
+	of the record is a field that stores the data, and the second part of the record is a field that stores a pointer to a
+	node. So, each node contains two fields: a data field and a next field which is a pointer used to link one node to
+	the next node. Generally, "linked list" means a singly linked list. This list consists of a number of nodes in which
+	each node has a pointer to the following element. The link of the last node in the list is nil, which indicates
+	the end of the list.
+
+	Basic Operations on a List
+		--> Traversing the list
+		--> Inserting an item in the list
+		--> Deleting an item from the list
+*/
 package main
 
 import "fmt"
@@ -101,6 +114,7 @@ func (ll *LinkedList) InsertAtAnyPos(data interface{}, position int) error {
 }
 // DeleteFirst: create a temporaty node which will point to the same node as that of head
 // and move the head nodes pointer to the next node and dispose temporary node
+// Time Complexity: O(1), for scanning the list of size. Space Complexity: O(1).
 func (ll *LinkedList) DeleteFirst() (interface{}, error) {
 	if ll.head == nil {
 		return nil, fmt.Errorf("deleteFront: List is empty")
@@ -113,6 +127,7 @@ func (ll *LinkedList) DeleteFirst() (interface{}, error) {
 // DeleteLast: traverse the list, while traversingmaintain the previous node address.
 // by the time we reach end of list we have two pointers, one pointing to the tail node and
 // other pointing to the node before tail node
+// Time Complexity: O(n), for scanning the list of size 􀝊. Space Complexity: O(1).
 func (ll *LinkedList) DeleteLast() (interface{}, error) {
 	if ll.head == nil {
 		return nil, fmt.Errorf("deleteLast: List is empty")
@@ -135,6 +150,8 @@ func (ll *LinkedList) DeleteLast() (interface{}, error) {
 // DeleteFromAnyPos: maintain the previous node while traversing the list.
 // Once we find the node to be deleted, 
 // change the previous node's next pointer to the next pointer of the node to be deleted
+// Time Complexity: O(n). In the worst case, we may need to delete the node from the end of the linked list.
+// Space Complexity: O(1).
 func (ll *LinkedList) DeleteFromAnyPos(position int) (interface{}, error) {
 	if position < 1 || position > ll.size + 1 {
 		return nil, fmt.Errorf("insert: Index out of bounds")
