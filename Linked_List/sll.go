@@ -110,3 +110,23 @@ func (ll *LinkedList) DeleteFirst() (interface{}, error) {
 	ll.size--
 	return data, nil
 }
+
+func (ll *LinkedList) DeleteLast() (interface{}, error) {
+	if ll.head == nil {
+		return nil, fmt.Errorf("deleteLast: List is empty")
+	}
+	var prev *ListNode
+	current := ll.head
+	for current.next != nil {
+		prev = current
+		current = current.next
+	}
+	if prev != nil {
+		prev.next = nil
+	} else {
+		ll.head = nil
+	}
+	ll.size--
+	return current.data, nil
+
+}
