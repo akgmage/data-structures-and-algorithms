@@ -1,3 +1,16 @@
+/*
+	The linked list consists of a series of structures called nodes. We can think of each node as a record. The first part
+	of the record is a field that stores the data, and the second part of the record is a field that stores a pointer to a
+	node. So, each node contains two fields: a data field and a next field which is a pointer used to link one node to
+	the next node. Generally, "linked list" means a singly linked list. This list consists of a number of nodes in which
+	each node has a pointer to the following element. The link of the last node in the list is nil, which indicates
+	the end of the list.
+
+	Basic Operations on a List
+		--> Traversing the list
+		--> Inserting an item in the list
+		--> Deleting an item from the list
+*/
 package main
 
 import "fmt"
