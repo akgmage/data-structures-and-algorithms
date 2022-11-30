@@ -96,4 +96,16 @@ func (ll *LinkedList) InsertAtAnyPos(data interface{}, position int) error {
 		newNode.next = current
 		ll.head = newNode
 	}
+	ll.size++
+	return nil
+}
+
+func (ll *LinkedList) DeleteFirst() (interface{}, error) {
+	if ll.head == nil {
+		return nil, fmt.Errorf("deleteFront: List is empty")
+	}
+	data := ll.head.data
+	ll.head = ll.head.next
+	ll.size--
+	return data, nil
 }
