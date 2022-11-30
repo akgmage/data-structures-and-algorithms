@@ -119,6 +119,7 @@ func (ll *LinkedList) DeleteLast() (interface{}, error) {
 	}
 	var prev *ListNode
 	current := ll.head
+	// last and second last node
 	for current.next != nil {
 		prev = current
 		current = current.next
@@ -130,5 +131,31 @@ func (ll *LinkedList) DeleteLast() (interface{}, error) {
 	}
 	ll.size--
 	return current.data, nil
-
+}
+// DeleteFromAnyPos: maintain the previous node while traversing the list.
+// Once we find the node to be deleted, 
+// change the previous node's next pointer to the next pointer of the node to be deleted
+func (ll *LinkedList) DeleteFromAnyPos(position int) (interface{}, error) {
+	if position < 1 || position > ll.size + 1 {
+		return nil, fmt.Errorf("insert: Index out of bounds")
+	}
+	var prev, current *ListNode
+	prev = nil
+	current = ll.head
+	pos := 0
+	// delete head and set head as next node
+	if position == 1 {
+		ll.head = ll.head.next
+	} else { // maintain two nodes
+		for pos != position - 1 {
+			pos = pos + 1
+			prev = current
+			current = current.next
+		}
+		if current != nil {
+			prev.next = current.next
+		}
+	}
+	ll.size--
+	return current.data, nil
 }
