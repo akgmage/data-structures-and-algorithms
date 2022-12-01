@@ -154,6 +154,31 @@ func Size(root *BinaryTreeNode) int {
 		return Size(root.left) + 1 + Size(root.right)
 	}
 }
+
+func SizeWithoutUsingRecursion(root *BinaryTreeNode) int {
+	if root == nil {
+		return 0
+	}
+	var result int
+	queue := []*BinaryTreeNode{root}
+	for len(queue) > 0 {
+		qlen := len(queue)
+		//var level []int
+		for i := 0; i < qlen; i++ {
+			node := queue[0]
+			result++
+			//level = append(level, node.data)
+			queue = queue[1:]
+			if node.left != nil {
+				queue = append(queue, node.left)
+			}
+			if node.right != nil {
+				queue = append(queue, node.right)
+			}
+		}
+	}
+	return result
+}
 // Time Complexity: O(n). Space Complexity: O(n).
 // Approach: Recursively calculate height of left and right subtrees of a node 
 // and assign height to the node as max of heights of two children + 1
@@ -220,6 +245,9 @@ func main() {
 	res := SearchAnElement(t1, 1)
 	fmt.Println(res)
 	size := Size(t1)
+	fmt.Println(size)
+	size = SizeWithoutUsingRecursion(t1)
+	fmt.Println("Size without recursion")
 	fmt.Println(size)
 	height := Height(t1)
 	fmt.Println(height)
