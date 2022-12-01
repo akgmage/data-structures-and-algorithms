@@ -69,7 +69,8 @@ func FindMax(root *BinaryTreeNode) int {
 	}
 	return max
 }
-
+// Time Complexity: O(n). Space Complexity: O(n).
+// Approach: Using level order traversal observe the elements data 
 func FindMaxWithoutRecursion(root *BinaryTreeNode) int {
 	max := math.MinInt32
 	if root == nil {
