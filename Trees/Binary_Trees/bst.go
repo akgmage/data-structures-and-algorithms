@@ -69,6 +69,32 @@ func FindMax(root *BinaryTreeNode) int {
 	}
 	return max
 }
+
+func FindMaxWithoutRecursion(root *BinaryTreeNode) int {
+	max := math.MinInt32
+	if root == nil {
+		return max
+	}
+	queue := []*BinaryTreeNode{root}
+	for len(queue) > 0 {
+		qlen := len(queue)
+		for i := 0; i < qlen; i++ {
+			node := queue[0]
+			if node.data > max {
+				max = node.data
+			}
+			queue = queue[1:]
+			if node.left != nil {
+				queue = append(queue, node.left)
+			}
+			if node.right != nil {
+				queue = append(queue, node.right)
+			}
+		}
+	}
+	return max
+}
+
 // Time Complexity: O(n). Space Complexity: O(n).
 // Approach: recurse down the tree choose left or right branch by comparing data with each node's data
 func SearchAnElement(root *BinaryTreeNode, data int) *BinaryTreeNode {
