@@ -222,6 +222,16 @@ func InvertTree2(root *BinaryTreeNode) *BinaryTreeNode {
 	return root
 }
 
+func DeleteTree(root *BinaryTreeNode) *BinaryTreeNode {
+	if root == nil {
+		return nil
+	}
+	root.left = DeleteTree(root.left)
+	root.right = DeleteTree(root.right)
+	root = nil
+	return root
+}
+
 func insert(root *BinaryTreeNode, v int) *BinaryTreeNode {
 	if root == nil {
 		// fmt.Printf("%d root", v)
