@@ -70,6 +70,33 @@ func FindMax(root *BinaryTreeNode) int {
 	return max
 }
 // Time Complexity: O(n). Space Complexity: O(n).
+// Approach: Using level order traversal observe the elements data 
+func FindMaxWithoutRecursion(root *BinaryTreeNode) int {
+	max := math.MinInt32
+	if root == nil {
+		return max
+	}
+	queue := []*BinaryTreeNode{root}
+	for len(queue) > 0 {
+		qlen := len(queue)
+		for i := 0; i < qlen; i++ {
+			node := queue[0]
+			if node.data > max {
+				max = node.data
+			}
+			queue = queue[1:]
+			if node.left != nil {
+				queue = append(queue, node.left)
+			}
+			if node.right != nil {
+				queue = append(queue, node.right)
+			}
+		}
+	}
+	return max
+}
+
+// Time Complexity: O(n). Space Complexity: O(n).
 // Approach: recurse down the tree choose left or right branch by comparing data with each node's data
 func SearchAnElement(root *BinaryTreeNode, data int) *BinaryTreeNode {
 	// base case empty tree
@@ -91,6 +118,33 @@ func SearchAnElement(root *BinaryTreeNode, data int) *BinaryTreeNode {
 	}
 }
 // Time Complexity: O(n). Space Complexity: O(n).
+// Approach: using level order traversal we can solve this problem, check whether
+// the root data is equal to the element we want to search
+func SearchAnElementWithoutRecursion(root *BinaryTreeNode, data int) *BinaryTreeNode {
+	if root == nil {
+		return root
+	}
+	queue := []*BinaryTreeNode{root}
+	for len(queue) > 0 {
+		qlen := len(queue)
+		for i := 0; i < qlen; i++ {
+			node := queue[0]
+			if data == node.data {
+				return node
+			}
+			queue = queue[1:]
+			if node.left != nil {
+				queue = append(queue, node.left)
+			}
+			if node.right != nil {
+				queue = append(queue, node.right)
+			}
+		}
+	}
+	return nil
+}
+
+// Time Complexity: O(n). Space Complexity: O(n).
 // Approach: calculate the size of left and right subtree recursively
 // add 1 (curr node) and return to its parent
 func Size(root *BinaryTreeNode) int {
@@ -99,6 +153,32 @@ func Size(root *BinaryTreeNode) int {
 	} else {
 		return Size(root.left) + 1 + Size(root.right)
 	}
+}
+// Time Complexity: O(n). Space Complexity: O(n).
+// Approach: use level order traversal and count nodes
+func SizeWithoutUsingRecursion(root *BinaryTreeNode) int {
+	if root == nil {
+		return 0
+	}
+	var result int
+	queue := []*BinaryTreeNode{root}
+	for len(queue) > 0 {
+		qlen := len(queue)
+		//var level []int
+		for i := 0; i < qlen; i++ {
+			node := queue[0]
+			result++
+			//level = append(level, node.data)
+			queue = queue[1:]
+			if node.left != nil {
+				queue = append(queue, node.left)
+			}
+			if node.right != nil {
+				queue = append(queue, node.right)
+			}
+		}
+	}
+	return result
 }
 // Time Complexity: O(n). Space Complexity: O(n).
 // Approach: Recursively calculate height of left and right subtrees of a node 
@@ -166,6 +246,9 @@ func main() {
 	res := SearchAnElement(t1, 1)
 	fmt.Println(res)
 	size := Size(t1)
+	fmt.Println(size)
+	size = SizeWithoutUsingRecursion(t1)
+	fmt.Println("Size without recursion")
 	fmt.Println(size)
 	height := Height(t1)
 	fmt.Println(height)
