@@ -117,6 +117,31 @@ func SearchAnElement(root *BinaryTreeNode, data int) *BinaryTreeNode {
 		}
 	}
 }
+
+func SearchAnElementWithoutRecursion(root *BinaryTreeNode, data int) *BinaryTreeNode {
+	if root == nil {
+		return root
+	}
+	queue := []*BinaryTreeNode{root}
+	for len(queue) > 0 {
+		qlen := len(queue)
+		for i := 0; i < qlen; i++ {
+			node := queue[0]
+			if data == node.data {
+				return node
+			}
+			queue = queue[1:]
+			if node.left != nil {
+				queue = append(queue, node.left)
+			}
+			if node.right != nil {
+				queue = append(queue, node.right)
+			}
+		}
+	}
+	return nil
+}
+
 // Time Complexity: O(n). Space Complexity: O(n).
 // Approach: calculate the size of left and right subtree recursively
 // add 1 (curr node) and return to its parent
