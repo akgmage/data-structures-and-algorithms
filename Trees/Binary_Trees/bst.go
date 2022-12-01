@@ -117,7 +117,9 @@ func SearchAnElement(root *BinaryTreeNode, data int) *BinaryTreeNode {
 		}
 	}
 }
-
+// Time Complexity: O(n). Space Complexity: O(n).
+// Approach: using level order traversal we can solve this problem, check whether
+// the root data is equal to the element we want to search
 func SearchAnElementWithoutRecursion(root *BinaryTreeNode, data int) *BinaryTreeNode {
 	if root == nil {
 		return root
