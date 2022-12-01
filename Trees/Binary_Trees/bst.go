@@ -154,7 +154,8 @@ func Size(root *BinaryTreeNode) int {
 		return Size(root.left) + 1 + Size(root.right)
 	}
 }
-
+// Time Complexity: O(n). Space Complexity: O(n).
+// Approach: use level order traversal and count nodes
 func SizeWithoutUsingRecursion(root *BinaryTreeNode) int {
 	if root == nil {
 		return 0
