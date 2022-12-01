@@ -221,7 +221,9 @@ func InvertTree2(root *BinaryTreeNode) *BinaryTreeNode {
 	InvertTree(root.right)
 	return root
 }
-
+// Time Complexity: O(n). Space Complexity: O(n).
+// Approach: before deleting parent node, delete all its children nodes
+// using post order traversal we can solve this problem 
 func DeleteTree(root *BinaryTreeNode) *BinaryTreeNode {
 	if root == nil {
 		return nil
