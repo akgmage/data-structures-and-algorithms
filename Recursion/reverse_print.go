@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// Starting from n print number till 1
 func print(n int) int {
 	if n == 0 {
 		return 0
