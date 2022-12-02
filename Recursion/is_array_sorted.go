@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// Time Complexity: O(n). Space Complexity: O(n) for recursive stack space.
 func isSorted(A []int) bool {
 	n := len(A)
 	if n == 1 {
