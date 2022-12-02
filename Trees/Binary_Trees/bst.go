@@ -287,4 +287,7 @@ func main() {
 	fmt.Println(height)
 	invert := InvertTree(t1)
 	fmt.Println(invert)
+	deleteLeaf := RemoveLeafNodes(t1)
+	fmt.Println(deleteLeaf)
+	PreOrder(deleteLeaf)
 }
