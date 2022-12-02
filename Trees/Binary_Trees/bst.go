@@ -257,10 +257,11 @@ func RemoveLeafNodes(root *BinaryTreeNode) *BinaryTreeNode {
 	if root == nil {
 		return root
 	}
+	// if it doesnt have left and right children then delete it
 	if root.left == nil && root.right == nil {
 		root = nil
 		return root
-	} else {
+	} else { // recurse to left and right subtree
 		root.left = RemoveLeafNodes(root.left)
 		root.right = RemoveLeafNodes(root.right)
 	}
