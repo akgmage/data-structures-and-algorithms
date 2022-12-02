@@ -253,6 +253,19 @@ func DeleteTree(root *BinaryTreeNode) *BinaryTreeNode {
 	return root
 }
 
+func RemoveLeafNodes(root *BinaryTreeNode) *BinaryTreeNode {
+	if root == nil {
+		return root
+	}
+	if root.left == nil && root.right == nil {
+		root = nil
+		return root
+	} else {
+		root.left = RemoveLeafNodes(root.left)
+		root.right = RemoveLeafNodes(root.right)
+	}
+	return root
+}
 
 func main() {
 	t1 := NewBinaryTree(10, 1)
