@@ -252,7 +252,9 @@ func DeleteTree(root *BinaryTreeNode) *BinaryTreeNode {
 	root = nil
 	return root
 }
-
+// Time Complexity: O(n). Space Complexity: O(n).
+// Approach: recurse both left and right subtree and check if the node doesn't have
+// left and right children
 func RemoveLeafNodes(root *BinaryTreeNode) *BinaryTreeNode {
 	if root == nil {
 		return root
