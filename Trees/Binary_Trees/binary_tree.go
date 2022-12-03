@@ -50,7 +50,10 @@ func insert(root *BinaryTreeNode, v int) *BinaryTreeNode {
 }
 
 // Pre-order traversal
-
+// Preorder traversal is defined as follows:
+// 1 Visit the root.
+// 2 Traverse the left subtree in Preorder.
+// 3 Traverse the right subtree in Preorder.
 func PreOrder(root *BinaryTreeNode) {
 	if root == nil {
 		return
