@@ -102,7 +102,12 @@ func PostOrder(root *BinaryTreeNode) {
 	fmt.Printf("%d", root.data)
 }
 
-
+// Level order traversal is defined as follows:
+// 1 Visit the root.
+// 2 While traversing level 􀝈, keep all the elements at level 􀝈 + 1 in queue.
+// 3 Go to the next level and visit all the nodes at that level.
+// 4 Repeat this until all levels are completed.
+// The nodes of the tree are visited in the order: [1] [2 3] [ 4 5 6 7]
 func LevelOrder(root *BinaryTreeNode) [][]int {
 	if root == nil {
 		return [][]int{}
