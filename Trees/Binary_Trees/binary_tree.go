@@ -108,6 +108,7 @@ func PostOrder(root *BinaryTreeNode) {
 // 3 Go to the next level and visit all the nodes at that level.
 // 4 Repeat this until all levels are completed.
 // The nodes of the tree are visited in the order: [1] [2 3] [ 4 5 6 7]
+// Time Complexity: O(n), Space Complexity: O(n) In the worst case, all the nodes on the entire last level could be in the queue.
 func LevelOrder(root *BinaryTreeNode) [][]int {
 	if root == nil {
 		return [][]int{}
