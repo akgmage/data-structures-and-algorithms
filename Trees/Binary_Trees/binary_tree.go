@@ -12,6 +12,12 @@
 	   has 1) then we get a complete sequence from 1 to the number of nodes in the tree. While traversing we should give
 	   numbering for nil pointers also. A binary tree is called complete binary tree if all leaf nodes are at height ℎ or ℎ − 1
 	   and also without any missing number in the sequence.
+
+	              1
+                /   \
+               2      3
+              / \    / \
+             4   5  6   7
 */
 package main
 
@@ -55,6 +61,7 @@ func insert(root *BinaryTreeNode, v int) *BinaryTreeNode {
 // 2 Traverse the left subtree in Preorder.
 // 3 Traverse the right subtree in Preorder.
 // Time Complexity: O(n). Space Complexity: O(n).
+// The nodes of tree would be visited in the order: 1 2 4 5 3 6 7
 func PreOrder(root *BinaryTreeNode) {
 
 	if root == nil {
@@ -69,6 +76,7 @@ func PreOrder(root *BinaryTreeNode) {
 // 2 Visit the root.
 // 3 Traverse the right subtree in Inorder.
 // Time Complexity: O(n). Space Complexity: O(n).
+// The nodes of tree would be visited in the order: 4 2 5 1 6 3 7
 func InOrder(root *BinaryTreeNode) {
 	if root == nil {
 		return
