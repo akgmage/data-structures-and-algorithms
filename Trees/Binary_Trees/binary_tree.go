@@ -36,7 +36,7 @@ type BinaryTreeNode struct {
 func NewBinaryTree(n, k int) *BinaryTreeNode {
 	var root * BinaryTreeNode
 	for _, v := range rand.Perm(n) {
-		root = insert(root, (1 + v) * k)
+		root = Insert(root, (1 + v) * k)
 	}
 	return root
 }
@@ -49,12 +49,12 @@ func Insert(root *BinaryTreeNode, v int) *BinaryTreeNode {
 	// data less than root of data the insert in left subtree
 	if v < root.data {
 		// fmt.Printf("%d left\n", v)
-		root.left = insert(root.left, v)
+		root.left = Insert(root.left, v)
 		return root
 	}
 	// data greater than or equal to root of data the insert in right subtree
 	// fmt.Printf("%d right\n", v)
-	root.right = insert(root.right, v)
+	root.right = Insert(root.right, v)
 	return root
 }
 
