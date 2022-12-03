@@ -54,7 +54,9 @@ func insert(root *BinaryTreeNode, v int) *BinaryTreeNode {
 // 1 Visit the root.
 // 2 Traverse the left subtree in Preorder.
 // 3 Traverse the right subtree in Preorder.
+// Time Complexity: O(n). Space Complexity: O(n).
 func PreOrder(root *BinaryTreeNode) {
+
 	if root == nil {
 		return
 	}
@@ -62,7 +64,11 @@ func PreOrder(root *BinaryTreeNode) {
 	PreOrder(root.left)
 	PreOrder(root.right)
 }
-
+// Inorder traversal is defined as follows:
+// 1 Traverse the left subtree in Inorder.
+// 2 Visit the root.
+// 3 Traverse the right subtree in Inorder.
+// Time Complexity: O(n). Space Complexity: O(n).
 func InOrder(root *BinaryTreeNode) {
 	if root == nil {
 		return
