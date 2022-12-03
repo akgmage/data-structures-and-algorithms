@@ -40,8 +40,8 @@ func NewBinaryTree(n, k int) *BinaryTreeNode {
 	}
 	return root
 }
-
-func insert(root *BinaryTreeNode, v int) *BinaryTreeNode {
+// Insert, inserts an element in binary tree 
+func Insert(root *BinaryTreeNode, v int) *BinaryTreeNode {
 	if root == nil {
 		// fmt.Printf("%d root", v)
 		return &BinaryTreeNode{nil, v, nil}
@@ -52,7 +52,7 @@ func insert(root *BinaryTreeNode, v int) *BinaryTreeNode {
 		root.left = insert(root.left, v)
 		return root
 	}
-	// data lgreater than or equal to root of data the insert in right subtree
+	// data greater than or equal to root of data the insert in right subtree
 	// fmt.Printf("%d right\n", v)
 	root.right = insert(root.right, v)
 	return root
