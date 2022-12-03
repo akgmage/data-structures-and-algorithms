@@ -113,6 +113,7 @@ func LevelOrder(root *BinaryTreeNode) [][]int {
 	if root == nil {
 		return [][]int{}
 	}
+	// Data from each level is being returned as a separate list
 	var result [][]int
 	queue := []*BinaryTreeNode{root}
 	for len(queue) > 0 {
@@ -122,9 +123,11 @@ func LevelOrder(root *BinaryTreeNode) [][]int {
 			node := queue[0]
 			level = append(level, node.data)
 			queue = queue[1:]
+			// if there are left children then append them in queue
 			if node.left != nil {
 				queue = append(queue, node.left)
 			}
+			// if there are right children then append them in queue
 			if node.right != nil {
 				queue = append(queue, node.right)
 			}
