@@ -40,6 +40,7 @@ func NewBinaryTree(n, k int) *BinaryTreeNode {
 	}
 	return root
 }
+
 func insert(root *BinaryTreeNode, v int) *BinaryTreeNode {
 	if root == nil {
 		// fmt.Printf("%d root", v)
@@ -71,6 +72,7 @@ func PreOrder(root *BinaryTreeNode) {
 	PreOrder(root.left)
 	PreOrder(root.right)
 }
+
 // Inorder traversal is defined as follows:
 // 1 Traverse the left subtree in Inorder.
 // 2 Visit the root.
@@ -85,6 +87,7 @@ func InOrder(root *BinaryTreeNode) {
 	fmt.Printf("%d", root.data)
 	InOrder(root.right)
 }
+
 // PostOrder traversal is defined as follows:
 // 1 Traverse the left subtree in PostOrder.
 // 2 Traverse the right subtree in PostOrder.
@@ -98,8 +101,6 @@ func PostOrder(root *BinaryTreeNode) {
 	PostOrder(root.right)
 	fmt.Printf("%d", root.data)
 }
-
-
 
 // Time Complexity: O(n). Space Complexity: O(n).
 // Approach: find maximum in left sub tree, find maximum in right subtree
@@ -122,6 +123,7 @@ func FindMax(root *BinaryTreeNode) int {
 	}
 	return max
 }
+
 // Time Complexity: O(n). Space Complexity: O(n).
 // Approach: Using level order traversal observe the elements data 
 func FindMaxWithoutRecursion(root *BinaryTreeNode) int {
@@ -170,6 +172,7 @@ func SearchAnElement(root *BinaryTreeNode, data int) *BinaryTreeNode {
 		}
 	}
 }
+
 // Time Complexity: O(n). Space Complexity: O(n).
 // Approach: using level order traversal we can solve this problem, check whether
 // the root data is equal to the element we want to search
@@ -207,6 +210,7 @@ func Size(root *BinaryTreeNode) int {
 		return Size(root.left) + 1 + Size(root.right)
 	}
 }
+
 // Time Complexity: O(n). Space Complexity: O(n).
 // Approach: use level order traversal and count nodes
 func SizeWithoutUsingRecursion(root *BinaryTreeNode) int {
@@ -233,6 +237,7 @@ func SizeWithoutUsingRecursion(root *BinaryTreeNode) int {
 	}
 	return result
 }
+
 // Time Complexity: O(n). Space Complexity: O(n).
 // Approach: Recursively calculate height of left and right subtrees of a node 
 // and assign height to the node as max of heights of two children + 1
@@ -251,6 +256,7 @@ func Height(root *BinaryTreeNode) int {
 
 	}
 }
+
 // Time Complexity: O(n). Space Complexity: O(n).
 // Approach: The inverse of an empty tree is an empty tree
 // The inverse of a tree with root r, and subtrees right and left is a tree with
@@ -262,6 +268,7 @@ func InvertTree(root *BinaryTreeNode) *BinaryTreeNode {
 	}
 	return root
 }
+
 // Time Complexity: O(􀝊). Space Complexity: O(􀝊).
 // Method2 : swap pointers
 func InvertTree2(root *BinaryTreeNode) *BinaryTreeNode {
@@ -274,6 +281,7 @@ func InvertTree2(root *BinaryTreeNode) *BinaryTreeNode {
 	InvertTree(root.right)
 	return root
 }
+
 // Time Complexity: O(n). Space Complexity: O(n).
 // Approach: before deleting parent node, delete all its children nodes
 // using post order traversal we can solve this problem 
@@ -288,6 +296,8 @@ func DeleteTree(root *BinaryTreeNode) *BinaryTreeNode {
 	root = nil
 	return root
 }
+
+
 // Time Complexity: O(n). Space Complexity: O(n).
 // Approach: recurse both left and right subtree and check if the node doesn't have
 // left and right children
