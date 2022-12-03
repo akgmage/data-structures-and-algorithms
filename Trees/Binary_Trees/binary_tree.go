@@ -1,3 +1,24 @@
+/*
+	A tree is called binary tree if each node has zero child, one child or two children. Empty tree is also a valid binary
+	tree. We can visualize a binary tree as consisting of a root and two disjoint binary trees, called the left and right
+	subtrees of the root.
+
+	Types of Binary Trees
+	1) Strict Binary Tree: A binary tree is called  strict binary tree if each node has exactly two children or no children.
+	2) Full Binary Tree: A binary tree is called full binary tree if each node has exactly two children and all leaf nodes
+	   are at the same level.
+	3) Complete Binary Tree: Before defining the complete binary tree, let us assume that the height of the binary tree
+	   is ℎ. In complete binary trees, if we give numbering for the nodes by starting at the root (let us say the root node
+	   has 1) then we get a complete sequence from 1 to the number of nodes in the tree. While traversing we should give
+	   numbering for nil pointers also. A binary tree is called complete binary tree if all leaf nodes are at height ℎ or ℎ − 1
+	   and also without any missing number in the sequence.
+
+	              1
+                /   \
+               2      3
+              / \    / \
+             4   5  6   7
+*/
 package main
 
 import (
@@ -11,32 +32,41 @@ type BinaryTreeNode struct {
 	data  int
 	right *BinaryTreeNode
 }
-
+// NewBinaryTree returns a new, random binary tree
 func NewBinaryTree(n, k int) *BinaryTreeNode {
 	var root * BinaryTreeNode
 	for _, v := range rand.Perm(n) {
-		root = insert(root, (1 + v) * k)
+		root = Insert(root, (1 + v) * k)
 	}
 	return root
 }
-func insert(root *BinaryTreeNode, v int) *BinaryTreeNode {
+// Insert, inserts an element in binary tree 
+func Insert(root *BinaryTreeNode, v int) *BinaryTreeNode {
 	if root == nil {
 		// fmt.Printf("%d root", v)
 		return &BinaryTreeNode{nil, v, nil}
 	}
+	// data less than root of data the insert in left subtree
 	if v < root.data {
 		// fmt.Printf("%d left\n", v)
-		root.left = insert(root.left, v)
+		root.left = Insert(root.left, v)
 		return root
 	}
+	// data greater than or equal to root of data the insert in right subtree
 	// fmt.Printf("%d right\n", v)
-	root.right = insert(root.right, v)
+	root.right = Insert(root.right, v)
 	return root
 }
 
 // Pre-order traversal
-
+// Preorder traversal is defined as follows:
+// 1 Visit the root.
+// 2 Traverse the left subtree in Preorder.
+// 3 Traverse the right subtree in Preorder.
+// Time Complexity: O(n). Space Complexity: O(n).
+// The nodes of tree would be visited in the order: 1 2 4 5 3 6 7
 func PreOrder(root *BinaryTreeNode) {
+
 	if root == nil {
 		return
 	}
@@ -45,6 +75,12 @@ func PreOrder(root *BinaryTreeNode) {
 	PreOrder(root.right)
 }
 
+// Inorder traversal is defined as follows:
+// 1 Traverse the left subtree in Inorder.
+// 2 Visit the root.
+// 3 Traverse the right subtree in Inorder.
+// Time Complexity: O(n). Space Complexity: O(n).
+// The nodes of tree would be visited in the order: 4 2 5 1 6 3 7
 func InOrder(root *BinaryTreeNode) {
 	if root == nil {
 		return
@@ -54,6 +90,11 @@ func InOrder(root *BinaryTreeNode) {
 	InOrder(root.right)
 }
 
+// PostOrder traversal is defined as follows:
+// 1 Traverse the left subtree in PostOrder.
+// 2 Traverse the right subtree in PostOrder.
+// 3 Visit the root.
+// The nodes of the tree would be visited in the order: 4 5 2 6 7 3 1
 func PostOrder(root *BinaryTreeNode) {
 	if root == nil {
 		return
@@ -63,7 +104,39 @@ func PostOrder(root *BinaryTreeNode) {
 	fmt.Printf("%d", root.data)
 }
 
-
+// Level order traversal is defined as follows:
+// 1 Visit the root.
+// 2 While traversing level 􀝈, keep all the elements at level 􀝈 + 1 in queue.
+// 3 Go to the next level and visit all the nodes at that level.
+// 4 Repeat this until all levels are completed.
+// The nodes of the tree are visited in the order: [1] [2 3] [ 4 5 6 7]
+// Time Complexity: O(n), Space Complexity: O(n) In the worst case, all the nodes on the entire last level could be in the queue.
+func LevelOrder(root *BinaryTreeNode) [][]int {
+	if root == nil {
+		return [][]int{}
+	}
+	// Data from each level is being returned as a separate list
+	var result [][]int
+	queue := []*BinaryTreeNode{root}
+	for len(queue) > 0 {
+		qlen := len(queue)
+		var level []int
+		for i:= 0; i < qlen; i++ {
+			node := queue[0]
+			level = append(level, node.data)
+			queue = queue[1:]
+			// if there are left children then append them in queue
+			if node.left != nil {
+				queue = append(queue, node.left)
+			}
+			// if there are right children then append them in queue
+			if node.right != nil {
+				queue = append(queue, node.right)
+			}
+		}
+	}
+	return result
+}
 
 // Time Complexity: O(n). Space Complexity: O(n).
 // Approach: find maximum in left sub tree, find maximum in right subtree
@@ -86,6 +159,7 @@ func FindMax(root *BinaryTreeNode) int {
 	}
 	return max
 }
+
 // Time Complexity: O(n). Space Complexity: O(n).
 // Approach: Using level order traversal observe the elements data 
 func FindMaxWithoutRecursion(root *BinaryTreeNode) int {
@@ -134,6 +208,7 @@ func SearchAnElement(root *BinaryTreeNode, data int) *BinaryTreeNode {
 		}
 	}
 }
+
 // Time Complexity: O(n). Space Complexity: O(n).
 // Approach: using level order traversal we can solve this problem, check whether
 // the root data is equal to the element we want to search
@@ -171,6 +246,7 @@ func Size(root *BinaryTreeNode) int {
 		return Size(root.left) + 1 + Size(root.right)
 	}
 }
+
 // Time Complexity: O(n). Space Complexity: O(n).
 // Approach: use level order traversal and count nodes
 func SizeWithoutUsingRecursion(root *BinaryTreeNode) int {
@@ -197,6 +273,7 @@ func SizeWithoutUsingRecursion(root *BinaryTreeNode) int {
 	}
 	return result
 }
+
 // Time Complexity: O(n). Space Complexity: O(n).
 // Approach: Recursively calculate height of left and right subtrees of a node 
 // and assign height to the node as max of heights of two children + 1
@@ -215,6 +292,7 @@ func Height(root *BinaryTreeNode) int {
 
 	}
 }
+
 // Time Complexity: O(n). Space Complexity: O(n).
 // Approach: The inverse of an empty tree is an empty tree
 // The inverse of a tree with root r, and subtrees right and left is a tree with
@@ -226,6 +304,7 @@ func InvertTree(root *BinaryTreeNode) *BinaryTreeNode {
 	}
 	return root
 }
+
 // Time Complexity: O(􀝊). Space Complexity: O(􀝊).
 // Method2 : swap pointers
 func InvertTree2(root *BinaryTreeNode) *BinaryTreeNode {
@@ -238,6 +317,7 @@ func InvertTree2(root *BinaryTreeNode) *BinaryTreeNode {
 	InvertTree(root.right)
 	return root
 }
+
 // Time Complexity: O(n). Space Complexity: O(n).
 // Approach: before deleting parent node, delete all its children nodes
 // using post order traversal we can solve this problem 
@@ -252,6 +332,8 @@ func DeleteTree(root *BinaryTreeNode) *BinaryTreeNode {
 	root = nil
 	return root
 }
+
+
 // Time Complexity: O(n). Space Complexity: O(n).
 // Approach: recurse both left and right subtree and check if the node doesn't have
 // left and right children
