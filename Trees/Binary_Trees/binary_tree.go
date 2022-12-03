@@ -85,7 +85,11 @@ func InOrder(root *BinaryTreeNode) {
 	fmt.Printf("%d", root.data)
 	InOrder(root.right)
 }
-
+// PostOrder traversal is defined as follows:
+// 1 Traverse the left subtree in PostOrder.
+// 2 Traverse the right subtree in PostOrder.
+// 3 Visit the root.
+// The nodes of the tree would be visited in the order: 4 5 2 6 7 3 1
 func PostOrder(root *BinaryTreeNode) {
 	if root == nil {
 		return
