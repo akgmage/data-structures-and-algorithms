@@ -102,6 +102,14 @@ func PostOrder(root *BinaryTreeNode) {
 	fmt.Printf("%d", root.data)
 }
 
+
+func LevelOrder(root *BinaryTreeNode) [][]int {
+	if root == nil {
+		return [][]int{}
+	}
+	
+}
+
 // Time Complexity: O(n). Space Complexity: O(n).
 // Approach: find maximum in left sub tree, find maximum in right subtree
 // compare them with root data and select the one which is giving the max value
