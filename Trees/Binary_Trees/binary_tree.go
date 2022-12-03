@@ -1,3 +1,12 @@
+/*
+	A tree is called binary tree if each node has zero child, one child or two children. Empty tree is also a valid binary
+	tree. We can visualize a binary tree as consisting of a root and two disjoint binary trees, called the left and right
+	subtrees of the root.
+
+	Types of Binary Trees
+	1) Strict Binary Tree: A binary tree is called  strict binary tree if each node has exactly two children or no children.
+
+*/
 package main
 
 import (
