@@ -107,7 +107,24 @@ func LevelOrder(root *BinaryTreeNode) [][]int {
 	if root == nil {
 		return [][]int{}
 	}
-	
+	var result [][]int
+	queue := []*BinaryTreeNode{root}
+	for len(queue) > 0 {
+		qlen := len(queue)
+		var level []int
+		for i:= 0; i < qlen; i++ {
+			node := queue[0]
+			level = append(level, node.data)
+			queue = queue[1:]
+			if node.left != nil {
+				queue = append(queue, node.left)
+			}
+			if node.right != nil {
+				queue = append(queue, node.right)
+			}
+		}
+	}
+	return result
 }
 
 // Time Complexity: O(n). Space Complexity: O(n).
