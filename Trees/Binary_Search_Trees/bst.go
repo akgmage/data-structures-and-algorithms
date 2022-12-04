@@ -2,6 +2,7 @@
 package main
 
 import (
+	"fmt"
 	"math/rand"
 )
 
@@ -31,7 +32,20 @@ func Insert(root *BSTNode, data int) *BSTNode {
 	return root
 }
 
+func SearchElement(root *BSTNode, data int) *BSTNode {
+	if root == nil {
+		return root
+	}
+	if data < root.data {
+		return SearchElement(root.left, data)
+	} else if data > root.data {
+		return SearchElement(root.right, data)
+	}
+	return root
+}
 
 func main() {
-
+	tree := ConstructBST(10, 1)
+	fmt.Println(tree)
+	fmt.Println(SearchElement(tree, 5))
 }
