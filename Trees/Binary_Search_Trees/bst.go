@@ -85,21 +85,32 @@ func SearchElementNonRecursive(root *BSTNode, data int) *BSTNode {
 	}
 	return nil
 }
-
-func FindMin(root *BSTNode) *BSTNode {
+// FindMIn: finds min element in BST,
+// Approach :  start with root and keep moving left
+// min element is the left most node in BST
+func FindMinRecursive(root *BSTNode) *BSTNode {
 	if root == nil {
 		return nil
 	} else if root.left == nil {
 		return root
 	} else {
-		return FindMin(root.left)
+		return FindMinRecursive(root.left)
 	}
 }
 
+func FindMinNonRecursive(root *BSTNode) *BSTNode {
+	if root == nil {
+		return root
+	}
+	for root.left != nil {
+		root = root.left
+	}
+	return root
+}
 func main() {
 	tree := ConstructBST(10, 1)
 	fmt.Println(tree)
 	fmt.Println(SearchElementRecursive(tree, 5))
 	fmt.Println(SearchElementNonRecursive(tree, 5))
-	fmt.Println(FindMin(tree))
+	fmt.Println(FindMinRecursive(tree))
 }
