@@ -9,6 +9,11 @@
 
 	Source(https://en.wikipedia.org/wiki/Binary_search_tree)
 
+	Opeartions on BST:
+	1 Find/ Find Minimum / Find Maximum element in binary search trees
+	2 Inserting an element in binary search trees
+	3 Deleting an element from binary search trees
+
 */
 package main
 
