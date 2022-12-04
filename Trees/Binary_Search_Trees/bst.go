@@ -128,6 +128,10 @@ func FindMaxRecursive(root *BSTNode) *BSTNode {
 	return FindMaxRecursive(root.right)
 }
 
+// FindMIn: finds max element in BST,
+// Approach:  start with root and keep moving right
+// Max element is the right most node in BST
+// Time Complexity: O(n). Space Complexity: O(1).
 func FindMaxNonRecursive(root *BSTNode) *BSTNode {
 	if root == nil {
 		return nil
