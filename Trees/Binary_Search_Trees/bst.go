@@ -32,6 +32,11 @@ func Insert(root *BSTNode, data int) *BSTNode {
 	return root
 }
 
+// Time Complexity: O(n). Space Complexity: O(n).
+// Approach: start with root and keep moving left or right recursively
+// if data we are searching is same as current node's data then return current node
+// if data is less than node's data then resurse left, else recurse right
+// if no data then it will return nil
 func SearchElementRecursive(root *BSTNode, data int) *BSTNode {
 	if root == nil {
 		return root
@@ -44,6 +49,11 @@ func SearchElementRecursive(root *BSTNode, data int) *BSTNode {
 	return root
 }
 
+// Time Complexity: O(n). Space Complexity: O(1).
+// Approach: start with root and keep moving left or right
+// if data we are searching is same as current node's data then return current node
+// if data is less than node's data then resurse left, else recurse right
+// if no data then it will return nil
 func SearchElementNonRecursive(root *BSTNode, data int) *BSTNode {
 	if root == nil {
 		return root
