@@ -86,7 +86,7 @@ func SearchElementNonRecursive(root *BSTNode, data int) *BSTNode {
 	return nil
 }
 // FindMIn: finds min element in BST,
-// Approach :  start with root and keep moving left
+// Approach:  start with root and keep moving left
 // min element is the left most node in BST
 // Time Complexity: O(n). Space Complexity: O(n).
 func FindMinRecursive(root *BSTNode) *BSTNode {
@@ -99,6 +99,10 @@ func FindMinRecursive(root *BSTNode) *BSTNode {
 	}
 }
 
+// FindMIn: finds min element in BST,
+// Approach:  start with root and keep moving left
+// min element is the left most node in BST
+// Time Complexity: O(n). Space Complexity: O(1).
 func FindMinNonRecursive(root *BSTNode) *BSTNode {
 	if root == nil {
 		return root
