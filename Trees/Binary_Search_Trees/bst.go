@@ -86,9 +86,20 @@ func SearchElementNonRecursive(root *BSTNode, data int) *BSTNode {
 	return nil
 }
 
+func FindMin(root *BSTNode) *BSTNode {
+	if root == nil {
+		return nil
+	} else if root.left == nil {
+		return root
+	} else {
+		return FindMin(root.left)
+	}
+}
+
 func main() {
 	tree := ConstructBST(10, 1)
 	fmt.Println(tree)
 	fmt.Println(SearchElementRecursive(tree, 5))
 	fmt.Println(SearchElementNonRecursive(tree, 5))
+	fmt.Println(FindMin(tree))
 }
