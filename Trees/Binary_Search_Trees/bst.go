@@ -32,20 +32,37 @@ func Insert(root *BSTNode, data int) *BSTNode {
 	return root
 }
 
-func SearchElement(root *BSTNode, data int) *BSTNode {
+func SearchElementRecursive(root *BSTNode, data int) *BSTNode {
 	if root == nil {
 		return root
 	}
 	if data < root.data {
-		return SearchElement(root.left, data)
+		return SearchElementRecursive(root.left, data)
 	} else if data > root.data {
-		return SearchElement(root.right, data)
+		return SearchElementRecursive(root.right, data)
 	}
 	return root
+}
+
+func SearchElementNonRecursive(root *BSTNode, data int) *BSTNode {
+	if root == nil {
+		return root
+	}
+	for root != nil {
+		if data == root.data {
+			return root
+		} else if data < root.data {
+			root = root.left
+		} else {
+			root = root.right
+		}
+	}
+	return nil
 }
 
 func main() {
 	tree := ConstructBST(10, 1)
 	fmt.Println(tree)
-	fmt.Println(SearchElement(tree, 5))
+	fmt.Println(SearchElementRecursive(tree, 5))
+	fmt.Println(SearchElementNonRecursive(tree, 5))
 }
