@@ -112,10 +112,23 @@ func FindMinNonRecursive(root *BSTNode) *BSTNode {
 	}
 	return root
 }
+
+func FindMaxRecursive(root *BSTNode) *BSTNode {
+	if root == nil {
+		return nil
+	}
+	if root.right == nil {
+		return root
+	}
+	return FindMaxRecursive(root.right)
+}
+
 func main() {
 	tree := ConstructBST(10, 1)
 	fmt.Println(tree)
 	fmt.Println(SearchElementRecursive(tree, 5))
 	fmt.Println(SearchElementNonRecursive(tree, 5))
 	fmt.Println(FindMinRecursive(tree))
+	fmt.Println(FindMinNonRecursive(tree))
+	fmt.Println(FindMaxRecursive(tree))
 }
