@@ -1,4 +1,15 @@
-// Binary Search tree implementation
+/*
+	Binary Search tree implementation
+	In computer science, a binary search tree (BST), also called an ordered or sorted binary tree, is a rooted binary tree data structure
+	with the key of each internal node being greater than all the keys in the respective node's left subtree and less than the ones
+	in its right subtree. The time complexity of operations on the binary search tree is directly proportional to the height of the tree.
+
+	The complexity analysis of BST shows that, on average, the insert, delete and search
+	takes O(log n) fot n nodes. In the worst case, they degrade to that of a singly linked list O(n).
+
+	Source(https://en.wikipedia.org/wiki/Binary_search_tree)
+
+*/
 package main
 
 import (
