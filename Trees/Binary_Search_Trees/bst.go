@@ -85,9 +85,10 @@ func SearchElementNonRecursive(root *BSTNode, data int) *BSTNode {
 	}
 	return nil
 }
-// FindMIn: finds min element in BST,
+
+// FindMin: finds min element in BST,
 // Approach:  start with root and keep moving left
-// min element is the left most node in BST
+// Min element is the left most node in BST
 // Time Complexity: O(n). Space Complexity: O(n).
 func FindMinRecursive(root *BSTNode) *BSTNode {
 	if root == nil {
@@ -99,9 +100,9 @@ func FindMinRecursive(root *BSTNode) *BSTNode {
 	}
 }
 
-// FindMIn: finds min element in BST,
-// Approach:  start with root and keep moving left
-// min element is the left most node in BST
+// FindMIn: finds max element in BST,
+// Approach:  start with root and keep moving right
+// Max element is the right most node in BST
 // Time Complexity: O(n). Space Complexity: O(1).
 func FindMinNonRecursive(root *BSTNode) *BSTNode {
 	if root == nil {
@@ -113,6 +114,10 @@ func FindMinNonRecursive(root *BSTNode) *BSTNode {
 	return root
 }
 
+// FindMax: finds min element in BST,
+// Approach:  start with root and keep moving left
+// min element is the left most node in BST
+// Time Complexity: O(n). Space Complexity: O(n).
 func FindMaxRecursive(root *BSTNode) *BSTNode {
 	if root == nil {
 		return nil
@@ -123,6 +128,16 @@ func FindMaxRecursive(root *BSTNode) *BSTNode {
 	return FindMaxRecursive(root.right)
 }
 
+func FindMaxNonRecursive(root *BSTNode) *BSTNode {
+	if root == nil {
+		return nil
+	}
+	for root.right != nil {
+		root  = root.right
+	}
+	return root
+}
+
 func main() {
 	tree := ConstructBST(10, 1)
 	fmt.Println(tree)
@@ -131,4 +146,5 @@ func main() {
 	fmt.Println(FindMinRecursive(tree))
 	fmt.Println(FindMinNonRecursive(tree))
 	fmt.Println(FindMaxRecursive(tree))
+	fmt.Println(FindMaxNonRecursive(tree))
 }
