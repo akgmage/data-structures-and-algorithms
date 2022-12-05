@@ -149,6 +149,8 @@ func DeleteMin(root *BSTNode) *BSTNode{
 	return root
 }
 
+// DeleteFromBST deleted given value from bst and doesn't break the node
+// Time Complexity: O(n). Space Complexity: O(n).
 func DeleteFromBST(root *BSTNode, data int) *BSTNode {
 	if root == nil {
 		return nil
@@ -199,7 +201,6 @@ func DeleteFromBST(root *BSTNode, data int) *BSTNode {
 // 3 Traverse the right subtree in Preorder.
 // Time Complexity: O(n). Space Complexity: O(n).
 // The nodes of tree would be visited in the order: 1 2 4 5 3 6 7
-
 func PreOrder(root *BSTNode) {
 	if root == nil {
 		return
