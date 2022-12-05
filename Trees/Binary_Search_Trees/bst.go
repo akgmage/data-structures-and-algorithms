@@ -164,11 +164,13 @@ func DeleteFromBST(root *BSTNode, data int) *BSTNode {
 			root = nil
 			return root
 		}
+		// if left is nil and right has children set root as root.right 
 		if root.left == nil && root.right != nil {
 			temp := root.right
 			root = temp
 			return root
 		}
+		// if right is nil and left has children set root as root.left
 		if root.right == nil && root.left != nil {
 			temp := root.left
 			root = temp
