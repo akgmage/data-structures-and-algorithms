@@ -191,6 +191,15 @@ func DeleteFromBST(root *BSTNode, data int) *BSTNode {
 	return root
 }
 
+
+// Pre-order traversal
+// Preorder traversal is defined as follows:
+// 1 Visit the root.
+// 2 Traverse the left subtree in Preorder.
+// 3 Traverse the right subtree in Preorder.
+// Time Complexity: O(n). Space Complexity: O(n).
+// The nodes of tree would be visited in the order: 1 2 4 5 3 6 7
+
 func PreOrder(root *BSTNode) {
 	if root == nil {
 		return
