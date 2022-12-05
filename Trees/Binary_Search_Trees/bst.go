@@ -148,15 +148,18 @@ func DeleteMin(root *BSTNode) *BSTNode{
 	root.left = DeleteMin(root.left)
 	return root
 }
+
 func DeleteFromBST(root *BSTNode, data int) *BSTNode {
 	if root == nil {
 		return nil
 	}
+	// traverse left or right recursively until you find data
 	if data < root.data {
 		DeleteFromBST(root.left, data)
 	} else if data > root.data {
 		DeleteFromBST(root.right, data)
 	} else {
+		// straight forward conddition no child set root as nil and return root
 		if root.right == nil && root.left == nil{
 			root = nil
 			return root
