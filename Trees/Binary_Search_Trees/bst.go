@@ -141,7 +141,13 @@ func FindMaxNonRecursive(root *BSTNode) *BSTNode {
 	}
 	return root
 }
-
+func DeleteMin(root *BSTNode) *BSTNode{
+	if root.left == nil {
+		return root.right
+	}
+	root.left = DeleteMin(root.left)
+	return root
+}
 func DeleteFromBST(root *BSTNode, data int) *BSTNode {
 	if root == nil {
 		return nil
