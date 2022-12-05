@@ -148,32 +148,43 @@ func DeleteMin(root *BSTNode) *BSTNode{
 	root.left = DeleteMin(root.left)
 	return root
 }
+
 func DeleteFromBST(root *BSTNode, data int) *BSTNode {
 	if root == nil {
 		return nil
 	}
+	// traverse left or right recursively until you find data
 	if data < root.data {
 		DeleteFromBST(root.left, data)
 	} else if data > root.data {
 		DeleteFromBST(root.right, data)
 	} else {
+		// straight forward conddition no child set root as nil and return root
 		if root.right == nil && root.left == nil{
 			root = nil
 			return root
 		}
+		// if left is nil and right has children set root as root.right 
 		if root.left == nil && root.right != nil {
 			temp := root.right
 			root = temp
 			return root
 		}
-		if root.right != nil && root.left == nil {
+		// if right is nil and left has children set root as root.left
+		if root.right == nil && root.left != nil {
 			temp := root.left
 			root = temp
 			return root 
 		}
+		// if both left and right have children
+		// find min in the right sub tree, 
+		// set root.data as minimum value you found you found in right sub tree
+		// call DeleteFromBST and delete min value
 		temp := FindMinRecursive(root.right)
+		DeleteMin(root.right)
 		root.data = temp.data
 		root.right = DeleteFromBST(root.right, temp.data)
+		
 	}
 	return root
 }
@@ -197,7 +208,7 @@ func main() {
 	fmt.Println(FindMaxRecursive(tree))
 	fmt.Println(FindMaxNonRecursive(tree))
 	PreOrder(tree)
-	tree = DeleteFromBST(tree, 7)
+	tree = DeleteFromBST(tree, 9)
 	fmt.Println()
 	PreOrder(tree)
 	//fmt.Println(SearchElementRecursive(tree, 7))
