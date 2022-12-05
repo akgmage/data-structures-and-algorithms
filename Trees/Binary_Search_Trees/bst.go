@@ -141,6 +141,51 @@ func FindMaxNonRecursive(root *BSTNode) *BSTNode {
 	}
 	return root
 }
+func DeleteMin(root *BSTNode) *BSTNode{
+	if root.left == nil {
+		return root.right
+	}
+	root.left = DeleteMin(root.left)
+	return root
+}
+func DeleteFromBST(root *BSTNode, data int) *BSTNode {
+	if root == nil {
+		return nil
+	}
+	if data < root.data {
+		DeleteFromBST(root.left, data)
+	} else if data > root.data {
+		DeleteFromBST(root.right, data)
+	} else {
+		if root.right == nil && root.left == nil{
+			root = nil
+			return root
+		}
+		if root.left == nil && root.right != nil {
+			temp := root.right
+			root = temp
+			return root
+		}
+		if root.right != nil && root.left == nil {
+			temp := root.left
+			root = temp
+			return root 
+		}
+		temp := FindMinRecursive(root.right)
+		root.data = temp.data
+		root.right = DeleteFromBST(root.right, temp.data)
+	}
+	return root
+}
+
+func PreOrder(root *BSTNode) {
+	if root == nil {
+		return
+	}
+	fmt.Print(root.data)
+	PreOrder(root.left)
+	PreOrder(root.right)
+}
 
 func main() {
 	tree := ConstructBST(10, 1)
@@ -151,4 +196,9 @@ func main() {
 	fmt.Println(FindMinNonRecursive(tree))
 	fmt.Println(FindMaxRecursive(tree))
 	fmt.Println(FindMaxNonRecursive(tree))
+	PreOrder(tree)
+	tree = DeleteFromBST(tree, 7)
+	fmt.Println()
+	PreOrder(tree)
+	//fmt.Println(SearchElementRecursive(tree, 7))
 }
