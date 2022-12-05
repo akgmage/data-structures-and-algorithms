@@ -149,6 +149,8 @@ func DeleteMin(root *BSTNode) *BSTNode{
 	return root
 }
 
+// DeleteFromBST deleted given value from bst and doesn't break the node
+// Time Complexity: O(n). Space Complexity: O(n).
 func DeleteFromBST(root *BSTNode, data int) *BSTNode {
 	if root == nil {
 		return nil
@@ -161,6 +163,7 @@ func DeleteFromBST(root *BSTNode, data int) *BSTNode {
 	} else {
 		// straight forward conddition no child set root as nil and return root
 		if root.right == nil && root.left == nil{
+			fmt.Println("hit")
 			root = nil
 			return root
 		}
@@ -172,6 +175,7 @@ func DeleteFromBST(root *BSTNode, data int) *BSTNode {
 		}
 		// if right is nil and left has children set root as root.left
 		if root.right == nil && root.left != nil {
+			fmt.Println(" boom")
 			temp := root.left
 			root = temp
 			return root 
@@ -180,7 +184,7 @@ func DeleteFromBST(root *BSTNode, data int) *BSTNode {
 		// find min in the right sub tree, 
 		// set root.data as minimum value you found you found in right sub tree
 		// call DeleteFromBST and delete min value
-		temp := FindMinRecursive(root.right)
+		temp := FindMinNonRecursive(root.right)
 		DeleteMin(root.right)
 		root.data = temp.data
 		root.right = DeleteFromBST(root.right, temp.data)
@@ -189,6 +193,14 @@ func DeleteFromBST(root *BSTNode, data int) *BSTNode {
 	return root
 }
 
+
+// Pre-order traversal
+// Preorder traversal is defined as follows:
+// 1 Visit the root.
+// 2 Traverse the left subtree in Preorder.
+// 3 Traverse the right subtree in Preorder.
+// Time Complexity: O(n). Space Complexity: O(n).
+// The nodes of tree would be visited in the order: 1 2 4 5 3 6 7
 func PreOrder(root *BSTNode) {
 	if root == nil {
 		return
@@ -208,7 +220,8 @@ func main() {
 	fmt.Println(FindMaxRecursive(tree))
 	fmt.Println(FindMaxNonRecursive(tree))
 	PreOrder(tree)
-	tree = DeleteFromBST(tree, 9)
+	
+	tree = DeleteFromBST(tree, 6)
 	fmt.Println()
 	PreOrder(tree)
 	//fmt.Println(SearchElementRecursive(tree, 7))
