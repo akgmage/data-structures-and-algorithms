@@ -210,6 +210,14 @@ func PreOrder(root *BSTNode) {
 	PreOrder(root.right)
 }
 
+func IsBST(root *BSTNode) bool {
+	if root == nil {
+		return true
+	}
+
+	return true
+}
+
 func main() {
 	tree := ConstructBST(10, 1)
 	fmt.Println(tree)
@@ -225,4 +233,5 @@ func main() {
 	fmt.Println()
 	PreOrder(tree)
 	//fmt.Println(SearchElementRecursive(tree, 7))
+	fmt.Print(IsBST(tree))
 }
