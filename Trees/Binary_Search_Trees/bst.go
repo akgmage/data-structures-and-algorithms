@@ -212,6 +212,7 @@ func PreOrder(root *BSTNode) {
 	PreOrder(root.right)
 }
 // IsBST: checks whether a given tree is a valid BST or not
+// Time Complexity: O(n2). Space Complexity: O(n).
 func IsBST(root *BSTNode) bool {
 	if root == nil {
 		return true
