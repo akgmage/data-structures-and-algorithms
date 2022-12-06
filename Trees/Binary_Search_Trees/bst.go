@@ -209,11 +209,12 @@ func PreOrder(root *BSTNode) {
 	PreOrder(root.left)
 	PreOrder(root.right)
 }
-
+// IsBST: checks whether a given tree is a valid BST or not
 func IsBST(root *BSTNode) bool {
 	if root == nil {
 		return true
 	}
+	// if max on left tree is greater then root then return false
 	max := FindMaxRecursive(root.left)
 	if root.left != nil && max.data > root.data {
 		return false
