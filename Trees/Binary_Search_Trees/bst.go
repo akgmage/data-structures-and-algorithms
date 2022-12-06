@@ -234,7 +234,7 @@ func IsBST(root *BSTNode) bool {
 	}
 	return true
 }
-
+// Time Complexity: O(n). Space Complexity: O(n).
 func IsBSTOptimal(root *BSTNode, min, max int) bool {
 	if root == nil {
 		return true
