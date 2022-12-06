@@ -214,8 +214,11 @@ func IsBST(root *BSTNode) bool {
 	if root == nil {
 		return true
 	}
+	max := FindMaxRecursive(root.left)
+	if root.left != nil && max.data > root.data {
+		return false
+	}
 
-	return true
 }
 
 func main() {
