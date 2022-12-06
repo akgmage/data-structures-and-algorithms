@@ -28,6 +28,7 @@ type BSTNode struct {
 	right *BSTNode
 }
 
+// ConstructBST returns a new, random binary tree
 func ConstructBST(n, k int) *BSTNode {
 	var root *BSTNode
 	for _, v := range rand.Perm(n) {
@@ -36,6 +37,7 @@ func ConstructBST(n, k int) *BSTNode {
 	return root
 }
 
+// Insert, inserts an element in binary tree
 func Insert(root *BSTNode, data int) *BSTNode {
 	if root == nil {
 		return &BSTNode{nil, data, nil}
