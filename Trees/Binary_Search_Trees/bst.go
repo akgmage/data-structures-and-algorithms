@@ -209,6 +209,27 @@ func PreOrder(root *BSTNode) {
 	PreOrder(root.left)
 	PreOrder(root.right)
 }
+// IsBST: checks whether a given tree is a valid BST or not
+func IsBST(root *BSTNode) bool {
+	if root == nil {
+		return true
+	}
+	// if max on left tree is greater then root then return false
+	max := FindMaxRecursive(root.left)
+	if root.left != nil && max.data > root.data {
+		return false
+	}
+	// if min on right tree is less then root then return false
+	min := FindMinNonRecursive(root.right)
+	if root.right != nil && min.data < root.data {
+		return false
+	}
+	// recursively check if left or right is not a BST
+	if !IsBST(root.left) || !IsBST(root.right) {
+		return false
+	}
+	return true
+}
 
 func main() {
 	tree := ConstructBST(10, 1)
@@ -225,4 +246,5 @@ func main() {
 	fmt.Println()
 	PreOrder(tree)
 	//fmt.Println(SearchElementRecursive(tree, 7))
+	fmt.Print(IsBST(tree))
 }
