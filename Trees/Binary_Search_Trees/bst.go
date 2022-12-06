@@ -222,7 +222,10 @@ func IsBST(root *BSTNode) bool {
 	if root.right != nil && min.data < root.data {
 		return false
 	}
-
+	if !IsBST(root.left) || !IsBST(root.right) {
+		return false
+	}
+	return true
 }
 
 func main() {
