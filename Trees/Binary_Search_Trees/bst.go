@@ -19,6 +19,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"math/rand"
 )
 
@@ -234,6 +235,17 @@ func IsBST(root *BSTNode) bool {
 	return true
 }
 
+func IsBSTOptimal(root *BSTNode, min, max int) bool {
+	if root == nil {
+		return true
+	}
+	return (
+		root.data > min && 
+		root.data < max && 
+		IsBSTOptimal(root.left, min, root.data) &&  
+		IsBSTOptimal(root.right, root.data, max))
+}
+
 func main() {
 	tree := ConstructBST(10, 1)
 	fmt.Println(tree)
@@ -250,4 +262,5 @@ func main() {
 	PreOrder(tree)
 	//fmt.Println(SearchElementRecursive(tree, 7))
 	fmt.Print(IsBST(tree))
+	fmt.Print(IsBSTOptimal(tree, math.MinInt32, math.MaxInt32))
 }
