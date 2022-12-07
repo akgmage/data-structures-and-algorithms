@@ -213,7 +213,14 @@ func PreOrder(root *BSTNode) {
 	PreOrder(root.right)
 }
 
-
+func InOrder(root *BSTNode) {
+	if root == nil {
+		return
+	}
+	InOrder(root.left)
+	fmt.Print(root.data)
+	InOrder(root.right)
+}
 // IsBST: checks whether a given tree is a valid BST or not
 // Time Complexity: O(n2). Space Complexity: O(n).
 func IsBST(root *BSTNode) bool {
@@ -308,5 +315,5 @@ func main() {
 
 	arr := []int {1, 2, 3, 4, 5 ,6}
 	node := ConvertSortedArrayToBST(arr)
-	
+	InOrder(node)
 }
