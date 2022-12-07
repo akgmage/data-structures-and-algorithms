@@ -286,6 +286,8 @@ func helper(Arr []int, low int, high int) *BSTNode {
 	node.right = helper(Arr, mid + 1, high)
 	return node
 }
+
+// Time Complexity: O(n). Space Complexity: O(n).
 func ConvertSortedArrayToBST(Arr []int) *BSTNode {
 	if Arr == nil {
 		return nil
