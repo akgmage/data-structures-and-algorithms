@@ -246,6 +246,27 @@ func IsBSTOptimal(root *BSTNode, min, max int) bool {
 		IsBSTOptimal(root.right, root.data, max))
 }
 
+// IsBSTInorder: Using Inorder traversal we can solve this problem 
+// Inorder traversal gives us sorted values, while traversing the BST in inorder,
+// at each node check the condition that its key value should be greater than 
+// the key value of its previous visited node, initialize prev with minimum integer value
+// Time Complexity: O(n). Space Complexity: O(n).
+func IsBSTInorder(root *BSTNode, prev *int) bool {
+	if root == nil {
+		return true
+	}
+	if !IsBSTInorder(root.left, prev) {
+		return false
+	}
+	// compare root value with prev visited value
+	if root.data < *prev {
+		return false
+	}
+	// set prev value as root's value
+	*prev = root.data
+	return IsBSTInorder(root.right, prev)
+}
+
 func main() {
 	tree := ConstructBST(10, 1)
 	fmt.Println(tree)
@@ -263,4 +284,6 @@ func main() {
 	//fmt.Println(SearchElementRecursive(tree, 7))
 	fmt.Print(IsBST(tree))
 	fmt.Print(IsBSTOptimal(tree, math.MinInt32, math.MaxInt32))
+	var prev = math.MinInt32
+	fmt.Println(IsBSTInorder(tree, &prev))
 }
