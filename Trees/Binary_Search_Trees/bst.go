@@ -279,10 +279,13 @@ func helper(Arr []int, low int, high int) *BSTNode {
 	if low > high {
 		return nil
 	}
+	// middle element will form the root of BST
 	mid := low + (high - low) / 2
 	node := new(BSTNode)
 	node.data = Arr[mid]
+	// elements left from mid will form left sub tree
 	node.left = helper(Arr, low, mid - 1)
+	// elements right from mid will form right sub tree
 	node.right = helper(Arr, mid + 1, high)
 	return node
 }
