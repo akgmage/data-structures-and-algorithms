@@ -212,6 +212,15 @@ func PreOrder(root *BSTNode) {
 	PreOrder(root.left)
 	PreOrder(root.right)
 }
+
+func InOrder(root *BSTNode) {
+	if root == nil {
+		return
+	}
+	InOrder(root.left)
+	fmt.Print(root.data)
+	InOrder(root.right)
+}
 // IsBST: checks whether a given tree is a valid BST or not
 // Time Complexity: O(n2). Space Complexity: O(n).
 func IsBST(root *BSTNode) bool {
@@ -267,6 +276,35 @@ func IsBSTInorder(root *BSTNode, prev *int) bool {
 	return IsBSTInorder(root.right, prev)
 }
 
+// Helper created balanced binary search tree
+// also it ensures height is balanced
+// Approach : Using Divide and Conquer strategy
+// It is similar to binary seaarch algorithm 
+func Helper(Arr []int, low int, high int) *BSTNode {
+	if low > high {
+		return nil
+	}
+	// middle element will form the root of BST
+	mid := low + (high - low) / 2
+	// create new node (allocate memory)
+	node := new(BSTNode)
+	// assign data to newly created node
+	node.data = Arr[mid]
+	// elements left from mid will form left sub tree
+	node.left = Helper(Arr, low, mid - 1)
+	// elements right from mid will form right sub tree
+	node.right = Helper(Arr, mid + 1, high)
+	return node
+}
+
+// Time Complexity: O(n). Space Complexity: O(n).
+func ConvertSortedArrayToBST(Arr []int) *BSTNode {
+	if Arr == nil {
+		return nil
+	}
+	return Helper(Arr, 0, len(Arr)-1)
+}
+
 func main() {
 	tree := ConstructBST(10, 1)
 	fmt.Println(tree)
@@ -286,4 +324,8 @@ func main() {
 	fmt.Print(IsBSTOptimal(tree, math.MinInt32, math.MaxInt32))
 	var prev = math.MinInt32
 	fmt.Println(IsBSTInorder(tree, &prev))
+
+	arr := []int {1, 2, 3, 4, 5 ,6}
+	node := ConvertSortedArrayToBST(arr)
+	InOrder(node)
 }
