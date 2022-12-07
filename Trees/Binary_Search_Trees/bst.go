@@ -275,7 +275,10 @@ func IsBSTInorder(root *BSTNode, prev *int) bool {
 	*prev = root.data
 	return IsBSTInorder(root.right, prev)
 }
-func helper(Arr []int, low int, high int) *BSTNode {
+
+// Helper created balanced ninary search tree
+// also it ensures height is balanced
+func Helper(Arr []int, low int, high int) *BSTNode {
 	if low > high {
 		return nil
 	}
@@ -284,9 +287,9 @@ func helper(Arr []int, low int, high int) *BSTNode {
 	node := new(BSTNode)
 	node.data = Arr[mid]
 	// elements left from mid will form left sub tree
-	node.left = helper(Arr, low, mid - 1)
+	node.left = Helper(Arr, low, mid - 1)
 	// elements right from mid will form right sub tree
-	node.right = helper(Arr, mid + 1, high)
+	node.right = Helper(Arr, mid + 1, high)
 	return node
 }
 
@@ -295,7 +298,7 @@ func ConvertSortedArrayToBST(Arr []int) *BSTNode {
 	if Arr == nil {
 		return nil
 	}
-	return helper(Arr, 0, len(Arr)-1)
+	return Helper(Arr, 0, len(Arr)-1)
 }
 
 func main() {
