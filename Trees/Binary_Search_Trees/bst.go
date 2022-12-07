@@ -246,6 +246,10 @@ func IsBSTOptimal(root *BSTNode, min, max int) bool {
 		IsBSTOptimal(root.right, root.data, max))
 }
 
+// IsBSTInorder: Using Inorder traversal we can solve this problem 
+// Inorder traversal gives us sorted values, while traversing the BST in inorder,
+// at each node check the condition that its key value should be greater than 
+// the key value of its previous visited node, initialize prev with minimum integer value
 func IsBSTInorder(root *BSTNode, prev *int) bool {
 	if root == nil {
 		return true
