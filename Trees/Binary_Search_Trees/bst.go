@@ -250,6 +250,7 @@ func IsBSTOptimal(root *BSTNode, min, max int) bool {
 // Inorder traversal gives us sorted values, while traversing the BST in inorder,
 // at each node check the condition that its key value should be greater than 
 // the key value of its previous visited node, initialize prev with minimum integer value
+// Time Complexity: O(n). Space Complexity: O(n).
 func IsBSTInorder(root *BSTNode, prev *int) bool {
 	if root == nil {
 		return true
@@ -257,9 +258,11 @@ func IsBSTInorder(root *BSTNode, prev *int) bool {
 	if !IsBSTInorder(root.left, prev) {
 		return false
 	}
+	// compare root value with prev visited value
 	if root.data < *prev {
 		return false
 	}
+	// set prev value as root's value
 	*prev = root.data
 	return IsBSTInorder(root.right, prev)
 }
