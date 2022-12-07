@@ -266,6 +266,15 @@ func IsBSTInorder(root *BSTNode, prev *int) bool {
 	*prev = root.data
 	return IsBSTInorder(root.right, prev)
 }
+func helper(Arr []int, low int, hight int) *BSTNode {
+	
+}
+func ConvertSortedArrayToBST(Arr []int) *BSTNode {
+	if Arr == nil {
+		return nil
+	}
+	return helper(A, 0, len(Arr)-1)
+}
 
 func main() {
 	tree := ConstructBST(10, 1)
