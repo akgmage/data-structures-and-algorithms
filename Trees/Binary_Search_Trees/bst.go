@@ -246,6 +246,20 @@ func IsBSTOptimal(root *BSTNode, min, max int) bool {
 		IsBSTOptimal(root.right, root.data, max))
 }
 
+func IsBSTInorder(root *BSTNode, prev *int) bool {
+	if root == nil {
+		return true
+	}
+	if !IsBSTInorder(root.left, prev) {
+		return false
+	}
+	if root.data < *prev {
+		return false
+	}
+	*prev = root.data
+	return IsBSTInorder(root.right, prev)
+}
+
 func main() {
 	tree := ConstructBST(10, 1)
 	fmt.Println(tree)
@@ -263,4 +277,6 @@ func main() {
 	//fmt.Println(SearchElementRecursive(tree, 7))
 	fmt.Print(IsBST(tree))
 	fmt.Print(IsBSTOptimal(tree, math.MinInt32, math.MaxInt32))
+	var prev = math.MinInt32
+	fmt.Println(IsBSTInorder(tree, &prev))
 }
