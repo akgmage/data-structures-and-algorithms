@@ -276,8 +276,10 @@ func IsBSTInorder(root *BSTNode, prev *int) bool {
 	return IsBSTInorder(root.right, prev)
 }
 
-// Helper created balanced ninary search tree
+// Helper created balanced binary search tree
 // also it ensures height is balanced
+// Approach : Using Divide and Conquer strategy
+// It is similar to binary seaarch algorithm 
 func Helper(Arr []int, low int, high int) *BSTNode {
 	if low > high {
 		return nil
