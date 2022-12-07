@@ -212,6 +212,8 @@ func PreOrder(root *BSTNode) {
 	PreOrder(root.left)
 	PreOrder(root.right)
 }
+
+
 // IsBST: checks whether a given tree is a valid BST or not
 // Time Complexity: O(n2). Space Complexity: O(n).
 func IsBST(root *BSTNode) bool {
@@ -266,14 +268,22 @@ func IsBSTInorder(root *BSTNode, prev *int) bool {
 	*prev = root.data
 	return IsBSTInorder(root.right, prev)
 }
-func helper(Arr []int, low int, hight int) *BSTNode {
-	
+func helper(Arr []int, low int, high int) *BSTNode {
+	if low > high {
+		return nil
+	}
+	mid := low + (high - low) / 2
+	node := new(BSTNode)
+	node.data = Arr[mid]
+	node.left = helper(Arr, low, mid - 1)
+	node.right = helper(Arr, mid + 1, high)
+	return node
 }
 func ConvertSortedArrayToBST(Arr []int) *BSTNode {
 	if Arr == nil {
 		return nil
 	}
-	return helper(A, 0, len(Arr)-1)
+	return helper(Arr, 0, len(Arr)-1)
 }
 
 func main() {
@@ -295,4 +305,8 @@ func main() {
 	fmt.Print(IsBSTOptimal(tree, math.MinInt32, math.MaxInt32))
 	var prev = math.MinInt32
 	fmt.Println(IsBSTInorder(tree, &prev))
+
+	arr := []int {1, 2, 3, 4, 5 ,6}
+	node := ConvertSortedArrayToBST(arr)
+	
 }
