@@ -305,6 +305,7 @@ func ConvertSortedArrayToBST(Arr []int) *BSTNode {
 	return Helper(Arr, 0, len(Arr)-1)
 }
 
+// Time Complexity: O(n). Space Complexity: O(1).
 func kthSmallest(root *BSTNode, k int) *BSTNode {
 	counter := 0
 	return helperKthSmallest(root, k, &counter)
