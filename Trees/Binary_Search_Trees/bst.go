@@ -326,6 +326,7 @@ func helperKthSmallest(root *BSTNode, k int, counter *int) *BSTNode {
 	return helperKthSmallest(root.right, k, counter)
 }
 
+// Time Complexity: O(n). Space Complexity: O(n).
 func FloorInBST(root *BSTNode, key int) *BSTNode {
 	if root == nil {
 		return root
