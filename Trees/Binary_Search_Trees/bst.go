@@ -348,4 +348,5 @@ func main() {
 	arr := []int {1, 2, 3, 4, 5 ,6}
 	node := ConvertSortedArrayToBST(arr)
 	InOrder(node)
+	fmt.Println(kthSmallest(tree, 3))
 }
