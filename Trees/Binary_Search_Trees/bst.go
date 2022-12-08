@@ -305,6 +305,7 @@ func ConvertSortedArrayToBST(Arr []int) *BSTNode {
 	return Helper(Arr, 0, len(Arr)-1)
 }
 
+// Time Complexity: O(n). Space Complexity: O(1).
 func kthSmallest(root *BSTNode, k int) *BSTNode {
 	counter := 0
 	return helperKthSmallest(root, k, &counter)
@@ -323,6 +324,27 @@ func helperKthSmallest(root *BSTNode, k int, counter *int) *BSTNode {
 		return root
 	}
 	return helperKthSmallest(root.right, k, counter)
+}
+// FloorInBST gives floor value of the supplied key in BST
+// Floor of the key is the largest key in the BST 
+// less than tor equal to the key 
+// Time Complexity: O(n). Space Complexity: O(n).
+func FloorInBST(root *BSTNode, key int) *BSTNode {
+	if root == nil {
+		return root
+	}
+	if key > root.data {
+		r := FloorInBST(root.right, key)
+		if r == nil {
+			return root
+		} else {
+			return r
+		}
+	} else if key < root.data {
+		return FloorInBST(root.left, key)
+	} else {
+		return root
+	}
 }
 
 func main() {
