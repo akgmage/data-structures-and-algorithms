@@ -325,7 +325,9 @@ func helperKthSmallest(root *BSTNode, k int, counter *int) *BSTNode {
 	}
 	return helperKthSmallest(root.right, k, counter)
 }
-
+// FloorInBST gives floor value of the supplied key in BST
+// Floor of the key is the largest key in the BST 
+// less than tor equal to the key 
 // Time Complexity: O(n). Space Complexity: O(n).
 func FloorInBST(root *BSTNode, key int) *BSTNode {
 	if root == nil {
