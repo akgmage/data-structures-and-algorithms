@@ -347,6 +347,10 @@ func FloorInBST(root *BSTNode, key int) *BSTNode {
 	}
 }
 
+// CeilInBST gives ceil value of the supplied key in BST
+// Ceil of the key is the smallest key in the BST 
+// greater than tor equal to the key 
+// Time Complexity: O(n). Space Complexity: O(n).
 func CeilInBST(root *BSTNode, key int) *BSTNode {
 	if root == nil {
 		return root
