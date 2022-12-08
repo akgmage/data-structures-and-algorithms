@@ -310,7 +310,9 @@ func kthSmallest(root *BSTNode, k int) *BSTNode {
 	return helperKthSmallest(root, k, &counter)
 }
 
-
+func helperKthSmallest(root *BSTNode, k int, counter *int) *BSTNode {
+	
+}
 
 func main() {
 	tree := ConstructBST(10, 1)
