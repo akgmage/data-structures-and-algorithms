@@ -325,6 +325,24 @@ func helperKthSmallest(root *BSTNode, k int, counter *int) *BSTNode {
 	return helperKthSmallest(root.right, k, counter)
 }
 
+func FloorInBST(root *BSTNode, key int) *BSTNode {
+	if root == nil {
+		return root
+	}
+	if key > root.data {
+		r := FloorInBST(root.right, key)
+		if r == nil {
+			return root
+		} else {
+			return r
+		}
+	} else if key < root.data {
+		return FloorInBST(root.left, key)
+	} else {
+		return root
+	}
+}
+
 func main() {
 	tree := ConstructBST(10, 1)
 	fmt.Println(tree)
