@@ -347,6 +347,23 @@ func FloorInBST(root *BSTNode, key int) *BSTNode {
 	}
 }
 
+func CeilInBST(root *BSTNode, key int) *BSTNode {
+	if root == nil {
+		return root
+	}
+	if root.data == key {
+		return root
+	} else if root.data < key {
+		return CeilInBST(root.right, key)
+	} else {
+		l := CeilInBST(root.left, key)
+		if l != nil {
+			return l
+		}
+	}
+	return root
+}
+
 func main() {
 	tree := ConstructBST(10, 1)
 	fmt.Println(tree)
