@@ -311,7 +311,18 @@ func kthSmallest(root *BSTNode, k int) *BSTNode {
 }
 
 func helperKthSmallest(root *BSTNode, k int, counter *int) *BSTNode {
-	
+	if root == nil {
+		return nil
+	}
+	left := helperKthSmallest(root.left, k, counter)
+	if left != nil {
+		return left
+	}
+	*counter += 1
+	if *counter == k {
+		return root
+	}
+	return helperKthSmallest(root.right, k, counter)
 }
 
 func main() {
