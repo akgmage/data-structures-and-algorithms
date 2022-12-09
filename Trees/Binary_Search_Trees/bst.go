@@ -369,6 +369,7 @@ func CeilInBST(root *BSTNode, key int) *BSTNode {
 }
 // RangePrintBST prints the value in trees which lies in range  from start and end
 // Approach: Traverse in inorder, if key lie within range then print them
+// Time Complexity: O(n). Space Complexity: O(n).
 func RangePrintBST(root *BSTNode, start int, end int) {
 	if root == nil {
 		return
