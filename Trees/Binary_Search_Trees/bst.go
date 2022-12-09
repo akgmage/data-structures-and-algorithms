@@ -401,8 +401,17 @@ func RangePrintQueueBST(root *BSTNode, start, end int) {
 			node := queue[0]
 			level = append(level, node.data)
 			queue = queue[1:]
-			
+			if node.data >= start && node.data <= end {
+				fmt.Printf("%v", node.data)
+			}
+			if node.left != nil && node.data >= start {
+				queue = append(queue, node.left)
+			}
+			if node.right != nil && node.data <= end {
+				queue = append(queue, node.right)
+			}
 		}
+		result = append(result, level)
 	}
 }
 
@@ -431,4 +440,5 @@ func main() {
 	InOrder(node)
 	fmt.Println(kthSmallest(tree, 3))
 	RangePrintBST(tree, 3, 7)
+	RangePrintQueueBST(tree, 3, 7)
 }
