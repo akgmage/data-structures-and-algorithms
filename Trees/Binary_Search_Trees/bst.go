@@ -404,12 +404,15 @@ func RangePrintQueueBST(root *BSTNode, start, end int) {
 			node := queue[0]
 			level = append(level, node.data)
 			queue = queue[1:]
+			// if data lies within range then print data
 			if node.data >= start && node.data <= end {
 				fmt.Printf("%v", node.data)
 			}
+			// append left node to queue
 			if node.left != nil && node.data >= start {
 				queue = append(queue, node.left)
 			}
+			// append right node to queue
 			if node.right != nil && node.data <= end {
 				queue = append(queue, node.right)
 			}
