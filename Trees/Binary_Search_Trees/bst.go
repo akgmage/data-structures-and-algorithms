@@ -368,6 +368,12 @@ func CeilInBST(root *BSTNode, key int) *BSTNode {
 	return root
 }
 
+func RangePrintBST(root *BSTNode, start int, end int) {
+	if root == nil {
+		return
+	}
+}
+
 func main() {
 	tree := ConstructBST(10, 1)
 	fmt.Println(tree)
