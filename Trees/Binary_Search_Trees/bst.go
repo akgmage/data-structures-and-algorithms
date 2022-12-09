@@ -320,6 +320,7 @@ func helperKthSmallest(root *BSTNode, k int, counter *int) *BSTNode {
 	if left != nil {
 		return left
 	}
+	// while traversing the tree keep track of the number of elements visited
 	*counter += 1
 	if *counter == k {
 		return root
