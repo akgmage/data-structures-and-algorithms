@@ -311,6 +311,9 @@ func kthSmallest(root *BSTNode, k int) *BSTNode {
 	return helperKthSmallest(root, k, &counter)
 }
 
+// Helper method to find kth smallest element
+// Approach: Inorder traversal gives us sorted list , so we can determine kth smallest 
+// element in tree easily
 func helperKthSmallest(root *BSTNode, k int, counter *int) *BSTNode {
 	if root == nil {
 		return nil
@@ -319,12 +322,14 @@ func helperKthSmallest(root *BSTNode, k int, counter *int) *BSTNode {
 	if left != nil {
 		return left
 	}
+	// while traversing the tree keep track of the number of elements visited
 	*counter += 1
 	if *counter == k {
 		return root
 	}
 	return helperKthSmallest(root.right, k, counter)
 }
+
 // FloorInBST gives floor value of the supplied key in BST
 // Floor of the key is the largest key in the BST 
 // less than tor equal to the key 
@@ -368,6 +373,61 @@ func CeilInBST(root *BSTNode, key int) *BSTNode {
 	return root
 }
 
+// RangePrintBST prints the value in trees which lies in range  from start and end
+// Approach: Traverse in inorder, if key lie within range then print them
+// Time Complexity: O(n). Space Complexity: O(n).
+func RangePrintBST(root *BSTNode, start int, end int) {
+	if root == nil {
+		return
+	}
+	// look in left side
+	if root.data >= start {
+		RangePrintBST(root.left, start, end)
+	}
+	// if value lies within supplied range print them
+	if root.data >= start && root.data <= end {
+		fmt.Printf("%v ", root.data)
+	}
+	// look in right side
+	if root.data <= end {
+		RangePrintBST(root.right, start, end)
+	}
+}
+
+// RangePrintQueueBST prints the value in trees which lies in range  
+// from start and end using queue (level order traversal)
+// Approach: while adding the elements to queue check for range
+// Time Complexity: O(n). Space Complexity: O(n).
+func RangePrintQueueBST(root *BSTNode, start, end int) {
+	if root == nil {
+		return
+	}
+	var result [][]int
+	queue := []*BSTNode{root}
+	for len(queue) > 0 {
+		qlen := len(queue)
+		var level []int
+		for i := 0; i < qlen; i++ {
+			node := queue[0]
+			level = append(level, node.data)
+			queue = queue[1:]
+			// if data lies within range then print data
+			if node.data >= start && node.data <= end {
+				fmt.Printf("%v", node.data)
+			}
+			// append left node to queue
+			if node.left != nil && node.data >= start {
+				queue = append(queue, node.left)
+			}
+			// append right node to queue
+			if node.right != nil && node.data <= end {
+				queue = append(queue, node.right)
+			}
+		}
+		result = append(result, level)
+	}
+}
+
 func main() {
 	tree := ConstructBST(10, 1)
 	fmt.Println(tree)
@@ -392,4 +452,6 @@ func main() {
 	node := ConvertSortedArrayToBST(arr)
 	InOrder(node)
 	fmt.Println(kthSmallest(tree, 3))
+	RangePrintBST(tree, 3, 7)
+	RangePrintQueueBST(tree, 3, 7)
 }
