@@ -387,7 +387,8 @@ func RangePrintBST(root *BSTNode, start int, end int) {
 		RangePrintBST(root.right, start, end)
 	}
 }
-
+// RangePrintQueueBST prints the value in trees which lies in range  
+// from start and end using queue (level order traversal)
 func RangePrintQueueBST(root *BSTNode, start, end int) {
 	if root == nil {
 		return
