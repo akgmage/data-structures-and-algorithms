@@ -388,6 +388,24 @@ func RangePrintBST(root *BSTNode, start int, end int) {
 	}
 }
 
+func RangePrintQueueBST(root *BSTNode, start, end int) {
+	if root == nil {
+		return
+	}
+	var result [][]int
+	queue := []*BSTNode{root}
+	for len(queue) > 0 {
+		qlen := len(queue)
+		var level []int
+		for i := 0; i < qlen; i++ {
+			node := queue[0]
+			level = append(level, node.data)
+			queue = queue[1:]
+			
+		}
+	}
+}
+
 func main() {
 	tree := ConstructBST(10, 1)
 	fmt.Println(tree)
