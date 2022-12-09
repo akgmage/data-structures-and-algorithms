@@ -311,6 +311,7 @@ func kthSmallest(root *BSTNode, k int) *BSTNode {
 	return helperKthSmallest(root, k, &counter)
 }
 
+// Helper method to find kth smallest element
 func helperKthSmallest(root *BSTNode, k int, counter *int) *BSTNode {
 	if root == nil {
 		return nil
@@ -325,6 +326,7 @@ func helperKthSmallest(root *BSTNode, k int, counter *int) *BSTNode {
 	}
 	return helperKthSmallest(root.right, k, counter)
 }
+
 // FloorInBST gives floor value of the supplied key in BST
 // Floor of the key is the largest key in the BST 
 // less than tor equal to the key 
@@ -367,6 +369,7 @@ func CeilInBST(root *BSTNode, key int) *BSTNode {
 	}
 	return root
 }
+
 // RangePrintBST prints the value in trees which lies in range  from start and end
 // Approach: Traverse in inorder, if key lie within range then print them
 // Time Complexity: O(n). Space Complexity: O(n).
@@ -387,6 +390,7 @@ func RangePrintBST(root *BSTNode, start int, end int) {
 		RangePrintBST(root.right, start, end)
 	}
 }
+
 // RangePrintQueueBST prints the value in trees which lies in range  
 // from start and end using queue (level order traversal)
 // Approach: while adding the elements to queue check for range
