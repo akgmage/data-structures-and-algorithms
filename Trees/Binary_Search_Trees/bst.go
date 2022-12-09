@@ -312,6 +312,8 @@ func kthSmallest(root *BSTNode, k int) *BSTNode {
 }
 
 // Helper method to find kth smallest element
+// Approach: Inorder traversal gives us sorted list , so we can determine kth smallest 
+// element in tree easily
 func helperKthSmallest(root *BSTNode, k int, counter *int) *BSTNode {
 	if root == nil {
 		return nil
