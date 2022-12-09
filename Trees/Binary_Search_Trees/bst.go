@@ -367,7 +367,7 @@ func CeilInBST(root *BSTNode, key int) *BSTNode {
 	}
 	return root
 }
-
+// RangePrintBST prints the value in trees from start and end
 func RangePrintBST(root *BSTNode, start int, end int) {
 	if root == nil {
 		return
