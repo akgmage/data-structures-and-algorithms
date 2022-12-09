@@ -374,12 +374,15 @@ func RangePrintBST(root *BSTNode, start int, end int) {
 	if root == nil {
 		return
 	}
+	// look in left side
 	if root.data >= start {
 		RangePrintBST(root.left, start, end)
 	}
+	// if value lies within supplied range print them
 	if root.data >= start && root.data <= end {
 		fmt.Printf("%v ", root.data)
 	}
+	// look in right side
 	if root.data <= end {
 		RangePrintBST(root.right, start, end)
 	}
