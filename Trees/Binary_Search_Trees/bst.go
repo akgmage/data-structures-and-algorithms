@@ -372,6 +372,15 @@ func RangePrintBST(root *BSTNode, start int, end int) {
 	if root == nil {
 		return
 	}
+	if root.data >= start {
+		RangePrintBST(root.left, start, end)
+	}
+	if root.data >= start && root.data <= end {
+		fmt.Printf("%v ", root.data)
+	}
+	if root.data <= end {
+		RangePrintBST(root.right, start, end)
+	}
 }
 
 func main() {
@@ -398,4 +407,5 @@ func main() {
 	node := ConvertSortedArrayToBST(arr)
 	InOrder(node)
 	fmt.Println(kthSmallest(tree, 3))
+	RangePrintBST(tree, 3, 7)
 }
