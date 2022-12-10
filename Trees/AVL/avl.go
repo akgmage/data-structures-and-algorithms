@@ -1,5 +1,10 @@
 package main
 
+/*
+	A binary tree is said to be an AVL tree, if:
+		1 It is a binary search tree, and
+		2 For any node N, the height of left subtree of N and height of right subtree of N differ by at most 1.
+*/
 type AVLTreeNode struct {
 	data   int
 	left   *AVLTreeNode
