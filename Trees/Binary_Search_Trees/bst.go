@@ -431,6 +431,14 @@ func RangePrintQueueBST(root *BSTNode, start, end int) {
 func CountTrees(n int) int {
 	if n <= 1 {
 		return 1
+	} else {
+		sum := 0
+		for root := 1; root <= n; root++ {
+			left := CountTrees(root - 1)
+			right := CountTrees(n - root)
+			sum += left + right
+		}
+		return sum
 	}
 }
 
