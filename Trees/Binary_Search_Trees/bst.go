@@ -428,6 +428,12 @@ func RangePrintQueueBST(root *BSTNode, start, end int) {
 	}
 }
 
+func CountTrees(n int) int {
+	if n <= 1 {
+		return 1
+	}
+}
+
 func main() {
 	tree := ConstructBST(10, 1)
 	fmt.Println(tree)
