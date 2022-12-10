@@ -428,6 +428,22 @@ func RangePrintQueueBST(root *BSTNode, start, end int) {
 	}
 }
 
+// CountTrees: returns how many structurally unique BST's are possible 
+func CountTrees(n int) int {
+	if n <= 1 {
+		return 1
+	} else {
+		sum := 0
+		// iterate through all values that could be the root
+		for root := 1; root <= n; root++ {
+			left := CountTrees(root - 1)
+			right := CountTrees(n - root)
+			sum += left + right
+		}
+		return sum
+	}
+}
+
 func main() {
 	tree := ConstructBST(10, 1)
 	fmt.Println(tree)
