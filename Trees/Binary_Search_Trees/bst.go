@@ -430,7 +430,8 @@ func RangePrintQueueBST(root *BSTNode, start, end int) {
 
 // CountTrees: returns how many structurally unique BST's are possible
 // Approach: Consider each value to be root, recursively find the size of the left and right
-// subtrees. 
+// subtrees. Let p be the root in BST with n nodes from 1 to n
+// The left subtree has p - 1 nodes, right tree has n - p nodes.
 func CountTrees(n int) int {
 	if n <= 1 {
 		return 1
