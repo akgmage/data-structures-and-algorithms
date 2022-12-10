@@ -7,6 +7,8 @@ type AVLTreeNode struct {
 	height int
 }
 
+// Height: returns the height of AVL tree
+// Time Complexity: O(1)
 func Height(node *AVLTreeNode) int {
 	if node == nil {
 		return -1
