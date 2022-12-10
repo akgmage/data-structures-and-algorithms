@@ -441,7 +441,8 @@ func CountTrees(n int) int {
 		for root := 1; root <= n; root++ {
 			left := CountTrees(root - 1)
 			right := CountTrees(n - root)
-			sum += left + right
+			// number of possible trees withcurr root = left * right
+			sum += left * right
 		}
 		return sum
 	}
