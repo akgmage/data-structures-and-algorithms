@@ -22,6 +22,7 @@ func Height(node *AVLTreeNode) int {
 	}
 }
 
+// Time Complexity: O(1). Space Complexity: O(1).
 func singleLeftRotate(X *AVLTreeNode) *AVLTreeNode {
 	var W *AVLTreeNode
 	if X != nil {
