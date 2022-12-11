@@ -38,6 +38,8 @@ func SingleLeftRotate(X *AVLTreeNode) *AVLTreeNode {
 	return X
 }
 
+// SingleRightRotate: right rotate a root, and update node's height, return the new root
+// Time Complexity: O(1). Space Complexity: O(1).
 func SingleRightRotate(X *AVLTreeNode) *AVLTreeNode {
 	var W *AVLTreeNode
 	if X != nil {
