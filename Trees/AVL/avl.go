@@ -22,8 +22,9 @@ func Height(node *AVLTreeNode) int {
 	}
 }
 
+// SingleLeftRotate: left rotate a root, and update node's height, return the new root
 // Time Complexity: O(1). Space Complexity: O(1).
-func singleLeftRotate(X *AVLTreeNode) *AVLTreeNode {
+func SingleLeftRotate(X *AVLTreeNode) *AVLTreeNode {
 	var W *AVLTreeNode
 	if X != nil {
 		W = X.left
@@ -34,7 +35,29 @@ func singleLeftRotate(X *AVLTreeNode) *AVLTreeNode {
 		W.height = Max(Height(W.left), Height(W.right)) + 1
 		X = W
 	}
+	return X
 }
+
+// SingleRightRotate: right rotate a root, and update node's height, return the new root
+// Time Complexity: O(1). Space Complexity: O(1).
+func SingleRightRotate(X *AVLTreeNode) *AVLTreeNode {
+	var W *AVLTreeNode
+	if X != nil {
+		W = X.right
+		X.right = W.right
+		W.left = X
+
+		X.height = Max(Height(X.left), Height(X.right)) + 1
+		W.height = Max(Height(W.left), Height(W.right)) + 1
+		X = W
+	}
+	return X
+}
+// DoubleRotateRightLeft: left-right double rotation
+func DoubleRotateRightLeft(Z *AVLTreeNode) *AVLTreeNode {
+	Z.right = SingleLeftRotate(Z.right)
+	return SingleRightRotate(Z)
+	}
 
 func main() {
 
