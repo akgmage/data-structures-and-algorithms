@@ -35,7 +35,23 @@ func SingleLeftRotate(X *AVLTreeNode) *AVLTreeNode {
 		W.height = Max(Height(W.left), Height(W.right)) + 1
 		X = W
 	}
+	return X
 }
+
+func SingleRightRotate(X *AVLTreeNode) *AVLTreeNode {
+	var W *AVLTreeNode
+	if X != nil {
+		W = X.right
+		X.right = W.right
+		W.left = X
+
+		X.height = Max(Height(X.left), Height(X.right)) + 1
+		W.height = Max(Height(W.left), Height(W.right)) + 1
+		X = W
+	}
+	return X
+}
+
 
 func main() {
 
