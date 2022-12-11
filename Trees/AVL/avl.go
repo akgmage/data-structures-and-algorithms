@@ -29,6 +29,9 @@ func singleLeftRotate(X *AVLTreeNode) *AVLTreeNode {
 		X.left = W.right
 		W.right = X
 
+		X.height = Max(Height(X.left), Height(X.right)) + 1
+		W.height = Max(Height(W.left), Height(W.right)) + 1
+		X = W
 	}
 }
 
