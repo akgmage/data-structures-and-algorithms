@@ -54,6 +54,10 @@ func SingleRightRotate(X *AVLTreeNode) *AVLTreeNode {
 	return X
 }
 
+func DoubleRotateRightLeft(Z *AVLTreeNode) *AVLTreeNode {
+	Z.right = SingleLeftRotate(Z.right)
+	return SingleRightRotate(Z)
+	}
 
 func main() {
 
