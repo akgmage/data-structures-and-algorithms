@@ -22,6 +22,16 @@ func Height(node *AVLTreeNode) int {
 	}
 }
 
+func singleLeftRotate(X *AVLTreeNode) *AVLTreeNode {
+	var W *AVLTreeNode
+	if X != nil {
+		W = X.left
+		X.left = W.right
+		W.right = X
+
+	}
+}
+
 func main() {
 
 }
