@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"math"
 )
-
 // Item: Defines the interface for an element to be held by a Heap instance
 type Item interface {
 	Less(item Item) bool
@@ -57,3 +56,8 @@ func (h *Heap) percolateUp() {
 	}
 }
 
+func swap(h *Heap, i int, j int) {
+	temp := h.data[i]
+	h.data[i] = h.data[j]
+	h.data[j] = temp
+}
