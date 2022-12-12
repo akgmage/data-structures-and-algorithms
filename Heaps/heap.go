@@ -8,3 +8,7 @@ type Heap struct {
 	size int
 	data []Item
 }
+
+func New() *Heap {
+	return &Heap{}
+}
