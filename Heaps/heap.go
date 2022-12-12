@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 )
+
 // Item: Defines the interface for an element to be held by a Heap instance
 type Item interface {
 	Less(item Item) bool
@@ -41,6 +42,9 @@ func GetMinimum(h *Heap) (Item, error) {
 	return h.data[0], nil
 }
 
+
+// PercolateUp: move from bottom to top
+// Time Complexity: O(log n) Space Complexity: O(1).
 func (h *Heap) percolateUp() {
 	idx := h.size
 	if idx <= 0 {
@@ -55,6 +59,7 @@ func (h *Heap) percolateUp() {
 		idx = p
 	}
 }
+
 
 func swap(h *Heap, i int, j int) {
 	temp := h.data[i]
