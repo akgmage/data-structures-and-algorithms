@@ -22,3 +22,7 @@ func Parent(i int) int {
 func LeftChild(parent int) int {
 	return (2 * parent) + 1
 }
+
+func RightChild(parent int) int {
+	return (2 * parent) + 2
+}
