@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 )
+
 // Item: Defines the interface for an element to be held by a Heap instance
 type Item interface {
 	Less(item Item) bool
@@ -39,4 +40,31 @@ func GetMinimum(h *Heap) (Item, error) {
 		return nil, fmt.Errorf("Unable to get element from empty heap")
 	}
 	return h.data[0], nil
+}
+
+
+// PercolateUp: move from bottom to top
+// Heap is a complete binary tree and in the worst case we start at the root and come
+// down to the leaf. This is equal to the height of the complete binary tree.
+// Time Complexity: O(log n) Space Complexity: O(1).
+func (h *Heap) percolateUp() {
+	idx := h.size
+	if idx <= 0 {
+		return
+	}
+	for {
+		p := Parent(idx)
+		if p < 0 || h.data[p].Less(h.data[idx]) {
+			break
+		}
+		swap(h, p, idx)
+		idx = p
+	}
+}
+
+
+func swap(h *Heap, i int, j int) {
+	temp := h.data[i]
+	h.data[i] = h.data[j]
+	h.data[j] = temp
 }
