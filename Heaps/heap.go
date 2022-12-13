@@ -42,7 +42,7 @@ func GetMinimum(h *Heap) (Item, error) {
 	return h.data[0], nil
 }
 
-
+// Note: Deleting an element uses percolateUp, and inserting an element uses percolateDown.
 // PercolateUp: move from bottom to top
 // Heap is a complete binary tree and in the worst case we start at the root and come
 // down to the leaf. This is equal to the height of the complete binary tree.
