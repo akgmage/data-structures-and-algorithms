@@ -42,7 +42,7 @@ func GetMinimum(h *Heap) (Item, error) {
 	return h.data[0], nil
 }
 
-
+// Note: Deleting an element uses percolateUp, and inserting an element uses percolateDown.
 // PercolateUp: move from bottom to top
 // Heap is a complete binary tree and in the worst case we start at the root and come
 // down to the leaf. This is equal to the height of the complete binary tree.
@@ -62,6 +62,14 @@ func (h *Heap) percolateUp() {
 	}
 }
 
+// To delete an element from heap, we just need to delete the element from the root. This is the only operation
+// (maximum element) supported by standard heap. After deleting the root element, copy the last element of the heap
+// (tree) and delete that last element.
+// After replacing the last element, the tree may not satisfy the heap property. To make it heap again, call the
+// percolateDown function.
+// 1 Copy the first element into some variable
+// 2 Copy the last element into first element location
+// 3 percolateDown the first element
 func (h *Heap) percolateDown(i int) {
 	p := i
 	for {
