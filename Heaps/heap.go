@@ -88,6 +88,7 @@ func swap(h *Heap, i int, j int) {
 	h.data[j] = temp
 }
 
+// Extract - removes and returns the 'item' at the top of the heap, maintaining the min-heap invariant
 func (h *Heap) Extract() (Item, error) {
 	n := h.size
 	if n == 0 {
