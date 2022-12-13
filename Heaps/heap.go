@@ -62,6 +62,11 @@ func (h *Heap) percolateUp() {
 	}
 }
 
+// After replacing the last element, the tree may not satisfy the heap property. To make it heap again, call the
+// percolateDown function.
+// 1 Copy the first element into some variable
+// 2 Copy the last element into first element location
+// 3 percolateDown the first element
 func (h *Heap) percolateDown(i int) {
 	p := i
 	for {
