@@ -70,6 +70,7 @@ func (h *Heap) percolateUp() {
 // 1 Copy the first element into some variable
 // 2 Copy the last element into first element location
 // 3 percolateDown the first element
+// Time Complexity: O(log n) Space Complexity: O(1).
 func (h *Heap) percolateDown(i int) {
 	p := i
 	for {
