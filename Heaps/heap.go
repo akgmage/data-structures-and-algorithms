@@ -62,6 +62,25 @@ func (h *Heap) percolateUp() {
 	}
 }
 
+func (h *Heap) percolateDown(i int) {
+	p := i
+	for {
+		l := LeftChild(p)
+		r := RightChild(p)
+		s := p
+		if l < h.size && h.data[l].Less(h.data[s]) {
+			s = l
+		}
+		if r < h.size && h.data[r].Less(h.data[s]) {
+			s = r
+		}
+		if s == p {
+			break
+		}
+		swap(h, p, s)
+		p = s
+	}
+}
 
 func swap(h *Heap, i int, j int) {
 	temp := h.data[i]
