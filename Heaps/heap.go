@@ -29,6 +29,7 @@ func Parent(i int) int {
 func LeftChild(parent int) int {
 	return (2 * parent) + 1
 }
+
 // RightChild: For a node at ith location its right children is at 2 * i + 2 th locations
 func RightChild(parent int) int {
 	return (2 * parent) + 2
@@ -113,4 +114,15 @@ func (h *Heap) Extract() (Item, error) {
 		h.data = nil
 	}
 	return m, nil
+}
+
+func (h *Heap) Insert(item Item) { // Insert - inserts 'item' into the Heap, maintaining the min-heap
+	if h.size == 0 {
+		h.data = make([]Item, 1)
+		h.data[0] = item
+	} else {
+		h.data = append(h.data, item)
+	}
+	h.size++
+	h.percolateUp()
 }
