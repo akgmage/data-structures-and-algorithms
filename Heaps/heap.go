@@ -62,6 +62,9 @@ func (h *Heap) percolateUp() {
 	}
 }
 
+// To delete an element from heap, we just need to delete the element from the root. This is the only operation
+// (maximum element) supported by standard heap. After deleting the root element, copy the last element of the heap
+// (tree) and delete that last element.
 // After replacing the last element, the tree may not satisfy the heap property. To make it heap again, call the
 // percolateDown function.
 // 1 Copy the first element into some variable
