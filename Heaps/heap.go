@@ -87,3 +87,20 @@ func swap(h *Heap, i int, j int) {
 	h.data[i] = h.data[j]
 	h.data[j] = temp
 }
+
+func (h *Heap) Extract() (Item, error) {
+	n := h.size
+	if n == 0 {
+		return nil, fmt.Errorf("Unable to extract from empty Heap")
+	}
+	m := h.data[0]
+	h.data[0] = h.data[n-1]
+	h.data = h.data[:n-1]
+	h.size--
+	if h.size > 0 {
+		h.percolateDown(0)
+	} else {
+		h.data = nil
+	}
+	return m, nil
+}
