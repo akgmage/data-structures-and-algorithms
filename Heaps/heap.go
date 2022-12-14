@@ -116,7 +116,8 @@ func (h *Heap) Extract() (Item, error) {
 	return m, nil
 }
 
-func (h *Heap) Insert(item Item) { // Insert - inserts 'item' into the Heap, maintaining the min-heap
+// Insert - inserts 'item' into the Heap, maintaining the min-heap
+func (h *Heap) Insert(item Item) { 
 	if h.size == 0 {
 		h.data = make([]Item, 1)
 		h.data[0] = item
@@ -127,6 +128,10 @@ func (h *Heap) Insert(item Item) { // Insert - inserts 'item' into the Heap, mai
 	h.percolateUp()
 }
 
+// Heapify - returns a pointer to a min-heap composed of the elements of 'items'
+// One simple approach for building the heap is, take n input items and place them into an empty heap. This can be
+// done with n successive inserts and takes O(nlogn) in the worst case. This is due to the fact that each insert
+// operation takes O(logn).
 func Heapify(items []Item) *Heap {
 	h := New()
 	n := len(items)
