@@ -11,10 +11,10 @@ func RemoveDuplicates(word string) string {
 	result := ""
 	mp := map[byte]bool{}
 	for i:= 0; i < len(word); i++ {
-		// do nothing
 		if mp[word[i]] == true {
+			// current character exist in hash table so do nothing
 		} else {
-			// mark as true and add to result string
+			// mark as true(insert into hashtable) and add to result string
 			mp[word[i]] = true
 			result = result + string(word[i])
 		}
