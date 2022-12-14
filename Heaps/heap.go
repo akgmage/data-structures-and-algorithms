@@ -126,3 +126,17 @@ func (h *Heap) Insert(item Item) { // Insert - inserts 'item' into the Heap, mai
 	h.size++
 	h.percolateUp()
 }
+
+func Heapify(items []Item) *Heap {
+	h := New()
+	n := len(items)
+	h.data = make([]Item, n)
+	copy(h.data, items)
+	h.size = len(items)
+	i := int(n/2)
+	for i >= 0 {
+		h.percolateDown(i)
+		i--
+	}
+	return h
+}
