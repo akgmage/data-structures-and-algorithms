@@ -10,8 +10,10 @@ func RemoveDuplicates(word string) string {
 	result := ""
 	mp := map[byte]bool{}
 	for i:= 0; i < len(word); i++ {
+		// do nothing
 		if mp[word[i]] == true {
 		} else {
+			// mark as true and add to result string
 			mp[word[i]] = true
 			result = result + string(word[i])
 		}
