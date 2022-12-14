@@ -1,3 +1,5 @@
+// Give an algorithm for printing the first repeated character if there are duplicated elements in it
+
 package main
 
 import "fmt"
