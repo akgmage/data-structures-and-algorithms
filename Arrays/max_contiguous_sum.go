@@ -5,6 +5,8 @@ package main
 
 import "fmt"
 
+// MaxContiguousSum: give max contiguous sum in supplied array
+// Approach: Bruteforce tru all possibilities and select maximum sum
 func MaxContiguousSum(Arr []int) int {
 	maxSum, n := 0, len(Arr)
 	for i := 0; i < n; i++ {
