@@ -12,9 +12,11 @@ func MaxContiguousSum(Arr []int) int {
 	for i := 0; i < n; i++ {
 		for j := i; j < n; j++ {
 			currentSum := 0
+			// range over i to j and calculate sum
 			for k := i; k <= j; k++ {
 				currentSum += Arr[k]
 			}
+			// if sum exceeds maxsum so far then set max sum as currsum
 			if currentSum > maxSum {
 				maxSum = currentSum
 			}
