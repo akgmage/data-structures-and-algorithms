@@ -24,6 +24,7 @@ func ClimbStairs(n int) int {
 
 // Variatiom: A child is climbing up a staircase with 􀝊 steps, and can hop either 1 step, 2 steps, or 3 steps at a time.
 // Implement a method to count how many possible ways the child can jump up the stairs.
+// Approach similar to above problem
 func ClimbStairs2(n int) int {
 	// base case
 	if n < 3 {
