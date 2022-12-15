@@ -4,6 +4,9 @@ package main
 // or 2 steps. In how many distinct ways can the child climb to the top?
 import "fmt"
 
+// ClimbStairs: returns the number of ways in which a child can climb stairs
+// Approach: Number of ways to reach kth stair = Number of ways to reach k − 1th stair + Number of ways to reach k − 2th stair
+// ClimbStairs(k) = ClimbStairs(k-1) + ClimbStairs(k-2)
 func ClimbStairs(n int) int {
 	if n < 3 {
 		return n
