@@ -22,6 +22,23 @@ func ClimbStairs(n int) int {
 	return cache[n-1]
 }
 
+// Variatiom: A child is climbing up a staircase with 􀝊 steps, and can hop either 1 step, 2 steps, or 3 steps at a time.
+// Implement a method to count how many possible ways the child can jump up the stairs.
+func ClimbStairs2(n int) int {
+	// base case
+	if n < 3 {
+		return n
+	}
+	cache := make([]int, n)
+	// initialize initial 2 values
+	cache[0], cache[1], cache[2] = 1, 2, 4
+	for i := 3; i < n; i++ {
+		// add previous 2 values
+		cache[i] = cache[i-1] + cache[i-2] + cache[i - 3]
+	}
+	return cache[n-1]
+}
 func main() {
 	fmt.Println(ClimbStairs(5))
+	fmt.Println(ClimbStairs2(5))
 }
