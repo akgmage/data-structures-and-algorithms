@@ -31,10 +31,10 @@ func ClimbStairs2(n int) int {
 		return n
 	}
 	cache := make([]int, n)
-	// initialize initial 2 values
+	// initialize initial 3 values
 	cache[0], cache[1], cache[2] = 1, 2, 4
 	for i := 3; i < n; i++ {
-		// add previous 2 values
+		// add previous 3 values
 		cache[i] = cache[i-1] + cache[i-2] + cache[i - 3]
 	}
 	return cache[n-1]
