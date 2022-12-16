@@ -15,6 +15,7 @@ package main
 // way we found the midpoint in binary search
 // Conquer by recursively sorting the subarrays in each of the two subproblems created by the divide step.
 // That is, recursively sort the subarray Arr[left. . mid] and recursively sort the subarray Arr[mid + 1. . right].
+// Combine by merging the two sorted subarrays back into the single sorted subarray Arr[left. . right].
 func MergeSort(Arr []int) []int {
 	if len(Arr) <= 1 {
 		return Arr
