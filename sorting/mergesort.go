@@ -16,7 +16,11 @@ func MergeSort(Arr []int) []int {
 		return Arr
 	}
 	middle := len(Arr) / 2
-	left := MergeSort(A[:middle])
-	right := MergeSort(A[middle:])
+	left := MergeSort(Arr[:middle])
+	right := MergeSort(Arr[middle:])
 	return Merge(left, right)
+}
+
+func Merge(left, right []int) []int {
+	result := make([]int, len(left) + len(right))
 }
