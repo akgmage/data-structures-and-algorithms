@@ -7,6 +7,7 @@ import "fmt"
 
 // MaxContiguousSum: give max contiguous sum in supplied array
 // Approach: Bruteforce tru all possibilities and select maximum sum
+// Time complexity O(n3)
 func MaxContiguousSum(Arr []int) int {
 	maxSum, n := 0, len(Arr)
 	for i := 0; i < n; i++ {
@@ -25,6 +26,7 @@ func MaxContiguousSum(Arr []int) int {
 	return maxSum
 }
 
+// Time complexity O(n2)
 func MaxContiguousSum2(Arr []int) int {
 	maxSum, n := 0, len(Arr)
 	for i := 0; i < n ; i++ {
