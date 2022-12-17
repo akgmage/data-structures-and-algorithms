@@ -1,6 +1,9 @@
 package main
 
-import "errors"
+import (
+	"errors"
+	"fmt"
+)
 
 type Stack struct {
 	top      int
@@ -43,6 +46,7 @@ func (stack *Stack) Push(data interface{}) error {
 	}
 	stack.top++
 	stack.array[stack.top] = data
+	fmt.Printf("\n%v Pushed to stack", data)
 	return nil
 }
 
@@ -52,6 +56,7 @@ func (stack *Stack) Pop() (interface{}, error) {
 		return nil, errors.New("Stack is empty")
 	}
 	temp := stack.array[stack.top]
+	fmt.Printf("\n%v Popped from stack", temp)
 	stack.top--
 	return temp, nil
 }
@@ -62,6 +67,7 @@ func (stack *Stack) Peek() (interface{}, error) {
 		return nil, errors.New("Stack is empty")
 	}
 	temp := stack.array[stack.top]
+	fmt.Printf("\n%v is the topmost element in stack", temp)
 	return temp, nil
 }
 
@@ -69,4 +75,20 @@ func (stack *Stack) Peek() (interface{}, error) {
 func (stack *Stack) Drain() {
 	stack.array = nil
 	stack.top = -1
+}
+
+func main() {
+	stack := NewStack(50)
+	stack.Push(1)
+	stack.Push(2)
+	stack.Push(3)
+	fmt.Println(stack.Size()) // returns 3
+	stack.Pop()
+	stack.Pop()
+	stack.Peek()
+	stack.Drain()
+	stack.Pop()
+	stack.Peek()
+	fmt.Println()
+	fmt.Println(stack.Size()) // returns 0 after draining
 }
