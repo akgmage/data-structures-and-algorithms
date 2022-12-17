@@ -1,10 +1,11 @@
 package main
 
 type Stack struct {
-	top int
+	top      int
 	capacity uint
-	array []interface{}
+	array    []interface{}
 }
+
 func (stack *Stack) Init(capacity uint) *Stack {
 	stack.top = -1
 	stack.capacity = capacity
@@ -17,9 +18,13 @@ func NewStack(capacity uint) *Stack {
 }
 
 func (stack *Stack) IsFull() bool {
-	return stack.top == int(stack.capacity) - 1
+	return stack.top == int(stack.capacity)-1
 }
 
 func (stack *Stack) IsEmpty() bool {
 	return stack.top == -1
+}
+
+func (stack *Stack) Size() uint {
+	return uint(stack.top + 1)
 }
