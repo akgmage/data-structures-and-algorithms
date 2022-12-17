@@ -1,5 +1,7 @@
 package main
 
+import "errors"
+
 type Stack struct {
 	top      int
 	capacity uint
@@ -32,4 +34,14 @@ func (stack *Stack) IsEmpty() bool {
 // Size: Returns the size of Stack
 func (stack *Stack) Size() uint {
 	return uint(stack.top + 1)
+}
+
+// Push: Pushes new [data] into stack
+func (stack *Stack) Push(data interface{}) error {
+	if stack.IsFull() {
+		return errors.New("Stack is full")
+	}
+	stack.top++
+	stack.array[stack.top] = data
+	return nil
 }
