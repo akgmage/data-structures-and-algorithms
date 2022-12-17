@@ -19,3 +19,7 @@ func NewStack(capacity uint) *Stack {
 func (stack *Stack) IsFull() bool {
 	return stack.top == int(stack.capacity) - 1
 }
+
+func (stack *Stack) IsEmpty() bool {
+	return stack.top == -1
+}
