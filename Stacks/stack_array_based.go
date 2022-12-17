@@ -18,3 +18,7 @@ func (stack *Stack) Init(capacity uint) *Stack {
 	stack.array = make([]interface{}, capacity)
 	return stack
 }
+
+func NewStack(capacity uint) *Stack {
+	return new(Stack).Init(capacity)
+}
