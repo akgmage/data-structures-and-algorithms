@@ -1,12 +1,5 @@
 package main
 
-import (
-	"errors"
-	"fmt"
-
-	"golang.org/x/tools/go/analysis/unitchecker"
-)
-
 type Stack struct {
 	top int
 	capacity uint
@@ -21,4 +14,8 @@ func (stack *Stack) Init(capacity uint) *Stack {
 
 func NewStack(capacity uint) *Stack {
 	return new(Stack).Init(capacity)
+}
+
+func (stack *Stack) IsFull() bool {
+	return stack.top == int(stack.capacity) - 1
 }
