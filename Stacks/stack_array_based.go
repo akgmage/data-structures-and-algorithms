@@ -45,3 +45,13 @@ func (stack *Stack) Push(data interface{}) error {
 	stack.array[stack.top] = data
 	return nil
 }
+
+// Pop: Pops top most data from stack
+func (stack *Stack) Pop() (interface{}, error) {
+	if stack.IsEmpty() {
+		return nil, errors.New("Stack is empty")
+	}
+	temp := stack.array[stack.top]
+	stack.top--
+	return temp, nil
+}
