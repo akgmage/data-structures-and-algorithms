@@ -12,3 +12,9 @@ type Stack struct {
 	capacity uint
 	array []interface{}
 }
+func (stack *Stack) Init(capacity uint) *Stack {
+	stack.top = -1
+	stack.capacity = capacity
+	stack.array = make([]interface{}, capacity)
+	return stack
+}
