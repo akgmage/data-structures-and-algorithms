@@ -4,7 +4,10 @@
 // takes time proportional to k
 package main
 
-import "errors"
+import (
+	"errors"
+	"fmt"
+)
 
 type Stack struct {
 	top      int
@@ -32,7 +35,7 @@ func (stack *Stack) Size() uint {
 
 // IsFull: Returns true if Stack is full or else false
 func (stack *Stack) IsFull() bool {
-	return stack.top == int(stack.capacity)+1
+	return stack.top == int(stack.capacity) - 1
 }
 
 // IsEmpty: Returns true if Stack is empty or else false
@@ -43,6 +46,7 @@ func (stack *Stack) IsEmpty() bool {
 // Resize: If the array is full, creates a new array of
 // twice the size, and copy the items
 func (stack *Stack) Resize() {
+	fmt.Println("Resizing")
 	if stack.IsFull() {
 		stack.capacity *= 2
 	} else {
@@ -60,6 +64,7 @@ func (stack *Stack) Push(data interface{}) error {
 	}
 	stack.top++
 	stack.array[stack.top] = data
+	fmt.Printf("\n%v Pushed to stack", data)
 	return nil
 }
 
@@ -69,6 +74,7 @@ func (stack *Stack) Pop() (interface{}, error) {
 		return nil, errors.New("Stack is empty")
 	}
 	temp := stack.array[stack.top]
+	fmt.Printf("\n%v Popped from stack", temp)
 	stack.top--
 	if stack.Size() < stack.capacity / 2 {
 		stack.Resize()
@@ -82,6 +88,7 @@ func (stack *Stack) Peek() (interface{}, error) {
 		return nil, errors.New("Stack is empty")
 	}
 	temp := stack.array[stack.top]
+	fmt.Printf("\n%v is the topmost element in stack", temp)
 	return temp, nil
 }
 
@@ -89,4 +96,17 @@ func (stack *Stack) Peek() (interface{}, error) {
 func (stack *Stack) Drain() {
 	stack.array = nil
 	stack.top = -1
+}
+
+func main() {
+	stack := NewStack(1)
+	stack.Push(1)
+	stack.Push(2)
+	stack.Push(3)
+	fmt.Println(stack.Size())
+	stack.Pop()
+	stack.Pop()
+	stack.Pop()
+	stack.Drain()
+	stack.Peek()
 }
