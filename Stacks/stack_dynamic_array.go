@@ -1,3 +1,7 @@
+// Using Repeated Array doubling technique.
+// If the array is full, create a new array of
+// twice the size, and copy the items. With this approach, pushing k items
+// takes time proportional to k
 package main
 
 import "errors"
