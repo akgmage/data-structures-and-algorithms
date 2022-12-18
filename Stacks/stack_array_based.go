@@ -1,3 +1,6 @@
+// Array based Stack Implementation
+// Limitation : The maximum size of the stack must first be defined and it cannot be changed. Trying to push a new element into
+// a full Stack causes an implementation-specific exception.
 package main
 
 import (
@@ -39,7 +42,7 @@ func (stack *Stack) Size() uint {
 	return uint(stack.top + 1)
 }
 
-// Push: Pushes new [data] into stack
+// Push: Pushes new [data] into Stack
 func (stack *Stack) Push(data interface{}) error {
 	if stack.IsFull() {
 		return errors.New("Stack is full")
@@ -50,7 +53,7 @@ func (stack *Stack) Push(data interface{}) error {
 	return nil
 }
 
-// Pop: Pops top most data from stack
+// Pop: Pops top most data from Stack
 func (stack *Stack) Pop() (interface{}, error) {
 	if stack.IsEmpty() {
 		return nil, errors.New("Stack is empty")
@@ -61,7 +64,7 @@ func (stack *Stack) Pop() (interface{}, error) {
 	return temp, nil
 }
 
-// Peek: Returns top most element from stack
+// Peek: Returns top most element from Stack
 func (stack *Stack) Peek() (interface{}, error) {
 	if stack.IsEmpty() {
 		return nil, errors.New("Stack is empty")
@@ -71,7 +74,7 @@ func (stack *Stack) Peek() (interface{}, error) {
 	return temp, nil
 }
 
-// Drain: Removes all elements that are currently in stack
+// Drain: Removes all elements that are currently in Stack
 func (stack *Stack) Drain() {
 	stack.array = nil
 	stack.top = -1
