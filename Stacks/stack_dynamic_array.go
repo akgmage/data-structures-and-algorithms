@@ -46,3 +46,13 @@ func (stack *Stack) Resize() {
 	copy(target, stack.array[:stack.top+1])
 	stack.array = target
 }
+
+// Push: Pushes new [data] into Stack
+func (stack *Stack) Push(data interface{}) error {
+	if stack.IsFull() {
+		stack.Resize()
+	}
+	stack.top++
+	stack.array[stack.top] = data
+	return nil
+}
