@@ -71,3 +71,12 @@ func (stack *Stack) Pop() (interface{}, error) {
 	}
 	return temp, nil
 }
+
+// Peek: Returns top most element from Stack
+func (stack *Stack) Peek() (interface{}, error) {
+	if stack.IsEmpty() {
+		return nil, errors.New("Stack is empty")
+	}
+	temp := stack.array[stack.top]
+	return temp, nil
+}
