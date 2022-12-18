@@ -1,5 +1,7 @@
 package main
 
+import "errors"
+
 type Stack struct {
 	top      int
 	capacity uint
@@ -20,7 +22,7 @@ func NewStack(capacity uint) *Stack {
 }
 
 // Size: Returns the size of Stack
-func Size(stack *Stack) uint {
+func (stack *Stack) Size() uint {
 	return uint(stack.top + 1)
 }
 
@@ -47,7 +49,7 @@ func (stack *Stack) Resize() {
 	stack.array = target
 }
 
-// Push: Pushes new [data] into Stack
+// Push: Pushes new [data] into Stack, resizes to double if stack is full
 func (stack *Stack) Push(data interface{}) error {
 	if stack.IsFull() {
 		stack.Resize()
@@ -55,4 +57,17 @@ func (stack *Stack) Push(data interface{}) error {
 	stack.top++
 	stack.array[stack.top] = data
 	return nil
+}
+
+// Pop: Pops top most data from Stack, resizes to hald if sizeof stack is less than half the capacity
+func (stack *Stack) Pop() (interface{}, error) {
+	if stack.IsEmpty() {
+		return nil, errors.New("Stack is empty")
+	}
+	temp := stack.array[stack.top]
+	stack.top--
+	if stack.Size() < stack.capacity / 2 {
+		stack.Resize()
+	}
+	return temp, nil
 }
