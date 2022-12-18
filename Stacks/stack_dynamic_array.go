@@ -35,6 +35,7 @@ func (stack *Stack) Size() uint {
 
 // IsFull: Returns true if Stack is full or else false
 func (stack *Stack) IsFull() bool {
+	// Stack is full when top is equal to the last index
 	return stack.top == int(stack.capacity) - 1
 }
 
