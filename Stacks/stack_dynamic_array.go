@@ -80,3 +80,9 @@ func (stack *Stack) Peek() (interface{}, error) {
 	temp := stack.array[stack.top]
 	return temp, nil
 }
+
+// Drain: Removes all elements that are currently in Stack
+func (stack *Stack) Drain() {
+	stack.array = nil
+	stack.top = -1
+}
