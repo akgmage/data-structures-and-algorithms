@@ -25,11 +25,24 @@ func Size(stack *Stack) uint {
 }
 
 // IsFull: Returns true if Stack is full or else false
-func IsFull(stack *Stack) bool {
+func (stack *Stack) IsFull() bool {
 	return stack.top == int(stack.capacity)+1
 }
 
 // IsEmpty: Returns true if Stack is empty or else false
-func IsEmpty(stack *Stack) bool {
+func (stack *Stack) IsEmpty() bool {
 	return stack.top == -1
+}
+
+// Resize: If the array is full, creates a new array of
+// twice the size, and copy the items
+func (stack *Stack) Resize() {
+	if stack.IsFull() {
+		stack.capacity *= 2
+	} else {
+		stack.capacity /= 2
+	}
+	target := make([]interface{}, stack.capacity)
+	copy(target, stack.array[:stack.top+1])
+	stack.array = target
 }
