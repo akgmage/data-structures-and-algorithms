@@ -1,6 +1,7 @@
-// Array based Stack Implementation
-// Limitation : The maximum size of the stack must first be defined and it cannot be changed. Trying to push a new element into
-// a full Stack causes an implementation-specific exception.
+// Using Repeated Array doubling technique.
+// If the array is full, create a new array of
+// twice the size, and copy the items. With this approach, pushing k items
+// takes time proportional to k
 package main
 
 import (
@@ -27,10 +28,15 @@ func NewStack(capacity uint) *Stack {
 	return new(Stack).Init(capacity)
 }
 
+// Size: Returns the size of Stack
+func (stack *Stack) Size() uint {
+	return uint(stack.top + 1)
+}
+
 // IsFull: Returns true if Stack is full or else false
 func (stack *Stack) IsFull() bool {
 	// Stack is full when top is equal to the last index
-	return stack.top == int(stack.capacity)-1
+	return stack.top == int(stack.capacity) - 1
 }
 
 // IsEmpty: Returns true if Stack is empty or else false
@@ -39,15 +45,24 @@ func (stack *Stack) IsEmpty() bool {
 	return stack.top == -1
 }
 
-// Size: Returns the size of Stack
-func (stack *Stack) Size() uint {
-	return uint(stack.top + 1)
+// Resize: If the array is full, creates a new array of
+// twice the size, and copy the items
+func (stack *Stack) Resize() {
+	fmt.Println("Resizing")
+	if stack.IsFull() {
+		stack.capacity *= 2
+	} else {
+		stack.capacity /= 2
+	}
+	target := make([]interface{}, stack.capacity)
+	copy(target, stack.array[:stack.top+1])
+	stack.array = target
 }
 
-// Push: Pushes new [data] into Stack
+// Push: Pushes new [data] into Stack, resizes to double if stack is full
 func (stack *Stack) Push(data interface{}) error {
 	if stack.IsFull() {
-		return errors.New("Stack is full")
+		stack.Resize()
 	}
 	stack.top++
 	stack.array[stack.top] = data
@@ -55,7 +70,7 @@ func (stack *Stack) Push(data interface{}) error {
 	return nil
 }
 
-// Pop: Pops top most data from Stack
+// Pop: Pops top most data from Stack, resizes to hald if sizeof stack is less than half the capacity
 func (stack *Stack) Pop() (interface{}, error) {
 	if stack.IsEmpty() {
 		return nil, errors.New("Stack is empty")
@@ -63,6 +78,9 @@ func (stack *Stack) Pop() (interface{}, error) {
 	temp := stack.array[stack.top]
 	fmt.Printf("\n%v Popped from stack", temp)
 	stack.top--
+	if stack.Size() < stack.capacity / 2 {
+		stack.Resize()
+	}
 	return temp, nil
 }
 
@@ -83,17 +101,14 @@ func (stack *Stack) Drain() {
 }
 
 func main() {
-	stack := NewStack(50)
+	stack := NewStack(1)
 	stack.Push(1)
 	stack.Push(2)
 	stack.Push(3)
-	fmt.Println(stack.Size()) // returns 3
+	fmt.Println(stack.Size())
 	stack.Pop()
 	stack.Pop()
-	stack.Peek()
+	stack.Pop()
 	stack.Drain()
-	stack.Pop()
 	stack.Peek()
-	fmt.Println()
-	fmt.Println(stack.Size()) // returns 0 after draining
 }
