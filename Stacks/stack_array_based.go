@@ -27,12 +27,12 @@ func NewStack(capacity uint) *Stack {
 	return new(Stack).Init(capacity)
 }
 
-// IsFull: Returns true if Stack is full oe else false
+// IsFull: Returns true if Stack is full or else false
 func (stack *Stack) IsFull() bool {
 	return stack.top == int(stack.capacity)-1
 }
 
-// IsEmpty: Returns true if Stack is empty oe else false
+// IsEmpty: Returns true if Stack is empty or else false
 func (stack *Stack) IsEmpty() bool {
 	return stack.top == -1
 }
