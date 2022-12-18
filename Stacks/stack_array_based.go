@@ -35,6 +35,7 @@ func (stack *Stack) IsFull() bool {
 
 // IsEmpty: Returns true if Stack is empty or else false
 func (stack *Stack) IsEmpty() bool {
+	// Stack is empty when top is equal to -1
 	return stack.top == -1
 }
 
