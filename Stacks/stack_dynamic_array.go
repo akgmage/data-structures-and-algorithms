@@ -18,3 +18,8 @@ func (stack *Stack) Init(capacity uint) *Stack {
 func NewStack(capacity uint) *Stack {
 	return new(Stack).Init(capacity)
 }
+
+// Size: Returns the size of Stack
+func Size(stack *Stack) uint {
+	return uint(stack.top + 1)
+}
