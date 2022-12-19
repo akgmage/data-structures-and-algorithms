@@ -29,17 +29,20 @@ func NewStack(capacity uint) *Stack {
 }
 
 // Size: Returns the size of Stack
+// Time complexity O(1)
 func (stack *Stack) Size() uint {
 	return uint(stack.top + 1)
 }
 
 // IsFull: Returns true if Stack is full or else false
+// Time complexity O(1)
 func (stack *Stack) IsFull() bool {
 	// Stack is full when top is equal to the last index
 	return stack.top == int(stack.capacity) - 1
 }
 
 // IsEmpty: Returns true if Stack is empty or else false
+// Time complexity O(1)
 func (stack *Stack) IsEmpty() bool {
 	// Stack is empty when top is equal to -1
 	return stack.top == -1
@@ -60,6 +63,8 @@ func (stack *Stack) Resize() {
 }
 
 // Push: Pushes new [data] into Stack, resizes to double if stack is full
+// Time complexity O(1)
+// Space complexity for n push operations O(n)
 func (stack *Stack) Push(data interface{}) error {
 	if stack.IsFull() {
 		stack.Resize()
@@ -71,6 +76,7 @@ func (stack *Stack) Push(data interface{}) error {
 }
 
 // Pop: Pops top most data from Stack, resizes to hald if sizeof stack is less than half the capacity
+// Time complexity O(1)
 func (stack *Stack) Pop() (interface{}, error) {
 	if stack.IsEmpty() {
 		return nil, errors.New("Stack is empty")
@@ -85,6 +91,7 @@ func (stack *Stack) Pop() (interface{}, error) {
 }
 
 // Peek: Returns top most element from Stack
+// Time complexity O(1)
 func (stack *Stack) Peek() (interface{}, error) {
 	if stack.IsEmpty() {
 		return nil, errors.New("Stack is empty")
@@ -95,6 +102,7 @@ func (stack *Stack) Peek() (interface{}, error) {
 }
 
 // Drain: Removes all elements that are currently in Stack
+// Time complexity O(1)
 func (stack *Stack) Drain() {
 	stack.array = nil
 	stack.top = -1
