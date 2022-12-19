@@ -25,3 +25,12 @@ func (s *Stack) IsEmpty() bool {
 func (s *Stack) IsFull() bool {
 	return false
 }
+
+func (s *Stack) Pop() (data interface{}) {
+	if s.size > 0 {
+		data, s.top = s.top.data, s.top.next
+		s.size--
+		return data
+	}
+	return nil
+}
