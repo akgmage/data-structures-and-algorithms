@@ -17,3 +17,7 @@ func (s *Stack) length() int {
 func (s *Stack) push(data interface{}) {
 	s.top = &ListNode{data, s.top}
 }
+
+func (s *Stack) IsEmpty() bool {
+	return s.size == 0
+}
