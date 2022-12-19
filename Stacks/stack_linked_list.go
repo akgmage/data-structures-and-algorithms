@@ -21,3 +21,7 @@ func (s *Stack) push(data interface{}) {
 func (s *Stack) IsEmpty() bool {
 	return s.size == 0
 }
+
+func (s *Stack) IsFull() bool {
+	return false
+}
