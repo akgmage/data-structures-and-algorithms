@@ -18,6 +18,8 @@ func (s *Stack) Length() int {
 }
 
 // Push: Pushes new [data] into Stack
+// Time complexity O(1)
+// Space complexity for n push operations O(n)
 func (s *Stack) Push(data interface{}) {
 	s.top = &ListNode{data, s.top}
 	s.size++
@@ -25,16 +27,19 @@ func (s *Stack) Push(data interface{}) {
 }
 
 // IsEmpty: Returns true if Stack is empty or else false
+// Time complexity O(1)
 func (s *Stack) IsEmpty() bool {
 	return s.size == 0
 }
 
 // IsFull: Returns false since its LL based implementation
+// Time complexity O(1)
 func (s *Stack) IsFull() bool {
 	return false
 }
 
 // Pop: Pops top most data from Stack
+// Time complexity O(1)
 func (s *Stack) Pop() (data interface{}) {
 	if s.size > 0 {
 		data, s.top = s.top.data, s.top.next
@@ -46,6 +51,7 @@ func (s *Stack) Pop() (data interface{}) {
 }
 
 // Peek: Returns top most element from Stack
+// Time complexity O(1)
 func (s *Stack) Peek() (data interface{}) {
 	if s.size > 0 {
 		data = s.top.data
