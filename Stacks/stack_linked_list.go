@@ -1,7 +1,7 @@
 package main
 
 type Stack struct {
-	top *ListNode
+	top  *ListNode
 	size int
 }
 
@@ -30,6 +30,14 @@ func (s *Stack) Pop() (data interface{}) {
 	if s.size > 0 {
 		data, s.top = s.top.data, s.top.next
 		s.size--
+		return data
+	}
+	return nil
+}
+
+func (s *Stack) Peek() (data interface{}) {
+	if s.size > 0 {
+		data = s.top.data
 		return data
 	}
 	return nil
