@@ -10,3 +10,6 @@ type ListNode struct {
 	next *ListNode
 }
 
+func (s *Stack) length() int {
+	return s.size
+}
