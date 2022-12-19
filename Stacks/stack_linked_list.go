@@ -13,3 +13,7 @@ type ListNode struct {
 func (s *Stack) length() int {
 	return s.size
 }
+
+func (s *Stack) push(data interface{}) {
+	s.top = &ListNode{data, s.top}
+}
