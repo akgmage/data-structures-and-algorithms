@@ -1,5 +1,6 @@
 package main
 
+// IsPalindrome: returns true if supplied string is a palindrome
 func IsPalindrome(s string) bool {
 	stack := NewStack(1)
 	i, n := 0, len(s)
@@ -7,6 +8,7 @@ func IsPalindrome(s string) bool {
 		stack.Push(s[i])
 		i++
 	}
+	// escape mid character
 	if n%2 == 1 {
 		i++
 	}
