@@ -1,6 +1,7 @@
 package main
 
 // IsPalindrome: returns true if supplied string is a palindrome
+// Time Complexity: O(n). Space Complexity: O(n/2) ≈ O(n).
 func IsPalindrome(s string) bool {
 	stack := NewStack(1)
 	i, n := 0, len(s)
