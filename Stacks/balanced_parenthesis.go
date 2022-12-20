@@ -116,7 +116,12 @@ var pairs = []Pair {
 	{'[', ']'},
 	{'{', '}'},
 }
-
+// IsValid: returns true if string has balanced parenthesis
+// Approach : If the character read is not a symbol to be balanced, ignore it.
+// If the character is an opening symbol like (, [, {, push it onto the stack.
+// If it is a closing symbol like ),],}, then if the stack is empty report an error. Otherwise pop the stack.
+// If the symbol popped is not the corresponding opening symbol, report an error.
+// At end of input, if the stack is not empty report an error
 func IsValid(s string) bool {
 	stack := NewStack(1)
 	for _, r := range s {
