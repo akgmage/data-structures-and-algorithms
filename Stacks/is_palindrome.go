@@ -4,6 +4,7 @@ package main
 func IsPalindrome(s string) bool {
 	stack := NewStack(1)
 	i, n := 0, len(s)
+	// push hald element into stack
 	for i < n/2 {
 		stack.Push(s[i])
 		i++
@@ -12,6 +13,7 @@ func IsPalindrome(s string) bool {
 	if n%2 == 1 {
 		i++
 	}
+	// compare other half of string with stack
 	for i < len(s) {
 		if stack.IsEmpty() || s[i] != stack.Pop() {
 			return false
