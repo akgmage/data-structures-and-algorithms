@@ -16,6 +16,7 @@ func IsPalindrome(s string) bool {
 	}
 	// compare other half of string with stack
 	for i < len(s) {
+		// if element doesn't match, or stack is empty then return false
 		if stack.IsEmpty() || s[i] != stack.Pop() {
 			return false
 		}
