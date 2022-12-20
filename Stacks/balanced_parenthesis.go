@@ -117,15 +117,26 @@ var pairs = []Pair {
 	{'{', '}'},
 }
 
-func main() {
+func IsValid(s string) bool {
 	stack := NewStack(1)
-	stack.Push(1)
-	stack.Push(2)
-	stack.Push(3)
-	fmt.Println(stack.Size())
-	stack.Pop()
-	stack.Pop()
-	stack.Pop()
-	stack.Drain()
-	stack.Peek()
+	for _, r := range s {
+		for _, p := range pairs {
+			temp, _ := stack.Peek()
+			if r == p.open {
+				stack.Push(r)
+			} else if r == p.close && stack.IsEmpty() {
+				return false
+			} else if r == p.close && temp == p.open {
+				stack.Pop()
+				break
+			} else if r == p.close && temp != p.open {
+				return false
+			}
+		}
+	}
+	return stack.IsEmpty()
+}
+
+func main() {
+	fmt.Println(IsValid("()(1[23){}{}"))
 }
