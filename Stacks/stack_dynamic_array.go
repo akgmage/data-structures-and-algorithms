@@ -138,6 +138,17 @@ func ToPostfix(s string) string {
 		}
 		if char == "(" {
 			stack.Push(char)
+		} else if char == ")" {
+			for !stack.IsEmpty() {
+			temp, _ := stack.Peek()
+			str := temp.(string)
+			if str == "(" {
+			break
+			}
+			postfix += " " + str
+			stack.Pop()
+			}
+			stack.Pop()
 		}
 	}
 }
