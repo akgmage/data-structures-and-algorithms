@@ -7,6 +7,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"strings"
 )
 
 type Stack struct {
@@ -106,6 +107,23 @@ func (stack *Stack) Peek() (interface{}, error) {
 func (stack *Stack) Drain() {
 	stack.array = nil
 	stack.top = -1
+}
+
+
+func IsOperator(c uint8) bool {
+	return strings.ContainsAny(string(c), "+ & - & * & /")
+}
+
+func IsOperand(c uint8) bool {
+	return c >= '0' && c <= '9'
+}
+
+func GetOperatorWeight(op string) int {
+	switch op {
+		case "+", "-" : return 1
+		case "*", "/" : return 2
+	}
+	return -1
 }
 
 func main() {
