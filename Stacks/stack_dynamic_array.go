@@ -129,6 +129,28 @@ func GetOperatorWeight(op string) int {
 func ToPostfix(s string) string {
 	stack := NewStack(1)
 	postfix := ""
+	length := len(s)
+
+	for i := 0; i < length; i++ {
+		char := string(s[i])
+		if char == " " {
+			continue
+		}
+		if char == "(" {
+			stack.Push(char)
+		} else if char == ")" {
+			for !stack.IsEmpty() {
+				temp, _ := stack.Peek()
+				str := temp.(string)
+				if str == "(" {
+					break
+				}
+				postfix += " " + str
+				stack.Pop()
+			}
+			stack.Pop()
+		}
+	}
 }
 
 func HasHigherPrecedence(op1 string, op2 string) bool {
@@ -148,4 +170,5 @@ func main() {
 	stack.Pop()
 	stack.Drain()
 	stack.Peek()
+	fmt.Println(ToPostfix("((1+(4+5+2)-3)+(6+8))"))
 }
