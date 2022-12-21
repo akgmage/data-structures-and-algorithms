@@ -170,4 +170,5 @@ func main() {
 	stack.Pop()
 	stack.Drain()
 	stack.Peek()
+	fmt.Println(ToPostfix("((1+(4+5+2)-3)+(6+8))"))
 }
