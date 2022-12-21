@@ -114,6 +114,10 @@ func IsOperator(c uint8) bool {
 	return strings.ContainsAny(string(c), "+ & - & * & /")
 }
 
+func IsOperand(c uint8) bool {
+	return c >= '0' && c <= '9'
+}
+
 func main() {
 	stack := NewStack(1)
 	stack.Push(1)
