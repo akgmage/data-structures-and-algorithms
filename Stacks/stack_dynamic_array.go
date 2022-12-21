@@ -136,6 +136,9 @@ func ToPostfix(s string) string {
 		if char == " " {
 			continue
 		}
+		if char == "(" {
+			stack.Push(char)
+		}
 	}
 }
 
