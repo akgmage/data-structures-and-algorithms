@@ -118,6 +118,14 @@ func IsOperand(c uint8) bool {
 	return c >= '0' && c <= '9'
 }
 
+func GetOperatorWeight(op string) int {
+	switch op {
+		case "+", "-" : return 1
+		case "*", "/" : return 2
+	}
+	return -1
+}
+
 func main() {
 	stack := NewStack(1)
 	stack.Push(1)
