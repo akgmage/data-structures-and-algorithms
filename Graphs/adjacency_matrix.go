@@ -48,3 +48,16 @@ func (G *AdjacencyMatrix) AddEdge(vertexOne int, vertexTwo int) error {
 	}
 	return nil
 }
+
+func (G *AdjacencyMatrix) AddEdgeWithWeight(vertexOne int, vertexTwo int, weight int) error {
+	if vertexOne >= G.Vertices || vertexTwo >= G.Vertices || vertexOne < 0 || vertexTwo < 0 {
+		return errors.New("Index out of bounds")
+	}
+	G.AdjMatrix[vertexOne][vertexTwo] = weight
+	G.Edges++
+	if G.GraphType == UNDIRECTED {
+		G.AdjMatrix[vertexTwo][vertexOne] = weight
+		G.Edges++
+	}
+	return nil
+}
