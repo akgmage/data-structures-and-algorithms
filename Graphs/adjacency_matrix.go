@@ -5,3 +5,8 @@ type AdjacencyMatrix struct {
 	GraphType GraphType
 	AdjMatrix [][]int
 }
+type GraphType string
+const (
+DIRECTED GraphType = "DIRECTED"
+UNDIRECTED GraphType = "UNDIRECTED"
+)
