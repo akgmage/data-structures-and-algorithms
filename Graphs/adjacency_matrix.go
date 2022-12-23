@@ -74,3 +74,9 @@ func (G *AdjacencyMatrix) RemoveEdge(vertexOne int, vertexTwo int) error {
 	}
 	return nil
 }
+func (G *AdjacencyMatrix) HasEdge(vertexOne int, vertexTwo int) bool {
+	if vertexOne >= G.Vertices || vertexTwo >= G.Vertices || vertexOne < 0 || vertexTwo < 0 {
+		return false
+	}
+	return G.AdjMatrix[vertexOne][vertexTwo] != 0
+}
