@@ -23,3 +23,11 @@ type Graph interface {
 	GetNumberOfEdges() int
 	GetIndegreeForVertex(vertex int) int
 }
+
+func (G *AdjacencyMatrix) Init() {
+	G.AdjMatrix = make([][]int, G.Vertices)
+	G.Edges = 0
+	for i := 0; i < G.Vertices; i++ {
+	G.AdjMatrix[i] = make([]int, G.Vertices) // default initialization is 0
+	}
+}
