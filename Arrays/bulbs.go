@@ -4,8 +4,11 @@
 	Given an initial state of all bulbs, find the minimum number of switches you have to press to turn on all the bulbs.
 	You can press the same switch multiple times.
 	Note : 0 represents the bulb is off and 1 represents the bulb is on.
+
+	Input: A = [0 1 0 1]
+	Output: 4
 */
-ackage main
+package main
 
 import "fmt"
 
