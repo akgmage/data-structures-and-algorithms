@@ -1,5 +1,6 @@
 // Implement an algorithm to replace all spaces with %20.
-// Input : Mr Ashish Lala Output: Mr%20Ashish%20Lala
+// Sample Input : Mr Ashish Lala 
+// Output: Mr%20Ashish%20Lala
 // Program Author : Abhisek Kumar Gupta
 #include<bits/stdc++.h>
 using namespace std;

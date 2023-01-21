@@ -1,3 +1,8 @@
+// Program to check if an array is alerady sorted
+// Sample Input: [1, 2, 3, 4, 4, 5, 3]
+// Output: 0 meaning false
+// Sample Output: [1, 2, 3, 4, 4, 5, 6]
+// Output: 1 meaning true
 #include<bits/stdc++.h>
 using namespace std;
 bool is_sorted(int A[], int m){

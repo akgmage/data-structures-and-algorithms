@@ -1,7 +1,8 @@
 // Delete  Middle node [given only access to that node]
 // Note : No head node is given
 // Program Author : Abhisek Kumar Gupta 
-
+// Sample Input : 5 4 3 2 1, delete 3rd node
+// Output: 5 4 2 1
 #include<bits/stdc++.h>
 using namespace std;
 class Node{
@@ -46,8 +47,7 @@ int main(){
     Node *head = NULL;
     make_linked_list(head);
     print_linked_list(head);   cout << endl;
-    // delete 3rd node
-    // INP : 5 4 3 2 1 OUT: 5 4 2 1
+    
     if(delete_from_middle(head->next->next)){
         print_linked_list(head);
     }

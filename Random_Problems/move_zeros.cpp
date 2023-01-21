@@ -1,4 +1,4 @@
-// Move zeros to end of array
+// Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
 // Input : [1, 0, 0, 4, 3]
 // Output : [1, 4, 3, 0, 0]
 #include<bits/stdc++.h>

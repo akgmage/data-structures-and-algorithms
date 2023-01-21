@@ -1,3 +1,7 @@
+// Flood fill, also called seed fill, is a flooding algorithm that determines and alters the area connected to a given node 
+// in a multi-dimensional array with some matching attribute. It is used in the "bucket" fill tool of paint programs to fill 
+// connected, similarly-colored areas with a different color, and in games such as Go and Minesweeper for determining 
+// which pieces are cleared. Source(https://en.wikipedia.org/wiki/Flood_fill)
 #include<bits/stdc++.h>
 using namespace std;
 int R, C;

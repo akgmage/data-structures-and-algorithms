@@ -1,3 +1,5 @@
+// In computer science, the maximum sum subarray problem, also known as the maximum segment sum problem, 
+// is the task of finding a contiguous subarray with the largest sum, within a given one-dimensional array A[1...n] of numbers
 // Subarray with maximum sum using kadane's algo O(n)
 #include<bits/stdc++.h>
 using namespace std;

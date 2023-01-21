@@ -1,3 +1,16 @@
+// Implementation of Bubble sort.
+// Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm
+// that repeatedly steps through the input list element by element,
+// comparing the current element with the one after it, swapping their values if needed.
+//  These passes through the list are repeated until no swaps had to be performed during a pass,
+// meaning that the list has become fully sorted. (Source wiki) https://en.wikipedia.org/wiki/Bubble_sort
+
+// Time Complexity worst-case and average complexity O(n^{2})
+// Bubble sort is O(n) on a list that is already sorted i.e. Best case
+
+// Sample Input : [2, 1, 9, 3, 5, 4, 0]
+// Output : [0 1 2 3 4 5 9]
+
 package main
 
 import "fmt"
@@ -10,7 +23,7 @@ func main() {
 		for j := 0; j < 6 - i - 1; j++ {
 			if(arr[j] > arr[j + 1]) {
 				arr[j], arr[j + 1] = arr[j + 1], arr[j]
-				flag = false
+				flag = false // hack if the array is already sorted, no need for redundant passes
 			}
 		}
 		if flag {

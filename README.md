@@ -3,6 +3,8 @@
 ## Contributing
 
 Contributions are always welcome!
+People who can implement well known Data Structures and Algorithms in
+Javascript, TypeScript, Python, Java, Dart, C++, Go, Rust are most welcome
 
 ## Fork this repository
 
