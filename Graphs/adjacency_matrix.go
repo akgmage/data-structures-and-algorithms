@@ -96,3 +96,10 @@ func (G *AdjacencyMatrix) GetAdjacentNodesForVertex(vertex int) map[int]bool {
 	}
 	return adjacencyMatrixVertices
 }
+
+func (G *AdjacencyMatrix) GetWeightOfEdge(vertexOne int, vertexTwo int) (int, error) {
+	if vertexOne >= G.Vertices || vertexTwo >= G.Vertices || vertexOne < 0 || vertexTwo < 0 {
+		return 0, errors.New("Error getting weight for vertex")
+	}
+	return G.AdjMatrix[vertexOne][vertexTwo], nil
+}
