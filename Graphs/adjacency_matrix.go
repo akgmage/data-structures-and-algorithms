@@ -84,3 +84,15 @@ func (G *AdjacencyMatrix) HasEdge(vertexOne int, vertexTwo int) bool {
 func (G *AdjacencyMatrix) GetGraphType() GraphType {
 	return G.GraphType
 }
+func (G *AdjacencyMatrix) GetAdjacentNodesForVertex(vertex int) map[int]bool {
+	adjacencyMatrixVertices := map[int]bool{}
+	if vertex >= G.Vertices || vertex < 0 {
+		return adjacencyMatrixVertices
+	}
+	for i := 0; i < G.Vertices; i++ {
+		if G.AdjMatrix[vertex][i] != 0 {
+			adjacencyMatrixVertices[i] = (G.AdjMatrix[vertex][i] != 0)
+		}
+	}
+	return adjacencyMatrixVertices
+}
