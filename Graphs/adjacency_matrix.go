@@ -80,3 +80,7 @@ func (G *AdjacencyMatrix) HasEdge(vertexOne int, vertexTwo int) bool {
 	}
 	return G.AdjMatrix[vertexOne][vertexTwo] != 0
 }
+
+func (G *AdjacencyMatrix) GetGraphType() GraphType {
+	return G.GraphType
+}
