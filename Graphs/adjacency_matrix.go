@@ -103,3 +103,7 @@ func (G *AdjacencyMatrix) GetWeightOfEdge(vertexOne int, vertexTwo int) (int, er
 	}
 	return G.AdjMatrix[vertexOne][vertexTwo], nil
 }
+
+func (G *AdjacencyMatrix) GetNumberOfVertices() int {
+	return G.Vertices
+}
