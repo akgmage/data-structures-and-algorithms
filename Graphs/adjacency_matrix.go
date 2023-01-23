@@ -81,6 +81,17 @@ func (G *AdjacencyMatrix) HasEdge(vertexOne int, vertexTwo int) bool {
 	return G.AdjMatrix[vertexOne][vertexTwo] != 0
 }
 
+func (G *AdjacencyMatrix) GetIndegreeForVertex(vertex int) int {
+	indegree := 0
+	adjacentNodes := G.GetAdjacentNodesForVertex(vertex)
+	for key := range adjacentNodes {
+		if adjacentNodes[key] {
+			indegree++
+		}
+	}
+	return indegree
+}
+
 func (G *AdjacencyMatrix) GetGraphType() GraphType {
 	return G.GraphType
 }
