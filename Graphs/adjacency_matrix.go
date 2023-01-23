@@ -80,3 +80,34 @@ func (G *AdjacencyMatrix) HasEdge(vertexOne int, vertexTwo int) bool {
 	}
 	return G.AdjMatrix[vertexOne][vertexTwo] != 0
 }
+
+func (G *AdjacencyMatrix) GetGraphType() GraphType {
+	return G.GraphType
+}
+func (G *AdjacencyMatrix) GetAdjacentNodesForVertex(vertex int) map[int]bool {
+	adjacencyMatrixVertices := map[int]bool{}
+	if vertex >= G.Vertices || vertex < 0 {
+		return adjacencyMatrixVertices
+	}
+	for i := 0; i < G.Vertices; i++ {
+		if G.AdjMatrix[vertex][i] != 0 {
+			adjacencyMatrixVertices[i] = (G.AdjMatrix[vertex][i] != 0)
+		}
+	}
+	return adjacencyMatrixVertices
+}
+
+func (G *AdjacencyMatrix) GetWeightOfEdge(vertexOne int, vertexTwo int) (int, error) {
+	if vertexOne >= G.Vertices || vertexTwo >= G.Vertices || vertexOne < 0 || vertexTwo < 0 {
+		return 0, errors.New("Error getting weight for vertex")
+	}
+	return G.AdjMatrix[vertexOne][vertexTwo], nil
+}
+
+func (G *AdjacencyMatrix) GetNumberOfVertices() int {
+	return G.Vertices
+}
+
+func (G *AdjacencyMatrix) GetNumberOfEdges() int {
+	return G.Edges
+}
