@@ -20,7 +20,7 @@ func BinarySearch(Arr []int, key int) bool {
 	low := 0
 	high := len(Arr) - 1
 	if low <= high {
-		mid := (high + low) / 2
+		mid := low + (high - low) / 2
 		if Arr[mid] > key {
 			return BinarySearch(Arr[:mid], key) // search from start to mid 
 		} else if Arr[mid] < key {
