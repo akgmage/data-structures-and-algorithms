@@ -29,7 +29,7 @@ def binary_search(lst, target):
         mid = math.floor(lo + (hi - lo) / 2)  # Find mid. math.floor is used to round floats down.
         if lst[mid] < target:  # Element in mid is lower than target.
             lo = mid + 1  # Our low (start) becomes the element after mid.
-        elif lst[mid] > target:  # Eelemnt in mid is higher than target.
+        elif lst[mid] > target:  # Element in mid is higher than target.
             hi = mid - 1  # Our high (end) becomes the element before mid.
         elif lst[mid] == target:
             print(f"Found {target} at index {mid}.")
