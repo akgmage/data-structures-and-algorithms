@@ -16,15 +16,15 @@ package main
 
 import "fmt"
 
-func BinarySearch(Arr []int, key int) bool {
+func BinarySearchRecursive(Arr []int, key int) bool {
 	low := 0
 	high := len(Arr) - 1
 	if low <= high {
-		mid := low + (high - low) / 2
-		if Arr[mid] > key {
-			return BinarySearch(Arr[:mid], key) // search from start to mid 
-		} else if Arr[mid] < key {
-			return BinarySearch(Arr[mid + 1:], key) // search from mid + 1 to last
+		mid := low + (high - low) / 2 // prevent overflow
+		if Arr[mid] > key { // Element in mid is higher than target.
+			return BinarySearchRecursive(Arr[:mid], key) // search from start to mid 
+		} else if Arr[mid] < key { // Element in mid is lower than target.
+			return BinarySearchRecursive(Arr[mid + 1:], key) // search from mid + 1 to last
 		} else {
 			return true
 		}
@@ -34,9 +34,9 @@ func BinarySearch(Arr []int, key int) bool {
 
 func main() {
 	Arr := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-	fmt.Println(BinarySearch(Arr, 5))
-	fmt.Println(BinarySearch(Arr, 6))
-	fmt.Println(BinarySearch(Arr, -1))
-	fmt.Println(BinarySearch(Arr, -10))
-	fmt.Println(BinarySearch(Arr, 70))
+	fmt.Println(BinarySearchRecursive(Arr, 5))
+	fmt.Println(BinarySearchRecursive(Arr, 6))
+	fmt.Println(BinarySearchRecursive(Arr, -1))
+	fmt.Println(BinarySearchRecursive(Arr, -10))
+	fmt.Println(BinarySearchRecursive(Arr, 70))
 }
