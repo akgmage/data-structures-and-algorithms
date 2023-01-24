@@ -22,7 +22,7 @@ func BinarySearch(Arr []int, target int) bool {
 	low := 0
 	high := len(Arr) - 1
 	for low <= high {
-		mid := (high + low) / 2
+		mid := low + (high - low) / 2
 		if Arr[mid] == target {
 			return true
 		} else if(Arr[mid] < target) { // Element in mid is lower than target.
