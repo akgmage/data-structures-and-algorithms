@@ -24,13 +24,13 @@ func BinarySearch(array []int, target int) int {
 	// make sure start and end dont cross each other
 	for start <= end {
 		// compute mid, prevent overflow of integer
-		mid := start + (end-start) / 2
+		mid := start + (end - start) / 2
 		if array[mid] == target {
 			return mid
-		} else if array[mid] > target {
-			end = mid - 1
-		} else if array[mid] < target {
-			start = mid + 1
+		} else if array[mid] > target { // Element in mid is higher than target.
+			end = mid - 1 // # Our (end) becomes the element before mid.
+		} else if array[mid] < target { // Element in mid is lower than target.
+			start = mid + 1 // # Our (start) becomes the element after mid.
 		}
 	}
 	return -1
