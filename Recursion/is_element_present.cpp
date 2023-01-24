@@ -1,3 +1,8 @@
+// Program to check if an element is present in an array
+// Sample Input: [1, 2, 3, 4, 4, 5, 3] key: 51
+// Output: 0 meaning false
+// Sample Input: [1, 2, 3, 4, 4, 5, 3] key: 5
+// Output: 1 meaning true
 #include<bits/stdc++.h>
 using namespace std;
 bool is_element_present(int A[], int m, int key){

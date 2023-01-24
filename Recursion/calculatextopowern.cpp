@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+// Canculate power of x^n
+// Sample Input : 3 2
+// Output : 9
 /* Method 1 Time complexity O(n)
 int power(int x, int n){
 	if(n == 0)
