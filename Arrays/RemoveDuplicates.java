@@ -46,8 +46,8 @@ class RemoveDuplicates {
     public static void main(String[] args) {
          
         Solution s = new Solution();
-        int nums [] = {1 ,2,2,2,45,67,89,89,89};
+        int nums [] = {1 ,2 ,2 ,2 ,45 ,67 ,89 ,89 ,89 };
 
-        System.out.println(s.removeDuplicates(nums));
+        System.out.println( s.removeDuplicates(nums));
     }
 }
