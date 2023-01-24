@@ -6,7 +6,7 @@ const inputArr = [4,5,67,56,3,35,45];
 
 const insertionSort= (arr) => {
 
-    //loop to access each element in the array
+    //loop to access each array element
     for (let i = 1; i < arr.length; i++) {
       let currentValue = arr[i];
       const j = 0;
