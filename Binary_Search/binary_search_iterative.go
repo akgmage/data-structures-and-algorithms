@@ -18,17 +18,17 @@ import "fmt"
        Further reading: https://en.wikipedia.org/wiki/Binary_search_algorithm
 
 */
-func BinarySearch(Arr []int, key int) bool {
+func BinarySearch(Arr []int, target int) bool {
 	low := 0
 	high := len(Arr) - 1
 	for low <= high {
 		mid := (high + low) / 2
-		if Arr[mid] == key {
+		if Arr[mid] == target {
 			return true
-		} else if(Arr[mid] < key) {
-			low = mid + 1
-		} else if(Arr[mid] > key) {
-			high = mid - 1
+		} else if(Arr[mid] < target) { // Element in mid is lower than target.
+			low = mid + 1 // Our low (start) becomes the element after mid.
+		} else if(Arr[mid] > target) { // Element in mid is higher than target.
+			high = mid - 1 // # Our high (end) becomes the element before mid.
 		}
 	}
 	return false
