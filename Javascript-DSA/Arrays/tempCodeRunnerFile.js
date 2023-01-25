@@ -1,0 +1,1 @@
+            const difference = targetSum - currentSum;
