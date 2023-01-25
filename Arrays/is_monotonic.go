@@ -16,16 +16,16 @@ func IsMonotonic(Arr []int) bool {
 	for i := 1; i < len(Arr); i++ {
 		if isIncreasing == 0 {
 			if Arr[i - 1] > Arr[i] {
-				isIncreasing = -1
+				isIncreasing = -1 // means we will check for decreasing
 			} else if Arr[i - 1] < Arr[i] {
-				isIncreasing = 1	
+				isIncreasing = 1 // means we will check for increasing	
 			}
 		}
 		if isIncreasing == 1 && Arr[i - 1] > Arr[i] {
-			return false
+			return false // in increasing array element before other element cannot be less so return false
 		}
 		if isIncreasing == -1 && Arr[i - 1] < Arr[i] {
-			return false
+			return false // in decreasing array element after other element cannot be greater so return false
 		}
 	}
 	return true
