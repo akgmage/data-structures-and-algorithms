@@ -49,8 +49,8 @@ class Solution {
 }
 class SumOfUniqueElements {
     public static void main(String[] args) {
-        int arr[]={1,2,2,3};
-        Solution s=new Solution();
+        int arr[] = {1,2,2,3};
+        Solution s = new Solution();
         System.out.println(s.sumOfUnique(arr));
         
     }
