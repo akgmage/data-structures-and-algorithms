@@ -1,0 +1,16 @@
+#!/bin/bash
+
+yum update -y
+yum install httpd -y
+systemctl start httpd
+systemctl enable httpd
+cd /var/www/html 
+
+echo "<h1> </h1><p>Hi From Amazon web services Mumbai cloud server , once upon a time<br> I'm your friend in GURU NANAK INSTITUTIONS||<br> 
+    NARAYANA JR COLLEGE ||<br> 
+    KESHAVAREDDY SCHOOL </p> </h1>" > index.html
+
+
+
+
+

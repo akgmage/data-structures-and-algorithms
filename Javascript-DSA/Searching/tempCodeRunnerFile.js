@@ -1,0 +1,1 @@
+Math.floor(m / w) / Math.floor(w * h)
