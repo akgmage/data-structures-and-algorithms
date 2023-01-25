@@ -1,3 +1,7 @@
+// Search of first occurance of element using Binary search
+// Sample Input {0, 1, 1, 4, 5} key 1
+// Output 1
+// Time conplexity O(log n)
 package main
 
 import "fmt"
@@ -12,8 +16,8 @@ func FirstOccurance(Arr []int, key int) int {
 		} else if Arr[mid] < key {
 			start = mid + 1
 		} else {
-			result = mid
-			end = mid - 1
+			result = mid // update result
+			end = mid - 1 // move to left side so search for occurance
 		}
 	}
 	return result
