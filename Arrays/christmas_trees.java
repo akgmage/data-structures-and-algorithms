@@ -83,7 +83,6 @@ public class ChristmasTrees {
                 ans = Math.min(tempSum, ans);
             }
         }
-
-        return (ans == Integer.MAX_VALUE)  ?  -1 : ans;
+        return (ans == Integer.MAX_VALUE) ? -1 : ans;
     }
 }
