@@ -30,6 +30,7 @@ import "fmt"
 
 //Boyer-Moore Voting Algorithm
 /*
+Source(https://leetcode.com/problems/majority-element/solutions/127412/majority-element/)
 Intuition
 If we had some way of counting instances of the majority element as +1+1+1 and
 instances of any other element as −1-1−1, summing them would make it obvious
