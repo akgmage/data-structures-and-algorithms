@@ -18,7 +18,7 @@ HOW TO SOLVE:
     We use Binary Search for this problem.
 */
 
-public class BinarySearch3{
+public class SquareRoot{
     public static int sqrt(int x){
         int start = 1, end=x;
         while(start<=end){

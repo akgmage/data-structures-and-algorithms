@@ -20,7 +20,7 @@ APPROACH:
 
 */
 
-class BinarySearch2 {
+class PerfectSquare {
     public static boolean isPerfectSquare(int num) {
             // Binary Search
             long start =1,end=num;

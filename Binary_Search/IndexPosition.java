@@ -14,7 +14,7 @@
     Explanation : target 2 is found at index 3
 */
 
-public class BinarySearch1 {
+public class IndexPosition {
 
     // method for implementation of binary search
     public static int search(int[] nums, int target) {
