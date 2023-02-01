@@ -50,17 +50,13 @@ public class AnyBaseToDecimal {
     }
     public static int solve(int num, int base) {
         // O(1) time | O(1) space
-        int currentNum = num;
-        int ans = 0;
-        int len = String.valueOf(num).length() - 1;
-        int i = 0;
-
-        while (i <= len) {
+        int res = 0 , multiplier = 1, currentNum = num;
+        while(currentNum > 0){
             int currentDigit = currentNum % 10;
-            currentNum = currentNum / 10;
-            ans += (int) Math.pow(base, i) * currentDigit;
-            i++;
+            res += multiplier * currentDigit;
+            multiplier *= base;
+            currentNum /= 10;
         }
-        return ans;
+        return res;
     }
 }
