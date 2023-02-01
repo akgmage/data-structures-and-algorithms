@@ -3,6 +3,7 @@
 ## Contributing
 
 Contributions are always welcome!
+You can join the fun by following our contributing guide. 🌈 Everyone is welcome!
 
 Check out [contributing.md](https://github.com/akgmage/data-structures-and-algorithms/blob/main/CONTRIBUTING.md)
 
