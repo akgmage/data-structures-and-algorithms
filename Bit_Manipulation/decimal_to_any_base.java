@@ -54,7 +54,7 @@ public class AnyBaseToDecimal {
         while(currentNum > 0){
             int currentDigit = currentNum % 10;
             res += multiplier * currentDigit;
-            multiplier *= base;
+            multiplier *= B;
             currentNum /= 10;
         }
         return res;
