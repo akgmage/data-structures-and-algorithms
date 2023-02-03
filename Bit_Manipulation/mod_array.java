@@ -98,8 +98,8 @@ package ModularArithmetic;
 public class ModArray {
     public static void main(String[] args) {
         int[] array = {4, 3, 5, 3, 5, 3, 2, 1};
-        int b = 47;
-        int ans = solve(array, b);
+        int divisor = 47;
+        int ans = solve(array, divisor);
         System.out.println(ans);
     }
     public static int solve(int[] array, int divisor) {
