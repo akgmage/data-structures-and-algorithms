@@ -1,3 +1,11 @@
+<a href="https://flutter.dev/">
+  <h1 align="center">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/akgmage/go-web/master/templates/assets/DSA.png">
+      <img alt="Data Structures & Algorithms" src="https://raw.githubusercontent.com/akgmage/go-web/master/templates/assets/DSA.png">
+    </picture>
+  </h1>
+</a>
 # Implementation of well known Data Structures and Algorithms
 
 ## Contributing
