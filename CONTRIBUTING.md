@@ -2,7 +2,7 @@
 
 Contributions are always welcome!
 
-- Pick any good first issue and add comment on it (Example: "I'll take this up")
+- Pick any good first issue and add comment on it (Example: "I'll take this up"), or Add classic DSA problem which is currently not present in this repo
 - Read description on the issue (Mostly it will be the link to the question)
 - Add question on top of file
 - Add sample input and output

@@ -12,28 +12,36 @@ and orientation.
 We pledge to act and interact in ways that contribute to an open, welcoming,
 diverse, inclusive, and healthy community.
 
+## Conflict resolution
+
+When multiple contributors disagree on the direction for a particular patch or the general direction of the project, the conflict should be resolved by communication. The people who disagree should get together, try to understand each other's points of view, and work to find a design that addresses everyone's concerns.
+
+This is usually sufficient to resolve issues. If you cannot come to an agreement, ask for the advice of a more senior member of the project.
+
+Be wary of agreement by attrition, where one person argues a point repeatedly until other participants give up in the interests of moving on. This is not conflict resolution, as it does not address everyone's concerns. Be wary of agreement by compromise, where two good competing solutions are merged into one mediocre solution. A conflict is addressed when the participants agree that the final solution is better than all the conflicting proposals. Sometimes the solution is more work than either of the proposals. Embrace the yak shave.
+
 ## Our Standards
 
 Examples of behavior that contributes to a positive environment for our
 community include:
 
-* Demonstrating empathy and kindness toward other people
-* Being respectful of differing opinions, viewpoints, and experiences
-* Giving and gracefully accepting constructive feedback
-* Accepting responsibility and apologizing to those affected by our mistakes,
+- Demonstrating empathy and kindness toward other people
+- Being respectful of differing opinions, viewpoints, and experiences
+- Giving and gracefully accepting constructive feedback
+- Accepting responsibility and apologizing to those affected by our mistakes,
   and learning from the experience
-* Focusing on what is best not just for us as individuals, but for the
+- Focusing on what is best not just for us as individuals, but for the
   overall community
 
 Examples of unacceptable behavior include:
 
-* The use of sexualized language or imagery, and sexual attention or
+- The use of sexualized language or imagery, and sexual attention or
   advances of any kind
-* Trolling, insulting or derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or email
+- Trolling, insulting or derogatory comments, and personal or political attacks
+- Public or private harassment
+- Publishing others' private information, such as a physical or email
   address, without their explicit permission
-* Other conduct which could reasonably be considered inappropriate in a
+- Other conduct which could reasonably be considered inappropriate in a
   professional setting
 
 ## Enforcement Responsibilities
@@ -106,7 +114,7 @@ Violating these terms may lead to a permanent ban.
 ### 4. Permanent Ban
 
 **Community Impact**: Demonstrating a pattern of violation of community
-standards, including sustained inappropriate behavior,  harassment of an
+standards, including sustained inappropriate behavior, harassment of an
 individual, or aggression toward or disparagement of classes of individuals.
 
 **Consequence**: A permanent ban from any sort of public interaction within
