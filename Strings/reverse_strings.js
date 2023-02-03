@@ -16,15 +16,10 @@ function reverseString(inputString) {
     /// Loop through the array in reverse order to reverse the string, subtracting -1 from length because length starts from 1 but index strats from 0
     for (i = inputStringArray.length - 1; i >= 0; i--) {
         /// If its a first iteration then store the word in variable otherwise concatenate it with the current string
-        if (i == inputStringArray.length - 1) {
-            outputString = inputStringArray[i] + " ";
+        if (inputStringArray[i] == "") {
+            continue;
         } else {
-            /// Checking if its an empty string then continue otherwise store it in variable
-            if (inputStringArray[i] == "") {
-                continue;
-            } else {
-                outputString += inputStringArray[i] + " ";
-            }
+            outputString += inputStringArray[i] + " ";
         }
     }
     return outputString.trim();
