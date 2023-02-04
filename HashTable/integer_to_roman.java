@@ -40,36 +40,15 @@ Constraints:
 
 class Solution {
     public String intToRoman(int num) {
-        String ones[] = {"I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX"};
-    String tens[] = {"XX","XXX","XL","L","LX","LXX","LXXX","XC"};
-        StringBuilder str = new StringBuilder();
-        if (num>=1000) {
-            int t = num/1000;
-            for (int i = 1; i <= t; i++) str.append("M");
-            num = num%1000;            
-        }
-        if (num>=900){
-            str.append("CM");
-            num = num%900;
-        }
-        if (num>=500) {
-            str.append("D");
-            num = num%500;            
-        }
-        if (num>=400) {
-            str.append("CD");
-            num = num%400;
-        }
-        if (num>=100) {
-            int t = num/100;
-            for (int i = 1; i <= t; i++) str.append("C");
-            num = num % 100;
-        }
-        if (num>=20) {
-            str.append(tens[num/10-2]);
-            num = num % 10;            
-        }
-        if (num>0) str.append(ones[num-1]);
-        return str.toString();
+        int numsVal[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        String[] romans = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        StringBuilder sb = new StringBuilder();        
+        for (int i = 0; i < numsVal.length; i++) {
+            while (num >= numsVal[i]) {
+                sb.append(romans[i]);
+                num -= numsVal[i];
+            }
+        }        
+        return sb.toString();
     }
 }

@@ -1,0 +1,52 @@
+[1mdiff --git a/HashTable/integer_to_roman.java b/HashTable/integer_to_roman.java[m
+[1mindex e5ca77d..cc4a150 100644[m
+[1m--- a/HashTable/integer_to_roman.java[m
+[1m+++ b/HashTable/integer_to_roman.java[m
+[36m@@ -40,36 +40,15 @@[m [mConstraints:[m
+ [m
+ class Solution {[m
+     public String intToRoman(int num) {[m
+[31m-        String ones[] = {"I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX"};[m
+[31m-    String tens[] = {"XX","XXX","XL","L","LX","LXX","LXXX","XC"};[m
+[31m-        StringBuilder str = new StringBuilder();[m
+[31m-        if (num>=1000) {[m
+[31m-            int t = num/1000;[m
+[31m-            for (int i = 1; i <= t; i++) str.append("M");[m
+[31m-            num = num%1000;            [m
+[31m-        }[m
+[31m-        if (num>=900){[m
+[31m-            str.append("CM");[m
+[31m-            num = num%900;[m
+[31m-        }[m
+[31m-        if (num>=500) {[m
+[31m-            str.append("D");[m
+[31m-            num = num%500;            [m
+[31m-        }[m
+[31m-        if (num>=400) {[m
+[31m-            str.append("CD");[m
+[31m-            num = num%400;[m
+[31m-        }[m
+[31m-        if (num>=100) {[m
+[31m-            int t = num/100;[m
+[31m-            for (int i = 1; i <= t; i++) str.append("C");[m
+[31m-            num = num % 100;[m
+[31m-        }[m
+[31m-        if (num>=20) {[m
+[31m-            str.append(tens[num/10-2]);[m
+[31m-            num = num % 10;            [m
+[31m-        }[m
+[31m-        if (num>0) str.append(ones[num-1]);[m
+[31m-        return str.toString();[m
+[32m+[m[32m        int numsVal[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};[m
+[32m+[m[32m        String[] romans = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};[m
+[32m+[m[32m        StringBuilder sb = new StringBuilder();[m[41m        [m
+[32m+[m[32m        for (int i = 0; i < numsVal.length; i++) {[m
+[32m+[m[32m            while (num >= numsVal[i]) {[m
+[32m+[m[32m                sb.append(romans[i]);[m
+[32m+[m[32m                num -= numsVal[i];[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m[41m        [m
+[32m+[m[32m        return sb.toString();[m
+     }[m
+ }[m
+\ No newline at end of file[m
