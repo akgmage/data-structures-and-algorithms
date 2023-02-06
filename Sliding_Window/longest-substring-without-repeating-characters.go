@@ -31,6 +31,7 @@ s consists of English letters, digits, symbols and spaces.
 // Approach 1 Brute force
 // Intuition
 // Check all the substring one by one to see if it has no duplicate character.
+// Time complexity O(n³ ) Space complexity O(m) where m is size of hMap
 func lengthOfLongestSubstring(s string) int {
     n := len(s)
     res := 0
