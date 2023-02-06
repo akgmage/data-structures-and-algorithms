@@ -31,7 +31,8 @@ s consists of English letters, digits, symbols and spaces.
 // Approach 1 Brute force
 // Intuition
 // Check all the substring one by one to see if it has no duplicate character.
-func lengthOfLongestSubstring(s string) int {
+// Time complexity O(n³ ) Space complexity O(m) where m is size of hMap
+func LengthOfLongestSubstring1(s string) int {
     n := len(s)
     res := 0
     for i := 0; i < n; i++ {
@@ -59,4 +60,24 @@ func check(s string, start int, end int) bool {
         }
     }
     return true
+}
+
+// Approach 2:  Sliding window
+// Time complexity O(n) Space complexity O(m) where m is size of char 
+func LengthOfLongestSubstring2(s string) int {
+    result := 0
+    for i := 0; i < len(s); i++ {
+        char := make(map[byte]bool)
+        char[s[i]] = true
+        for j := i + 1; j < len(s); j++ {
+            if _, ok := char[s[j]]; ok {
+                break
+            }
+            char[s[j]] = true
+        }
+        if len(char) > result {
+            result = len(char)
+        }
+    }
+    return result
 }
