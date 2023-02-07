@@ -96,6 +96,7 @@ public class LargestNumber {
         for (String string : stringArray) {
             stringBuilder.append(string);
         }
+        
         return stringBuilder.toString();
     }
 }
