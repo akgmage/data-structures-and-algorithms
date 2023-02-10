@@ -10,3 +10,7 @@ Contributions are always welcome!
 - Take care of Readability (Code is written once and read multiple times, so keep this in mind)
 - Provide link for further reading (optional)
 - Send a PR against dev branch
+
+## What if the problem you want to add is not present in the issue?
+- You can suggest an idea for this project under issues tab (add list of questions you think it is important, it will be assigned to you)
+- You can directly make a PR against dev branch with the proposed problems with appropriate comments and description
