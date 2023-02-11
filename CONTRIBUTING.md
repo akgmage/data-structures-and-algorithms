@@ -16,5 +16,5 @@ Contributions are always welcome!
 - You can directly make a PR against dev branch with the proposed problems with appropriate comments and description
 
 ## What if the changes are inconsistent?
-- keep pulling from origin/main see below, this way you will be up to date with the latest changes in main branch
+- Keep pulling from origin/main see below, this way you will be up to date with the latest changes in main branch
 - git pull origin main
