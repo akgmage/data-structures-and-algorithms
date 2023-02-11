@@ -30,7 +30,7 @@ public:
             int mid2 = (n1 + n2 + 1)/2 - mid1;
             // why?? => suppose nums1[] is partitioned at index 3 => nums1[3] = 7.
 
-            std::pair<int, int> maxleft, maxright;
+            std::pair<int, int> maxleft, minright;
             maxleft.first = mid1 == 0 ? INT_MIN : nums1[mid1-1];
             maxleft.second = mid2 == 0 ? INT_MIN : nums2[mid2-1];
 
@@ -68,7 +68,7 @@ int main(int argc, char const *argv[])
         std::cin>>arr2[i];
     }
 
-    const Solution sol = new Solution();
+    Solution sol = Solution();
     double res = sol.findMedianSortedArrays(arr1, arr2);
 
     std::cout<<res<<"\n";
