@@ -30,14 +30,15 @@ Follow-up: Could you solve the problem in linear time and in O(1) space?
 //and also check the frequency at the same time..if frequency(occurence) of any  element is  greater than (n/2) at anytime we will return that element.
 // suppose if no such element exist return simply -1.
 
-Find Majority Element in C++ 
+// Find Majority Element in C++ 
+
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
         
        unordered_map<int,int>mp;
-        for(int i:nums){
-            if(++mp[i]>nums.size()/2){
+       for(int i : nums){
+            if(++mp[i] > nums.size() / 2) {
                 return i;
             }
         }
