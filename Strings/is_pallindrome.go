@@ -8,37 +8,46 @@ import (
 
 // The two pointers approach would allow us to solve this problem in linear time and without any extra space complexity or built-in functions because we’ll be simply traverse the array from the start and the end at the same time to reach the middle of the string.
 
-func isPalindrome(inputString string) {
-	fmt.Printf("String to check: \"%s\". Length of string: %d\n", inputString, len(inputString))
+func isPalindrome(inputString string) bool {
 	left := 0
 	right := len(inputString) - 1
-	i := 1
-
-	// The terminating condition for the loop is when both the pointers reach the same element or when they cross each other
+	fmt.Printf("\tThe current element being pointed by the left index is %c\n", inputString[left])
+	fmt.Printf("\tThe current element being pointed by the right index is %c\n", inputString[right])
 	for left < right {
-		fmt.Printf("In iteration %d, left = %d, right = %d\n", i, left, right)
-		fmt.Printf("The current element being pointed to by the left pointer is %c\n", inputString[left])
-		fmt.Printf("The current element being pointed to by the right pointer is %c\n", inputString[right])
-        fmt.Printf("%s\n", strings.Repeat("-", 100))
-		// Heading towards the right
-		left += 1
+		fmt.Printf("\tWe check if the two elements are indeed the same, in this case...\n")
+		
+		// If the elements at index left and index right are not equal
+		if inputString[left] != inputString[right] {
+			fmt.Printf("\tThe elements are not the same, hence we return false\n")
 
-		// Heading towards left
-		right -= 1
-		i += 1
+			// then the symmetry is broken, the string is not a palindrome
+			return false
+		}
+
+		fmt.Printf("\tThey are the same, thus we move the two pointers toward the middle to continue the\n\tverfification process\n\n")
+		
+		// Heading towards the right
+		left++
+
+		// Heading towards the middle
+		right--
+
+		fmt.Printf("\tThe new element at the left pointer is %c\n", inputString[left])
+		fmt.Printf("\tThe new element at the right pointer is %c\n", inputString[right])
 	}
-	fmt.Printf("Loop terminated with left = %d, right = %d\n", left, right)
-	fmt.Printf("The pointers have either reached the same index, or have crossed each other, hence we don't need to look further.\n")
-	fmt.Printf("%s\n", strings.Repeat("-", 100))
+
+	// We reached the middle of the string without finding a mismatch, so it is a palindrome
+	return true
 }
 
 // Driver code
 func main() {
-	inputList := []string {"RACECAR", "ABBA", "TART"}
-	
-	for i, value := range inputList {
+	str := []string {"RACEACAR", "A", "ABCDEFGFEDCBA", "ABC", "ABCBA", "ABBA", "RACEACAR"}
+	for i, s := range str {
 		fmt.Printf("Test Case # %d\n", i + 1)
-		isPalindrome(value)
-		
+		fmt.Printf("%s\n", strings.Repeat("-", 100))
+		fmt.Printf("\tThe input string is '%s' and the length of the string is %d.\n", s, len(s))
+		fmt.Printf("\nIs it a palindrome?.....%v\n", isPalindrome(s))
+		fmt.Printf("%s\n", strings.Repeat("-", 100))
 	}
 }
