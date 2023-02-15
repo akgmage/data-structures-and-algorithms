@@ -3,6 +3,7 @@ Given an array of integers, nums, and an integer value, target,
 determine if there are any three integers in nums whose sum equals the target.
 Return TRUE if three such integers are found in the array. Otherwise, return FALSE.
 */
+
 package main
 
 import (
@@ -11,6 +12,8 @@ import (
 	"strings"
 )
 
+// Time complexity : Sorting the array O(n log(n)) and Nested loop to find triplet O(n^{2}) which can be simplified to O(n^{2})
+// Space complexity is O(1) since we use a fixed amount of extra space in memory.
 // FindSumOfThree is our challenge function
 func findSumOfThree(nums []int, target int) bool {
 	// Sorting the input vector
