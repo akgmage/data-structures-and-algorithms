@@ -7,6 +7,11 @@ import (
 )
 
 // The two pointers approach would allow us to solve this problem in linear time and without any extra space complexity or built-in functions because we’ll be simply traverse the array from the start and the end at the same time to reach the middle of the string.
+// Time complexity
+// The time complexity is O(n) where n is the number of characters present in the string.
+// Space complexity O(1) because we use constant space to store two indices.
+// Sample Input : RACEACAR
+// Output: False
 
 func isPalindrome(inputString string) bool {
 	left := 0
