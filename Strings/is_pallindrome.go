@@ -1,9 +1,12 @@
+// Valid Palindrome
 package main
 
 import (
 	"fmt"
 	"strings"
 )
+
+// The two pointers approach would allow us to solve this problem in linear time and without any extra space complexity or built-in functions because we’ll be simply traverse the array from the start and the end at the same time to reach the middle of the string.
 
 func isPalindrome(inputString string) {
 	fmt.Printf("String to check: \"%s\". Length of string: %d\n", inputString, len(inputString))
