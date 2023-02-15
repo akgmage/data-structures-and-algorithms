@@ -31,7 +31,7 @@ class merge_sorted_array{
 
         merge_sorted_array is=new merge_sorted_array();
         is.merge(nums1,m,nums2,n);
-        for (int j : nums1) {
+        for (int j:nums1) {
             System.out.print(j + " ");
         }
     }
