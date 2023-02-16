@@ -25,13 +25,13 @@ class merge_sorted_array{
     }
 
     public static void main(String[] args){
-        int[] nums1 ={1,2,3,0,0,0};
-        int m=3,n=3;
-        int[] nums2 ={2,5,6};
+        int[] nums1 = {1, 2, 3, 0, 0, 0};
+        int m = 3, n = 3;
+        int[] nums2 ={2, 5, 6};
 
-        merge_sorted_array is=new merge_sorted_array();
-        is.merge(nums1,m,nums2,n);
-        for (int j:nums1) {
+        merge_sorted_array is = new merge_sorted_array();
+        is.merge(nums1, m, nums2, n);
+        for (int j : nums1) {
             System.out.print(j + " ");
         }
     }
