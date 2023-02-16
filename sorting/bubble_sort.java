@@ -16,23 +16,23 @@
 package sorting;
 
 public class Bubblesort {
-    void bubblesort(int[] array){
-       int size=array.length;
-       int temp=0;
-       boolean flag=false;
+    void bubblesort(int[] array) {
+       int size = array.length;
+       int temp = 0;
+       boolean flag = false;
 
-        for(int i=0; i<size; i++){
-            for(int j=1; j<(size-i); j++){
-                if(array[j-1]>array[j]){
+        for(int i = 0; i < size; i++) {
+            for(int j = 1; j < (size - i); j++) {
+                if(array[j - 1] > array[j]) {
                     //swap elements
-                    temp=array[j-1];
-                    array[j-1]=array[j];
-                    array[j]=temp;
-                    flag=true;
+                    temp = array[j-1];
+                    array[j - 1] = array[j];
+                    array[j] = temp;
+                    flag = true;
                 }
 
             }
-            if(!flag){
+            if(!flag) {
                 System.out.println("Already sorted so no further redundant passes best case 0(n)");
                 break;
             }
@@ -40,21 +40,20 @@ public class Bubblesort {
     }
 
     public static void main(String[] args) {
-        int[] array ={5,1,2,3,4,5};
+        int[] array = {5, 1, 2, 3, 4, 5};
 
         System.out.println("Array Before Bubble Sort");
         for (int j : array) {
             System.out.print(j + " ");
         }
         System.out.println();
-        Bubblesort is=new Bubblesort();
+        Bubblesort is = new Bubblesort();
         is.bubblesort(array);//sorting array elements using bubble sort
 
         System.out.println("Array After Bubble Sort");
         for (int j : array) {
             System.out.print(j + " ");
         }
-
     }
 
 }
