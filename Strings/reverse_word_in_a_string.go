@@ -1,3 +1,8 @@
+/*
+	Given a sentence, reverse the order of its words without affecting the order of letters within a given word.
+*/
+// Time Complexity : O(n) n is length of string
+// Space complexity : O(n) as we used additional space to store the list of characters as strings are immutable in go
 package main
 
 import (
