@@ -29,4 +29,6 @@ Two sum [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main
 
 Three Number Sum [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/sum_of_three_values.go) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/sum_of_three_values.js)
 
+Valid Pallindrome [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/is_pallindrome.go)
+
 Reverse Word in a String [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/reverse_word_in_a_string.go)
