@@ -11,12 +11,6 @@
 
 Check out [contributing.md](https://github.com/akgmage/data-structures-and-algorithms/blob/main/CONTRIBUTING.md)
 
-## Fork this repository
-
-Get involved! Fork this repository by clicking on the fork button on the top of this page. This will create a copy of this repository in your account.
-
-- [How to Fork a repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
-
 # Pattern 1: Two Pointers
 
 As the name suggests, the two pointers pattern uses two pointers to iterate over an array or list until the conditions of the problem are satisfied. This is useful because it allows us to keep track of the values of two different indexes in a single iteration. Whenever there’s a requirement to find two data elements in an array that satisfy a certain condition, the two pointers pattern should be the first strategy to come to mind.
