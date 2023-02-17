@@ -6,7 +6,7 @@ function factorialIterative(number) {
         return 0;
     }
 
-    for (i = 2; i <= number; i++) {
+    for (i = 1; i <= number; i++) {
         factorialResult *= i;
     }
     return factorialResult;
