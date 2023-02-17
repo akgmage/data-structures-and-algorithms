@@ -1,5 +1,12 @@
 ## Contributing
 
+🌈 Everyone is welcome!
+You can join the fun by following our contributing guide.
+
+Before you get started, we encourage you to read these documents which describe some of our community norms:
+
+Our [code of conduct](https://github.com/akgmage/data-structures-and-algorithms/blob/main/CODE_OF_CONDUCT.md), which stipulates explicitly that everyone must be gracious, respectful, and professional. This also documents our conflict resolution policy and encourages people to ask questions.
+
 Contributions are always welcome!
 
 - Pick any good first issue and add comment on it (Example: "I'll take this up"), or Add classic DSA problem which is currently not present in this repo
@@ -12,9 +19,11 @@ Contributions are always welcome!
 - Send a PR against dev branch
 
 ## What if the problem you want to add is not present in the issue?
+
 - You can suggest an idea for this project under issues tab (add list of questions you think it is important, it will be assigned to you)
 - You can directly make a PR against dev branch with the proposed problems with appropriate comments and description
 
 ## What if the changes are inconsistent?
+
 - Keep pulling from origin/main see below, this way you will be up to date with the latest changes in main branch
 - git pull origin main
