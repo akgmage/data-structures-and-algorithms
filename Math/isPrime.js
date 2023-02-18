@@ -1,4 +1,4 @@
-// Whether the given number is a prime nujmber or not
+// Whether the given number is a prime number or not
 
 // Time complexity - O(n)
 function isPrime(input) {
@@ -13,7 +13,7 @@ function isPrime(input) {
     return "Given number is a prime number";
 }
 
-// Time complexity - (O logn)
+// Time complexity - O(logn)
 function isPrimeLogn(input) {
     for (i = 2; i < Math.sqrt(input); i++) {
         if (input % i == 0) {
