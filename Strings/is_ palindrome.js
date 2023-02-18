@@ -1,4 +1,27 @@
 // Check whether a given string is a Valid Palindrome in Javascript
+
+// Two pointer approach
+function isPalindromeTwoPointer(inputString) {
+    var string = inputString.trim().toLowerCase();
+
+    if (string == "") {
+        return false;
+    }
+
+    var leftIndex = 0;
+    var rightIndex = string.length - 1;
+
+    while (leftIndex < rightIndex) {
+        if (string[leftIndex] !== string[rightIndex]) {
+            return false;
+        }
+        leftIndex++;
+        rightIndex--;
+    }
+    return true;
+}
+
+// Reverse String approach
 function isPalindrome(inputString) {
     var stringArray = inputString.trim().toLowerCase().split("");
 
@@ -18,4 +41,5 @@ function isPalindrome(inputString) {
 }
 
 // Driver code
-console.log(isPalindrome("Kayak"));
+console.log(isPalindrome("Kaayak"));
+console.log(isPalindromeTwoPointer("Kayak"));
