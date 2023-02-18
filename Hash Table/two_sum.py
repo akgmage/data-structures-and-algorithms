@@ -8,6 +8,8 @@
   Output: [-1 11]
 '''
 # Brute Force Approach
+# Time complexity: O(N^2);
+# Space Complexity: O(1);
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         for i in range(len(nums)):
@@ -17,6 +19,8 @@ class Solution:
         return []
     
 # Two Pointer approach
+# Time complexity: O(N);
+# Space Complexity: O(N);
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         # Create map to keep track of what we ahve seen so far
