@@ -19,7 +19,7 @@ The pointers can be used to iterate the data structure in one or both directions
 
 ## Practice problems for two pointers
 
-Two sum [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.java)
+Two sum [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.java) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.py)
 
 Three Number Sum [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/sum_of_three_values.go) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/sum_of_three_values.js)
 
