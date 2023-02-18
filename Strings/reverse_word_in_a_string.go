@@ -7,6 +7,7 @@ package main
 
 import (
 	"fmt"
+	"regexp"
 	"strings"
 )
 
@@ -100,4 +101,57 @@ func main() {
 		fmt.Printf("\tReversed string:    \"%s\"\n", reverseWords(str))
 		fmt.Printf("%s\n", strings.Repeat("-", 100))
 	}
+	fmt.Printf("%s\n", strings.Repeat("*", 100))
+	for i, str := range stringToReverse {
+		fmt.Printf("%d.\tActual string:      \"%s\"\n", i+1, str)
+		fmt.Printf("\tReversed string:    \"%s\"\n", ReverseWordsNew(str))
+		fmt.Printf("%s\n", strings.Repeat("-", 100))
+	}
+}
+
+// Using regexp and strings library
+
+func ReverseWordsNew(s string) string {
+    // trim leading and multiple spaces
+    trimmedString := trimHelper(s)
+    // convert string into array bytes since strings are immutable in go
+    sBytes := []byte(trimmedString)
+    // reverse the entire sBytes first
+    strlen := len(sBytes)
+    reversedString := revHelper(sBytes, 0, strlen - 1)
+    
+    // this way words will be in desired position 
+
+    start, end := 0, 0
+    for {
+        for start < strlen && reversedString[start] == ' ' {
+            start += 1;
+        }
+        if start == strlen {
+            break
+        }
+        end = start + 1
+        for end < strlen && reversedString[end] != ' ' {
+            end += 1
+        }
+        reversedString = revHelper(reversedString, start, end - 1)
+        start = end
+    }
+    return string(reversedString)
+}
+
+func trimHelper(s string) string {
+    result := strings.TrimSpace(s)
+    regex := regexp.MustCompile("\\s+")
+    result = regex.ReplaceAllString(result, " ")
+    return result
+}
+
+func revHelper(s []byte, start int, end int) []byte {
+    for start < end {
+        s[start], s[end] = s[end], s[start]
+        start += 1
+        end -= 1
+    }
+    return s
 }

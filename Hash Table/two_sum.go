@@ -50,7 +50,7 @@ func TwoNumberSumTwoPointerMethod(array []int, target int) []int {
 			// add result in array
 			result = append(result, array[i])
 			result = append(result, array[j])
-			// result the result
+			// return the result
 			return result
 		} else if array[i] + array[j] > target {
 			// elements is greater that means look to left side of j
