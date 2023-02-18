@@ -22,7 +22,7 @@ Contributions are always welcome!
 - Explain approach with comments
 - Take care of Readability (Code is written once and read multiple times, so keep this in mind)
 - Provide link for further reading (optional)
-- Send a PR against dev branch
+- Send a Pull Request (PR) against main branch
 
 ## What if the problem you want to add is not present in the issue?
 
