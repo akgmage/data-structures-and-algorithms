@@ -16,3 +16,17 @@ class Solution:
                     return [i, j]
         return []
     
+# Two Pointer approach
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # Create map to keep track of what we ahve seen so far
+        numToIndex = {}
+        for i in range(len(nums)):
+            # lets say first element in our array is 3, and target sum is 10
+            # then we will look for 7 in our map, if its present then we simply return 7 and 3 
+            # if the required value is found then store result
+            if target - nums[i] in numToIndex:
+                return [numToIndex[target - nums[i]], i]
+            # keep track of what value in array we have seen so far
+            numToIndex[nums[i]] = i
+        return []
