@@ -1,7 +1,7 @@
 // C++ program to find a triplet sum in array
 #include <bits/stdc++.h>
 using namespace std;
-bool findTriplet(int arr[], int n, int target)
+string findTriplet(int arr[], int n, int target)
 {
     int l, r;
     /* Sort the elements */
@@ -12,7 +12,7 @@ bool findTriplet(int arr[], int n, int target)
         r = n - 1; // last element
         while (l < r) {
             if (arr[i] + arr[l] + arr[r] == target) {
-                return true;
+                return "TRUE";
             }
             else if (arr[i] + arr[l] + arr[r] < target)
                 l++;
@@ -22,7 +22,7 @@ bool findTriplet(int arr[], int n, int target)
         }
     }
     // If no triplet was found
-    return false;
+    return "FALSE";
 }
 
 int main()
