@@ -41,6 +41,7 @@ The key idea is that the pointers start at the same location, but they move forw
 
 ## Practice problems for fast and slow pointers
 
-- Linked List cycle detection
-- Find middle of Linked List
+- Linked List cycle detection [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_floyds_cycle_detection.cpp)
+- Find middle of Linked List [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_compute_midpoint.cpp)
 - Pallindrome Linked List
+- Remove Kth node from end [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_remove_nth_node_from_end.cpp)
