@@ -1,4 +1,6 @@
 // Whether the provided number is power of two
+
+// Time complexity - O(log n)
 function isPowerOfTwo(inputNumber) {
     if (inputNumber <= 1) {
         return false;
@@ -13,6 +15,30 @@ function isPowerOfTwo(inputNumber) {
         dividedNumber = dividedNumber / 2;
     }
     return true;
+}
+
+// Time complexity - O(1)
+function isPowerOfTwoConst(inputNumber) {
+    if (inputNumber <= 1) {
+        return false;
+    }
+
+    return (
+        parseInt(Math.ceil(Math.log(n) / Math.log(2))) ==
+        parseInt(Math.floor(Math.log(n) / Math.log(2)))
+    );
+}
+
+// Time complexity - O(log n)
+function isPowerOfTwoConst(inputNumber) {
+    if (inputNumber <= 1) {
+        return false;
+    }
+
+    return (
+        parseInt(Math.ceil(Math.log(n) / Math.log(2))) ==
+        parseInt(Math.floor(Math.log(n) / Math.log(2)))
+    );
 }
 
 //Driver code
