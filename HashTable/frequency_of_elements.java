@@ -68,7 +68,7 @@ public class FrequencyOfElements {
     }
 
     public static int[] solve(int[] nums, int[] queries) {
-        // O(N) time | O(Q) space where N is length of array , Q is length of queries
+         // O(N) time | O(Q) space where N is length of array , Q is length of queries
 
         HashMap<Integer, Integer> hashMap = new HashMap<>();
 
@@ -82,8 +82,8 @@ public class FrequencyOfElements {
         int[] res = new int[queries.length];
 
         for (int i = 0; i < queries.length; i++)
-            if (hashMap.containsKey(queries[i]))
-                res[i] = hashMap.get(queries[i]);
+                if (hashMap.containsKey(queries[i]))
+                    res[i] = hashMap.get(queries[i]);
 
         return res;
     }
