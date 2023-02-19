@@ -106,15 +106,15 @@ def timSort(arr):
 # Driver program to test above function
 if __name__ == "__main__":
 
-	arr = [-2, 7, 15, -15, 0, 15, 0,
-		7, -7, -4, -13, 5, 9, -14, 12]
+	array = [-2, 7, 15, -15, 2, 15, 2,
+		7, -7, -4, -13, 5, 9, -15, 12]
 
 	print("Given Array is")
-	print(arr)
+	print(array)
 
 	# Function Call
-	timSort(arr)
+	timSort(array)
 
 	print("After Sorting Array is")
-	print(arr)
+	print(array)
 	
