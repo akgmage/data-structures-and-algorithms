@@ -9,7 +9,8 @@
 
 # Implementation of well known Data Structures and Algorithms
 
-Check out [contributing.md](https://github.com/akgmage/data-structures-and-algorithms/blob/main/CONTRIBUTING.md)
+🌈 Everyone is welcome!
+You can join the fun by following our [contributing](https://github.com/akgmage/data-structures-and-algorithms/blob/main/CONTRIBUTING.md) guide.
 
 # Pattern 1: Two Pointers
 

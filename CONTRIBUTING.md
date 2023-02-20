@@ -1,8 +1,5 @@
 ## Contributing
 
-🌈 Everyone is welcome!
-You can join the fun by following our contributing guide.
-
 ## Fork this repository
 
 Get involved! Fork this repository by clicking on the fork button on the top of this page. This will create a copy of this repository in your account.
