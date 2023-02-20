@@ -59,24 +59,24 @@ def merge(array, l, m, r):
     # merge the two arrays in a larger sub array
     while i < array_len1 and j < array_len2:
         if left[i] <= right[j]:
-            arr[k] = left[i]
+            array[k] = left[i]
             i += 1
  
         else:
-            arr[k] = right[j]
+            array[k] = right[j]
             j += 1
  
         k += 1
  
     # Copy remaining elements of the left part, if any
     while i < array_len1:
-        arr[k] = left[i]
+        array[k] = left[i]
         k += 1
         i += 1
  
     # Copy remaining element of the right part, if any
     while j <array_len2:
-        arr[k] = right[j]
+        array[k] = right[j]
         k += 1
         j += 1
  
@@ -108,7 +108,7 @@ def tim_sort(array):
  
             # Merge array[left ... mid] and array[mid + 1 ... right]
             if mid < right:
-                merge(arr, left, mid, right)
+                merge(array, left, mid, right)
  
         size = 2 * size
  
