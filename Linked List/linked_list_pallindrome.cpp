@@ -36,7 +36,8 @@
  * };
  */
 
-// TODO: Implement O(1) space
+// Time Complexity : O(n) Space Complexity: O(n)
+// TODO: Implement O(n) Time and  O(1) space solution
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
