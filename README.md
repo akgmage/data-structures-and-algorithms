@@ -46,6 +46,7 @@ The key idea is that the pointers start at the same location, but they move forw
 
 - Linked List cycle detection [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_floyds_cycle_detection.cpp)
 - Find middle of Linked List [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_compute_midpoint.cpp)
+- Happy Nuumber [Go](https://github.com/akgmage/data-structures-and-algorithms/tree/main/Fast%20and%20Slow%20Pointers)
 - Pallindrome Linked List
 - Remove Kth node from end [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_remove_nth_node_from_end.cpp)
 - Linked List Sort List [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/liniked_list_sort_list.cpp)
