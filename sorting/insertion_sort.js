@@ -1,7 +1,22 @@
-/* 
-Insertion sort is a sorting algorithm that places an unsorted element 
-at its suitable place in each iteration.
+/*
+Implementation of insertion sort in JS.
+Insertion sort is a simple sorting algorith that iterates through
+the list starting at the second element. We compare each element
+to the preceding elements, slide over the preceding larger (or smaller)
+elements, and insert the original element into the empty position.
+
+Time Complexity worst-case and average complexity O(n^{2})
+
+Insertion sort is inefficient for large arrays. However it is fast for
+small arrays and typically more efficient than bubble sort and selection
+sort due to not making as many comparisons on average.
+
+Source: https://en.wikipedia.org/wiki/Insertion_sort
+
+Sample input: [0, 2, 1,-1, 10, 3, 4]
+Output: [-1 0 1 2 3 4 10]
 */
+
 const inputArr = [4,5,67,56,3,35,45];
 
 const insertionSort= (arr) => {
