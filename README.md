@@ -12,6 +12,26 @@
 🌈 Everyone is welcome!
 You can join the fun by following our [contributing](https://github.com/akgmage/data-structures-and-algorithms/blob/main/CONTRIBUTING.md) guide.
 
+# Sorting
+
+Sorting a list of items into ascending or descending order can help either a human or a computer find items on that list quickly, perhaps using an algorithm like binary search. Most Programming languages have built-in sorting methods. It works on arrays of numbers, or even on arrays of strings:
+
+```
+heights = [6, 5, 4, 5, 2, 3];
+heights.sort();
+Output : [2, 3, 4, 5, 5, 6]
+```
+
+Even though languages have built-in sorting method, sorting is a great example of how there may be many ways to think about the same problem, some perhaps better than others. Understanding sorting is a traditional first step towards mastery of algorithms and computer science.
+
+### Well known sorting algorithms
+
+- Bubble Sort [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/bubble_sort.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/bubble_sort.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/bubble_sort.java) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/bubble_sort.js) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/bubble_sort.py)
+- Insertion Sort [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/insertion_sort.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/insertion_sort.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/insertion_sort.java) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/insertion_sort.js) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/insertion_sort.py)
+- Selection Sort [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/selection_sort.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/selection_sort.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/selection_sort.java) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/selection_sort.js) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/selection_sort.py)
+- Merge Sort [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/merge_sort.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/merge_sort.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/merge_sort.java) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/merge_sort.js) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/merge_sort.py)
+- Quick Sort [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/quick_sort.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/quick_sort.java)
+
 # Pattern 1: Two Pointers
 
 As the name suggests, the two pointers pattern uses two pointers to iterate over an array or list until the conditions of the problem are satisfied. This is useful because it allows us to keep track of the values of two different indexes in a single iteration. Whenever there’s a requirement to find two data elements in an array that satisfy a certain condition, the two pointers pattern should be the first strategy to come to mind.
