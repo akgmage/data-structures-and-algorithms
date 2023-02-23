@@ -1,13 +1,20 @@
-// Merge Sort in Java
+// In computer science, merge sort (also commonly spelled as mergesort) is an efficient, general-purpose,
+// and comparison-based sorting algorithm. Most implementations produce a stable sort,
+// which means that the order of equal elements is the same in the input and output.
+// Merge sort is a divide-and-conquer algorithm that was invented by John von Neumann in 1945.
+// A detailed description and analysis of bottom-up merge sort appeared in a report by Goldstine and von Neumann as early as 1948.
+// Conceptually, a merge sort works as follows:
 
-// Merge sort is a sorting algorithm that works by dividing an array into smaller subarrays, sorting each subarray, and then merging the sorted subarrays back together to form the final sorted array.
-// In simple terms, we can say that the process of merge sort is to divide the array into two halves, sort each half, and then merge the sorted halves back together. This process is repeated until the entire array is sorted.
+// Divide the unsorted list into n sublists, each containing one element (a list of one element is considered sorted).
+// Repeatedly merge sublists to produce new sorted sublists until there is only one sublist remaining. This will be the sorted list
+// Source(https://en.wikipedia.org/wiki/Merge_sort)
 
-// Time complexity = O(nlogn) and Space complexity = O(n).
+// Approach: Divide by finding the number mid of the position midway between left and right. Do this step the same
+// way we found the midpoint in binary search
+// Conquer by recursively sorting the subarrays in each of the two subproblems created by the divide step.
+// That is, recursively sort the subarray Arr[left. . mid] and recursively sort the subarray Arr[mid + 1. . right].
+// Combine by merging the two sorted subarrays back into the single sorted subarray Arr[left. . right].
 
-// Sample input = [ 4, 6, 2, 1, 3, 5] , Output = [1, 2, 3, 4, 5, 6]
-
-// Link for further Reading : [https://www.geeksforgeeks.org/merge-sort/]
 class MergeSort {
 
      void mergeSort(int ar[], int p,int r){

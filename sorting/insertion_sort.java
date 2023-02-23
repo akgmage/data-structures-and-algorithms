@@ -1,11 +1,21 @@
-// Insertion sort in Java
+/*
+Implementation of insertion sort in Java.
+Insertion sort is a simple sorting algorith that iterates through
+the list starting at the second element. We compare each element
+to the preceding elements, slide over the preceding larger (or smaller)
+elements, and insert the original element into the empty position.
 
-// Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.
+Time Complexity worst-case and average complexity O(n^{2})
 
-// Time complexity = O(n^2) and Space complexity = O(1).
+Insertion sort is inefficient for large arrays. However it is fast for
+small arrays and typically more efficient than bubble sort and selection
+sort due to not making as many comparisons on average.
 
-// Sample input = [ 9, 5, 1, 4, 3] , Output = [1, 3, 4, 5, 9]
+Source: https://en.wikipedia.org/wiki/Insertion_sort
 
+Sample input: [0, 2, 1,-1, 10, 3, 4]
+Output: [-1 0 1 2 3 4 10]
+*/
 
 import java.util.Arrays;
 
