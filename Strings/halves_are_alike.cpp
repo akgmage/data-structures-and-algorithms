@@ -21,16 +21,20 @@
     s.length is even.
     s consists of uppercase and lowercase letters.
 */
+
+// Approach: Count vowels in first and second half and return whether count is equal or not
 class Solution {
 public:
     bool halvesAreAlike(string s) {
         set<char> X {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'};
         int half = s.size() / 2;
         int c = 0, d = 0;
+        // count vowels in first half
         for(int i = 0; i < half; i++){
             if(X.find(s[i]) != X.end())
                 c++;
         }
+        // count vowels in second half
         for(int i = half; i < s.size(); i++){
             if(X.find(s[i]) != X.end()){
                 d++;
