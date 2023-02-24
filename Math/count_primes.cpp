@@ -16,6 +16,8 @@
     Constraints:
     0 <= n <= 5 * 106
 */
+
+// Refer to Sieve Of Eratosthenes explanation under Math folder
 class Solution {
 public:
     int countPrimes(int n) {
