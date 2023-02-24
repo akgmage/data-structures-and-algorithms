@@ -27,6 +27,9 @@
     Constraints:\
     1 <= n <= 200
 */
+
+// In case of even simply divide number by 2 ad add result
+// In case of add simply divide number by 2 ad add result and increase n by 1
 class Solution {
 public:
     int numberOfMatches(int n) {
