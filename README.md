@@ -106,3 +106,11 @@ Many problems in the real world use the merge intervals pattern. Let’s look at
 - Schedule a new meeting: Add a new meeting to the tentative meeting schedule of a user in such a way that no two meetings overlap each other.
 
 - Task scheduling in operating systems (OS): Schedule tasks for the OS based on task priority and the free slots in the machine’s processing schedule.
+
+## Practice problems for merge intervals
+
+- Merge Intervals
+- Insert Interval
+- Interval List Intersections
+- Employee Free Time
+- Meeting Rooms
