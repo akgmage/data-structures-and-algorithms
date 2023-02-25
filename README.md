@@ -152,3 +152,9 @@ Many problems in the real world use the two heaps pattern. Let’s look at some 
 - Video streaming: During a user session, there is often a possibility that packet drops and buffering might occur. We want to record the median number of buffering events that might occur in a particular session, which could then be used to improve the user experience.
 
 - Netflix: As part of a demographic study, we’re interested in the median age of our viewers. We want to implement a functionality whereby the median age can be updated efficiently whenever a new user signs up for video streaming.
+
+## Practice problems for two heaps
+
+- Maximize Capital
+- Find Median from a data stream
+- Schedule Tasks on a minimum machines
