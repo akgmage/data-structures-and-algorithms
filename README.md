@@ -137,7 +137,7 @@ Similarly, for space complexity: the naive approach requires the use of addition
 - Swapping Nodes in Pairs
 - Reverse Nodes in Even Length Groups
 
-# Pattern 5: Two Heaps
+# Pattern 6: Two Heaps
 
 As the name suggests, the two heaps pattern uses either two min-heaps, two max-heaps, or a min-heap and a max-heap simultaneously to solve the problem.
 
