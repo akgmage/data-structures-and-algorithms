@@ -98,3 +98,11 @@ The merge intervals pattern deals with problems involving overlapping intervals.
 The most common problems solved using this pattern are scheduling problems.
 
 The key to understanding this pattern and exploiting its power lies in understanding how any two intervals may overlap.
+
+Many problems in the real world use the merge intervals pattern. Let’s look at some examples.
+
+- Display busy schedule: Display the busy hours of a user to other users without revealing the individual meeting slots in a calendar.
+
+- Schedule a new meeting: Add a new meeting to the tentative meeting schedule of a user in such a way that no two meetings overlap each other.
+
+- Task scheduling in operating systems (OS): Schedule tasks for the OS based on task priority and the free slots in the machine’s processing schedule.
