@@ -89,3 +89,4 @@ Instead, what if we focused on the element entering the window and the one leavi
 - Minimum Window Subsequence
 - Repeated DNA Sequences
 - Minimum Window Substring
+- Longest Substring without Repeating Characters
