@@ -114,3 +114,16 @@ Many problems in the real world use the merge intervals pattern. Let’s look at
 - Interval List Intersections
 - Employee Free Time
 - Meeting Rooms
+
+# Pattern 5: In-place Reversal of a Linked List: Introduction
+
+The in-place reversal of a linked list pattern allows us to reverse a linked list without any additional memory, using only the given nodes.
+
+Many problems require a reversal of a set of nodes in a linked list without using additional memory. In such cases, using the in-place reversal pattern is the simplest solution. Instead of making a new linked list with reversed links, we can do it in place, without using additional memory.
+
+How can we achieve an in-place reversal of nodes? We iterate in a linked list and keep track of the current node, the next node, and the previous node simultaneously. Keeping track of the nodes allows us to easily change the links between them and make them point to a different node than before.
+
+When solving such problems, the naive approach of iterating the linked list using nested loops takes O(n²) time. However, using the in-place reversal pattern, the time complexity is O(n)
+time, since we use a single loop to iterate the linked list.
+
+Similarly, for space complexity: the naive approach requires the use of additional memory—if a linked list contains thousands of nodes, we’d need to allocate a lot of additional memory resources to solve the problem. However, the in-place reversal of a linked pattern will use only O(1) space.
