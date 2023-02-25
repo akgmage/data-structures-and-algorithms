@@ -82,3 +82,10 @@ A window is a sublist formed over a part of an iterable data structure. It can b
 Why is this method more efficient? It isn’t if, for each window, we iterate over all the elements of the window because that gives us the same O(kn) time complexity.
 
 Instead, what if we focused on the element entering the window and the one leaving it? For example, after calculating the sum of the first three elements, we move the window one step forward, subtract the element that is no longer in the window from the sum, and add the new element that has entered it. Next we check if the new sum is greater than the first. If it is, we update the max sum found so far. Now, each time we move the window forward, we perform at most four operations, reducing the time complexity to O(4n), that is, O(n).
+
+## Practice problems for sliding window
+
+- Find Maximum in Sliding Window
+- Minimum Window Subsequence
+- Repeated DNA Sequences
+- Minimum Window Substring
