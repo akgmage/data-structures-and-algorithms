@@ -157,4 +157,4 @@ Many problems in the real world use the two heaps pattern. Let’s look at some 
 
 - Maximize Capital
 - Find Median from a data stream
-- Schedule Tasks on a minimum machines
+- Schedule Tasks on minimum machines
