@@ -213,3 +213,5 @@ Many problems in the real world use the top K elements pattern. Let’s look at 
 - Reorganize string
 - K closest point to origin
 - Top K frequent element
+- Kth largest element in an array
+- Kth smallest element in an BST
