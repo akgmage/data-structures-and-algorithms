@@ -183,3 +183,5 @@ Many problems in the real world use the k-way merge pattern. Let’s look at som
 - Kth smallest number in M sorted list
 - Find K pairs with smallest sums
 - Merge K sorted lists
+- Kth Smallest element in a sorted matrix
+- Median of two sorted arrays
