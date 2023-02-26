@@ -158,3 +158,15 @@ Many problems in the real world use the two heaps pattern. Let’s look at some 
 - Maximize Capital
 - Find Median from a data stream
 - Schedule Tasks on minimum machines
+
+# Pattern 7: K-way Merge
+
+The k-way merge pattern helps to solve problems involving a list of sorted arrays.
+
+Here is what the pattern looks like:
+
+1. Insert the first element of each array in a min-heap.
+2. Next, remove the smallest element from the heap and add it to the merged array.
+3. Keep track of which array each element comes from.
+4. Then, insert the next element of the same array into the heap.
+5. Repeat steps 2 to 4 to fill the merged array in sorted order.
