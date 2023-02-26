@@ -19,9 +19,6 @@
     0 <= prices[i] <= 104
 */
 function maxProfit(prices) {
-    if (!prices || prices.length <= 1) {
-        return 0;
-    }
     
     let minPrice = prices[0];
     let maxProfit = 0;
