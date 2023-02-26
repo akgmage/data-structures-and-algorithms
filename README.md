@@ -185,3 +185,18 @@ Many problems in the real world use the k-way merge pattern. Let’s look at som
 - Merge K sorted lists
 - Kth Smallest element in a sorted matrix
 - Median of two sorted arrays
+
+# Pattern 8: Top K Elements
+
+The top K elements pattern helps find some specific k number of elements from the given data with optimum time complexity. Many problems ask us to find the top, the smallest, or the most/least frequent k elements in an unsorted list of elements. To solve such problems, sorting the list takes O(nlog(n)) time, then finding the k elements takes O(k) time. However, the top k elements pattern can allow us to solve the problem using O(n logk) time without sorting the list first.
+
+Which data structure can we use to solve such problems? The best data structure to keep track of the smallest or largest k elements is heap. With this pattern, we either use a max-heap or a min-heap to find the smallest or largest k elements, respectively.
+
+For example, let’s look at how this pattern takes steps to solve the problem of finding the top k largest elements (using min-heap) or top k smallest elements (using max-heap):
+Insert the first k elements from the given set of elements to the min-heap or max-heap.
+
+Iterate through the rest of the elements.
+
+For min-heap, if you find the larger element, remove the top (smallest number) of the min-heap and insert the new larger element.
+For max-heap, if you find the smaller element, remove the top (largest number) of the max-heap and insert the new smaller element.
+Iterating the complete list takes O(n) time, and the heap takes O(logk) time for insertion. However, we get the O(1) access to the k elements using the heap.
