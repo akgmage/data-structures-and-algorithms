@@ -200,3 +200,9 @@ Iterate through the rest of the elements.
 For min-heap, if you find the larger element, remove the top (smallest number) of the min-heap and insert the new larger element.
 For max-heap, if you find the smaller element, remove the top (largest number) of the max-heap and insert the new smaller element.
 Iterating the complete list takes O(n) time, and the heap takes O(logk) time for insertion. However, we get the O(1) access to the k elements using the heap.
+
+Many problems in the real world use the top K elements pattern. Let’s look at some examples.
+
+- Uber: Select at least the n nearest drivers within the user’s vicinity, avoiding the drivers that are too far away.
+
+- Stocks: Given the set of IDs of brokers, determine the top K broker’s performance with the frequently repeated IDs in the given data set.
