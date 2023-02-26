@@ -206,3 +206,10 @@ Many problems in the real world use the top K elements pattern. Let’s look at 
 - Uber: Select at least the n nearest drivers within the user’s vicinity, avoiding the drivers that are too far away.
 
 - Stocks: Given the set of IDs of brokers, determine the top K broker’s performance with the frequently repeated IDs in the given data set.
+
+## Practice problems for Top K Elements
+
+- Kth largest element in a stream
+- Reorganize string
+- K closest point to origin
+- Top K frequent element
