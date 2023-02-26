@@ -170,3 +170,9 @@ Here is what the pattern looks like:
 3. Keep track of which array each element comes from.
 4. Then, insert the next element of the same array into the heap.
 5. Repeat steps 2 to 4 to fill the merged array in sorted order.
+
+Many problems in the real world use the k-way merge pattern. Let’s look at some examples.
+
+- Merge tweets in twitter feed: Sometimes we need to implement a module that adds a user’s Tweets into an already populated Twitter feed in chronological order.
+
+- Used in external sorting procedures: When an algorithm is processing huge amounts of data, it needs to repeatedly fetch it from external storage because RAM capacity is fixed. To overcome the speed limitation of external storage, k-way merges are used in external sorting. Let’s consider a case where we need to perform six merges. A binary merge requires three merge passes while a 6-way merge only requires one pass. K-way merge reduces the number of accesses to external storage, which in turn greatly improves performance when dealing with large amounts of data.
