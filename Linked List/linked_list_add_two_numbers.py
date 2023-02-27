@@ -22,6 +22,11 @@ Constraints:
 The number of nodes in each linked list is in the range [1, 100].
 0 <= Node.val <= 9
 It is guaranteed that the list represents a number that does not have leading zeros.
+
+Complexity
+Time complexity : O(max(l1,l2)).
+Space complexity : O(n).
+
 '''
 
 # Definition for singly-linked list.
@@ -34,22 +39,22 @@ class Solution:
         carry = 0
         head = ListNode('*');
         header_pointer = head;
-        while(l1!=None or l2!=None):
+        while(l1 != None or l2 != None):
             temp = carry
-            if(l1==None):
-                temp+= l2.val
+            if(l1 == None):
+                temp += l2.val
                 l2 = l2.next
-            elif(l2==None):
+            elif(l2 == None):
                 temp += l1.val
                 l1 = l1.next
             else:
-                temp+=l1.val+l2.val
-                l1=l1.next
-                l2=l2.next
-            head.next = ListNode(temp%10)
-            carry = temp//10
+                temp += l1.val+l2.val
+                l1 = l1.next
+                l2 = l2.next
+            head.next = ListNode(temp % 10)
+            carry = temp // 10
             head = head.next
-        if(carry!=0):
+        if(carry != 0):
             head.next = ListNode(carry)
             head = head.next
         return header_pointer.next
