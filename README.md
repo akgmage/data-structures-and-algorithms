@@ -85,7 +85,7 @@ Instead, what if we focused on the element entering the window and the one leavi
 
 ## Practice problems for sliding window
 
-- Find Maximum in Sliding Window
+- Find Maximum in Sliding Window [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Sliding%20Window/sliding_window_max.java) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Sliding%20Window/sliding_window_max.js) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Sliding%20Window/sliding_window_max.py)
 - Minimum Window Subsequence
 - Repeated DNA Sequences
 - Minimum Window Substring
