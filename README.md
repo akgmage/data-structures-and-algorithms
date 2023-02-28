@@ -130,11 +130,11 @@ Similarly, for space complexity: the naive approach requires the use of addition
 
 ## Practice problems for in-place reversal of a linked list
 
-- Reverse Linked List
+- Reverse Linked List [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_reverse.cpp)
 - Reverse Nodes in k-group
 - Reorder List
 - Swapping Nodes in a Linked List
-- Swapping Nodes in Pairs
+- Swapping Nodes in Pairs [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_swap_nodes_in_pair.cpp)
 - Reverse Nodes in Even Length Groups
 
 # Pattern 6: Two Heaps
