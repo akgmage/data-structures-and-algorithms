@@ -89,7 +89,7 @@ Instead, what if we focused on the element entering the window and the one leavi
 - Minimum Window Subsequence
 - Repeated DNA Sequences
 - Minimum Window Substring
-- Longest Substring without Repeating Characters
+- Longest Substring without Repeating Characters [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Sliding%20Window/longest_substring_without_repeating_characters.go)
 
 # Pattern 4: Merge Interval
 
