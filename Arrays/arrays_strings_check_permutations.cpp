@@ -38,9 +38,9 @@ void print_ans(bool ans){
     }
 }
 int main(){
-    check_permutation("ABDE", "DEBA") == true ? print_ans(true) : print_ans(false);
-    check_permutation("ABCD", "DEFG") == true ? print_ans(true) : print_ans(false);
-    check_permutation_fast("AA", "DEBA") == true ? print_ans(true) : print_ans(false);
-    check_permutation_fast("ADEB", "ABED") == true ? print_ans(true) : print_ans(false);
+    check_permutation("ABDE", "DEBA") ? print_ans(true) : print_ans(false);
+    check_permutation("ABCD", "DEFG") ? print_ans(true) : print_ans(false);
+    check_permutation_fast("AA", "DEBA") ? print_ans(true) : print_ans(false);
+    check_permutation_fast("ADEB", "ABED") ? print_ans(true) : print_ans(false);
     return 0;
 }
