@@ -51,9 +51,9 @@ bool is_permutation_pallindrome(string a){
     return bit_vector == 0 || check_exactly_for_one_set_bit(bit_vector);
 }
 int main(){
-    is_permutation_pallindrome("aabcb") == true ? print_ans(true) : print_ans(false);
-    is_permutation_pallindrome("ab") == true ? print_ans(true) : print_ans(false);
-    is_permutation_pallindrome("ABA") == true ? print_ans(true) : print_ans(false);
-    is_permutation_pallindrome("racecarf") == true ? print_ans(true) : print_ans(false);
+    is_permutation_pallindrome("aabcb") ? print_ans(true) : print_ans(false);
+    is_permutation_pallindrome("ab") ? print_ans(true) : print_ans(false);
+    is_permutation_pallindrome("ABA") ? print_ans(true) : print_ans(false);
+    is_permutation_pallindrome("racecarf") ? print_ans(true) : print_ans(false);
     return 0;
 }
