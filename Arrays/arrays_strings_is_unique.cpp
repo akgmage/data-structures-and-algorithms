@@ -48,12 +48,12 @@ int main(){
     string s = "ABCDD";
     string t = "ABCD";
     string u = "AAAAAABCD";
-    is_unique_normal(s) == true ? print_ans(true, s) : print_ans(false, s);
-    is_unique_normal(t) == true ? print_ans(true, t) : print_ans(false, t);
-    is_unique_normal(u) == true ? print_ans(true, u) : print_ans(false, u);
+    is_unique_normal(s)  ? print_ans(true, s) : print_ans(false, s);
+    is_unique_normal(t)  ? print_ans(true, t) : print_ans(false, t);
+    is_unique_normal(u)  ? print_ans(true, u) : print_ans(false, u);
     cout << "\n***********************\n";
-    is_unique(s) == true ? print_ans(true, s) : print_ans(false, s);
-    is_unique(t) == true ? print_ans(true, t) : print_ans(false, t);
-    is_unique(u) == true ? print_ans(true, u) : print_ans(false, u);
+    is_unique(s)  ? print_ans(true, s) : print_ans(false, s);
+    is_unique(t)  ? print_ans(true, t) : print_ans(false, t);
+    is_unique(u)  ? print_ans(true, u) : print_ans(false, u);
     return 0;
 }

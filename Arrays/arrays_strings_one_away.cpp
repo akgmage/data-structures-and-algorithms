@@ -56,9 +56,9 @@ void print_ans(bool ans){
     }
 }
 int main(){
-    is_one_edit_away("Pale", "Ple") == true ? print_ans(true) : print_ans(false);
-    is_one_edit_away("Pales", "Pale") == true ? print_ans(true) : print_ans(false);
-    is_one_edit_away("Pale", "bale") == true ? print_ans(true) : print_ans(false);
-    is_one_edit_away("Pale", "bae") == true ? print_ans(true) : print_ans(false);   
+    is_one_edit_away("Pale", "Ple") ? print_ans(true) : print_ans(false);
+    is_one_edit_away("Pales", "Pale") ? print_ans(true) : print_ans(false);
+    is_one_edit_away("Pale", "bale") ? print_ans(true) : print_ans(false);
+    is_one_edit_away("Pale", "bae") ? print_ans(true) : print_ans(false);   
     return 0;
 }
