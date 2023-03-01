@@ -49,14 +49,14 @@ void print_ans(bool ans){
     }
 }
 int main(){
-    is_permutation_pallindrome("aaabdddcba") == true ? print_ans(true) : print_ans(false);
-    is_permutation_pallindrome("abab") == true ? print_ans(true) : print_ans(false);
-    is_permutation_pallindrome("ABA") == true ? print_ans(true) : print_ans(false);
-    is_permutation_pallindrome("abcddeab") == true ? print_ans(true) : print_ans(false);
+    is_permutation_pallindrome("aaabdddcba") ? print_ans(true) : print_ans(false);
+    is_permutation_pallindrome("abab") ? print_ans(true) : print_ans(false);
+    is_permutation_pallindrome("ABA") ? print_ans(true) : print_ans(false);
+    is_permutation_pallindrome("abcddeab") ? print_ans(true) : print_ans(false);
     cout << "**********IMPROVED*********\n";
-    is_permutation_pallindrome_improved("a") == true ? print_ans(true) : print_ans(false);
-    is_permutation_pallindrome_improved("ab") == true ? print_ans(true) : print_ans(false);
-    is_permutation_pallindrome_improved("ABA") == true ? print_ans(true) : print_ans(false);
-    is_permutation_pallindrome_improved("abcddeab") == true ? print_ans(true) : print_ans(false);
+    is_permutation_pallindrome_improved("a") ? print_ans(true) : print_ans(false);
+    is_permutation_pallindrome_improved("ab") ? print_ans(true) : print_ans(false);
+    is_permutation_pallindrome_improved("ABA") ? print_ans(true) : print_ans(false);
+    is_permutation_pallindrome_improved("abcddeab") ? print_ans(true) : print_ans(false);
     return 0;
 }
