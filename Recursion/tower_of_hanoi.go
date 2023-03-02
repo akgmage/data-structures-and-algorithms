@@ -1,3 +1,10 @@
+/*
+	Towers of Hanoi puzzle.
+	Source(https://en.wikipedia.org/wiki/Tower_of_Hanoi)
+	Object of the game is to move all the disks over to Tower 3.
+	But you cannot place a larger disk onto a smaller disk.
+*/
+
 package main
 
 import "fmt"
