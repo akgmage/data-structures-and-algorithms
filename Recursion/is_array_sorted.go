@@ -1,7 +1,4 @@
-/*
-	Given an array, check whether the array is in sorted order with recursion.
-*/
-// Time Complexity: O(n). Space Complexity: O(n) for recursive stack space.
+// Given an array, check whether the array is in sorted order with recursion.
 
 package main
 
