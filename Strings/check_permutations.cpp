@@ -1,6 +1,7 @@
 // Check if a string is a permutation of other 
 // Sample Input: s1 = abba s2 = baba
 // Output: true 
+// Time Complexity O(n) Space complexity O(1)
 #include<bits/stdc++.h>
 using namespace std;
 bool check_permutations(string a, string b){
