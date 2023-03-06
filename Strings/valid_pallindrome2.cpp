@@ -1,15 +1,13 @@
 /*
-Write a function that takes a string as input and checks whether it can be a valid palindrome by removing at most one character from it.
+    Write a function that takes a string as input and checks whether it can be a valid palindrome by removing at most one character from it.
 
-Constraints:
-	string.length
-	The string only consists of English letters
+    Constraints: string.length The string only consists of English letters
 
-Sample Input : "madame"
-Output : True
+    Sample Input : "madame"
+    Output : True
 
-Sample Input : "masdasd"
-Output : False	
+    Sample Input : "masdasd"
+    Output : False	
 */
 class Solution {
 public:
