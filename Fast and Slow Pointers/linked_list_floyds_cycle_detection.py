@@ -1,3 +1,10 @@
+'''
+     Floyds Cycle detection and removal
+     Program Author : Abhisek Kumar Gupta 
+     The cycle detection problem is to find the cycle in a sequence, 
+     and Floyd’s cycle detection algorithm, aka Tortoise and Hare algorithm, 
+     is a two-pointer algorithm to detect the cycle and locate the start of the cycle as well.
+'''
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, x):
