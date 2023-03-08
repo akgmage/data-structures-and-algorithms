@@ -1,4 +1,4 @@
-// Program to check if an array is alerady sorted
+// Given an array, check whether the array is in sorted order with recursion.
 // Sample Input: [1, 2, 3, 4, 4, 5, 3]
 // Output: 0 meaning false
 // Sample Output: [1, 2, 3, 4, 4, 5, 6]
