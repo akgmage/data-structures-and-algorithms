@@ -1,6 +1,4 @@
-# Python 3 program to find the middle of a
-# given linked list
-
+# Finding Midpoint of a LinkedList
 # Node class
 class Node:
 
