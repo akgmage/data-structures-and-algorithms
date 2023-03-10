@@ -1,5 +1,14 @@
-Here's an implementation of the Tower of Hanoi problem in JavaScript:
+/*
+	Towers of Hanoi puzzle.
+	Source(https://en.wikipedia.org/wiki/Tower_of_Hanoi)
+	Object of the game is to move all the disks over to Tower 3.
+	But you cannot place a larger disk onto a smaller disk.
 
+  Approach
+	1 Move the top 􀝊 − 1 disks from 􀜵􀝋􀝑􀝎􀜿􀝁 to 􀜣􀝑􀝔􀝅􀝈􀝅􀜽􀝎􀝕 tower,
+	2 Move the 􀝊􀯧􀯛 disk from 􀜵􀝋􀝑􀝎􀜿􀝁 to 􀜦􀝁􀝏􀝐􀝅􀝊􀜽􀝐􀝅􀝋􀝊 tower,
+	3 Move the 􀝊 − 1disks from 􀜣􀝑􀝔􀝅􀝈􀝅􀜽􀝎􀝕 tower to 􀜦􀝁􀝏􀝐􀝅􀝊􀜽􀝐􀝅􀝋􀝊 tower.
+*/
 function towerOfHanoi(numDisks, fromPeg, toPeg, auxPeg) {
   if (numDisks === 1) {
     console.log(`Move disk 1 from peg ${fromPeg} to peg ${toPeg}`);
