@@ -22,15 +22,14 @@ function towerOfHanoi(numDisks, fromPeg, toPeg, auxPeg) {
 // Example usage:
 towerOfHanoi(3, "A", "C", "B"); // Move disk 1 from peg A to peg C, Move disk 2 from peg A to peg B, Move disk 1 from peg C to peg B, Move disk 3 from peg A to peg C, Move disk 1 from peg B to peg A, Move disk 2 from peg B to peg C, Move disk 1 from peg A to peg C
 
+// This implementation uses recursion to solve the problem. The towerOfHanoi function takes four arguments: numDisks (the number of disks to move), fromPeg (the peg the disks start on), toPeg (the peg the disks should end up on), and auxPeg (the auxiliary peg used for moving the disks).
+// If numDisks is 1, the function simply moves the single disk from fromPeg to toPeg. Otherwise, it first moves numDisks - 1 disks from fromPeg to auxPeg using toPeg as the auxiliary peg. Then it moves the largest remaining disk from fromPeg to toPeg. Finally, it moves the numDisks - 1 disks from auxPeg to toPeg using fromPeg as the auxiliary peg.
+// The function prints out the moves it makes to the console, so running towerOfHanoi(3, "A", "C", "B") would output:
 
-This implementation uses recursion to solve the problem. The towerOfHanoi function takes four arguments: numDisks (the number of disks to move), fromPeg (the peg the disks start on), toPeg (the peg the disks should end up on), and auxPeg (the auxiliary peg used for moving the disks).
-If numDisks is 1, the function simply moves the single disk from fromPeg to toPeg. Otherwise, it first moves numDisks - 1 disks from fromPeg to auxPeg using toPeg as the auxiliary peg. Then it moves the largest remaining disk from fromPeg to toPeg. Finally, it moves the numDisks - 1 disks from auxPeg to toPeg using fromPeg as the auxiliary peg.
-The function prints out the moves it makes to the console, so running towerOfHanoi(3, "A", "C", "B") would output:
-
-Move disk 1 from peg A to peg C
-Move disk 2 from peg A to peg B
-Move disk 1 from peg C to peg B
-Move disk 3 from peg A to peg C
-Move disk 1 from peg B to peg A
-Move disk 2 from peg B to peg C
-Move disk 1 from peg A to peg C
+// Move disk 1 from peg A to peg C
+// Move disk 2 from peg A to peg B
+// Move disk 1 from peg C to peg B
+// Move disk 3 from peg A to peg C
+// Move disk 1 from peg B to peg A
+// Move disk 2 from peg B to peg C
+// Move disk 1 from peg A to peg C
