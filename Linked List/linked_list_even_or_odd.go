@@ -1,3 +1,10 @@
+/*
+	Check whether the given Linked List length is even or odd?
+
+	Approach:
+	Use a 2x pointer. Take a pointer that moves at 2x [two nodes at a time]. At the end, if the length is even,
+	then the pointer will be nil; otherwise it will point to the last node.
+*/
 package main
 import "fmt"
 
