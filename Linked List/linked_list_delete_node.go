@@ -8,6 +8,7 @@ package main
 	Approach:
 	1. We can move the data from the next node into the current node
 	2. Delete the next node.
+	Time Complexity: O(1). Space Complexity: O(1).
 */
 func deleteNode(node *ListNode) {
 	temp = node.next
