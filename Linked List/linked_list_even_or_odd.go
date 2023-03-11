@@ -5,8 +5,8 @@
 	Use a 2x pointer. Take a pointer that moves at 2x [two nodes at a time]. At the end, if the length is even,
 	then the pointer will be nil; otherwise it will point to the last node.
 */
+// Time Complexity: O(⌊n/2⌋) ≈O(n). Space Complexity: O(1).
 package main
-import "fmt"
 
 // has two fields [data] of type integer and [next] of type *node (holds the memory address of next node)
 type node struct {
