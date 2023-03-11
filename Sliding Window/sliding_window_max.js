@@ -1,3 +1,6 @@
+/*
+    Given an integer array and a window of size windowSize, find the current maximum value in the window as it slides through the entire array
+*/
 function findMaxSlidingWindow(nums, windowSize) {
     if (!nums || windowSize <= 0 || nums.length < windowSize) {
         return [];
