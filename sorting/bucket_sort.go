@@ -1,15 +1,15 @@
 /*
-	Bucket sort, or bin sort, is a sorting algorithm that works by distributing 
-	the elements of an array into a number of buckets. Each bucket is then 
-	sorted individually, either using a different sorting algorithm, 
-	or by recursively applying the bucket sorting algorithm. 
-	It is a distribution sort, a generalization of pigeonhole sort that 
-	allows multiple keys per bucket, and is a cousin of 
-	radix sort in the most-to-least significant digit flavor. 
-	Bucket sort can be implemented with comparisons and therefore can also 
-	be considered a comparison sort algorithm. 
-	The computational complexity depends on the algorithm used to sort 
-	each bucket, the number of buckets to use, 
+	Bucket sort, or bin sort, is a sorting algorithm that works by distributing
+	the elements of an array into a number of buckets. Each bucket is then
+	sorted individually, either using a different sorting algorithm,
+	or by recursively applying the bucket sorting algorithm.
+	It is a distribution sort, a generalization of pigeonhole sort that
+	allows multiple keys per bucket, and is a cousin of
+	radix sort in the most-to-least significant digit flavor.
+	Bucket sort can be implemented with comparisons and therefore can also
+	be considered a comparison sort algorithm.
+	The computational complexity depends on the algorithm used to sort
+	each bucket, the number of buckets to use,
 	and whether the input is uniformly distributed.
 
 	Bucket sort works as follows:
@@ -26,20 +26,20 @@ import (
 	"fmt"
 )
 
-func InsertionSort(A []int) {
-	for i := 0; i < len(A); i++ {
-		temp := A[i]
+func InsertionSort(Array []int) {
+	for i := 0; i < len(Array); i++ {
+		temp := Array[i]
 		j := i - 1
-		for ; j >= 0 && A[j] > temp; j-- {
-			A[j+1] = A[j]
+		for ; j >= 0 && Array[j] > temp; j-- {
+			Array[j+1] = Array[j]
 		}
-		A[j+1] = temp
+		Array[j+1] = temp
 	}
 }
 
-func BucketSort(A []int, bucketSize int) []int {
+func BucketSort(Array []int, bucketSize int) []int {
 	var max, min int
-	for _, n := range A {
+	for _, n := range Array {
 		if n < min {
 			min = n
 		}
@@ -53,7 +53,7 @@ func BucketSort(A []int, bucketSize int) []int {
 		buckets[i] = make([]int, 0)
 	}
 
-	for _, n := range A {
+	for _, n := range Array {
 		idx := int(n-min) / bucketSize
 		buckets[idx] = append(buckets[idx], n)
 	}
@@ -70,9 +70,9 @@ func BucketSort(A []int, bucketSize int) []int {
 }
 
 func main() {
-	A := []int{3, 4, 5, 2, 1}
-	A = BucketSort(A, 2)
-	for _, val := range A {
+	Array := []int{3, 4, 5, 2, 1}
+	Array = BucketSort(Array, 2)
+	for _, val := range Array {
 		fmt.Println(val)
 	}
 }
