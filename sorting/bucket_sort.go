@@ -18,6 +18,8 @@
 	Scatter: Go over the original array, putting each object in its bucket.
 	Sort each non-empty bucket.
 	Gather: Visit the buckets in order and put all elements back into the original array.
+
+	Source(https://en.wikipedia.org/wiki/Bucket_sort)
 */
 // The average time complexity for Bucket Sort is O(n + k).
 // The worst time complexity is O(n²).
