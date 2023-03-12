@@ -19,7 +19,9 @@
 	Sort each non-empty bucket.
 	Gather: Visit the buckets in order and put all elements back into the original array.
 */
-
+// The average time complexity for Bucket Sort is O(n + k).
+// The worst time complexity is O(n²).
+// The space complexity for Bucket Sort is O(n+k).
 package main
 
 import (
