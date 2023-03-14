@@ -2,6 +2,7 @@
 // Program Author : Abhisek Kumar Gupta
 
 package main
+
 import "fmt"
 
 func reverse(s string) string {
@@ -11,6 +12,7 @@ func reverse(s string) string {
 	for i, j := 0, len(chars)-1; i < j; i, j = i+1, j-1 {
 		chars[i], chars[j] = chars[j], chars[i]
 	}
+	// cast chars to string
 	return string(chars)
 }
 
