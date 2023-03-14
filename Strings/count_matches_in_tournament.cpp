@@ -28,17 +28,17 @@
     1 <= n <= 200
 */
 
-// In case of even simply divide number by 2 ad add result
-// In case of add simply divide number by 2 ad add result and increase n by 1
 class Solution {
 public:
     int numberOfMatches(int n) {
         int res = 0;
         while(n > 1){
+            // In case of even simply divide number by 2 ad add result
             if(n % 2 == 0){
                 n = n / 2;
                 res += n;
             }    
+            // In case of odd simply divide number by 2 ad add result and increase n by 1
             if(n % 2 == 1){
                 n = n / 2;
                 res += n;
