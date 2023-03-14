@@ -18,17 +18,22 @@
  * @param {string[]} strs
  * @return {string[][]}
 */
-function groupAnagrams(strs) {
-    let result = {}
+// Approach:
+// 1. Go through the list of words
+// 2. Sort each word. All annograms of the word would look the same being sorted.
+// 3. Find matching bucket in map and put the word to it
+// 4. When finished, convert the map to vector of vectors and return it
 
-    for (let i of strs){
-        let anagram = i.split("").sort().join("");
-        if (result[anagram]) {
-            result[anagram].push(i);
-        } else {
-            result[anagram] = [i];
-        }
+function groupAnagrams(strs) {
+  let result = {};
+
+  for (let i of strs) {
+    let anagram = i.split("").sort().join("");
+    if (result[anagram]) {
+      result[anagram].push(i);
+    } else {
+      result[anagram] = [i];
     }
- return Object.values(result); 
-         
-};
+  }
+  return Object.values(result);
+}

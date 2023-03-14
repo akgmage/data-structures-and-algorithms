@@ -17,6 +17,11 @@ Example 3:
 Input: strs = ["a"]
 Output: [["a"]]
 */
+// Approach:
+// 1. Go through the list of words
+// 2. Sort each word. All annograms of the word would look the same being sorted.
+// 3. Find matching bucket in map and put the word to it
+// 4. When finished, convert the map to vector of vectors and return it
 
 package Strings;
 
