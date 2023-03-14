@@ -23,21 +23,21 @@ class Solution:
     def __init__(self):
         self.max_length = -1
         self.max_palindrome = ""
-    def CheckLeftRight(self,s,index,value):
-        low,high = index,index
-        if(value=="even"):
-            high=index+1
-        while(low>=0 and high<len(s) and s[low]==s[high]):
-            if(high-low+1>self.max_length):
-                self.max_length = high-low+1
-                self.max_palindrome = s[low:high+1]
-            low-=1
-            high+=1
+    def CheckLeftRight(self, s, index, value):
+        low, high = index, index
+        if(value == "even"):
+            high = index + 1
+        while(low >= 0 and high < len(s) and s[low] == s[high]):
+            if(high - low + 1 > self.max_length):
+                self.max_length = high - low + 1
+                self.max_palindrome = s[low:high + 1]
+            low -= 1
+            high += 1
 
     def longestPalindrome(self, s: str) -> str:
         for i in range(len(s)):
             #odd values
-            Solution.CheckLeftRight(self,s,i,"odd")
+            Solution.CheckLeftRight(self, s, i, "odd")
             #Even values
-            Solution.CheckLeftRight(self,s,i,"even")
+            Solution.CheckLeftRight(self, s, i, "even")
         return self.max_palindrome
