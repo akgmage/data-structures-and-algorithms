@@ -56,12 +56,13 @@ public class CheckAnagrams {
 
         int[] freq1 = new int[26];
         int[] freq2 = new int[26];
-
+        // build freq array and store count for each letter
         for (int i = 0; i < string1.length(); i++) {
             freq1[string1.charAt(i) - 'a']++;
             freq2[string2.charAt(i) - 'a']++;
         }
-
+        // compare if count of each letter 
+        // if mismatch occurs then return 0
         for (int i = 0; i < 26; i++) {
             if (freq1[i] != freq2[i]) return 0;
         }
