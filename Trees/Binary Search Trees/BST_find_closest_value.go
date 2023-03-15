@@ -3,6 +3,7 @@
   value and returns the closest value to that target value contained in the BST.
 
 Sample Input : 12
+
   		 10
        /     \
       5      15
@@ -11,7 +12,12 @@ Sample Input : 12
  /           \
 1            14
 Output : 13
-  */
+
+	Time and Space complexity:
+
+	Average: O(log(n)) time | O(1) space - where n is the number of nodes in the BST
+	Worst: O(n) time | O(1) space - where n is the number of nodes in the BST
+*/
 package main
 
 type BST struct {
