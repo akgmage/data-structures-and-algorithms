@@ -6,6 +6,16 @@
   branch is a path of nodes in a tree that starts at the root node and ends at
   any leaf node.
 
+  Sample INput:
+           1
+        /     \
+       2       3
+     /   \    /  \
+    4     5  6    7
+  /   \  /
+ 8    9 10
+
+ Output: [15, 16, 18, 10, 11] length of output will be always total number of leaves
 */
 package main
 
