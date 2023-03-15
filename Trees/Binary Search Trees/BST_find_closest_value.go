@@ -28,7 +28,7 @@ type BST struct {
 }
 
 func (tree *BST) FindClosestValue(target int) int {
-	// Write your code here.
+	// call helper function
     return tree.findClosestValue(target, tree.Value)
 }
 
@@ -36,9 +36,11 @@ func (tree *BST) findClosestValue(target, closest int) int {
     if absDiff(target, closest) > absDiff(target, tree.Value) {
         closest = tree.Value
     }
+	// look for target in left sub tree
     if target < tree.Value && tree.Left != nil {
         return tree.Left.findClosestValue(target, closest)
     } else if target > tree.Value && tree.Right != nil {
+		// // look for target in right sub tree
         return tree.Right.findClosestValue(target, closest)
     }
     return closest
