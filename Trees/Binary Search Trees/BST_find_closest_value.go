@@ -1,15 +1,17 @@
 /*
   Write a function that takes in a Binary Search Tree (BST) and a target integer
   value and returns the closest value to that target value contained in the BST.
-Sample Input : 
-  10
+
+Sample Input : 12
+  		 10
        /     \
       5      15
     /   \   /   \
    2     5 13   22
  /           \
 1            14
-*/
+Output : 13
+  */
 package main
 
 type BST struct {
