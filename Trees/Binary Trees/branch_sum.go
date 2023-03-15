@@ -16,6 +16,7 @@
  8    9 10
 
  Output: [15, 16, 18, 10, 11] length of output will be always total number of leaves
+ Time and Space complexity : O(n) time | O(n) space - where n is the number of nodes in the Binary Tree
 */
 package main
 
@@ -30,7 +31,15 @@ func BranchSums(root *BinaryTree) []int {
     calculateBranchSums(root, 0, &sums)
     return sums
 }
+/*
 
+As you recursively traverse the tree, if you reach a leaf node 
+(a node with no "left" or "right" Binary Tree nodes), 
+add the relevant running sum that you've calculated to a list of 
+sums (which you'll also have to pass to the recursive function). 
+If you reach a node that isn't a leaf node, keep recursively traversing 
+its children nodes, passing the correctly updated running sum to them.
+*/
 func calculateBranchSums(node *BinaryTree, runningSum int, sums *[]int) {
     if node == nil {
         return
