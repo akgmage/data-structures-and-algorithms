@@ -305,7 +305,7 @@ func InvertTree(root *BinaryTreeNode) *BinaryTreeNode {
 	return root
 }
 
-// Time Complexity: O(􀝊). Space Complexity: O(􀝊).
+// Time Complexity: O(n). Space Complexity: O(n).
 // Method2 : swap pointers
 func InvertTree2(root *BinaryTreeNode) *BinaryTreeNode {
 	if root == nil {
