@@ -325,7 +325,7 @@ func DeleteTree(root *BinaryTreeNode) *BinaryTreeNode {
 	if root == nil {
 		return nil
 	}
-	// deleet both subtrees
+	// delete both subtrees
 	root.left = DeleteTree(root.left)
 	root.right = DeleteTree(root.right)
 	// delete current node after deleting subtrees
