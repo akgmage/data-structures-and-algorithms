@@ -1,3 +1,4 @@
+// Search an element in Binary tree
 package main
 
 type BinaryTreeNode struct {
