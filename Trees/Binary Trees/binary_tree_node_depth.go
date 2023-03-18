@@ -15,6 +15,17 @@
 8     9
   Output: 16
 */
+
+/*
+	The depth of any node in the tree is equal to the depth of its parent node plus 1.
+	By starting at the root node whose depth is 0, you can pass down to every node in
+	the tree its respective depth, and you can implement the algorithm that does this
+	and that sums up all of the depths either recursively or iteratively.
+
+	Time and Space complexity
+	Average case: when the tree is balanced
+	O(n) time | O(h) space - where n is the number of nodes in the Binary Tree and h is the height of the Binary Tree
+*/
 package main
 
 type BinaryTree struct {
