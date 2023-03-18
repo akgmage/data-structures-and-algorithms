@@ -25,6 +25,8 @@
 	add the relevant running sum that you've calculated to a list of sums (which you'll also have to pass to the recursive
 	function). If you reach a node that isn't a leaf node, keep recursively traversing its children nodes,
 	passing the correctly updated running sum to them.
+
+	Time and Space complexity : O(n) time | O(n) space - where n is the number of nodes in the Binary Tree
 */
 package main
 
