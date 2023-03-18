@@ -3,7 +3,17 @@
   node's depth.
 
   Write a function that takes in a Binary Tree and returns the sum of its nodes'
-  depths. 
+  depths.
+
+  Sample Input:
+          1
+       /     \
+      2       3
+    /   \   /   \
+   4     5 6     7
+ /   \
+8     9
+  Output: 16
 */
 package main
 
@@ -14,7 +24,6 @@ type BinaryTree struct {
 
 func NodeDepths(root *BinaryTree) int {
 	return nodeDepthHelper(root, 0)
-	return -1
 }
 
 func nodeDepthHelper(root *BinaryTree, depth int) int {
