@@ -12,6 +12,13 @@
 🌈 Everyone is welcome!
 You can join the fun by following our [contributing guide](https://github.com/akgmage/data-structures-and-algorithms/blob/main/CONTRIBUTING.md).
 
+#Intro
+
+The design of algorithms consists of problem solving and mathematical
+thinking. Skills for analyzing problems and solving them creatively are needed.
+An algorithm for solving a problem has to be both correct and efficient, and the
+core of the problem is often about inventing an efficient algorithm.
+
 # Sorting
 
 Sorting a list of items into ascending or descending order can help either a human or a computer find items on that list quickly, perhaps using an algorithm like binary search. Most Programming languages have built-in sorting methods. It works on arrays of numbers, or even on arrays of strings:
