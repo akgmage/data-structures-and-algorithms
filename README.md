@@ -21,7 +21,17 @@ core of the problem is often about inventing an efficient algorithm.
 
 # Sorting
 
-Sorting a list of items into ascending or descending order can help either a human or a computer find items on that list quickly, perhaps using an algorithm like binary search. Most Programming languages have built-in sorting methods. It works on arrays of numbers, or even on arrays of strings:
+Sorting is a fundamental algorithm design problem. Many efficient algorithms
+use sorting as a subroutine, because it is often easier to process data if the
+elements are in a sorted order.
+For example, the problem ”does an array contain two equal elements?” is easy
+to solve using sorting. If the array contains two equal elements, they will be next
+to each other after sorting, so it is easy to find them. Also, the problem ”what is
+the most frequent element in an array?” can be solved similarly.
+There are many algorithms for sorting, and they are also good examples of
+how to apply different algorithm design techniques. The efficient general sorting
+algorithms work in O(nlogn) time, and many algorithms that use sorting as a
+subroutine also have this time complexity.
 
 ```
 heights = [6, 5, 4, 5, 2, 3];
