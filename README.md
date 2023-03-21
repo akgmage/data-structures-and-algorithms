@@ -72,6 +72,30 @@ possible to perform the search much faster, because the order of the elements in
 the array guides the search. The following binary search algorithm efficiently
 searches for an element in a sorted array in O(logn) time.
 
+## Method 1
+
+The usual way to implement binary search resembles looking for a word in a
+dictionary. The search maintains an active region in the array, which initially
+contains all array elements. Then, a number of steps is performed, each of which
+halves the size of the region.
+At each step, the search checks the middle element of the active region. If
+the middle element is the target element, the search terminates. Otherwise, the
+search recursively continues to the left or right half of the region, depending on
+the value of the middle element.
+The above idea can be implemented as follows:
+
+```
+int a = 0, b = n-1;
+while (a <= b) {
+  int k = (a+b)/2;
+  if (array[k] == x) {
+    // x found at index k
+  }
+  if (array[k] > x) b = k-1;
+  else a = k+1;
+}
+```
+
 # Pattern 1: Two Pointers
 
 As the name suggests, the two pointers pattern uses two pointers to iterate over an array or list until the conditions of the problem are satisfied. This is useful because it allows us to keep track of the values of two different indexes in a single iteration. Whenever there’s a requirement to find two data elements in an array that satisfy a certain condition, the two pointers pattern should be the first strategy to come to mind.
