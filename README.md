@@ -49,6 +49,29 @@ Even though languages have built-in sorting method, sorting is a great example o
 - Merge Sort [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/merge_sort.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/merge_sort.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/merge_sort.java) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/merge_sort.js) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/merge_sort.py)
 - Quick Sort [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/quick_sort.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/quick_sort.java)
 
+# Binary Search
+
+A general method for searching for an element in an array is to use a for loop
+that iterates through the elements of the array. For example, the following code
+searches for an element x in an array:
+
+```
+for (int i = 0; i < n; i++) {
+  if (array[i] == x) {
+    // x found at index i
+  }
+}
+```
+
+The time complexity of this approach is O(n), because in the worst case, it
+is necessary to check all elements of the array. If the order of the elements is
+arbitrary, this is also the best possible approach, because there is no additional
+information available where in the array we should search for the element x.
+However, if the array is sorted, the situation is different. In this case it is
+possible to perform the search much faster, because the order of the elements in
+the array guides the search. The following binary search algorithm efficiently
+searches for an element in a sorted array in O(logn) time.
+
 # Pattern 1: Two Pointers
 
 As the name suggests, the two pointers pattern uses two pointers to iterate over an array or list until the conditions of the problem are satisfied. This is useful because it allows us to keep track of the values of two different indexes in a single iteration. Whenever there’s a requirement to find two data elements in an array that satisfy a certain condition, the two pointers pattern should be the first strategy to come to mind.
