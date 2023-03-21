@@ -10,7 +10,7 @@
 # Implementation of well known Data Structures and Algorithms
 
 🌈 Everyone is welcome!
-You can join the fun by following our [contributing](https://github.com/akgmage/data-structures-and-algorithms/blob/main/CONTRIBUTING.md) guide.
+You can join the fun by following our [contributing guide](https://github.com/akgmage/data-structures-and-algorithms/blob/main/CONTRIBUTING.md).
 
 # Sorting
 
