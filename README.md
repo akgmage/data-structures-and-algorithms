@@ -111,6 +111,10 @@ while (a <= b) {
 }
 ```
 
+## Example
+
+[Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Binary%20Search/binary_search_iterative.go) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Binary%20Search/binary_search.py)
+
 ## Method 2
 
 An alternative method to implement binary search is based on an efficient way to
