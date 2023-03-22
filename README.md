@@ -12,12 +12,23 @@
 🌈 Everyone is welcome!
 You can join the fun by following our [contributing guide](https://github.com/akgmage/data-structures-and-algorithms/blob/main/CONTRIBUTING.md).
 
-#Intro
+# Intro
 
 The design of algorithms consists of problem solving and mathematical
 thinking. Skills for analyzing problems and solving them creatively are needed.
 An algorithm for solving a problem has to be both correct and efficient, and the
 core of the problem is often about inventing an efficient algorithm.
+
+# Data structures
+
+A data structure is a way to store data in the memory of a computer. It is
+important to choose an appropriate data structure for a problem, because each
+data structure has its own advantages and disadvantages. The crucial question
+is: which operations are efficient in the chosen data structure?
+
+- Dynamic arrays : A dynamic array is an array whose size can be changed during the execution of the program.
+- Set structures : A set is a data structure that maintains a collection of elements. The basic operations of sets are element insertion, search and removal.
+- Map structures : A map is a generalized array that consists of key-value-pairs. While the keys in an ordinary array are always the consecutive integers 0,1,...,n-1, where n is the size of the array, the keys in a map can be of any data type and they do not have to be consecutive values.
 
 # Sorting
 
