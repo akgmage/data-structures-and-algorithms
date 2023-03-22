@@ -96,6 +96,31 @@ while (a <= b) {
 }
 ```
 
+## Method 2
+
+An alternative method to implement binary search is based on an efficient way to
+iterate through the elements of the array. The idea is to make jumps and slow
+the speed when we get closer to the target element.
+The search goes through the array from left to right, and the initial jump
+length is n/2. At each step, the jump length will be halved: first n/4, then n/8,
+n/16, etc., until finally the length is 1. After the jumps, either the target element
+has been found or we know that it does not appear in the array.
+The following code implements the above idea:
+
+```
+int k = 0;
+for (int b = n/2; b >= 1; b /= 2) {
+  while (k+b < n && array[k+b] <= x) k += b;
+}
+if (array[k] == x) {
+  // x found at index k
+}
+```
+
+During the search, the variable b contains the current jump length. The
+time complexity of the algorithm is O(logn), because the code in the while loop is
+performed at most twice for each jump length.
+
 # Pattern 1: Two Pointers
 
 As the name suggests, the two pointers pattern uses two pointers to iterate over an array or list until the conditions of the problem are satisfied. This is useful because it allows us to keep track of the values of two different indexes in a single iteration. Whenever there’s a requirement to find two data elements in an array that satisfy a certain condition, the two pointers pattern should be the first strategy to come to mind.
