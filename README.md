@@ -140,6 +140,17 @@ During the search, the variable b contains the current jump length. The
 time complexity of the algorithm is O(logn), because the code in the while loop is
 performed at most twice for each jump length.
 
+# Greedy algorithms
+
+A greedy algorithm constructs a solution to the problem by always making a
+choice that looks the best at the moment. A greedy algorithm never takes back
+its choices, but directly constructs the final solution. For this reason, greedy
+algorithms are usually very efficient.
+The difficulty in designing greedy algorithms is to find a greedy strategy that
+always produces an optimal solution to the problem. The locally optimal choices
+in a greedy algorithm should also be globally optimal. It is often difficult to argue
+that a greedy algorithm works.
+
 # Pattern 1: Two Pointers
 
 As the name suggests, the two pointers pattern uses two pointers to iterate over an array or list until the conditions of the problem are satisfied. This is useful because it allows us to keep track of the values of two different indexes in a single iteration. Whenever there’s a requirement to find two data elements in an array that satisfy a certain condition, the two pointers pattern should be the first strategy to come to mind.
