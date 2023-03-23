@@ -162,6 +162,28 @@ For example, if the coins are the euro coins (in cents)
 and `n = 520`, we need at least four coins. The optimal solution is to select coins
 `200 + 200 + 100 + 20` whose sum is `520`.
 
+A simple greedy algorithm to the problem always selects the largest possible coin,
+until the required sum of money has been constructed. This algorithm works in
+the example case, because we first select two `200` cent coins, then one `100` cent
+coin and finally one `20` cent coin. But does this algorithm always work?
+It turns out that if the coins are the euro coins, the greedy algorithm always
+works, i.e., it always produces a solution with the fewest possible number of coins.
+The correctness of the algorithm can be shown as follows:
+First, each coin `1, 5, 10, 50 and 100` appears at most once in an optimal
+solution, because if the solution would contain two such coins, we could replace them by one coin and obtain a better solution. For example, if the solution would
+contain coins `5 + 5`, we could replace them by coin 10.
+In the same way, coins 2 and 20 appear at most twice in an optimal solution,
+because we could replace coins `2 + 2 + 2` by coins `5 + 1` and coins `20 + 20 + 20` by
+coins 50 + 10. Moreover, an optimal solution cannot contain coins `2 + 2 + 1` or
+`20 + 20 + 10`, because we could replace them by coins 5 and 50.
+Using these observations, we can show for each coin x that it is not possible
+to optimally construct a sum x or any larger sum by only using coins that are
+smaller than x. For example, `if x = 100`, the largest optimal sum using the smaller
+coins is `50 + 20 + 20 + 5 + 2 + 2 = 99`. Thus, the greedy algorithm that always selects
+the largest coin produces the optimal solution.
+This example shows that it can be difficult to argue that a greedy algorithm
+works, even if the algorithm itself is simple.
+
 # Pattern 1: Two Pointers
 
 As the name suggests, the two pointers pattern uses two pointers to iterate over an array or list until the conditions of the problem are satisfied. This is useful because it allows us to keep track of the values of two different indexes in a single iteration. Whenever there’s a requirement to find two data elements in an array that satisfy a certain condition, the two pointers pattern should be the first strategy to come to mind.
