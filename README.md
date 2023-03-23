@@ -151,6 +151,17 @@ always produces an optimal solution to the problem. The locally optimal choices
 in a greedy algorithm should also be globally optimal. It is often difficult to argue
 that a greedy algorithm works.
 
+## Coin problem
+
+As a first example, we consider a problem where we are given a set of coins and
+our task is to form a sum of money n using the coins. The values of the coins are
+coins = `{c1, c2,..., ck}`, and each coin can be used as many times we want. What
+is the minimum number of coins needed?
+For example, if the coins are the euro coins (in cents)
+`{1,2,5,10,20,50,100,200}`
+and `n = 520`, we need at least four coins. The optimal solution is to select coins
+`200 + 200 + 100 + 20` whose sum is `520`.
+
 # Pattern 1: Two Pointers
 
 As the name suggests, the two pointers pattern uses two pointers to iterate over an array or list until the conditions of the problem are satisfied. This is useful because it allows us to keep track of the values of two different indexes in a single iteration. Whenever there’s a requirement to find two data elements in an array that satisfy a certain condition, the two pointers pattern should be the first strategy to come to mind.
