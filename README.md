@@ -184,6 +184,17 @@ the largest coin produces the optimal solution.
 This example shows that it can be difficult to argue that a greedy algorithm
 works, even if the algorithm itself is simple.
 
+## General case
+
+In the general case, the coin set can contain any coins and the greedy algorithm
+does not necessarily produce an optimal solution.
+We can prove that a greedy algorithm does not work by showing a counterexample
+where the algorithm gives a wrong answer. In this problem we can easily
+find a counterexample: if the coins are `{1,3,4}` and the target sum is `6`, the greedy
+algorithm produces the solution 4 + 1 + 1 while the optimal solution is `3 + 3`.
+It is not known if the general coin problem can be solved using any greedy
+algorithm.
+
 # Pattern 1: Two Pointers
 
 As the name suggests, the two pointers pattern uses two pointers to iterate over an array or list until the conditions of the problem are satisfied. This is useful because it allows us to keep track of the values of two different indexes in a single iteration. Whenever there’s a requirement to find two data elements in an array that satisfy a certain condition, the two pointers pattern should be the first strategy to come to mind.
