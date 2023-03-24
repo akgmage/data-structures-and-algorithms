@@ -26,13 +26,13 @@ important to choose an appropriate data structure for a problem, because each
 data structure has its own advantages and disadvantages. The crucial question
 is: which operations are efficient in the chosen data structure?
 
--   Dynamic arrays : A dynamic array is an array whose size can be changed during the execution of the program.
--   Set structures : A set is a data structure that maintains a collection of elements. The basic operations of sets are element insertion, search and removal.
--   Map structures : A map is a generalized array that consists of key-value-pairs. While the keys in an ordinary array are always the consecutive integers 0,1,...,n-1, where n is the size of the array, the keys in a map can be of any data type and they do not have to be consecutive values.
--   Deque : A deque is a dynamic array whose size can be efficiently changed at both ends of the array. Like a vector, a deque provides the functions push_back and pop_back, but it also includes the functions push_front and pop_front which are not available in a vector.
--   Stack : A stack is a data structure that provides two O(1) time operations: adding an element to the top, and removing an element from the top. It is only possible to access the top element of a stack.
--   Queue : A queue also provides two O(1) time operations: adding an element to the end of the queue, and removing the first element in the queue. It is only possible to access the first and last element of a queue.
--   Priority queue : A priority queue maintains a set of elements. The supported operations are insertion and, depending on the type of the queue, retrieval and removal of either the minimum or maximum element. Insertion and removal take O(logn) time, and retrieval takes O(1) time. While an ordered set efficiently supports all the operations of a priority queue, the benefit of using a priority queue is that it has smaller constant factors. A priority queue is usually implemented using a heap structure that is much simpler than a balanced binary tree used in an ordered set.
+- Dynamic arrays : A dynamic array is an array whose size can be changed during the execution of the program.
+- Set structures : A set is a data structure that maintains a collection of elements. The basic operations of sets are element insertion, search and removal.
+- Map structures : A map is a generalized array that consists of key-value-pairs. While the keys in an ordinary array are always the consecutive integers 0,1,...,n-1, where n is the size of the array, the keys in a map can be of any data type and they do not have to be consecutive values.
+- Deque : A deque is a dynamic array whose size can be efficiently changed at both ends of the array. Like a vector, a deque provides the functions push_back and pop_back, but it also includes the functions push_front and pop_front which are not available in a vector.
+- Stack : A stack is a data structure that provides two O(1) time operations: adding an element to the top, and removing an element from the top. It is only possible to access the top element of a stack.
+- Queue : A queue also provides two O(1) time operations: adding an element to the end of the queue, and removing the first element in the queue. It is only possible to access the first and last element of a queue.
+- Priority queue : A priority queue maintains a set of elements. The supported operations are insertion and, depending on the type of the queue, retrieval and removal of either the minimum or maximum element. Insertion and removal take O(logn) time, and retrieval takes O(1) time. While an ordered set efficiently supports all the operations of a priority queue, the benefit of using a priority queue is that it has smaller constant factors. A priority queue is usually implemented using a heap structure that is much simpler than a balanced binary tree used in an ordered set.
 
 # Sorting
 
@@ -58,11 +58,11 @@ Even though languages have built-in sorting method, sorting is a great example o
 
 ### Well known sorting algorithms
 
--   Bubble Sort [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/bubble_sort.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/bubble_sort.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/bubble_sort.java) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/bubble_sort.js) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/bubble_sort.py)
--   Insertion Sort [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/insertion_sort.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/insertion_sort.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/insertion_sort.java) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/insertion_sort.js) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/insertion_sort.py)
--   Selection Sort [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/selection_sort.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/selection_sort.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/selection_sort.java) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/selection_sort.js) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/selection_sort.py)
--   Merge Sort [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/merge_sort.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/merge_sort.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/merge_sort.java) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/merge_sort.js) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/merge_sort.py)
--   Quick Sort [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/quick_sort.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/quick_sort.java)
+- Bubble Sort [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/bubble_sort.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/bubble_sort.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/bubble_sort.java) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/bubble_sort.js) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/bubble_sort.py)
+- Insertion Sort [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/insertion_sort.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/insertion_sort.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/insertion_sort.java) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/insertion_sort.js) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/insertion_sort.py)
+- Selection Sort [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/selection_sort.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/selection_sort.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/selection_sort.java) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/selection_sort.js) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/selection_sort.py)
+- Merge Sort [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/merge_sort.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/merge_sort.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/merge_sort.java) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/merge_sort.js) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/merge_sort.py)
+- Quick Sort [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/quick_sort.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/sorting/quick_sort.java)
 
 # Binary Search
 
@@ -195,6 +195,13 @@ algorithm produces the solution 4 + 1 + 1 while the optimal solution is `3 + 3`.
 It is not known if the general coin problem can be solved using any greedy
 algorithm.
 
+# Dynamic programming
+
+Dynamic programming is a technique that combines the correctness of complete
+search and the efficiency of greedy algorithms. Dynamic programming can
+be applied if the problem can be divided into overlapping subproblems that can
+be solved independently.
+
 # Pattern 1: Two Pointers
 
 As the name suggests, the two pointers pattern uses two pointers to iterate over an array or list until the conditions of the problem are satisfied. This is useful because it allows us to keep track of the values of two different indexes in a single iteration. Whenever there’s a requirement to find two data elements in an array that satisfy a certain condition, the two pointers pattern should be the first strategy to come to mind.
@@ -203,15 +210,15 @@ The pointers can be used to iterate the data structure in one or both directions
 
 ## Practice problems for two pointers
 
--   Two sum [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.java) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.py)
+- Two sum [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.java) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.py)
 
--   Three Number Sum [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/triplet_sum.go) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/triplet_sum.java) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/triplet_sum.cpp) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/triplet_sum.py) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/triplet_sum.js)
+- Three Number Sum [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/triplet_sum.go) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/triplet_sum.java) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/triplet_sum.cpp) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/triplet_sum.py) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/triplet_sum.js)
 
--   Valid Pallindrome [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/is_pallindrome.go) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/is_%20palindrome.js) [C++](https://github.com/akgmage/data-structures-and-algorithms/tree/main/Strings/is_palindrome.cpp)
+- Valid Pallindrome [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/is_pallindrome.go) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/is_%20palindrome.js) [C++](https://github.com/akgmage/data-structures-and-algorithms/tree/main/Strings/is_palindrome.cpp)
 
--   Reverse Word in a String [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/reverse_word_in_a_string.go) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/reverse_words_in_a_string.js)
+- Reverse Word in a String [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/reverse_word_in_a_string.go) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/reverse_words_in_a_string.js)
 
--   Valid Pallindrome II [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/valid_pallindrome2.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/valid_pallindrome2.cpp)
+- Valid Pallindrome II [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/valid_pallindrome2.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/valid_pallindrome2.cpp)
 
 # Pattern 2: Fast and Slow Pointers
 
@@ -227,12 +234,12 @@ The key idea is that the pointers start at the same location, but they move forw
 
 ## Practice problems for fast and slow pointers
 
--   Linked List cycle detection [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Fast%20and%20Slow%20Pointers/linked_floyds_cycle_detection.cpp)
--   Find middle of Linked List [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Fast%20and%20Slow%20Pointers/linked_list_compute_midpoint.cpp) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Fast%20and%20Slow%20Pointers/linked_list_find_middle.py)
--   Happy Number [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Fast%20and%20Slow%20Pointers/happy_number.go)
--   Pallindrome Linked List [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_pallindrome.cpp)
--   Remove Kth node from end [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_kth_from_end.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_remove_nth_node_from_end.cpp) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/remove_kth_node_from_end.py)
--   Linked List Sort List [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/liniked_list_sort_list.cpp)
+- Linked List cycle detection [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Fast%20and%20Slow%20Pointers/linked_floyds_cycle_detection.cpp)
+- Find middle of Linked List [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Fast%20and%20Slow%20Pointers/linked_list_compute_midpoint.cpp) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Fast%20and%20Slow%20Pointers/linked_list_find_middle.py)
+- Happy Number [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Fast%20and%20Slow%20Pointers/happy_number.go)
+- Pallindrome Linked List [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_pallindrome.cpp)
+- Remove Kth node from end [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_kth_from_end.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_remove_nth_node_from_end.cpp) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/remove_kth_node_from_end.py)
+- Linked List Sort List [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/liniked_list_sort_list.cpp)
 
 # Pattern 3: Sliding Window
 
@@ -248,11 +255,11 @@ Instead, what if we focused on the element entering the window and the one leavi
 
 ## Practice problems for sliding window
 
--   Find Maximum in Sliding Window [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Sliding%20Window/sliding_window_max.java) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Sliding%20Window/sliding_window_max.js) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Sliding%20Window/sliding_window_max.py)
--   Minimum Window Subsequence
--   Repeated DNA Sequences
--   Minimum Window Substring
--   Longest Substring without Repeating Characters [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Sliding%20Window/longest_substring_without_repeating_characters.go)
+- Find Maximum in Sliding Window [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Sliding%20Window/sliding_window_max.java) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Sliding%20Window/sliding_window_max.js) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Sliding%20Window/sliding_window_max.py)
+- Minimum Window Subsequence
+- Repeated DNA Sequences
+- Minimum Window Substring
+- Longest Substring without Repeating Characters [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Sliding%20Window/longest_substring_without_repeating_characters.go)
 
 # Pattern 4: Merge Interval
 
@@ -264,19 +271,19 @@ The key to understanding this pattern and exploiting its power lies in understan
 
 Many problems in the real world use the merge intervals pattern. Let’s look at some examples.
 
--   Display busy schedule: Display the busy hours of a user to other users without revealing the individual meeting slots in a calendar.
+- Display busy schedule: Display the busy hours of a user to other users without revealing the individual meeting slots in a calendar.
 
--   Schedule a new meeting: Add a new meeting to the tentative meeting schedule of a user in such a way that no two meetings overlap each other.
+- Schedule a new meeting: Add a new meeting to the tentative meeting schedule of a user in such a way that no two meetings overlap each other.
 
--   Task scheduling in operating systems (OS): Schedule tasks for the OS based on task priority and the free slots in the machine’s processing schedule.
+- Task scheduling in operating systems (OS): Schedule tasks for the OS based on task priority and the free slots in the machine’s processing schedule.
 
 ## Practice problems for merge intervals
 
--   Merge Intervals
--   Insert Interval
--   Interval List Intersections
--   Employee Free Time
--   Meeting Rooms
+- Merge Intervals
+- Insert Interval
+- Interval List Intersections
+- Employee Free Time
+- Meeting Rooms
 
 # Pattern 5: In-place Reversal of a Linked List
 
@@ -293,12 +300,12 @@ Similarly, for space complexity: the naive approach requires the use of addition
 
 ## Practice problems for in-place reversal of a linked list
 
--   Reverse Linked List [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_reverse.cpp)
--   Reverse Nodes in k-group
--   Reorder List
--   Swapping Nodes in a Linked List
--   Swapping Nodes in Pairs [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_swap_nodes_in_pair.cpp)
--   Reverse Nodes in Even Length Groups
+- Reverse Linked List [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_reverse.cpp)
+- Reverse Nodes in k-group
+- Reorder List
+- Swapping Nodes in a Linked List
+- Swapping Nodes in Pairs [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_swap_nodes_in_pair.cpp)
+- Reverse Nodes in Even Length Groups
 
 # Pattern 6: Two Heaps
 
@@ -312,15 +319,15 @@ There might be cases where we need to find the two largest numbers from two diff
 
 Many problems in the real world use the two heaps pattern. Let’s look at some examples.
 
--   Video streaming: During a user session, there is often a possibility that packet drops and buffering might occur. We want to record the median number of buffering events that might occur in a particular session, which could then be used to improve the user experience.
+- Video streaming: During a user session, there is often a possibility that packet drops and buffering might occur. We want to record the median number of buffering events that might occur in a particular session, which could then be used to improve the user experience.
 
--   Netflix: As part of a demographic study, we’re interested in the median age of our viewers. We want to implement a functionality whereby the median age can be updated efficiently whenever a new user signs up for video streaming.
+- Netflix: As part of a demographic study, we’re interested in the median age of our viewers. We want to implement a functionality whereby the median age can be updated efficiently whenever a new user signs up for video streaming.
 
 ## Practice problems for two heaps
 
--   Maximize Capital
--   Find Median from a data stream
--   Schedule Tasks on minimum machines
+- Maximize Capital
+- Find Median from a data stream
+- Schedule Tasks on minimum machines
 
 # Pattern 7: K-way Merge
 
@@ -336,18 +343,18 @@ Here is what the pattern looks like:
 
 Many problems in the real world use the k-way merge pattern. Let’s look at some examples.
 
--   Merge tweets in twitter feed: Sometimes we need to implement a module that adds a user’s Tweets into an already populated Twitter feed in chronological order.
+- Merge tweets in twitter feed: Sometimes we need to implement a module that adds a user’s Tweets into an already populated Twitter feed in chronological order.
 
--   Used in external sorting procedures: When an algorithm is processing huge amounts of data, it needs to repeatedly fetch it from external storage because RAM capacity is fixed. To overcome the speed limitation of external storage, k-way merges are used in external sorting. Let’s consider a case where we need to perform six merges. A binary merge requires three merge passes while a 6-way merge only requires one pass. K-way merge reduces the number of accesses to external storage, which in turn greatly improves performance when dealing with large amounts of data.
+- Used in external sorting procedures: When an algorithm is processing huge amounts of data, it needs to repeatedly fetch it from external storage because RAM capacity is fixed. To overcome the speed limitation of external storage, k-way merges are used in external sorting. Let’s consider a case where we need to perform six merges. A binary merge requires three merge passes while a 6-way merge only requires one pass. K-way merge reduces the number of accesses to external storage, which in turn greatly improves performance when dealing with large amounts of data.
 
 ## Practice problems for k-way Merge
 
--   Merge Sorted Array
--   Kth smallest number in M sorted list
--   Find K pairs with smallest sums
--   Merge K sorted lists
--   Kth Smallest element in a sorted matrix
--   Median of two sorted arrays
+- Merge Sorted Array
+- Kth smallest number in M sorted list
+- Find K pairs with smallest sums
+- Merge K sorted lists
+- Kth Smallest element in a sorted matrix
+- Median of two sorted arrays
 
 # Pattern 8: Top K Elements
 
@@ -366,15 +373,15 @@ Iterating the complete list takes O(n) time, and the heap takes O(logk) time for
 
 Many problems in the real world use the top K elements pattern. Let’s look at some examples.
 
--   Uber: Select at least the n nearest drivers within the user’s vicinity, avoiding the drivers that are too far away.
+- Uber: Select at least the n nearest drivers within the user’s vicinity, avoiding the drivers that are too far away.
 
--   Stocks: Given the set of IDs of brokers, determine the top K broker’s performance with the frequently repeated IDs in the given data set.
+- Stocks: Given the set of IDs of brokers, determine the top K broker’s performance with the frequently repeated IDs in the given data set.
 
 ## Practice problems for Top K Elements
 
--   Kth largest element in a stream
--   Reorganize string
--   K closest point to origin
--   Top K frequent element
--   Kth largest element in an array
--   Kth smallest element in an BST
+- Kth largest element in a stream
+- Reorganize string
+- K closest point to origin
+- Top K frequent element
+- Kth largest element in an array
+- Kth smallest element in an BST
