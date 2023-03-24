@@ -19,13 +19,13 @@ The pointers can be used to iterate the data structure in one or both directions
 
 ## Practice problems for two pointers
 
-- Two sum [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.java) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.py)
+-   Two sum [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.java) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Hash%20Table/two_sum.py)
 
-- Three Number Sum [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/sum_of_three_values.go) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/sum_of_three_values.js)
+-   Three Number Sum [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/sum_of_three_values.go) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/sum_of_three_values.js)
 
-- Valid Pallindrome [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/is_pallindrome.go) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/is_%20palindrome.js)
+-   Valid Pallindrome [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/is_pallindrome.go) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/is_%20palindrome.js)
 
-- Reverse Word in a String [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/reverse_word_in_a_string.go) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/reverse_word_in_a_string.js)
+-   Reverse Word in a String [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/reverse_word_in_a_string.go) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/reverse_words_in_a_string.js)
 
 # Pattern 2: Fast and Slow Pointers
 
@@ -41,8 +41,8 @@ The key idea is that the pointers start at the same location, but they move forw
 
 ## Practice problems for fast and slow pointers
 
-- Linked List cycle detection [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_floyds_cycle_detection.cpp)
-- Find middle of Linked List [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_compute_midpoint.cpp)
-- Pallindrome Linked List
-- Remove Kth node from end [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_remove_nth_node_from_end.cpp)
-- Linked List Sort List [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/liniked_list_sort_list.cpp)
+-   Linked List cycle detection [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_floyds_cycle_detection.cpp)
+-   Find middle of Linked List [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_compute_midpoint.cpp)
+-   Pallindrome Linked List
+-   Remove Kth node from end [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_remove_nth_node_from_end.cpp)
+-   Linked List Sort List [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/liniked_list_sort_list.cpp)
