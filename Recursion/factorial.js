@@ -1,12 +1,14 @@
-// Program to find factorial till a given number
+// Factorial of an integer
+// Sample Input: 5
+// Output: 120
 function recursiveFactorial(number) {
-    //Base case
-    if (number == 1) {
-        return 1;
-    }
+  //Base case
+  if (number == 1) {
+    return 1;
+  }
 
-    //recursively calling function to get factorial result
-    return number * recursiveFactorial(number - 1);
+  //recursively calling function to get factorial result
+  return number * recursiveFactorial(number - 1);
 }
 
 // Driver code

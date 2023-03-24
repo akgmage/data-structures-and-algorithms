@@ -1,15 +1,16 @@
-#include<bits/stdc++.h>
-using namespace std;
 // Canculate power of x^n
 // Sample Input : 3 2
 // Output : 9
-/* Method 1 Time complexity O(n)
-int power(int x, int n){
+
+#include<bits/stdc++.h>
+using namespace std;
+
+// Method 1 Time complexity O(n)
+int power1(int x, int n){
 	if(n == 0)
 		return 1;
-	return x * power(x, n-1);
+	return x * power1(x, n-1);
 }
-*/
 
 // Method 2 : Time complexity O(log n)
 int power(int x, int n){
