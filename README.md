@@ -202,6 +202,11 @@ search and the efficiency of greedy algorithms. Dynamic programming can
 be applied if the problem can be divided into overlapping subproblems that can
 be solved independently.
 
+There are two uses for dynamic programming:
+
+- Finding an optimal solution: We want to find a solution that is as large as possible or as small as possible.
+- Counting the number of solutions: We want to calculate the total number of possible solutions.
+
 # Pattern 1: Two Pointers
 
 As the name suggests, the two pointers pattern uses two pointers to iterate over an array or list until the conditions of the problem are satisfied. This is useful because it allows us to keep track of the values of two different indexes in a single iteration. Whenever there’s a requirement to find two data elements in an array that satisfy a certain condition, the two pointers pattern should be the first strategy to come to mind.
