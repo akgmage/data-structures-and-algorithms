@@ -207,6 +207,22 @@ There are two uses for dynamic programming:
 - Finding an optimal solution: We want to find a solution that is as large as possible or as small as possible.
 - Counting the number of solutions: We want to calculate the total number of possible solutions.
 
+## Coin problem
+
+We first focus on a problem that we have already seen in Greedy Algorithm Given a set
+of coin values coins = `{c1, c2,..., ck}` and a target sum of money n, our task is to
+form the sum n using as few coins as possible.
+We solved the problem using a greedy algorithm that always
+chooses the largest possible coin. The greedy algorithm works, for example, when
+the coins are the euro coins, but in the general case the greedy algorithm does
+not necessarily produce an optimal solution.
+Now is time to solve the problem efficiently using dynamic programming, so
+that the algorithm works for any coin set. The dynamic programming algorithm
+is based on a recursive function that goes through all possibilities how to form
+the sum, like a brute force algorithm. However, the dynamic programming
+algorithm is efficient because it uses memoization and calculates the answer to
+each subproblem only once.
+
 # Pattern 1: Two Pointers
 
 As the name suggests, the two pointers pattern uses two pointers to iterate over an array or list until the conditions of the problem are satisfied. This is useful because it allows us to keep track of the values of two different indexes in a single iteration. Whenever there’s a requirement to find two data elements in an array that satisfy a certain condition, the two pointers pattern should be the first strategy to come to mind.
