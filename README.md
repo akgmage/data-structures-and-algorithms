@@ -256,6 +256,9 @@ solve(x) = min(solve(x - 1) + 1,
 solve(x - 3) + 1,  
 solve(x - 4) + 1).
 
+The base case of the recursion is solve(0) Æ 0, because no coins are needed to form an empty sum. For example,
+solve(10) = solve(7) + 1 = solve(4) + 2 = solve(0) + 3 = 3.
+
 # Pattern 1: Two Pointers
 
 As the name suggests, the two pointers pattern uses two pointers to iterate over an array or list until the conditions of the problem are satisfied. This is useful because it allows us to keep track of the values of two different indexes in a single iteration. Whenever there’s a requirement to find two data elements in an array that satisfy a certain condition, the two pointers pattern should be the first strategy to come to mind.
