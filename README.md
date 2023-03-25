@@ -256,8 +256,13 @@ solve(x) = min(solve(x - 1) + 1,
 solve(x - 3) + 1,  
 solve(x - 4) + 1).
 
-The base case of the recursion is solve(0) Æ 0, because no coins are needed to form an empty sum. For example,
+The base case of the recursion is solve(0) Æ 0, because no coins are needed to form an empty sum. For example,  
 solve(10) = solve(7) + 1 = solve(4) + 2 = solve(0) + 3 = 3.
+
+Now we are ready to give a general recursive function that calculates the minimum number of coins needed to form a sum x:
+solve(x) = Infinity if x < 0  
+solve(x) = 0 if x == 0  
+solve(x) = min(c --> coins) ==> solve(x - c) + 1, if x > 0
 
 # Pattern 1: Two Pointers
 
