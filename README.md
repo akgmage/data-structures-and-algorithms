@@ -242,6 +242,15 @@ solve(8) = 2
 solve(9) = 3  
 solve(10) = 3
 
+For example, `solve(10) = 3`, because at least 3 coins are needed to form the
+sum `10`. The optimal solution is `3 + 3 + 4 = 10`.
+The essential property of solve is that its values can be recursively calculated
+from its smaller values. The idea is to focus on the first coin that we choose for
+the sum. For example, in the above scenario, the first coin can be either `1, 3
+or 4`. If we first choose coin `1`, the remaining task is to form the sum 9 using
+the minimum number of coins, which is a subproblem of the original problem.
+Of course, the same applies to coins` 3 and 4`.
+
 # Pattern 1: Two Pointers
 
 As the name suggests, the two pointers pattern uses two pointers to iterate over an array or list until the conditions of the problem are satisfied. This is useful because it allows us to keep track of the values of two different indexes in a single iteration. Whenever there’s a requirement to find two data elements in an array that satisfy a certain condition, the two pointers pattern should be the first strategy to come to mind.
