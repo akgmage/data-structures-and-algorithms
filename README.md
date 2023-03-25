@@ -251,6 +251,11 @@ or 4`. If we first choose coin `1`, the remaining task is to form the sum 9 usin
 the minimum number of coins, which is a subproblem of the original problem.
 Of course, the same applies to coins` 3 and 4`.
 
+Thus, we can use the following recursive formula to calculate the minimum number of coins:  
+solve(x) = min(solve(x - 1) + 1,  
+solve(x - 3) + 1,  
+solve(x - 4) + 1).
+
 # Pattern 1: Two Pointers
 
 As the name suggests, the two pointers pattern uses two pointers to iterate over an array or list until the conditions of the problem are satisfied. This is useful because it allows us to keep track of the values of two different indexes in a single iteration. Whenever there’s a requirement to find two data elements in an array that satisfy a certain condition, the two pointers pattern should be the first strategy to come to mind.
