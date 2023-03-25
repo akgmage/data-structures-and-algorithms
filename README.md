@@ -264,6 +264,20 @@ solve(x) = Infinity if x < 0
 solve(x) = 0 if x == 0  
 solve(x) = min(c --> coins) ==> solve(x - c) + 1, if x > 0
 
+Once a recursive function that solves the problem has been found, we can
+directly implement a solution, (the constant INF denotes infinity):
+
+````
+int solve(int x) {
+  if (x < 0) return INF;
+  if (x == 0) return 0;
+  int best = INF;
+  for (auto c : coins) {
+    best = min(best, solve(x-c)+1);
+  }
+  return best;
+}```
+
 # Pattern 1: Two Pointers
 
 As the name suggests, the two pointers pattern uses two pointers to iterate over an array or list until the conditions of the problem are satisfied. This is useful because it allows us to keep track of the values of two different indexes in a single iteration. Whenever there’s a requirement to find two data elements in an array that satisfy a certain condition, the two pointers pattern should be the first strategy to come to mind.
@@ -447,3 +461,4 @@ Many problems in the real world use the top K elements pattern. Let’s look at 
 - Top K frequent element
 - Kth largest element in an array
 - Kth smallest element in an BST
+````
