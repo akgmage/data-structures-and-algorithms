@@ -20,23 +20,21 @@ Output: [-1 0 1 2 3 4 10]
 #include<bits/stdc++.h>
 using namespace std;
 
-void InsertionSort(int A[], int n){
-	int flag = 0;
-	for(int i = 1; i < n; i++){
-		int hole = i;
-		int value = A[i];
-		while(hole > 0 && A[hole-1] > value){
-			A[hole] = A[hole-1];
-			hole = hole - 1;
-		}
-		A[hole] = value;
-	}
-}
+
 int main(){
-	int A[] = {5,9,77,1,2,3,4,5};
-	InsertionSort(A,6);
+	int temp = 0;
+	int array[] = {5,9,77,1,2,3};
+	for (int i = 1; i < 6; i++) {
+        int j = i;
+        while (j > 0 && array[j] < array[j - 1]) {
+           temp = array[j];
+		   array[j] = array[j - 1];
+		   array[j - 1] = temp;
+            j -= 1;
+        }
+    }
 	for(int i = 0; i < 6; i++){
-		cout << A[i] << " ";
+		cout << array[i] << " ";
 	}
 	
 return 0;
