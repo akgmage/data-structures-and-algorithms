@@ -27,14 +27,12 @@ func main() {
 	fmt.Print(a_lst)
 }
 
-func insertion_sort(a_lst []int) {
-	for index := 1; index < len(a_lst); index++ {
-		val := a_lst[index]
-		position := index - 1
-		for 0 <= position && val < a_lst[position] {
-			a_lst[position+1] = a_lst[position]
-			position--
-		}
-		a_lst[position+1] = val
-	}
+func insertion_sort(array []int) {
+	for i := 1; i < len(array); i++ {
+        j := i
+        for j > 0 && array[j] < array[j - 1] {
+            array[j], array[j - 1] = array[j - 1], array[j] 
+            j -= 1
+        }
+    }
 }
