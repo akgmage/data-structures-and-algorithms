@@ -27,14 +27,18 @@ func main() {
 	fmt.Print(a_lst)
 }
 
-func insertion_sort(a_lst []int) {
-	for index := 1; index < len(a_lst); index++ {
-		val := a_lst[index]
-		position := index - 1
-		for 0 <= position && val < a_lst[position] {
-			a_lst[position+1] = a_lst[position]
-			position--
-		}
-		a_lst[position+1] = val
-	}
+/*
+	Divide the input array into two subarrays in place. The first subarray should be sorted at all times
+	and should start with a length of 1, while the second subarray should be unsorted. 
+	Iterate through the unsorted subarray, inserting all of its elements into the sorted subarray 
+	in the correct position by swapping them into place. Eventually, the entire array will be sorted.
+*/
+func insertion_sort(array []int) {
+	for i := 1; i < len(array); i++ {
+        j := i
+        for j > 0 && array[j] < array[j - 1] {
+            array[j], array[j - 1] = array[j - 1], array[j] 
+            j -= 1
+        }
+    }
 }
