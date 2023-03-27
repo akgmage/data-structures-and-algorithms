@@ -48,10 +48,10 @@ how to apply different algorithm design techniques. The efficient general sortin
 algorithms work in O(nlogn) time, and many algorithms that use sorting as a
 subroutine also have this time complexity.
 
-```
+```js
 heights = [6, 5, 4, 5, 2, 3];
 heights.sort();
-Output : [2, 3, 4, 5, 5, 6]
+Output: [2, 3, 4, 5, 5, 6];
 ```
 
 Even though languages have built-in sorting method, sorting is a great example of how there may be many ways to think about the same problem, some perhaps better than others. Understanding sorting is a traditional first step towards mastery of algorithms and computer science.
@@ -70,7 +70,7 @@ A general method for searching for an element in an array is to use a for loop
 that iterates through the elements of the array. For example, the following code
 searches for an element x in an array:
 
-```
+```cpp
 for (int i = 0; i < n; i++) {
   if (array[i] == x) {
     // x found at index i
@@ -99,7 +99,7 @@ search recursively continues to the left or right half of the region, depending 
 the value of the middle element.
 The above idea can be implemented as follows:
 
-```
+```cpp
 int a = 0, b = n-1;
 while (a <= b) {
   int k = (a+b)/2;
