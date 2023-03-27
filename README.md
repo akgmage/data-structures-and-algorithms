@@ -297,7 +297,7 @@ where `ready[x]` indicates whether the value of `solve(x)` has been calculated,
 and if it is, `value[x]` contains this value. The constant `N` has been chosen so that all required values fit in the arrays.  
 Now the function can be efficiently implemented as follows:
 
-```
+```cpp
 int solve(int x) {
   if (x < 0) return INF;
   if (x == 0) return 0;
