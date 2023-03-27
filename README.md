@@ -267,7 +267,7 @@ solve(x) = min(c --> coins) ==> solve(x - c) + 1, if x > 0
 Once a recursive function that solves the problem has been found, we can
 directly implement a solution, (the constant INF denotes infinity):
 
-````
+```
 int solve(int x) {
   if (x < 0) return INF;
   if (x == 0) return 0;
@@ -276,7 +276,15 @@ int solve(int x) {
     best = min(best, solve(x-c)+1);
   }
   return best;
-}```
+}
+```
+
+Still, this function is not efficient, because there may be an exponential number of ways to construct the sum. However, next we will see how to make the function efficient using a technique called memoization.
+
+## Using memoization
+
+The idea of dynamic programming is to use memoization to efficiently calculate values of a recursive function. This means that the values of the function are stored in an array after calculating them. For each parameter, the value of the function is calculated recursively only once, and after this, the value can be
+directly retrieved from the array.
 
 # Pattern 1: Two Pointers
 
@@ -461,4 +469,7 @@ Many problems in the real world use the top K elements pattern. Let’s look at 
 - Top K frequent element
 - Kth largest element in an array
 - Kth smallest element in an BST
-````
+
+```
+
+```
