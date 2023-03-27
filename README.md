@@ -126,7 +126,7 @@ n/16, etc., until finally the length is 1. After the jumps, either the target el
 has been found or we know that it does not appear in the array.
 The following code implements the above idea:
 
-```
+```cpp
 int k = 0;
 for (int b = n/2; b >= 1; b /= 2) {
   while (k+b < n && array[k+b] <= x) k += b;
@@ -267,7 +267,7 @@ solve(x) = min(c --> coins) ==> solve(x - c) + 1, if x > 0
 Once a recursive function that solves the problem has been found, we can
 directly implement a solution, (the constant INF denotes infinity):
 
-```
+```cpp
 int solve(int x) {
   if (x < 0) return INF;
   if (x == 0) return 0;
@@ -288,7 +288,7 @@ directly retrieved from the array.
 
 In this problem, we use arrays
 
-```
+```cpp
 bool ready[N];
 int value[N];
 ```
