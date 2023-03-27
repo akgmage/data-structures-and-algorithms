@@ -286,6 +286,32 @@ Still, this function is not efficient, because there may be an exponential numbe
 The idea of dynamic programming is to use memoization to efficiently calculate values of a recursive function. This means that the values of the function are stored in an array after calculating them. For each parameter, the value of the function is calculated recursively only once, and after this, the value can be
 directly retrieved from the array.
 
+In this problem, we use arrays
+
+```
+bool ready[N];
+int value[N];
+```
+
+where `ready[x]` indicates whether the value of `solve(x)` has been calculated,
+and if it is, `value[x]` contains this value. The constant `N` has been chosen so that all required values fit in the arrays.  
+Now the function can be efficiently implemented as follows:
+
+```
+int solve(int x) {
+  if (x < 0) return INF;
+  if (x == 0) return 0;
+  if (ready[x]) return value[x];
+  int best = INF;
+  for (auto c : coins) {
+    best = min(best, solve(x-c)+1);
+  }
+  value[x] = best;
+  ready[x] = true;
+  return best;
+}
+```
+
 # Pattern 1: Two Pointers
 
 As the name suggests, the two pointers pattern uses two pointers to iterate over an array or list until the conditions of the problem are satisfied. This is useful because it allows us to keep track of the values of two different indexes in a single iteration. Whenever there’s a requirement to find two data elements in an array that satisfy a certain condition, the two pointers pattern should be the first strategy to come to mind.
