@@ -229,18 +229,20 @@ subproblems. In the coin problem, a natural recursive problem is as follows: wha
 is the smallest number of coins required to form a sum x?
 Let solve(x) denote the minimum number of coins required for a sum x.
 The values of the function depend on the values of the coins. For example, if
-`coins = {1,3,4}`, the first values of the function are as follows:  
-solve(0) = 0  
-solve(1) = 1  
-solve(2) = 2  
-solve(3) = 1  
-solve(4) = 1  
-solve(5) = 2  
-solve(6) = 2  
-solve(7) = 2  
-solve(8) = 2  
-solve(9) = 3  
+`coins = {1,3,4}`, the first values of the function are as follows:
+
+```solve(0) = 0
+solve(1) = 1
+solve(2) = 2
+solve(3) = 1
+solve(4) = 1
+solve(5) = 2
+solve(6) = 2
+solve(7) = 2
+solve(8) = 2
+solve(9) = 3
 solve(10) = 3
+```
 
 For example, `solve(10) = 3`, because at least 3 coins are needed to form the
 sum `10`. The optimal solution is `3 + 3 + 4 = 10`.
