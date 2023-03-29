@@ -19,6 +19,10 @@ thinking. Skills for analyzing problems and solving them creatively are needed.
 An algorithm for solving a problem has to be both correct and efficient, and the
 core of the problem is often about inventing an efficient algorithm.
 
+# Time complexity
+
+The efficiency of algorithms is important. Usually, it is easy to design an algorithm that solves the problem slowly, but the real challenge is to invent a fast algorithm. The time complexity of an algorithm estimates how much time the algorithm will use for some input. The idea is to represent the efficiency as a function whose parameter is the size of the input. By calculating the time complexity, we can find out whether the algorithm is fast enough without implementing it.
+
 # Data structures
 
 A data structure is a way to store data in the memory of a computer. It is
