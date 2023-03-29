@@ -81,6 +81,24 @@ for (int i = 1; i <= n; i++) {
 }
 ```
 
+## Phases
+
+If the algorithm consists of consecutive phases, the total time complexity is the largest time complexity of a single phase. The reason for this is that the slowest phase is usually the bottleneck of the code. For example, the following code consists of three phases with time complexities O(n), O(n^2) and O(n). Thus, the total time complexity is O(n^2).
+
+```cpp
+for (int i = 1; i <= n; i++) {
+  // code
+}
+for (int i = 1; i <= n; i++) {
+  for (int j = 1; j <= n; j++) {
+    // code
+  }
+}
+for (int i = 1; i <= n; i++) {
+// code
+}
+```
+
 # Data structures
 
 A data structure is a way to store data in the memory of a computer. It is
