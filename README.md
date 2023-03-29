@@ -49,6 +49,38 @@ for (int i = 1; i <= n; i++) {
 }
 ```
 
+## Order of magnitude
+
+A time complexity does not tell us the exact number of times the code inside a loop is executed, but it only shows the order of magnitude. In the following examples, the code inside the loop is executed 3n, n + 5 and [n / 2] times, but the time complexity of each code is O(n).
+
+```cpp
+for (int i = 1; i <= 3*n; i++) {
+  // code
+}
+```
+
+```cpp
+for (int i = 1; i <= n+5; i++) {
+  // code
+}
+```
+
+```cpp
+for (int i = 1; i <= n; i += 2) {
+// code
+}
+```
+
+As another example, the time complexity of the following code is O(n^2):
+
+```cpp
+for (int i = 1; i <= n; i++) {
+  for (int j = i+1; j <= n; j++) {
+    // code
+  }
+}
+```
+
 # Data structures
 
 A data structure is a way to store data in the memory of a computer. It is
