@@ -23,6 +23,10 @@ core of the problem is often about inventing an efficient algorithm.
 
 The efficiency of algorithms is important. Usually, it is easy to design an algorithm that solves the problem slowly, but the real challenge is to invent a fast algorithm. The time complexity of an algorithm estimates how much time the algorithm will use for some input. The idea is to represent the efficiency as a function whose parameter is the size of the input. By calculating the time complexity, we can find out whether the algorithm is fast enough without implementing it.
 
+## Calculation rules
+
+The time complexity of an algorithm is denoted `O(...)` where the three dots represent some function. Usually, the variable n denotes the input size. For example, if the input is an array of numbers, n will be the size of the array, and if the input is a string, n will be the length of the string.
+
 # Data structures
 
 A data structure is a way to store data in the memory of a computer. It is
