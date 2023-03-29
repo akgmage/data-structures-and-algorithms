@@ -99,6 +99,18 @@ for (int i = 1; i <= n; i++) {
 }
 ```
 
+## Several variables
+
+Sometimes the time complexity depends on several factors. In this case, the time complexity formula contains several variables. For example, the time complexity of the following code is O(nm):
+
+```cpp
+for (int i = 1; i <= n; i++) {
+  for (int j = 1; j <= m; j++) {
+    // code
+  }
+}
+```
+
 # Data structures
 
 A data structure is a way to store data in the memory of a computer. It is
