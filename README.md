@@ -31,6 +31,24 @@ The time complexity of an algorithm is denoted `O(...)` where the three dots rep
 
 A common reason why an algorithm is slow is that it contains many loops that go through the input. The more nested loops the algorithm contains, the slower it is. If there are k nested loops, the time complexity is O(n^k).
 
+For example, the time complexity of the following code is O(n):
+
+```cpp
+for (int i = 1; i <= n; i++) {
+  // code
+}
+```
+
+And the time complexity of the following code is O(n^2):
+
+```cpp
+for (int i = 1; i <= n; i++) {
+  for (int j = 1; j <= n; j++) {
+    // code
+  }
+}
+```
+
 # Data structures
 
 A data structure is a way to store data in the memory of a computer. It is
