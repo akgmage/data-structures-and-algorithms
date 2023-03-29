@@ -27,6 +27,10 @@ The efficiency of algorithms is important. Usually, it is easy to design an algo
 
 The time complexity of an algorithm is denoted `O(...)` where the three dots represent some function. Usually, the variable n denotes the input size. For example, if the input is an array of numbers, n will be the size of the array, and if the input is a string, n will be the length of the string.
 
+## Loops
+
+A common reason why an algorithm is slow is that it contains many loops that go through the input. The more nested loops the algorithm contains, the slower it is. If there are k nested loops, the time complexity is O(n^k).
+
 # Data structures
 
 A data structure is a way to store data in the memory of a computer. It is
