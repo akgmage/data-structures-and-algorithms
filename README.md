@@ -111,6 +111,40 @@ for (int i = 1; i <= n; i++) {
 }
 ```
 
+## Recursion
+
+The time complexity of a recursive function depends on the number of times the function is called and the time complexity of a single call. The total time complexity is the product of these values.  
+For example, consider the following function:
+
+```cpp
+void f(int n) {
+  if (n == 1) return;
+  f(n-1);
+}
+```
+
+The call f(n) causes n function calls, and the time complexity of each call is O(1).
+Thus, the total time complexity is O(n).
+
+As another example, consider the following function:
+
+```cpp
+void g(int n) {
+  if (n == 1) return;
+  g(n-1);
+  g(n-1);
+}
+```
+
+In this case each function call generates two other calls, except for n = 1. Let us see what happens when g is called with parameter n. The following table shows the function calls produced by this single call:
+
+function call number of calls  
+g(n)&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1  
+g(n - 1)&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp; 2  
+g(n - 2)&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp; 4  
+.... &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  
+g(1) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 2^(n - 1)
+
 # Data structures
 
 A data structure is a way to store data in the memory of a computer. It is
