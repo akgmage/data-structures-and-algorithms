@@ -170,6 +170,9 @@ O(2^n) : This time complexity often indicates that the algorithm iterates throug
 
 O(n!) : This time complexity often indicates that the algorithm iterates through all permutations of the input elements. For example, the permutations of {1,2,3} are (1,2,3), (1,3,2), (2,1,3 , (2,3,1), (3,1,2) and (3,2,1).
 
+An algorithm is polynomial if its time complexity is at most O(n^k) where k is a constant. All the above time complexities except O(2^n) and O(n!) are polynomial.  
+In practice, the constant k is usually small, and therefore a polynomial time complexity roughly means that the algorithm is efficient. Still, there are many important problems for which no polynomial algorithm is known, i.e., nobody knows how to solve them efficiently. NP-hard problems are an important set of problems, for which no polynomial algorithm is known.
+
 # Data structures
 
 A data structure is a way to store data in the memory of a computer. It is
