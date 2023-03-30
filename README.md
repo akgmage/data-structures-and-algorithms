@@ -145,6 +145,9 @@ g(n - 2)&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp; 4
 .... &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  
 g(1) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 2^(n - 1)
 
+Based on this, the time complexity is
+1 + 2 + 4 + ... + 2^(n - 1) = 2^(n - 1) = O(2^n).
+
 # Data structures
 
 A data structure is a way to store data in the memory of a computer. It is
