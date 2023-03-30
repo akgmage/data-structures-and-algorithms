@@ -173,6 +173,10 @@ O(n!) : This time complexity often indicates that the algorithm iterates through
 An algorithm is polynomial if its time complexity is at most O(n^k) where k is a constant. All the above time complexities except O(2^n) and O(n!) are polynomial.  
 In practice, the constant k is usually small, and therefore a polynomial time complexity roughly means that the algorithm is efficient. Still, there are many important problems for which no polynomial algorithm is known, i.e., nobody knows how to solve them efficiently. NP-hard problems are an important set of problems, for which no polynomial algorithm is known.
 
+# Estimating efficiency
+
+By calculating the time complexity of an algorithm, it is possible to check, before implementing the algorithm, that it is efficient enough for the problem. The starting point for estimations is the fact that a modern computer can perform some hundreds of millions of operations in a second. For example, assume that the time limit for a problem is one second and the input size is n = 10 ^ 5. If the time complexity is O(n^2), the algorithm will perform about (10 ^ 5) ^ 2 = 10 ^ 10 operations. This should take at least some tens of seconds, so the algorithm seems to be too slow for solving the problem.
+
 # Data structures
 
 A data structure is a way to store data in the memory of a computer. It is
