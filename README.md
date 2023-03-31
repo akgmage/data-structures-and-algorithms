@@ -20,27 +20,21 @@ An algorithm for solving a problem has to be both correct and efficient, and the
 core of the problem is often about inventing an efficient algorithm.
 
 # Time complexity
-
 The efficiency of algorithms is important. Usually, it is easy to design an algorithm that solves the problem slowly, but the real challenge is to invent a fast algorithm. The time complexity of an algorithm estimates how much time the algorithm will use for some input. The idea is to represent the efficiency as a function whose parameter is the size of the input. By calculating the time complexity, we can find out whether the algorithm is fast enough without implementing it.
 
 ## Calculation rules
-
-The time complexity of an algorithm is denoted `O(...)` where the three dots represent some function. Usually, the variable n denotes the input size. For example, if the input is an array of numbers, n will be the size of the array, and if the input is a string, n will be the length of the string.
+The time complexity of an algorithm is denoted ```O(...)``` where the three dots represent some function. Usually, the variable n denotes the input size. For example, if the input is an array of numbers, n will be the size of the array, and if the input is a string, n will be the length of the string.
 
 ## Loops
-
 A common reason why an algorithm is slow is that it contains many loops that go through the input. The more nested loops the algorithm contains, the slower it is. If there are k nested loops, the time complexity is O(n^k).
 
-For example, the time complexity of the following code is O(n):
-
+For example, the time complexity of the following code is O(n):  
 ```cpp
 for (int i = 1; i <= n; i++) {
   // code
 }
 ```
-
-And the time complexity of the following code is O(n^2):
-
+And the time complexity of the following code is O(n^2):  
 ```cpp
 for (int i = 1; i <= n; i++) {
   for (int j = 1; j <= n; j++) {
@@ -48,31 +42,24 @@ for (int i = 1; i <= n; i++) {
   }
 }
 ```
-
 ## Order of magnitude
-
-A time complexity does not tell us the exact number of times the code inside a loop is executed, but it only shows the order of magnitude. In the following examples, the code inside the loop is executed 3n, n + 5 and [n / 2] times, but the time complexity of each code is O(n).
-
+A time complexity does not tell us the exact number of times the code inside a loop is executed, but it only shows the order of magnitude. In the following examples, the code inside the loop is executed 3n, n + 5 and [n / 2] times, but the time complexity of each code is O(n).  
 ```cpp
 for (int i = 1; i <= 3*n; i++) {
   // code
 }
 ```
-
 ```cpp
 for (int i = 1; i <= n+5; i++) {
   // code
 }
 ```
-
 ```cpp
 for (int i = 1; i <= n; i += 2) {
 // code
 }
 ```
-
-As another example, the time complexity of the following code is O(n^2):
-
+As another example, the time complexity of the following code is O(n^2):  
 ```cpp
 for (int i = 1; i <= n; i++) {
   for (int j = i+1; j <= n; j++) {
@@ -82,9 +69,7 @@ for (int i = 1; i <= n; i++) {
 ```
 
 ## Phases
-
-If the algorithm consists of consecutive phases, the total time complexity is the largest time complexity of a single phase. The reason for this is that the slowest phase is usually the bottleneck of the code. For example, the following code consists of three phases with time complexities O(n), O(n^2) and O(n). Thus, the total time complexity is O(n^2).
-
+If the algorithm consists of consecutive phases, the total time complexity is the largest time complexity of a single phase. The reason for this is that the slowest phase is usually the bottleneck of the code. For example, the following code consists of three phases with time complexities O(n), O(n^2) and O(n). Thus, the total time complexity is O(n^2).  
 ```cpp
 for (int i = 1; i <= n; i++) {
   // code
@@ -100,9 +85,7 @@ for (int i = 1; i <= n; i++) {
 ```
 
 ## Several variables
-
-Sometimes the time complexity depends on several factors. In this case, the time complexity formula contains several variables. For example, the time complexity of the following code is O(nm):
-
+Sometimes the time complexity depends on several factors. In this case, the time complexity formula contains several variables. For example, the time complexity of the following code is O(nm):  
 ```cpp
 for (int i = 1; i <= n; i++) {
   for (int j = 1; j <= m; j++) {
@@ -110,24 +93,19 @@ for (int i = 1; i <= n; i++) {
   }
 }
 ```
-
 ## Recursion
-
 The time complexity of a recursive function depends on the number of times the function is called and the time complexity of a single call. The total time complexity is the product of these values.  
-For example, consider the following function:
-
+For example, consider the following function:  
 ```cpp
 void f(int n) {
   if (n == 1) return;
   f(n-1);
 }
 ```
-
 The call f(n) causes n function calls, and the time complexity of each call is O(1).
 Thus, the total time complexity is O(n).
 
 As another example, consider the following function:
-
 ```cpp
 void g(int n) {
   if (n == 1) return;
@@ -135,38 +113,36 @@ void g(int n) {
   g(n-1);
 }
 ```
-
-In this case each function call generates two other calls, except for n = 1. Let us see what happens when g is called with parameter n. The following table shows the function calls produced by this single call:
+In this case each function call generates two other calls, except  for n = 1. Let us see what happens when g is called with parameter n. The following table shows the function calls produced by this single call:
 
 function call number of calls  
-g(n)&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1  
-g(n - 1)&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp; 2  
-g(n - 2)&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp; 4  
-.... &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  
-g(1) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 2^(n - 1)
+g(n)&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;             1  
+g(n - 1)&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;         2  
+g(n - 2)&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;         4  
+....  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  
+g(1) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;            2^(n - 1)    
 
 Based on this, the time complexity is
 1 + 2 + 4 + ... + 2^(n - 1) = 2^(n - 1) = O(2^n).
 
 # Complexity classes
+The following list contains common time complexities of algorithms:  
 
-The following list contains common time complexities of algorithms:
+O(1) : The running time of a constant-time algorithm does not depend on the input size. A typical constant-time algorithm is a direct formula that calculates the answer.  
 
-O(1) : The running time of a constant-time algorithm does not depend on the input size. A typical constant-time algorithm is a direct formula that calculates the answer.
+O(logn) : A logarithmic algorithm often halves the input size at each step. The running time of such an algorithm is logarithmic, because log base 2 n equals the number of times n must be divided by 2 to get 1.  
 
-O(logn) : A logarithmic algorithm often halves the input size at each step. The running time of such an algorithm is logarithmic, because log base 2 n equals the number of times n must be divided by 2 to get 1.
-
-O(√n) : A square root algorithm is slower than O(logn) but faster than O(n). A special property of square roots is that √n = n / √n , so the square root √n lies, in some sense, in the middle of the input.
+O(√n) :  A square root algorithm is slower than O(logn) but faster than O(n). A special property of square roots is that √n = n / √n , so the square root √n lies, in some sense, in the middle of the input.  
 
 O(n) : A linear algorithm goes through the input a constant number of times. This is often the best possible time complexity, because it is usually necessary to access each input element at least once before reporting the answer.
 
-O(nlogn) : This time complexity often indicates that the algorithm sorts the input, because the time complexity of efficient sorting algorithms is O(nlogn). Another possibility is that the algorithm uses a data structure where each operation takes O(logn) time.
+O(nlogn) : This time complexity often indicates that the algorithm sorts the input, because the time complexity of efficient sorting algorithms is O(nlogn). Another possibility is that the algorithm uses a data structure where each operation takes O(logn) time.  
 
-O(n^2) : A quadratic algorithm often contains two nested loops. It is possible to go through all pairs of the input elements in O(n^2) time.
+O(n^2) : A quadratic algorithm often contains two nested loops. It is possible to go through all pairs of the input elements in O(n^2) time.  
 
-O(n^3) : A cubic algorithm often contains three nested loops. It is possible to go through all triplets of the input elements in O(n^3) time.
+O(n^3) : A cubic algorithm often contains three nested loops. It is possible to go through all triplets of the input elements in O(n^3) time.  
 
-O(2^n) : This time complexity often indicates that the algorithm iterates through all subsets of the input elements. For example, the subsets of {1,2,3} are Φ, {1}, {2}, {3}, {1,2}, {1,3}, {2,3} and {1,2,3}.
+O(2^n) : This time complexity often indicates that the algorithm iterates through all subsets of the input elements. For example, the subsets of {1,2,3} are Φ, {1}, {2}, {3}, {1,2}, {1,3}, {2,3} and {1,2,3}.  
 
 O(n!) : This time complexity often indicates that the algorithm iterates through all permutations of the input elements. For example, the permutations of {1,2,3} are (1,2,3), (1,3,2), (2,1,3 , (2,3,1), (3,1,2) and (3,2,1).
 
@@ -174,8 +150,16 @@ An algorithm is polynomial if its time complexity is at most O(n^k) where k is a
 In practice, the constant k is usually small, and therefore a polynomial time complexity roughly means that the algorithm is efficient. Still, there are many important problems for which no polynomial algorithm is known, i.e., nobody knows how to solve them efficiently. NP-hard problems are an important set of problems, for which no polynomial algorithm is known.
 
 # Estimating efficiency
-
 By calculating the time complexity of an algorithm, it is possible to check, before implementing the algorithm, that it is efficient enough for the problem. The starting point for estimations is the fact that a modern computer can perform some hundreds of millions of operations in a second. For example, assume that the time limit for a problem is one second and the input size is n = 10 ^ 5. If the time complexity is O(n^2), the algorithm will perform about (10 ^ 5) ^ 2 = 10 ^ 10 operations. This should take at least some tens of seconds, so the algorithm seems to be too slow for solving the problem.
+
+On the other hand, given the input size, we can try to guess the required time complexity of the algorithm that solves the problem. The following table contains some useful estimates assuming a time limit of one second.   
+input size required time complexity  
+n <=  10&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;O(n!)  
+n <= 20&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; O(2 ^ n)  
+n <= 500&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp; O(n ^ 3)  
+n <= 5000&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; O(n ^ 2)  
+n <= 106&emsp;&emsp;&emsp;&emsp;&emsp; O(nlogn) or O(n)  
+n is large&emsp;&emsp;&emsp;&emsp;&emsp; O(1) or O(logn)  
 
 # Data structures
 
