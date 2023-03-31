@@ -12,6 +12,28 @@
 Contributions are welcome!
 You can join the fun by following our [contributing guide](https://github.com/akgmage/data-structures-and-algorithms/blob/main/CONTRIBUTING.md).
 
+- [Intro]()
+  - [Time complexity]()
+  - [Loops]()
+  - [Phases]()
+  - [Recursion]()
+  - [Complexity classes]()
+  - [Estimating efficiency]()
+  - [Estimating efficiency]()
+- [Data structures]()
+- [Sorting]()
+- [Binary Search]()
+  - [Method 1]()
+  - [Example]()
+  - [Method 2]()
+- [Greedy algorithms]()
+  - [Coin problem]()
+  - [General case]()
+- [Dynamic programming]()
+  - [Coin problem]()
+  - [Using memoization]()
+- [Amortized analysis]()
+
 # Intro
 
 The design of algorithms consists of problem solving and mathematical
