@@ -12,6 +12,8 @@
 Contributions are welcome!
 You can join the fun by following our [contributing guide](https://github.com/akgmage/data-structures-and-algorithms/blob/main/CONTRIBUTING.md).
 
+# Table of contents
+
 - [Intro](https://github.com/akgmage/data-structures-and-algorithms#intro)
   - [Time complexity](https://github.com/akgmage/data-structures-and-algorithms#time-complexity)
   - [Calculation Rules](https://github.com/akgmage/data-structures-and-algorithms#calculation-rules)
@@ -36,6 +38,24 @@ You can join the fun by following our [contributing guide](https://github.com/ak
   - [Coin problem](https://github.com/akgmage/data-structures-and-algorithms#coin-problem-1)
   - [Using memoization](https://github.com/akgmage/data-structures-and-algorithms#using-memoization)
 - [Amortized analysis](https://github.com/akgmage/data-structures-and-algorithms#amortized-analysis)
+- [Pattern 1: Two Pointers]()
+  - [Practice problems for two pointers]()
+- [Pattern 2: Fast and Slow Pointers]()
+  - [Practice problems for fast and slow pointers]()
+- [Pattern 3: Sliding Window]()
+  - [Practice problems for sliding window]()
+- [Pattern 3: Sliding Window]()
+  - [Practice problems for sliding window]()
+- [Pattern 4: Merge Interval]()
+  - [Practice problems for merge intervals]()
+- [Pattern 5: In-place Reversal of a Linked List]()
+  - [Practice problems for in-place reversal of a linked list]()
+- [Pattern 6: Two Heaps]()
+  - [Practice problems for two heaps]()
+- [Pattern 7: K-way Merge]()
+  - [Practice problems for k-way Merge]()
+- [Pattern 8: Top K Elements]()
+  - [Practice problems for Top K Elements]()
 
 # Intro
 
@@ -696,7 +716,3 @@ Many problems in the real world use the top K elements pattern. Let’s look at 
 - Top K frequent element
 - Kth largest element in an array
 - Kth smallest element in an BST
-
-```
-
-```
