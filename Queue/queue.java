@@ -1,6 +1,13 @@
-1. Here's an implementation of a Queue data structure in Java using an array:
+// 1. Queue Using Array:
+// 2. Queue Using LinkedList:
+/*
+    In this implementation, we use an array to store the elements of the queue, and we keep track of the front and rear indices, as well as the current size of the queue.
+    The enqueue operation adds an item to the rear of the queue, while the dequeue operation removes an item from the front of the queue.
+    The isEmpty and isFull methods check whether the queue is empty or full, respectively, while the size method returns the current size of the queue.
 
-    public class Queue {
+*/  
+// 1. Queue Using Array:
+public class Queue {
         private int maxSize;
         private int[] queueArray;
         private int front;
@@ -53,17 +60,20 @@
         public int size() {
             return currentSize;
         }
-    }
+    }    
 
 
-    In this implementation, we use an array to store the elements of the queue, and we keep track of the front and rear indices, as well as the current size of the queue.
-    The enqueue operation adds an item to the rear of the queue, while the dequeue operation removes an item from the front of the queue.
-    The isEmpty and isFull methods check whether the queue is empty or full, respectively, while the size method returns the current size of the queue.
+    
 
-
-2. Here's an example implementation of a Queue data structure in Java using a linked list
-
-    public class Queue<T> {
+// Here's an example implementation of a Queue data structure in Java using a linked list
+/*
+    In this implementation, we use a linked list to store the elements of the queue, and we keep track of the front and rear nodes, as well as the current size of the queue.
+    The enqueue operation adds a new node to the rear of the linked list, while the dequeue operation removes the head node from the linked list.
+    The isEmpty method checks whether the queue is empty, while the size method returns the current size of the queue.
+    Note that this implementation uses generics to allow the queue to store elements of any type.
+*/
+// 2. Queue Using LinkedList:
+public class Queue<T> {
         private Node<T> front;
         private Node<T> rear;
         private int size;
@@ -116,9 +126,5 @@
         public int size() {
             return size;
         }
-    }
+    }    
 
-    In this implementation, we use a linked list to store the elements of the queue, and we keep track of the front and rear nodes, as well as the current size of the queue.
-    The enqueue operation adds a new node to the rear of the linked list, while the dequeue operation removes the head node from the linked list.
-    The isEmpty method checks whether the queue is empty, while the size method returns the current size of the queue.
-    Note that this implementation uses generics to allow the queue to store elements of any type.
