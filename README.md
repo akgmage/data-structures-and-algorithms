@@ -12,6 +12,8 @@
 Contributions are welcome!
 You can join the fun by following our [contributing guide](https://github.com/akgmage/data-structures-and-algorithms/blob/main/CONTRIBUTING.md).
 
+# Table of contents
+
 - [Intro](https://github.com/akgmage/data-structures-and-algorithms#intro)
   - [Time complexity](https://github.com/akgmage/data-structures-and-algorithms#time-complexity)
   - [Calculation Rules](https://github.com/akgmage/data-structures-and-algorithms#calculation-rules)
