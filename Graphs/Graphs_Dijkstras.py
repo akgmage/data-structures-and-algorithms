@@ -1,6 +1,10 @@
 # Graphs Dijkstras Implementation
 # Program Author : Tyler Le
 
+# Dijkstra's algorithm is a graph search algorithm 
+# that solves the single-source shortest path problem 
+# for a graph with non-negative edge weights
+
 def dijkstra(graph, start):
     # Create a dictionary to store the shortest distances to each node
     shortest_distances = {node: float('inf') for node in graph}
