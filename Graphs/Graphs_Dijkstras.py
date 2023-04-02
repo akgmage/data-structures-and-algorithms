@@ -1,3 +1,6 @@
+# Graphs Dijkstras Implementation
+# Program Author : Tyler Le
+
 def dijkstra(graph, start):
     # Create a dictionary to store the shortest distances to each node
     shortest_distances = {node: float('inf') for node in graph}
