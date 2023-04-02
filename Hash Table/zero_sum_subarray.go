@@ -15,6 +15,8 @@ Approach:
   If the entire array does not sum to zero, then you need to check if there are
   any smaller subarrays that sum to zero. For this, it can be helpful to keep
   track of all of the sums from [0, i], where i is every index in the array.
+  
+  After recording all sums from [0, i], what would it mean if a sum is repeated?
 */
 package main
 
