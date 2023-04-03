@@ -9,16 +9,20 @@
 /*
 Approach:
 
-  A good way to approach this problem is to first think of a simpler version.
-  How would you check if the entire array sum is zero?
+    Time and Space complexity : O(n) time | O(n) space - where n is the length of nums
 
-  If the entire array does not sum to zero, then you need to check if there are
-  any smaller subarrays that sum to zero. For this, it can be helpful to keep
-  track of all of the sums from [0, i], where i is every index in the array.
-
-  After recording all sums from [0, i], what would it mean if a sum is repeated?
+    This implementation uses an unordered map to keep track of the prefix sum of the input array nums. 
+    We initialize the map with a key-value pair of 0 and -1, since a prefix sum of 0 indicates that the 
+    subarray from index 0 to -1 (i.e., an empty subarray) has a sum of 0. We then iterate through the 
+    input array nums, adding each element to the running sum sum and checking if the current sum is 
+    already in the map. If it is, then we've found a subarray whose sum is 0, so we add the starting and 
+    ending indices of the subarray to the result vector and break out of the loop.
+    If we reach the end of the loop without finding a zero sum subarray, then we return an empty vector.
+    Note that this implementation assumes that there is only one zero sum subarray in the input array. 
+    If there could be multiple zero sum subarrays, then we would need to modify the implementation to 
+    return all of them.
 */
-// Time and Space complexity : O(n) time | O(n) space - where n is the length of nums
+*/
 package main
 
 import "fmt"
