@@ -9,7 +9,8 @@
 */
 
 // Sample Input :  = ["diaper", "abc", "test", "cba", "repaid"]
-// Output : 
+// Output : [["diaper", "repaid"], ["abc", "cba"]]
+// Time and Space complexity : O(n * m) time | O(n * m) space - where n is the number of words and m is the length of the longest word
 package main
 
 func Semordnilap(words []string) [][]string {
