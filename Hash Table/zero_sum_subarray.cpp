@@ -19,26 +19,42 @@
     If there could be multiple zero sum subarrays, then we would need to modify the implementation to 
     return all of them.
 */
-package main
+#include <iostream>
+#include <unordered_map>
+#include <vector>
 
-import "fmt"
+using namespace std;
 
-func ZeroSumSubarray(nums []int) bool {
-	sums := map[int]bool{0: true}
-    currentSum := 0
-    for _, num := range nums {
-        currentSum += num
-        if _, sumIsInSet := sums[currentSum]; sumIsInSet {
-            return true
+vector<int> zeroSumSubarray(vector<int>& nums) {
+    vector<int> result;
+    unordered_map<int, int> mp;
+    int sum = 0;
+    mp[0] = -1;
+    
+    for (int i = 0; i < nums.size(); i++) {
+        sum += nums[i];
+        if (mp.find(sum) != mp.end()) {
+            result.push_back(mp[sum] + 1);
+            result.push_back(i);
+            break;
         }
-        sums[currentSum] = true
+        mp[sum] = i;
     }
-    return false
+    
+    return result;
 }
 
-func main() {
-	nums := []int{-5, -5, 2, 3, -2}
-	fmt.Println(ZeroSumSubarray(nums))
-	nums = []int{1, 2, 3, 4, 5}
-	fmt.Println(ZeroSumSubarray(nums))
+int main() {
+    vector<int> nums = {4, 2, -3, 1, 6};
+    vector<int> result = zeroSumSubarray(nums);
+    if (result.empty()) {
+        cout << "No zero sum subarray found." << endl;
+    } else {
+        cout << "Zero sum subarray found: ";
+        for (int i = result[0]; i <= result[1]; i++) {
+            cout << nums[i] << " ";
+        }
+        cout << endl;
+    }
+    return 0;
 }
