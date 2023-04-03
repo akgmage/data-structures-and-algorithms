@@ -7,6 +7,9 @@
 	words "diaper" and "repaid" are a semordnilap pair, as are the words
 	"palindromes" and "semordnilap".
 */
+
+// Sample Input :  = ["diaper", "abc", "test", "cba", "repaid"]
+// Output : 
 package main
 
 func Semordnilap(words []string) [][]string {
