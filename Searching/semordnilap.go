@@ -15,10 +15,14 @@ package main
 
 func Semordnilap(words []string) [][]string {
 	result := [][]string{}
+	// crete word set
     wordSet := make(map[string]bool)
     for _, word := range words {
         wordSet[word] = true
     }
+	
+	// After creating the set of words, try iterating through the original array. For
+	// each word, can you check if its semordnilap pair is in the word list
     for _, word := range words {
         reverse := reverse(word)
         if _, wordInSet := wordSet[reverse]; wordInSet && word != reverse {
