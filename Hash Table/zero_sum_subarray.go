@@ -5,12 +5,9 @@
 	Sample Input :  = [-5, -5, 2, 3, -2]
 	Output : True
 	The subarray [-5, 2, 3] has a sum of 0
-*/
-/*
-Approach:
 
+    Approach:
     Time and Space complexity : O(n) time | O(n) space - where n is the length of nums
-
     This implementation uses an unordered map to keep track of the prefix sum of the input array nums. 
     We initialize the map with a key-value pair of 0 and -1, since a prefix sum of 0 indicates that the 
     subarray from index 0 to -1 (i.e., an empty subarray) has a sum of 0. We then iterate through the 
@@ -21,7 +18,6 @@ Approach:
     Note that this implementation assumes that there is only one zero sum subarray in the input array. 
     If there could be multiple zero sum subarrays, then we would need to modify the implementation to 
     return all of them.
-*/
 */
 package main
 
