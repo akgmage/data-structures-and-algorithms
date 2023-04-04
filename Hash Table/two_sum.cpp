@@ -7,29 +7,48 @@
   Sample Input: [2, 1, 3, -1, 11, 5, 4, 0] Target: 10
   Output: [-1 11]
 */
-// Two Pointer approach
-// sort the given array, set i as initial index and j as last
-// add element at i and j and compate with target, if it matches then return
-// if element is greater then target decrease index of j by 1
-// if element is lesser then target increase index of i by 1
-class Solution {
-public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        unordered_map<int, int> mp;
-        vector<int> result; // result vector
-        for(int i = 0; i < nums.size(); i++){
-            // lets say first element in our array is 3, and target sum is 10
-            // then we will look for 7 in our map, if its present then we simply return 7 and 3 
-            int to_find = target - nums[i];
-            // if the required value is found then store result
-            if(mp.find(to_find) != mp.end()){
-                result.push_back(mp[to_find]);
-                result.push_back(i);
-                return result;
-            }
-            // keep track of what value in array we have seen so far
-            mp[nums[i]] = i;
+#include <iostream>
+#include <unordered_map>
+#include <vector>
+
+std::vector<int> twoNumberSum(std::vector<int>& nums, int target) {
+    // Create an unordered_map to store the indices of the elements in the vector
+    std::unordered_map<int, int> map;
+    
+    // Loop through the vector
+    for (int i = 0; i < nums.size(); i++) {
+        // Calculate the complement of the current element with respect to the target sum
+        int complement = target - nums[i];
+        
+        // Check if the complement is already in the map
+        if (map.count(complement) > 0) {
+            // If the complement is in the map, return the indices of the two elements that sum up to the target
+            return { map[complement], i };
         }
-        return result;
+        
+        // If the complement is not in the map, add the current element and its index to the map
+        map[nums[i]] = i;
     }
-};
+    
+    // If no two elements sum up to the target, return an empty vector
+    return {};
+}
+
+int main() {
+    // Example usage
+    std::vector<int> nums = { 2, 7, 11, 15 };
+    int target = 9;
+    std::vector<int> result = twoNumberSum(nums, target);
+    
+    if (result.size() > 0) {
+        std::cout << "Indices of the two numbers that sum up to " << target << ": ";
+        for (int i : result) {
+            std::cout << i << " ";
+        }
+        std::cout << std::endl;
+    } else {
+        std::cout << "No two numbers found that sum up to " << target << "." << std::endl;
+    }
+    
+    return 0;
+}
