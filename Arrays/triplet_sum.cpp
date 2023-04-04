@@ -7,7 +7,17 @@ Return TRUE if three such integers are found in the array. Otherwise, return FAL
 #include <iostream>
 #include <vector>
 #include <algorithm>
-
+/*
+    This implementation uses the two pointer technique to find all triplets in the input array that sum up to the target sum. 
+    We first sort the input array in non-decreasing order to simplify the process of finding triplets. We then loop through 
+    the array and use two pointers, one starting from the left and one starting from the right, to find triplets that sum up 
+    to the target sum. For each iteration of the loop, we set the left pointer to the index immediately to the right of the 
+    current index, and the right pointer to the index of the last element in the array. We then move the left and right pointers 
+    towards the center, checking at each step whether the triplet formed by the current indices sums up to the target sum. 
+    If it does, we add the triplet to the result vector and continue searching for other triplets. 
+    If the sum is less than the target sum, we move the left pointer towards the center to find larger numbers. 
+    If the sum is greater than the target sum, we move the right pointer towards the center to find smaller numbers.
+*/
 std::vector<std::vector<int>> threeNumberSum(std::vector<int>& nums, int targetSum) {
     // Sort the input array in non-decreasing order
     std::sort(nums.begin(), nums.end());

@@ -8,6 +8,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+We sort the input array in non-decreasing order using the Arrays.sort() method, and then loop through 
+the array using a for loop. We use two pointers, one starting from the left and one starting from the right, 
+to find triplets that sum up to the target sum. For each iteration of the loop, we set the left pointer to 
+the index immediately to the right of the current index, and the right pointer to the index of the last 
+element in the array. We then move the left and right pointers towards the center, checking at each step 
+whether the triplet formed by the current indices sums up to the target sum. If it does, we add the triplet 
+to the result list and continue searching for other triplets. If the sum is less than the target sum, we 
+move the left pointer towards the center to find larger numbers. If the sum is greater than the target 
+sum, we move the right pointer towards the center to find smaller numbers.
+Finally, we print out the result list using a nested for loop to iterate through each triplet and each element in each triplet.
+*/
 public class ThreeNumberSum {
 
     public static List<List<Integer>> threeNumberSum(int[] nums, int targetSum) {
