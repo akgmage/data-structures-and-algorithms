@@ -1,20 +1,15 @@
-# Valid Palindrome
-'''
-    1 The isPalindrome() function takes a string s as input.
-    2 The first line of the function converts the string to lowercase and 
-      removes all non-alphanumeric characters. This is achieved using a list comprehension, 
-      where each character in s is checked if it is alphanumeric. 
-      If it is, it is added to a new string, otherwise it is ignored. 
-      The resulting string only contains alphanumeric characters in lowercase.
-    3 We then loop through the string from the beginning to the middle character 
-      (the // operator divides the length of the string by 2 and rounds down to the nearest integer). 
-      For each character, we compare it to its corresponding character from the end of the string 
-      (i.e., the len(s) - i - 1-th character), to check if they are the same.
-    4 If at any point we find two characters that are not the same, we know that the string is not a 
-      palindrome and return False.
-    5 If we complete the loop without finding any mismatches, we know that the string is a palindrome 
-      and return True.
-'''
+/* Valid Palindrome
+
+1 We define a method isPalindrome that takes a String argument s and returns a boolean value indicating whether the string is a palindrome or not.
+2 We initialize two variables left and right to point to the beginning and end of the string respectively.
+3 We enter a while loop that continues until left is less than right.
+4 If the character at s[left] is not a letter or digit, we increment left.
+5 If the character at s[right] is not a letter or digit, we decrement right.
+6 If the characters at s[left] and s[right] are not equal, we return false as the string is not a palindrome.
+7 If the characters are equal, we increment left and decrement right.
+8 If the while loop completes without finding a mismatched pair of characters, we return true as the string is a palindrome.
+
+*/
 public static boolean isPalindrome(String s) {
     int left = 0, right = s.length() - 1;
     while (left < right) {
