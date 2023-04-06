@@ -1,4 +1,13 @@
 // Implement Queue data structure in C++
+/*
+    In this implementation, the Queue class has private member variables front, rear, and arr to keep track of the front and rear 
+    indices of the queue and the elements in the queue, respectively. The class also has public member functions isFull(), isEmpty(), 
+    enqueue(), dequeue(), peek(), and print() for checking if the queue is full or empty, adding elements to the rear of the queue, 
+    removing elements from the front of the queue, peeking at the element at the front of the queue, and printing the elements in the 
+    queue, respectively. The main() function demonstrates how to use the Queue class by creating a new queue object q, adding three 
+    elements to the queue, removing one element from the front of the queue, peeking at the element at the front of the queue, and 
+    printing the elements in the queue
+*/
 #include <iostream>
 using namespace std;
 
