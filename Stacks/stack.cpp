@@ -1,3 +1,12 @@
+// Implemenmtation of  stack data structure
+/*
+    This implementation creates a class Stack that has a private integer top to keep track of the index 
+    of the topmost element in the stack, and an integer array arr to store the elements of the stack. 
+    The push, pop, peek, and isEmpty methods are used to add elements to, remove elements from, view 
+    the topmost element in, and check if the stack is empty, respectively. The main function creates 
+    an instance of Stack and demonstrates the use of the stack by pushing some elements onto it, 
+    printing the topmost element, popping an element from the stack, and checking if the stack is empty.
+*/
 #include <iostream>
 using namespace std;
 
