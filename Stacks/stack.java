@@ -1,3 +1,10 @@
+// Implemenmtation of  stack data structure
+/*
+    This implementation uses a generic type T to allow the stack to store elements of any type. 
+    The stack is implemented using an array and has methods for pushing, popping, peeking, checking 
+    if the stack is empty, and getting the size of the stack. The comments explain each step of the 
+    implementation.
+*/
 public class Stack<T> {
     // array to store elements of the stack
     private T[] elements;
