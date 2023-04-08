@@ -1,4 +1,16 @@
 # Implementation of Singly Linked List in Python
+'''
+    This implementation defines a Node class to represent a node in the linked list, and a LinkedList 
+    class to represent the linked list itself. The LinkedList class has methods to insert nodes at the 
+    beginning or end of the list, delete nodes from the list, and print the list. Each node has two 
+    attributes: its data and a reference to the next node in the list (next). 
+    The LinkedList class has one attribute: the head node of the list (head). When a new node is 
+    inserted at the beginning of the list, its next attribute is set to the current head node, and the 
+    head attribute is set to the new node. When a new node is inserted at the end of the list, it is 
+    appended to the last node's next attribute. When a node is deleted, the list is traversed to find 
+    the node with the given data, and its next attribute is set to the node after it. Finally, the 
+    print_list method traverses the list and prints each node's data.
+'''
 # Define a class to represent a node in the linked list
 class Node:
     def __init__(self, data):
