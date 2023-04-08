@@ -1,3 +1,15 @@
+# Implemenmtation of  stack data structure
+'''
+    In this implementation, the Stack class contains the following methods:
+
+    __init__: Constructor function to initialize an empty stack.
+    is_empty: Check if stack is empty.
+    push: Push an item onto the stack.
+    pop: Remove and return the top item from the stack.
+    peek: Return the top item from the stack without removing it.
+    size: Return the number of items in the stack.
+    Each method includes a docstring that explains what it does, along with any arguments and return values.
+'''
 class Stack:
     """
     Stack class implementation using list in Python
