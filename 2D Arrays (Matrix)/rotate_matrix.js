@@ -1,3 +1,15 @@
+// Rotate clockwise and anti-clockwise
+/*
+    Here, we first get the number of rows and columns in the matrix. Then, for rotating the matrix clockwise, 
+    we iterate over the columns in reverse order and create a new row in the rotated matrix by iterating 
+    over each row in the original matrix and adding the corresponding element to the new row. 
+    Finally, we add the new row to the rotated matrix.
+
+    For rotating the matrix anti-clockwise, we again iterate over the columns but this time in the 
+    forward order and create a new row in the rotated matrix by iterating over each row in the original 
+    matrix in reverse order and adding the corresponding element to the new row. Finally, we add the 
+    new row to the rotated matrix.
+*/
 function rotateClockwise(matrix) {
   // Get the number of rows and columns in the matrix
   const rows = matrix.length;
