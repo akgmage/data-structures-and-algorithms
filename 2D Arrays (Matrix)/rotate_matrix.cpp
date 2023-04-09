@@ -1,14 +1,14 @@
 // Rotate clockwise and anti-clockwise
 /*
-    Here, we first get the number of rows and columns in the matrix. Then, for rotating the matrix clockwise, 
-    we iterate over the columns in reverse order and create a new row in the rotated matrix by iterating 
-    over each row in the original matrix and adding the corresponding element to the new row. 
-    Finally, we add the new row to the rotated matrix.
+This implementation first defines two functions, rotateClockwise and rotateCounterclockwise, 
+to rotate the image by 90 degrees clockwise and counterclockwise, respectively. 
+Each function takes a 2D vector image as input and modifies it in place.
 
-    For rotating the matrix anti-clockwise, we again iterate over the columns but this time in the 
-    forward order and create a new row in the rotated matrix by iterating over each row in the original 
-    matrix in reverse order and adding the corresponding element to the new row. Finally, we add the 
-    new row to the rotated matrix.
+The printImage function is used to print the image for demonstration purposes.
+
+Finally, the main function initializes an example image, prints it, rotates 
+it by 90 degrees clockwise, prints it again, rotates it by 90 degrees counterclockwise, 
+and prints it one last time to verify that the rotations worked as expected.
 */
 #include <iostream>
 #include <vector>
