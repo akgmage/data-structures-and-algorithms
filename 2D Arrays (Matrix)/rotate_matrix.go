@@ -1,3 +1,4 @@
+// Rotate clockwise and anti-clockwise
 /*
 	The rotateClockwise function takes an image array as input and returns the image rotated by 90 degrees clockwise. 
 	It creates a new rotated array with the same dimensions as the original image, and then iterates over 
