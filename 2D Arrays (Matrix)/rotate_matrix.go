@@ -1,3 +1,15 @@
+/*
+	The rotateClockwise function takes an image array as input and returns the image rotated by 90 degrees clockwise. 
+	It creates a new rotated array with the same dimensions as the original image, and then iterates over 
+	each element of the image, assigning it to a new position in the rotated array.
+
+	The rotateCounterClockwise function works similarly, but it rotates the image counterclockwise instead. 
+	The n-j-1 and n-i-1 indices are used to swap the rows and columns, respectively.
+
+	In the main function, we create an example image, and then call the rotateClockwise and 
+	rotateCounterClockwise functions to rotate the image by 90 degrees in each direction. 
+	Finally, we print the rotated images.
+*/
 package main
 
 import "fmt"
