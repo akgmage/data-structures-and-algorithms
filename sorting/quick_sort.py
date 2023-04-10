@@ -1,3 +1,15 @@
+'''
+    The basic idea of quicksort is to divide the input array into two partitions, with one partition 
+    consisting of all elements smaller than a chosen pivot element, and the other partition consisting 
+    of all elements larger than the pivot. This process is then recursively applied to the smaller
+    partitions until the entire array is sorted.
+
+    In this implementation, we first handle the base case where the array has 0 or 1 element, 
+    which is already sorted. Then, we choose the pivot element as the middle element of the array, 
+    and partition the array into two subarrays based on whether each element is less than or greater 
+    than the pivot. We then recursively sort the left and right subarrays using the same quicksort 
+    function, and concatenate the results together along with the pivot element to get the final sorted array.
+'''
 def quicksort(arr):
     """
     Sorts an array using quicksort algorithm.
