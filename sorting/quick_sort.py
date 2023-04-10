@@ -10,6 +10,11 @@
     than the pivot. We then recursively sort the left and right subarrays using the same quicksort 
     function, and concatenate the results together along with the pivot element to get the final sorted array.
 '''
+''' Time and Space complexity
+    The time complexity of quicksort is O(n log n) on average and O(n^2) in the worst case. 
+    The space complexity of quicksort is O(log n) on average and O(n) in the worst case. 
+    The worst case occurs when the partition process divides the input array into two subarrays of unequal size.
+'''
 def quicksort(arr):
     """
     Sorts an array using quicksort algorithm.
