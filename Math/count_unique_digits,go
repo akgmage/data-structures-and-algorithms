@@ -1,7 +1,20 @@
+/*
+   This function takes an integer n as input and returns the count of all positive numbers with unique digits that have n
+   digits or less. The function first handles the base case where n = 0 (only 1 possible number, 0). For n > 0,
+   the function initializes the count to 10 (digits 0-9), and then iterates through each number of digits from 2 to n.
+   For each number of digits, the function calculates the number of possible unique numbers and adds it to the total count.
+   The number of possible unique numbers for i digits is calculated by first choosing the first digit (9 choices) and then
+   choosing each subsequent digit (8 choices for the second digit, 7 choices for the third digit, and so on).
+   The product of all these choices is the total number of possible unique numbers for i digits.
+   This calculation is repeated for each number of digits from 2 to n, and the total count is returned at the end.
+
+   For example, if n = 2, the function should return 91. There are 10 possible numbers with 1 digit (0-9), and
+   91 possible numbers with 2 digits (10-99) that have unique digits
+*/
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 func countNumbersWithUniqueDigits(n int) int {
