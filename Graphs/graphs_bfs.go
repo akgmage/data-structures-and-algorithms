@@ -18,6 +18,10 @@
 	vertices and E is the number of edges in the graph. This is because BFS traverses all the vertices
 	and edges of the graph exactly once, and the time taken to visit each vertex and edge is constant.
 	Therefore, the time complexity of BFS is proportional to the size of the graph.
+
+	The space complexity of BFS is O(|V|), where |V| is the number of vertices in the graph.
+	This is because in the worst case scenario, we would need to store all vertices in the queue
+	before we finish traversing the graph.
 */
 package main
 
