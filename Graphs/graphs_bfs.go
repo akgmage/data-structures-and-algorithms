@@ -1,3 +1,4 @@
+// Breadth First Search
 /*
 	In this implementation, we define a Graph struct that represents a graph with a given number of vertices, 
 	edges, and a visited array to keep track of visited vertices. We also define two methods - addEdge to 
