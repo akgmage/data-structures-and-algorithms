@@ -1,18 +1,25 @@
 /*
-    This implementation represents a graph as a collection of nodes, where each node has a value and a list of 
-    neighboring nodes. The DFS algorithm is implemented recursively by starting from the given node, marking 
-    it as visited, and printing its value. Then, the algorithm recursively visits each of the neighboring 
-    nodes that have not been visited yet. The time complexity of DFS is O(V + E), where V is the number of 
-    vertices (nodes) in the graph and E is the number of edges between the vertices.
+   This implementation represents a graph as a collection of nodes, where each node has a value and a list of
+   neighboring nodes. The DFS algorithm is implemented recursively by starting from the given node, marking
+   it as visited, and printing its value. Then, the algorithm recursively visits each of the neighboring
+   nodes that have not been visited yet. The time complexity of DFS is O(V + E), where V is the number of
+   vertices (nodes) in the graph and E is the number of edges between the vertices.
 
-    Sample Input : graph = {
-    'A': ['B', 'C'],
-    'B': ['D', 'E'],
-    'C': ['F'],
-    'D': [],
-    'E': ['F'],
-    'F': []
-}
+   Sample Input : graph = {
+   'A': ['B', 'C'],
+   'B': ['D', 'E'],
+   'C': ['F'],
+   'D': [],
+   'E': ['F'],
+   'F': []
+   }
+   Output : DFS Traversal: A B D E F C
+   Here, we have a graph represented as an adjacency list, with nodes A, B, C, D, E, and F and their respective neighbors.
+   The DFS traversal starts at node A and visits each node in the graph, outputting the final order in which the nodes were visited.
+
+   The time complexity of the DFS algorithm is O(V + E), where V is the number of vertices (nodes) and E is the number of
+   edges in the graph. This is because the algorithm visits every vertex and every edge once.
+
 */
 package main
 
