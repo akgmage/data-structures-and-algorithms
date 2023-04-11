@@ -1,3 +1,10 @@
+/*
+    This implementation represents a graph as a collection of nodes, where each node has a value and a list of 
+    neighboring nodes. The DFS algorithm is implemented recursively by starting from the given node, marking 
+    it as visited, and printing its value. Then, the algorithm recursively visits each of the neighboring 
+    nodes that have not been visited yet. The time complexity of DFS is O(V + E), where V is the number of 
+    vertices (nodes) in the graph and E is the number of edges between the vertices.
+*/
 package main
 
 import "fmt"
