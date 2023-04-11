@@ -1,3 +1,18 @@
+/*
+	In this implementation, we define a Graph struct that represents a graph with a given number of vertices, 
+	edges, and a visited array to keep track of visited vertices. We also define two methods - addEdge to 
+	add an edge to the graph and BFS to perform the BFS algorithm.
+
+	In the BFS method, we start by creating a queue to store the vertices to visit. We mark the start node 
+	as visited and enqueue it. Then, while the queue is not empty, we dequeue a vertex from the queue, 
+	print it out, and get all its adjacent vertices. For each adjacent vertex, if it hasn't been visited, 
+	we mark it as visited and enqueue it. This continues until all reachable vertices have been visited.
+
+	In the main function, we create a new Graph with 5 vertices and add edges to it. We then perform 
+	BFS starting from vertex 2, and print out the visited vertices. The output of this program will be:
+	BFS starting from vertex 2:
+	2 0 3 1
+*/
 package main
 
 import "fmt"
