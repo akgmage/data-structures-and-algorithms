@@ -20,6 +20,10 @@
    The time complexity of the DFS algorithm is O(V + E), where V is the number of vertices (nodes) and E is the number of
    edges in the graph. This is because the algorithm visits every vertex and every edge once.
 
+   The space complexity of DFS depends on the maximum depth of the recursion stack. In the worst case, where the tree or
+   graph is completely unbalanced, the recursion stack can reach a depth of O(n), where n is the number of nodes in the graph.
+   Therefore, the space complexity of DFS is O(n).
+
 */
 package main
 
