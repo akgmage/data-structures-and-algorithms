@@ -4,6 +4,15 @@
     it as visited, and printing its value. Then, the algorithm recursively visits each of the neighboring 
     nodes that have not been visited yet. The time complexity of DFS is O(V + E), where V is the number of 
     vertices (nodes) in the graph and E is the number of edges between the vertices.
+
+    Sample Input : graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': ['F'],
+    'F': []
+}
 */
 package main
 
