@@ -1,3 +1,16 @@
+//  Implementation of a doubly linked list in Go
+/*
+	In this implementation, we define a Node struct that contains the data as well as pointers to the previous and next nodes.
+	We also define a LinkedList struct that contains a pointer to the head and tail nodes.
+
+	The AddNode method adds a new node to the end of the list. If the list is empty, the new node is set as both the head and tail.
+	Otherwise, the new node is added after the current tail, and the current tail is set as the previous node of the new node.
+	Finally, the new node is set as the new tail.
+
+	The PrintList method traverses the list from the head node and prints the data of each node.
+
+	In the main function, we create a new doubly linked list, add some nodes to it, and print the list.
+*/
 package main
 
 import "fmt"
