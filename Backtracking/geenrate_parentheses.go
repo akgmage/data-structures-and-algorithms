@@ -25,6 +25,14 @@
 
 	In the main function, we call generateParenthesis with n=3 and print the resulting array. 
 	This will output all possible combinations of three pairs of well-formed parentheses.
+
+	The time complexity of the above program is O(4^n / sqrt(n)), where n is the number of parentheses. 
+	This is because there are a total of 2n positions in the output string, and at each position,
+	we have two choices - either to put an opening or closing parenthesis. Therefore, the total 
+	number of possible combinations is 2^(2n). However, not all of these combinations are valid, 
+	as some may violate the well-formedness condition. We can use Catalan number to determine the 
+	actual number of valid combinations. The nth Catalan number is given by (2n)! / (n+1)!n!, which 
+	is approximately equal to 4^n / sqrt(n*pi). Thus, the time complexity is O(4^n / sqrt(n)).
 */
 package main
 
