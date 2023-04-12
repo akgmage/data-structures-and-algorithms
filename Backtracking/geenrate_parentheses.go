@@ -26,6 +26,15 @@
 	In the main function, we call generateParenthesis with n=3 and print the resulting array. 
 	This will output all possible combinations of three pairs of well-formed parentheses.
 
+	Input: n = 3
+
+	Output: ["((()))","(()())","(())()","()(())","()()()"]
+
+	Explanation:
+
+	There are 5 valid combinations of well-formed parentheses with 3 pairs of parentheses. 
+	The output lists all of them.
+
 	The time complexity of the above program is O(4^n / sqrt(n)), where n is the number of parentheses. 
 	This is because there are a total of 2n positions in the output string, and at each position,
 	we have two choices - either to put an opening or closing parenthesis. Therefore, the total 
