@@ -1,3 +1,4 @@
+// Implementation of generating all combinations of well-formed parentheses
 package main
 
 import "fmt"
