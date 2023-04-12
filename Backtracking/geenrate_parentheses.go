@@ -1,4 +1,31 @@
 // Implementation of generating all combinations of well-formed parentheses
+/*
+	The generateParenthesis function takes an integer n as input, which represents the number of pairs of 
+	parentheses to generate. It initializes an empty array result to store the valid combinations and calls 
+	the backtrack helper function to generate all the combinations.
+
+	The backtrack function takes four arguments:
+
+		a pointer to the result array to add the valid combinations
+		the current string cur
+		the number of open brackets open
+		the number of closed brackets close
+		the maximum number of pairs of parentheses max
+
+	The function first checks if the current string has reached the maximum length, i.e., len(cur) == max*2. 
+	If it has, the function appends the current string to the result array and returns.
+
+	If there are still open brackets left to add, i.e., open < max, the function appends an open bracket to 
+	the current string and recursively calls backtrack with open+1 and close. This represents adding an open 
+	bracket to the current combination.
+
+	If there are more closed brackets than open brackets, i.e., close < open, the function appends a 
+	closed bracket to the current string and recursively calls backtrack with open and close+1. 
+	This represents adding a closed bracket to the current combination.
+
+	In the main function, we call generateParenthesis with n=3 and print the resulting array. 
+	This will output all possible combinations of three pairs of well-formed parentheses.
+*/
 package main
 
 import "fmt"
