@@ -2,7 +2,15 @@
 	This implementation uses a bottom-up approach to fill in a 2D table of minimum coin counts for each amount 
 	up to the target amount. The table is initialized with the base cases (0 coins for an amount of 0, infinity 
 	for an amount greater than 0) and then filled in using the recurrence relation:
+	
 	dp[i][j] = min(dp[i-1][j], dp[i][j-coins[i-1]]+1)
+	
+	where dp[i][j] is the minimum number of coins needed to make an amount of j using the first i coins. 
+	If the current coin value coins[i-1] is greater than the current amount j, then we can't use that coin, 
+	so we take the minimum number of coins we need to make the amount using only the first i-1 coins (dp[i-1][j]). 
+	Otherwise, we can use the current coin, so we take the minimum of the number of coins we need to make the 
+	amount using only the first i-1 coins (dp[i-1][j]) and the number of coins we need to make the amount minus 
+	the value of the current coin, plus one (dp[i][j-coins[i-1]]+1).
 
 */
 package main
