@@ -9,6 +9,14 @@
     number of coins needed to make the target amount is still INT_MAX, it is not possible to make 
     the amount and the code returns -1. Otherwise, the code returns the minimum number of coins 
     needed to make the target amount.
+
+    The time complexity is O(n * V), where n is the number of coins and V is the value we want to make change for. 
+    The space complexity is also O(n * V) as we need to store the minimum number of coins required to make 
+    change for every value up to V for every coin.
+
+    In the worst case, when we have a large number of coins and a large value V, the time and space complexity 
+    can become quite large. However, this approach can efficiently handle a wide range of input values and is 
+    guaranteed to give the optimal solution.
 */
 #include <iostream>
 #include <vector>
