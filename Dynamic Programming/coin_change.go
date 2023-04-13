@@ -12,6 +12,13 @@
 	amount using only the first i-1 coins (dp[i-1][j]) and the number of coins we need to make the amount minus 
 	the value of the current coin, plus one (dp[i][j-coins[i-1]]+1).
 
+	The final result is dp[len(coins)][amount], which gives us the minimum number of coins needed to make the 
+	target amount. If this value is infinity, then it's not possible to make the amount using the given coins, 
+	so we return -1.
+
+	The time complexity of this implementation is O(nm), where n is the number of coins and m is the target amount. 
+	The space complexity is also O(nm) because we're storing a 2D table of size (n+1) x (m+1).
+
 */
 package main
 
