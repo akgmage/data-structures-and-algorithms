@@ -1,4 +1,9 @@
 '''
+    The coin change problem is a dynamic programming solution that takes a list of coin denominations and a 
+    target value as inputs, and returns the minimum number of coins required to reach the target value. 
+    It uses a bottom-up approach to build a table of minimum coin counts for each target value up to the 
+    input target. 
+    
     The time complexity of this implementation is O(amount * n), where n is the number of coins. 
     The space complexity is O(amount).
 
