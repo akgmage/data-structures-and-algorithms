@@ -1,3 +1,10 @@
+'''
+    The time complexity of this implementation is O(amount * n), where n is the number of coins. 
+    The space complexity is O(amount).
+
+    Note that this implementation assumes that there are infinite coins of each denomination. 
+    If the number of coins is limited, then the implementation can be modified to keep track of the number of coins used as well.
+'''
 def coin_change(coins, amount):
     # Initialize the DP table with float('inf') values for all amounts
     dp = [float('inf') for _ in range(amount+1)]
