@@ -1,61 +1,45 @@
+// Integer to Roman
 /*
-Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+    In this implementation, we use an unordered map to store the mapping between integers and Roman numerals. 
+    We then loop through the map from the largest number to the smallest, checking if the current number 
+    can be divided by the key of the map. If it can, we append the corresponding Roman numeral to the result 
+    string and subtract the key from the number. We continue this process until the number is 0. 
+    The final result string is then returned.
 
-Symbol       Value
-I             1
-V             5
-X             10
-L             50
-C             100
-D             500
-M             1000
-For example, 2 is written as II in Roman numeral, just two one's added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
-
-Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
-
-I can be placed before V (5) and X (10) to make 4 and 9. 
-X can be placed before L (50) and C (100) to make 40 and 90. 
-C can be placed before D (500) and M (1000) to make 400 and 900.
-
-Given an integer, convert it to a roman numeral.
-
-Example 1:
-
-Input: num = 3
-Output: "III"
-Explanation: 3 is represented as 3 ones.
-Example 2:
-
-Input: num = 58
-Output: "LVIII"
-Explanation: L = 50, V = 5, III = 3.
-Example 3:
-
-Input: num = 1994
-Output: "MCMXCIV"
-Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
- 
-
-Constraints:
-
-1 <= num <= 3999
-
+    The time complexity of this implementation is O(1) since the size of the map is fixed, and the 
+    space complexity is O(1) since we only use a fixed amount of memory to store the map and the result string.
 */
+#include <iostream>
+#include <unordered_map>
+using namespace std;
 
-class Solution {
-public:
-    string intToRoman(int num) {
-        // Store Roamn characters according to their order
-        string I[] = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
-        string X[] = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
-        string C[] = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
-        string M[] = {"", "M", "MM", "MMM"};
-        string result;
-        // build up the result from higher value i.e M down to lower i.e I
-        result += M[num/1000];
-        result += C[(num % 1000) / 100];
-        result += X[(num % 100) / 10];
-        result += I[num % 10];
-        return result;
+string intToRoman(int num) {
+    // Initialize the mapping between integers and Roman numerals
+    unordered_map<int, string> map = {
+        {1000, "M"}, {900, "CM"}, {500, "D"}, {400, "CD"},
+        {100, "C"}, {90, "XC"}, {50, "L"}, {40, "XL"},
+        {10, "X"}, {9, "IX"}, {5, "V"}, {4, "IV"}, {1, "I"}
+    };
+    
+    // Initialize an empty string to store the result
+    string result = "";
+    
+    // Loop through the map from the largest number to the smallest
+    for (auto it = map.rbegin(); it != map.rend(); ++it) {
+        // Check if the current number can be divided by the key of the map
+        while (num >= it->first) {
+            // Append the corresponding Roman numeral to the result string
+            result += it->second;
+            // Subtract the key from the number
+            num -= it->first;
+        }
     }
-};
+    
+    return result;
+}
+
+int main() {
+    int num = 1994;
+    cout << intToRoman(num) << endl; // Output: "MCMXCIV"
+    return 0;
+}
