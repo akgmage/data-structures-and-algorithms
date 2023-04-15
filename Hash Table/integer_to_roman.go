@@ -1,3 +1,14 @@
+// Integer to Roamn
+/*
+	In this implementation, we create two arrays symbols and values that hold the Roman numeral symbols and their 
+	corresponding integer values respectively. We then create a string builder to hold our result.
+
+	We loop through the values array, and while the current num is greater than or equal to the current values 
+	element, we subtract the values element from num and append the corresponding symbols element to the result 
+	string builder. We continue this process until we have gone through all the values elements.
+
+	Finally, we return the result string.
+*/
 package main
 
 import "strings"
