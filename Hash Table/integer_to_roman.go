@@ -1,4 +1,4 @@
-// Integer to Roamn
+// Integer to Roman
 /*
 	In this implementation, we create two arrays symbols and values that hold the Roman numeral symbols and their 
 	corresponding integer values respectively. We then create a string builder to hold our result.
