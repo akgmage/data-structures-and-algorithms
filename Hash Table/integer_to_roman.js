@@ -1,3 +1,10 @@
+// Integer to Roman
+/*
+    This solution uses a greedy approach to build the roman numeral string by subtracting the maximum 
+    possible value at each step until the input number is zero. The time complexity of this implementation 
+    is O(1) since there is a fixed number of roman numerals and the loop will always run 13 times. 
+    The space complexity is also O(1) since we only store a single string.
+*/
 function intToRoman(num) {
   // Create arrays for the symbols and their values
   const symbols = [
