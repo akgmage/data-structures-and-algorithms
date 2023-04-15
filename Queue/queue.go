@@ -1,5 +1,18 @@
 // Queue Data Structure
+/*
+	In this implementation, we define a struct for the queue that has a slice to store the values and pointers to the 
+	front and rear of the queue. We also define methods for checking if the queue is empty, adding an element to the 
+	rear of the queue, and removing an element from the front of the queue.
 
+	The NewQueue() function creates a new queue and initializes its front and rear pointers to nil. The IsEmpty() 
+	method checks if the queue is empty by checking if the front pointer is nil. The Enqueue() method adds an 
+	element to the rear of the queue by appending it to the slice and updating the rear pointer. The Dequeue() 
+	method removes an element from the front of the queue by removing it from the slice and updating the front 
+	pointer.
+
+	In the main() function, we create a new queue, add some elements to it, and then dequeue them one 
+	by one and print their values.
+*/
 package main
 
 import "fmt"
