@@ -1,39 +1,39 @@
+// Best Time to buy and sell stock
 /*
-    You are given an array prices where prices[i] is the price of a given stock on the ith day.
-    You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
-    Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
-
-    Example 1:
-    Input: prices = [7,1,5,3,6,4]
-    Output: 5
-    Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
-    Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
-    
-    Example 2:
-    Input: prices = [7,6,4,3,1]
-    Output: 0
-    Explanation: In this case, no transactions are done and the max profit = 0.
-    
-    Constraints:
-    1 <= prices.length <= 105
-    0 <= prices[i] <= 104
+	Explanation:
+	We start by initializing the minimum price to the maximum integer value and the maximum profit to 0.
+	We loop through the prices array, and for each price:
+	If the price is less than the current minimum price, we update the minimum price.
+	Otherwise, if the difference between the price and the minimum price is greater than the current maximum profit, we update the maximum profit.
+	Finally, we return the maximum profit
+	Time Complexity: O(n), where n is the length of the prices array.
+	Space Complexity: O(1), as we are only using two variables to keep track of the minimum price and maximum profit
 */
-
-class Solution {
+public class Solution {
     public int maxProfit(int[] prices) {
-        int minElement = prices[0];
-        int maxDiff = 0;
-        int size = prices.length;
-        for (int i = 0; i < size; i++){
-            minElement = Math.min(prices[i], minElement);
-            maxDiff = Math.max(prices[i] - minElement, maxDiff);
-         }
-        return maxDiff;
+        // Initialize variables to track the minimum price seen so far and the maximum profit
+        int minPrice = Integer.MAX_VALUE;
+        int maxProfit = 0;
+        
+        // Loop through the prices array
+        for (int i = 0; i < prices.length; i++) {
+            // If the current price is less than the minimum price seen so far, update the minimum price
+            if (prices[i] < minPrice) {
+                minPrice = prices[i];
+            }
+            // If the difference between the current price and the minimum price is greater than the maximum profit seen so far, update the maximum profit
+            else if (prices[i] - minPrice > maxProfit) {
+                maxProfit = prices[i] - minPrice;
+            }
+        }
+        
+        return maxProfit; // Return the maximum profit
     }
-    
+
     public static void main(String[] args) {
-        Solution solution = new Solution();
         int[] prices = {7, 1, 5, 3, 6, 4};
-        System.out.println(solution.maxProfit(prices));
+        int maxProfit = maxProfit(prices);
+        System.out.println("Max Profit: " + maxProfit);
     }
 }
+
