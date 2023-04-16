@@ -1,44 +1,41 @@
+// Best Time to buy and sell stock
 /*
-    You are given an array prices where prices[i] is the price of a given stock on the ith day.
-    You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
-    Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
-
-    Example 1:
-    Input: prices = [7,1,5,3,6,4]
-    Output: 5
-    Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
-    Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+	Explanation:
+	We start by initializing the minimum price to the maximum integer value and the maximum profit to 0.
+	We loop through the prices array, and for each price:
+	If the price is less than the current minimum price, we update the minimum price.
+	Otherwise, if the difference between the price and the minimum price is greater than the current maximum profit, we update the maximum profit.
+	Finally, we return the maximum profit
     
-    Example 2:
-    Input: prices = [7,6,4,3,1]
-    Output: 0
-    Explanation: In this case, no transactions are done and the max profit = 0.
-    
-    Constraints:
-    1 <= prices.length <= 105
-    0 <= prices[i] <= 104
+	Time Complexity: O(n), where n is the length of the prices array.
+	Space Complexity: O(1), as we are only using two variables to keep track of the minimum price and maximum profit
 */
-
 #include <iostream>
-#include <algorithm>
 #include <vector>
+#include <climits> // for INT_MIN
+
 using namespace std;
- 
-int maxProfit(vector<int>& prices)
-{
-    int minElement = prices[0], maxDiff = 0;
-    for (int i = 1; i < prices.size(); i++) {
- 
-        minElement = min(minElement, prices[i]);
-        maxDiff = max(maxDiff, prices[i] - minElement);
+
+int maxProfit(vector<int>& prices) {
+    int minPrice = INT_MAX; // initialize to maximum value to start with
+    int maxProfit = 0; // initialize to 0
+
+    for (int i = 0; i < prices.size(); i++) {
+        if (prices[i] < minPrice) {
+            minPrice = prices[i]; // update minimum price seen so far
+        } else if (prices[i] - minPrice > maxProfit) {
+            maxProfit = prices[i] - minPrice; // update maximum profit seen so far
+        }
     }
-    return maxDiff;
+
+    return maxProfit;
 }
 
-int main()
-{
-    vector<int> prices = { 7, 1, 5, 3, 6, 4 };
-    int maxProfitEarned = maxProfit(prices);
-    cout << maxProfitEarned << endl;
+int main() {
+    // example usage
+    vector<int> prices {7, 1, 5, 3, 6, 4};
+    int max_profit = maxProfit(prices);
+    cout << "Max profit: " << max_profit << endl;
+
     return 0;
 }
