@@ -3,10 +3,13 @@
     The function maxProfit takes a list of integers prices and returns the maximum profit that can be 
     made from buying and selling the stock represented by prices. The function works by initializing 
     the minimum price to a very large number (sys.maxsize) and the maximum profit to 0.
-     
+
     It then loops through the prices, updating the minimum price if the current price is less than the current minimum 
     price, and updating the maximum profit if the difference between the current price and the minimum 
     price is greater than the current maximum profit. Finally, it returns the maximum profit.
+
+    Time Complexity: O(n), where n is the length of the prices array.
+	Space Complexity: O(1), as we are only using two variables to keep track of the minimum price and maximum profit
 '''
 
 
