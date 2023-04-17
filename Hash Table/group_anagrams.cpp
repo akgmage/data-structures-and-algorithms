@@ -23,3 +23,20 @@ vector<vector<string>> groupAnagrams(vector<string>& strs) {
     return res; // return the result vector containing all the anagram groups
 }
 
+int main() {
+    // create an example input vector
+    vector<string> strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
+
+    // call the groupAnagrams function and store the result in the output vector
+    vector<vector<string>> output = groupAnagrams(strs);
+
+    // iterate through the output vector and print each anagram group
+    for (vector<string> group : output) {
+        for (string s : group) {
+            cout << s << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
