@@ -34,3 +34,10 @@ func sortString(s string) string {
 	sort.Slice(sBytes, func(i, j int) bool { return sBytes[i] < sBytes[j] })
 	return string(sBytes)
 }
+func main() {
+    strs := []string{"eat", "tea", "tan", "ate", "nat", "bat"}
+    groups := groupAnagrams(strs)
+    for _, group := range groups {
+        fmt.Println(group)
+    }
+}
