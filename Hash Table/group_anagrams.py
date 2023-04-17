@@ -17,6 +17,13 @@
     For example, if the input list is ["eat", "tea", "tan", "ate", "nat", "bat"], 
     the function will return [['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']], which 
     represents the three groups of anagrams: ['eat', 'tea', 'ate'], ['tan', 'nat'], and ['bat'].
+
+    The time complexity of this implementation is O(n * k log k), where n is the length of the input array and k is the 
+    length of the longest string in the array. This is due to the time complexity of sorting each string in the array.
+
+	The space complexity of this implementation is O(n * k), as we need to store each string in the map along with its 
+    corresponding group of anagrams.
+
 '''
 def groupAnagrams(strs):
     # create a dictionary to store the groups of anagrams
