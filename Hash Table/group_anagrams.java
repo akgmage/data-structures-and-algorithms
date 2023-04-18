@@ -1,3 +1,19 @@
+/*
+    Explanation:
+    
+    The groupAnagrams method takes an array of strings and groups them into a list of anagram groups. To accomplish this, 
+    the method first creates a HashMap called anagramGroups to store the groups of anagrams.
+
+    For each string in the input array, the method converts the string to a character array, sorts the array, 
+    and converts it back to a string. This sorted string serves as the key for the anagramGroups map. If the sorted 
+    string is not already in the map, the method adds it with an empty list as its value. Then, the original string 
+    is added to the list of its corresponding anagram group.
+
+    Finally, the method returns a list of the values in the anagramGroups map, which is a list of the anagram groups.
+
+    In the main method, we create an instance of the GroupAnagrams class and call the groupAnagrams method on an example input array.
+    We then print out the resulting list of anagram groups.
+*/
 import java.util.*;
 
 public class GroupAnagrams {
