@@ -25,3 +25,6 @@ function groupAnagrams(strs) {
   // Return the values of the anagram groups object as an array.
   return Object.values(anagramGroups);
 }
+
+const words = ["eat", "tea", "tan", "ate", "nat", "bat"];
+console.log(groupAnagrams(words));
