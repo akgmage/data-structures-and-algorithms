@@ -15,6 +15,11 @@
 
     Finally, the Object.values method is used to extract the arrays of anagrams from the anagramGroups object, and these arrays are 
     returned as the final result.
+
+	The time complexity of this implementation is O(n * k log k), where n is the length of the input array and k is the length of the longest string in the array. This is due to the time complexity of sorting each string in the array.
+
+	The space complexity of this implementation is O(n * k), as we need to store each string in the map along with its corresponding group of anagrams.
+
 */
 /**
  * Given an array of strings, group anagrams together and return them as an array of arrays.
