@@ -1,3 +1,20 @@
+/*
+    The function groupAnagrams takes an array of strings strs as input, and returns an array of arrays of anagrams. 
+    The approach taken is to sort the characters of each string alphabetically, and group strings with the same sorted form together. 
+    The resulting groups are stored in an object anagramGroups whose keys are the sorted strings and whose values are arrays of the original strings. 
+    Finally, the values of the anagramGroups object are returned as an array.
+
+    To accomplish the sorting and grouping, the split, sort, and join methods are used. First, each string is split into an array of its characters 
+    using the split method. Then, the sort method is used to sort the characters alphabetically. Finally, the join method is used to combine the 
+    sorted characters back into a string. This sorted string is used as the key for grouping the anagrams in the anagramGroups object.
+
+    The for...of loop is used to iterate over each string in the input array. Inside the loop, the sorted form of the string is computed, 
+    and a check is made to see if a group for the sorted form already exists in the anagramGroups object. If it doesn't, a new group is 
+    created as an empty array. Then, the original string is added to the appropriate group in the anagramGroups object using the push method.
+
+    Finally, the Object.values method is used to extract the arrays of anagrams from the anagramGroups object, and these arrays are 
+    returned as the final result.
+*/
 /**
  * Given an array of strings, group anagrams together and return them as an array of arrays.
  *
