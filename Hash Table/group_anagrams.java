@@ -26,4 +26,18 @@ public class GroupAnagrams {
         return new ArrayList<>(anagramGroups.values());
     }
     
+    public static void main(String[] args) {
+        GroupAnagrams ga = new GroupAnagrams();
+        
+        // Example input
+        String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
+        
+        // Group the anagrams
+        List<List<String>> groups = ga.groupAnagrams(strs);
+        
+        // Print the groups
+        for (List<String> group : groups) {
+            System.out.println(group);
+        }
+    }
 }
