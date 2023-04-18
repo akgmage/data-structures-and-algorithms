@@ -1,6 +1,7 @@
+// Group Anagrams
 /*
     Explanation:
-    
+
     The groupAnagrams method takes an array of strings and groups them into a list of anagram groups. To accomplish this, 
     the method first creates a HashMap called anagramGroups to store the groups of anagrams.
 
@@ -13,6 +14,11 @@
 
     In the main method, we create an instance of the GroupAnagrams class and call the groupAnagrams method on an example input array.
     We then print out the resulting list of anagram groups.
+
+	The time complexity of this implementation is O(n * k log k), where n is the length of the input array and k is the length of the longest string in the array. This is due to the time complexity of sorting each string in the array.
+
+	The space complexity of this implementation is O(n * k), as we need to store each string in the map along with its corresponding group of anagrams.
+
 */
 import java.util.*;
 
