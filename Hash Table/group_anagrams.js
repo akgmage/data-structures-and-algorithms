@@ -1,3 +1,4 @@
+// Group Anagrams
 /*
     The function groupAnagrams takes an array of strings strs as input, and returns an array of arrays of anagrams. 
     The approach taken is to sort the characters of each string alphabetically, and group strings with the same sorted form together. 
