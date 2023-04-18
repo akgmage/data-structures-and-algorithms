@@ -14,6 +14,13 @@
 	null and the next of the fast pointer is not null. In each iteration, we move the slow pointer
 	by one step and the fast pointer by two steps. If the slow and fast pointers meet, we know there
 	is a cycle and we return true. Otherwise, we continue the loop until the end of the linked list and return false.
+
+	The time complexity of Floyd's cycle detection algorithm is O(n), where n is the number of nodes in the linked list.
+	This is because in the worst case, we would need to traverse the entire linked list twice: once to reach the point
+	 where the cycle begins, and once more to detect the cycle.
+
+	The space complexity of the algorithm is O(1), as we are only using a few constant extra variables to perform
+	the detection, regardless of the size of the linked list.
 */
 
 package main
