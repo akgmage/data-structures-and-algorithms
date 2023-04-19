@@ -11,6 +11,10 @@
     The isPalindrome function takes a string s as input and returns true if the string is a palindrome, and false otherwise. 
     It works by initializing two pointers left and right to the left and right ends of the string, respectively. It then moves 
     the pointers inward while checking if the characters at the
+
+    Time complexity: O(n) : We iterate over the input string once with two pointers, which takes O(n) time.
+    Space complexity: O(1) : We only use a few constant amount of variables to keep track of the pointers, left and right. 
+    Therefore, the space complexity is O(1).
 */
 /**
  * Checks whether a string can be a valid palindrome by removing at most one character.
