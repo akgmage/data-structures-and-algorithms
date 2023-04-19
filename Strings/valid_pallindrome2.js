@@ -1,3 +1,16 @@
+/*
+    The validPalindrome function takes a string s as input and returns true if the string can be a valid palindrome by removing 
+    at most one character, and false otherwise. It works by initializing two pointers left and right to the left and right ends 
+    of the string, respectively. It then moves the pointers inward while checking if the characters at the left and right indices 
+    are equal. If they are not equal, it removes the left or right character, creates a new string, and checks if the new string 
+    is a palindrome using the isPalindrome helper function. If the new string is a palindrome, it returns true. If not, it 
+    continues moving the pointers inward and repeating the process. If the pointers meet, the string is already a palindrome, 
+    or it can be made into one by removing at most one character, so it returns true.
+
+    The isPalindrome function takes a string s as input and returns true if the string is a palindrome, and false otherwise. 
+    It works by initializing two pointers left and right to the left and right ends of the string, respectively. It then moves 
+    the pointers inward while checking if the characters at the
+*/
 /**
  * Checks whether a string can be a valid palindrome by removing at most one character.
  * @param {string} s - The input string to check.
