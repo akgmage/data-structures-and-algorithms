@@ -12,6 +12,13 @@
     the substrings is a palindrome, then the original string cannot be a palindrome even by removing a character.
 
     If we have checked the whole string and haven't returned yet, it means that the original string is a palindrome.
+
+    The time complexity of the given function is O(n), where n is the length of the input string. 
+    This is because we are iterating through the string only once and performing constant-time operations.
+
+    The space complexity of the function is also O(n), where n is the length of the input string. 
+    This is because we are using a constant amount of extra space to keep track of the counts of characters. 
+    The size of this extra space does not depend on the length of the input string.
 '''
 # using two-pointer Technique
 def valid_palindrome(s: str) -> bool:
