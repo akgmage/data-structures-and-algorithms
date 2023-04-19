@@ -1,13 +1,17 @@
 '''
-    Write a function that takes a string as input and checks whether it can be a valid palindrome by removing at most one character from it.
+    Explanation:
+    The function valid_palindrome takes a string s as input and returns a boolean indicating whether the 
+    string can be a valid palindrome by removing at most one character from it.
 
-    Constraints: string.length The string only consists of English letters
+    To check if the string can be a valid palindrome, we start by iterating over the string from both the 
+    left and right ends at the same time. If we encounter two characters that are not the same, we need to 
+    check if removing one of them would make the string a palindrome. We try removing the left character 
+    first and create two new substrings - one with the left character removed and one with the right character removed.
+    We then check if either of the substrings is a palindrome. If either of the substrings is a palindrome, 
+    then the original string can be a palindrome by removing the corresponding character. If neither of 
+    the substrings is a palindrome, then the original string cannot be a palindrome even by removing a character.
 
-    Sample Input : "madame"
-    Output : True
-
-    Sample Input : "masdasd"
-    Output : False	
+    If we have checked the whole string and haven't returned yet, it means that the original string is a palindrome.
 '''
 # using two-pointer Technique
 def valid_palindrome(s: str) -> bool:
