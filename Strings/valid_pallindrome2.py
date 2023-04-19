@@ -13,23 +13,20 @@
 def valid_palindrome(s: str) -> bool:
     left, right = 0, len(s) - 1
     
+    # iterate over the string from left and right at the same time
     while left < right:
+        # if the characters at the left and right indices are not the same
         if s[left] != s[right]:
-            # Check if deleting either left or right char will create a palindrome
-            return is_palindrome(s, left + 1, right) or is_palindrome(s, left, right - 1)
-        left += 1
-        right -= 1
+            # we need to check if removing one of them makes the string a palindrome
+            # we try removing the left character first
+            left_removed = s[left:right]
+            right_removed = s[left+1:right+1]
+            # if either of the substrings after removal is a palindrome, then the original string is also a palindrome
+            return left_removed == left_removed[::-1] or right_removed == right_removed[::-1]
         
-    return True
-
-def is_palindrome(s: str, left: int, right: int) -> bool:
-    while left < right:
-        if s[left] != s[right]:
-            return False
+        # move to the next pair of characters
         left += 1
         right -= 1
+    
+    # if we have checked the whole string and haven't returned yet, it's a palindrome
     return True
-
-print(valid_palindrome("aba")) # True
-print(valid_palindrome("abca")) # True
-print(valid_palindrome("abc")) # False
