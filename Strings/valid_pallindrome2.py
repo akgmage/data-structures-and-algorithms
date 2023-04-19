@@ -1,3 +1,4 @@
+// Check whether a string can be a valid palindrome by removing at most one character from it
 '''
     Explanation:
     The function valid_palindrome takes a string s as input and returns a boolean indicating whether the 

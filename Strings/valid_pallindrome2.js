@@ -1,3 +1,4 @@
+//  Check whether a string can be a valid palindrome by removing at most one character from it
 /*
     The validPalindrome function takes a string s as input and returns true if the string can be a valid palindrome by removing 
     at most one character, and false otherwise. It works by initializing two pointers left and right to the left and right ends 
