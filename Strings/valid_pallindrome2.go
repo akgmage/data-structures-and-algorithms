@@ -1,14 +1,16 @@
 // Check whether a string can be a valid palindrome by removing at most one character from it
 /*
-   Write a function that takes a string as input and checks whether it can be a valid palindrome by removing at most one character from it.
+   The given Go program takes a string as input and checks if it can be a valid palindrome by removing at most one
+   character from it. The program starts by defining two pointers, left and right, that move towards each other from
+   opposite ends of the input string. At each step, if the characters at the left and right pointers are equal,
+   then they move towards the center of the string. If the characters are not equal, then we check whether removing
+   the character at the left or right pointer would make the rest of the string a palindrome. If both removals fail,
+   then the string cannot be a valid palindrome by removing at most one character. The program returns true
+   if the string can be made a valid palindrome by removing at most one character, false otherwise.
 
-   Constraints: string.length The string only consists of English letters
+  The time complexity of this algorithm is O(n), where n is the length of the input string.
+  The space complexity is O(1), as we only use constant extra space to store a few variables.
 
-   Sample Input : "madame"
-   Output : True
-
-   Sample Input : "masdasd"
-   Output : False
 */
 package main
 
