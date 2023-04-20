@@ -1,3 +1,22 @@
+/*
+	Dijkstra's algorithm is a pathfinding algorithm that finds the shortest path between two points in a graph.
+	Here's how it works:
+
+	1. Start at the starting point (let's call it "A") and mark its distance as 0.
+
+	2. Visit each of its neighbors (the nodes it's connected to) and mark their distances as their weight
+	   (the distance between node A and its neighbor).
+
+	3. Choose the neighbor with the shortest distance and mark it as "visited."
+
+	4. Visit each of its neighbors that haven't been visited yet and calculate their distances by adding the weight
+	   of the edge between them and the current node to the current node's distance. If this distance is shorter than the current distance marked for the node, replace it with the shorter distance.
+
+	5. Repeat steps 3 and 4 until you reach the destination node or until all nodes have been visited.
+
+	6. Once you've reached the destination node, the shortest path can be determined by tracing back through the
+	   visited nodes from the destination to the starting point, following the path of the shortest distances.
+*/
 package main
 
 import (
