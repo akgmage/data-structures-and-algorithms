@@ -29,3 +29,12 @@ func (pq *priorityQueue) Push(x interface{}) {
     item := x.(*item)
     *pq = append(*pq, item)
 }
+
+// Pop removes the item with the highest priority from the priority queue and returns it
+func (pq *priorityQueue) Pop() interface{} {
+    old := *pq
+    n := len(old)
+    item := old[n-1]
+    *pq = old[0 : n-1]
+    return item
+}
