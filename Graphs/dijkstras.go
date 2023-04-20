@@ -1,3 +1,4 @@
+// Dijkstra's algorithm
 /*
 	Dijkstra's algorithm is a pathfinding algorithm that finds the shortest path between two points in a graph.
 	Here's how it works:
