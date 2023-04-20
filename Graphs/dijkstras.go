@@ -2,6 +2,7 @@ package main
 
 import (
 	"container/heap"
+	"fmt"
 	"math"
 )
 
@@ -83,4 +84,20 @@ func Dijkstra(graph map[string]map[string]int, start string) (map[string]int, ma
     }
     
     return dist, prev
+}
+
+func main() {
+
+	graph := map[string]map[string]int{
+		"A": {"B": 2, "C": 3},
+		"B": {"C": 1, "D": 1},
+		"C": {"D": 4},
+		"D": {"C": 2},
+	}
+	start := "A"
+	distances, _ := Dijkstra(graph, start)
+	fmt.Println("Shortest distances from", start, "to all other nodes:")
+	for node, distance := range distances {
+    fmt.Println(node, distance)
+}
 }
