@@ -17,6 +17,20 @@
 
 	6. Once you've reached the destination node, the shortest path can be determined by tracing back through the
 	   visited nodes from the destination to the starting point, following the path of the shortest distances.
+
+	Time complexity:
+
+		In the worst case, Dijkstra's algorithm visits every vertex and every edge in the graph.
+		Each vertex is visited once, and each edge is relaxed once.
+		Therefore, the time complexity of Dijkstra's algorithm is O(V + E * log V), where V is the number of vertices and E is the number of edges in the graph.
+		Note that this assumes a priority queue is used to efficiently extract the vertex with the smallest distance. If an array is used instead, the time complexity would be O(V^2 + E).
+
+	Space complexity:
+
+		Dijkstra's algorithm uses two data structures: a priority queue and an array to keep track of the shortest distances from the source vertex to all other vertices.
+		The priority queue stores at most V vertices at a time.
+		The array has V entries.
+		Therefore, the space complexity of Dijkstra's algorithm is O(V).
 */
 package main
 
