@@ -23,3 +23,9 @@ func (pq priorityQueue) Less(i, j int) bool {
 func (pq priorityQueue) Swap(i, j int) {
     pq[i], pq[j] = pq[j], pq[i]
 }
+
+// Push adds an item to the priority queue
+func (pq *priorityQueue) Push(x interface{}) {
+    item := x.(*item)
+    *pq = append(*pq, item)
+}
