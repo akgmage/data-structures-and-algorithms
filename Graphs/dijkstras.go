@@ -13,3 +13,8 @@ type item struct {
 func (pq priorityQueue) Len() int {
     return len(pq)
 }
+
+// Less returns true if item i has higher priority than item j
+func (pq priorityQueue) Less(i, j int) bool {
+    return pq[i].priority < pq[j].priority
+}
