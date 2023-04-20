@@ -8,3 +8,8 @@ type item struct {
     value    string  // value of the item
     priority int     // priority of the item (i.e., its distance from the start vertex)
 }
+
+// Len returns the number of items in the priority queue
+func (pq priorityQueue) Len() int {
+    return len(pq)
+}
