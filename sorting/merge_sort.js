@@ -20,3 +20,39 @@ function mergeSort(arr) {
   // Merge the two sorted halves into a single sorted array
   return merge(sortedLeftArr, sortedRightArr);
 }
+
+/**
+ * Merge two sorted arrays into a single sorted array
+ * @param {Array} leftArr - The first sorted array
+ * @param {Array} rightArr - The second sorted array
+ * @return {Array} - The merged sorted array
+ */
+function merge(leftArr, rightArr) {
+  let i = 0;
+  let j = 0;
+  const mergedArr = [];
+
+  // Compare the elements of the two arrays and add the smallest to the merged array
+  while (i < leftArr.length && j < rightArr.length) {
+    if (leftArr[i] <= rightArr[j]) {
+      mergedArr.push(leftArr[i]);
+      i++;
+    } else {
+      mergedArr.push(rightArr[j]);
+      j++;
+    }
+  }
+
+  // Add any remaining elements from the left or right array to the merged array
+  while (i < leftArr.length) {
+    mergedArr.push(leftArr[i]);
+    i++;
+  }
+
+  while (j < rightArr.length) {
+    mergedArr.push(rightArr[j]);
+    j++;
+  }
+
+  return mergedArr;
+}
