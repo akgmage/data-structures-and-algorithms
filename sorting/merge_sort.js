@@ -1,3 +1,17 @@
+// Merge Sort
+/*
+	Here's how the merge sort algorithm works:
+
+	1. It divides the input array into two halves, recursively sorts them, and then merges the sorted halves.
+	2. To merge two sorted sub-arrays, we need to create a temporary array and then compare the elements of the two sub-arrays, 
+	   one by one, and add the smaller element to the temporary array.
+	3. After we have exhausted one of the sub-arrays, we simply copy the remaining elements of the other sub-array to the temporary array.
+	4. Finally, we copy the elements of the temporary array back to the original array.
+
+	The time complexity of merge sort is O(n log n), where n is the number of elements in the array. 
+	The space complexity is O(n), because we create a temporary array of size n during the merging process.
+*/
+
 /**
  * Merge sort algorithm to sort an array of integers in ascending order.
  * @param {Array} arr - The array of integers to be sorted
