@@ -1,13 +1,16 @@
-// In computer science, merge sort (also commonly spelled as mergesort) is an efficient, general-purpose,
-// and comparison-based sorting algorithm. Most implementations produce a stable sort,
-// which means that the order of equal elements is the same in the input and output.
-// Merge sort is a divide-and-conquer algorithm that was invented by John von Neumann in 1945.
-// A detailed description and analysis of bottom-up merge sort appeared in a report by Goldstine and von Neumann as early as 1948.
-// Conceptually, a merge sort works as follows:
+/*
+	The MergeSort function is the main function that takes an integer array as input and sorts it using the Merge Sort algorithm.
 
-// Divide the unsorted list into n sublists, each containing one element (a list of one element is considered sorted).
-// Repeatedly merge sublists to produce new sorted sublists until there is only one sublist remaining. This will be the sorted list
-// Source(https://en.wikipedia.org/wiki/Merge_sort)
+	In the MergeSort function, if the length of the input array is only one element, it is already sorted, so we return it as is.
+	Otherwise, we find the middle point of the array and split it into two halves. We then recursively call the MergeSort
+	function on the left half and the right half of the array. Finally, we merge the two sorted halves using the merge function.
+
+	The merge function takes two sorted arrays as input and merges them into one sorted array. We initialize a new array to hold
+	the merged result and three index variables for the left, right, and result arrays. We then iterate over the left and right
+	arrays and compare their elements. We add the smaller element to the result array and move the corresponding index variable.
+	Finally, we append the remaining elements of the left or right array to the result array and return it.
+
+*/
 package main
 
 import "fmt"
