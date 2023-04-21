@@ -1,3 +1,4 @@
+// Merge Sort
 /*
 	The MergeSort function is the main function that takes an integer array as input and sorts it using the Merge Sort algorithm.
 

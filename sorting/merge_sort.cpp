@@ -1,3 +1,4 @@
+// Merge Sort
 /*
 	Here's how the merge sort algorithm works:
 
