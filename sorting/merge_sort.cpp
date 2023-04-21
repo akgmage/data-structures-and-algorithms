@@ -1,3 +1,13 @@
+/*
+	Here's how the merge sort algorithm works:
+
+	1. It divides the input array into two halves, recursively sorts them, and then merges the sorted halves.
+	2. To merge two sorted sub-arrays, we need to create a temporary array and then compare the elements of the two sub-arrays, 
+	   one by one, and add the smaller element to the temporary array.
+	3. After we have exhausted one of the sub-arrays, we simply copy the remaining elements of the other sub-array to the temporary array.
+	4. Finally, we copy the elements of the temporary array back to the original array.
+	
+*/
 #include <iostream>
 #include <vector>
 
