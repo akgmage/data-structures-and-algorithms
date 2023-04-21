@@ -10,10 +10,6 @@
 // Source(https://en.wikipedia.org/wiki/Merge_sort)
 package main
 
-import (
-	"fmt"
-)
-
 // MergeSort is the main function that takes an integer array as input
 // and sorts it using the Merge Sort algorithm.
 func MergeSort(arr []int) []int {
@@ -37,4 +33,44 @@ func MergeSort(arr []int) []int {
 
 	// Merge the two sorted halves.
 	return merge(left, right)
+}
+
+// Merge is a helper function that takes two sorted arrays and merges them into one sorted array.
+func merge(left, right []int) []int {
+	// Initialize a new array to hold the merged result.
+	result := make([]int, len(left)+len(right))
+
+	// Initialize the index variables for the left, right, and result arrays.
+	i := 0 // Index for left array
+	j := 0 // Index for right array
+	k := 0 // Index for result array
+
+	// Iterate over the left and right arrays and compare their elements.
+	// Add the smaller element to the result array and move the corresponding index variable.
+	for i < len(left) && j < len(right) {
+		if left[i] < right[j] {
+			result[k] = left[i]
+			i++
+		} else {
+			result[k] = right[j]
+			j++
+		}
+		k++
+	}
+
+	// Append the remaining elements of the left or right array to the result array.
+	for i < len(left) {
+		result[k] = left[i]
+		i++
+		k++
+	}
+
+	for j < len(right) {
+		result[k] = right[j]
+		j++
+		k++
+	}
+
+	// Return the merged and sorted result array.
+	return result
 }
