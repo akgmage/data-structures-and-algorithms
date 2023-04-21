@@ -43,3 +43,13 @@ void merge_sort(vector<int>& arr, int start, int end) {
         merge(arr, start, mid, end);
     }
 }
+
+int main() {
+    vector<int> arr = {5, 2, 8, 1, 9, 4};
+    merge_sort(arr, 0, arr.size() - 1);
+    for (int num : arr) {
+        cout << num << " ";
+    }
+    cout << endl;
+    return 0;
+}
