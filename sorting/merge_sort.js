@@ -56,3 +56,8 @@ function merge(leftArr, rightArr) {
 
   return mergedArr;
 }
+
+const unsortedArr = [5, 2, 9, 1, 5, 6];
+const sortedArr = mergeSort(unsortedArr);
+
+console.log(sortedArr); // Output: [1, 2, 5, 5, 6, 9]
