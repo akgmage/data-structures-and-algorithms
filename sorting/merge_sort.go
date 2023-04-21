@@ -8,42 +8,33 @@
 // Divide the unsorted list into n sublists, each containing one element (a list of one element is considered sorted).
 // Repeatedly merge sublists to produce new sorted sublists until there is only one sublist remaining. This will be the sorted list
 // Source(https://en.wikipedia.org/wiki/Merge_sort)
-
 package main
 
-// Approach: Divide by finding the number mid of the position midway between left and right. Do this step the same
-// way we found the midpoint in binary search
-// Conquer by recursively sorting the subarrays in each of the two subproblems created by the divide step.
-// That is, recursively sort the subarray Arr[left. . mid] and recursively sort the subarray Arr[mid + 1. . right].
-// Combine by merging the two sorted subarrays back into the single sorted subarray Arr[left. . right].
-func MergeSort(Arr []int) []int {
-	if len(Arr) <= 1 {
-		return Arr
-	}
-	middle := len(Arr) / 2
-	left := MergeSort(Arr[:middle])
-	right := MergeSort(Arr[middle:])
-	return Merge(left, right)
-}
+import (
+	"fmt"
+)
 
-func Merge(left, right []int) []int {
-	result := make([]int, len(left) + len(right))
-	for i:=0; len(left) > 0 || len(right) > - 0; i++ {
-		if len(left) > 0 && len(right) > 0 {
-			if left[0] < right[0] {
-				result[i] = left[0]
-				left = left[1:]
-			} else {
-				result[i] = right[0]
-				right = right[1:]
-			}
-		} else if len(left) > 0 {
-			result[i] = left[0]
-			left = left[1:]
-		} else if len(right) > 0 {
-			result[i] = right[0]
-			right = right[1:]
-		}
+// MergeSort is the main function that takes an integer array as input
+// and sorts it using the Merge Sort algorithm.
+func MergeSort(arr []int) []int {
+	// If the array has only one element, return it.
+	if len(arr) == 1 {
+		return arr
 	}
-	return result
+
+	// Find the middle point to divide the array into two halves.
+	mid := len(arr) / 2
+
+	// Split the array into two halves.
+	left := arr[:mid]
+	right := arr[mid:]
+
+	// Recursively sort the left half of the array.
+	left = MergeSort(left)
+
+	// Recursively sort the right half of the array.
+	right = MergeSort(right)
+
+	// Merge the two sorted halves.
+	return merge(left, right)
 }
