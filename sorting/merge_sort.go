@@ -10,6 +10,9 @@
 	arrays and compare their elements. We add the smaller element to the result array and move the corresponding index variable.
 	Finally, we append the remaining elements of the left or right array to the result array and return it.
 
+	The time complexity of Merge Sort is O(n*log n), where n is the number of elements in the array,
+	and the space complexity is O(n) due to the use of the temporary arrays during the merging phase.
+
 */
 package main
 
