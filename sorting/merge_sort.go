@@ -10,6 +10,8 @@
 // Source(https://en.wikipedia.org/wiki/Merge_sort)
 package main
 
+import "fmt"
+
 // MergeSort is the main function that takes an integer array as input
 // and sorts it using the Merge Sort algorithm.
 func MergeSort(arr []int) []int {
@@ -73,4 +75,12 @@ func merge(left, right []int) []int {
 
 	// Return the merged and sorted result array.
 	return result
+}
+
+func main() {
+	// Example usage
+	arr := []int{3, 2, 1, 5, 4}
+	fmt.Println("Unsorted array:", arr)
+	arr = MergeSort(arr)
+	fmt.Println("Sorted array:", arr)
 }
