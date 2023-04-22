@@ -23,6 +23,11 @@
 
 	The space complexity of the implementation is O(1), as we are only using a constant amount of extra space for
 	storing the maximum subarray sum and the current subarray sum.
+
+    Example Input: arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+    Example Output: 6
+    Explanation: The maximum subarray sum is [4, -1, 2, 1] which adds up to 6.
+    
 */
 #include <iostream>
 #include <vector>
