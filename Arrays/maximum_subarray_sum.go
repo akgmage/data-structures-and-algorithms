@@ -31,6 +31,7 @@ import (
 	"math"
 )
 
+// Kadanes algorithm
 // This function returns the maximum subarray sum in a given slice of integers.
 // It takes an integer slice as input and returns the maximum subarray sum as an integer.
 func maxSubarraySum(arr []int) int {
@@ -56,8 +57,34 @@ func maxSubarraySum(arr []int) int {
 	return maxSoFar
 }
 
+// Brute Force Solution
+func maxSubarraySumBruteForce(nums []int) int {
+    maxSum := math.MinInt32 // Initialize the maximum sum to the smallest possible integer
+    n := len(nums)
+
+    // Consider all possible subarrays and keep track of the maximum sum
+    for i := 0; i < n; i++ {
+        currSum := 0 // Initialize the current sum to 0
+
+        // Consider all subarrays starting from i and ending at j
+        for j := i; j < n; j++ {
+            currSum += nums[j] // Add the jth element to the current sum
+
+            // Update the maximum sum if the current sum is greater
+            if currSum > maxSum {
+                maxSum = currSum
+            }
+        }
+    }
+
+    return maxSum
+}
+
+
 func main() {
 	arr := []int{-2, 1, -3, 4, -1, 2, 1, -5, 4}
 	maxSum := maxSubarraySum(arr)
 	fmt.Println("Maximum subarray sum:", maxSum)
+	maxSum = maxSubarraySumBruteForce(arr)
+	fmt.Println("Maximum subarray sum using brute force:", maxSum)
 }
