@@ -1,4 +1,4 @@
-// Maximum Subarray Kadanes Algorithm
+// Maximum Subarray
 /*
 	The maxSubarraySum function takes an integer slice arr as input and returns the maximum subarray
 	sum as an integer.
