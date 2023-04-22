@@ -18,6 +18,11 @@
     
     The space complexity is O(1), since we only use 
     a constant amount of extra space to store the current sum and maximum sum variables.
+    
+    Example Input: arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+    Example Output: 6
+    Explanation: The maximum subarray sum is [4, -1, 2, 1] which adds up to 6.
+    
 '''
 def max_subarray_sum(arr):
     """
@@ -48,3 +53,6 @@ def max_subarray_sum(arr):
 
     # Return the maximum sum
     return max_sum
+
+arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+print(max_subarray_sum(arr))
