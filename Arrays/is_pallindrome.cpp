@@ -1,3 +1,23 @@
+/*
+    Write a function that takes in a non-empty string and that returns a boolean
+    representing whether the string is a palindrome.
+    Sample Input: abba
+    Output: True
+    Sample Input: aberba
+    Output: False
+    
+    Explanation:
+    we define a function isPalindrome that takes in a string and returns true if the string is a palindrome, 
+    and false otherwise. The function uses two indices, left and right, initialized to the beginning and 
+    end of the string respectively. It then iterates through the string by moving the left index to the 
+    right and the right index to the left, checking whether the characters at these indices match. 
+    If the characters do not match, the function returns false, indicating that the string is not a 
+    palindrome. If the entire string is iterated through and all characters match,
+    the function returns true, indicating that the string is a palindrome.
+
+    In the main function, we call the isPalindrome function on the string "racecar" and print the result. 
+    The output will be "racecar is a palindrome".
+*/
 #include <iostream>
 #include <string>
 
