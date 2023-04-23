@@ -1,27 +1,32 @@
-# Valid Palindrome
 '''
-    1 The isPalindrome() function takes a string s as input.
-    2 The first line of the function converts the string to lowercase and 
-      removes all non-alphanumeric characters. This is achieved using a list comprehension, 
-      where each character in s is checked if it is alphanumeric. 
-      If it is, it is added to a new string, otherwise it is ignored. 
-      The resulting string only contains alphanumeric characters in lowercase.
-    3 We then loop through the string from the beginning to the middle character 
-      (the // operator divides the length of the string by 2 and rounds down to the nearest integer). 
-      For each character, we compare it to its corresponding character from the end of the string 
-      (i.e., the len(s) - i - 1-th character), to check if they are the same.
-    4 If at any point we find two characters that are not the same, we know that the string is not a 
-      palindrome and return False.
-    5 If we complete the loop without finding any mismatches, we know that the string is a palindrome 
-      and return True.
+    Write a function that takes in a non-empty string and that returns a boolean
+    representing whether the string is a palindrome.
+    Sample Input: abba
+    Output: True
+    Sample Input: aberba
+    Output: False
+
+    Explanation:
+
+    In this implementation, we use Python's filter() function to remove all non-alphanumeric characters 
+    from the string and lower() method to convert the string to lowercase. Then we check if the reversed 
+    string is equal to the original string using the slice notation [::-1]. If the two strings are equal, 
+    we return True, indicating that the input string is a palindrome; otherwise, we return False.
 '''
-def isPalindrome(s):
-    # Convert string to lowercase and remove all non-alphanumeric characters
-    s = "".join(c.lower() for c in s if c.isalnum())
 
-    # Loop through the string and compare each character to its corresponding character from the end
-    for i in range(len(s) // 2):
-        if s[i] != s[len(s) - i - 1]:
-            return False
-
-    return True
+def is_palindrome(s: str) -> bool:
+    """
+    This function takes in a non-empty string and returns a boolean indicating
+    whether the string is a palindrome or not.
+    
+    Parameters:
+    s (str): The input string
+    
+    Returns:
+    bool: True if s is a palindrome, False otherwise
+    """
+    # Remove all non-alphanumeric characters and convert to lowercase
+    s = ''.join(filter(str.isalnum, s)).lower()
+    
+    # Check if the reversed string is equal to the original string
+    return s == s[::-1]
