@@ -1,39 +1,46 @@
 /*
-Implementation of insertion sort in JS.
-Insertion sort is a simple sorting algorith that iterates through
-the list starting at the second element. We compare each element
-to the preceding elements, slide over the preceding larger (or smaller)
-elements, and insert the original element into the empty position.
+	In this implementation, we define a function called InsertionSort that takes an array of integers and sorts
+	it in ascending order using the Insertion Sort algorithm.
 
-Time Complexity worst-case and average complexity O(n^{2})
+	The algorithm works by iterating over the array from the second element to the end.
 
-Insertion sort is inefficient for large arrays. However it is fast for
-small arrays and typically more efficient than bubble sort and selection
-sort due to not making as many comparisons on average.
+	For each element, it compares it with the previous elements in the array and inserts it in the correct position.
 
-Source: https://en.wikipedia.org/wiki/Insertion_sort
+	The current variable holds the value of the current element being compared.
 
-Sample input: [0, 2, 1,-1, 10, 3, 4]
-Output: [-1 0 1 2 3 4 10]
+	The j variable holds the index of the previous element being compared.
+
+	The loop compares the current value with the previous values in the array and shifts the values to the right to make space for the current value.
+
+	Once the correct position is found, the current value is inserted into the array.
+
+	Finally, the sorted array is returned. In the main function, we define an array of integers, sort it using the InsertionSort function, and print the sorted array.
+
+	Sample input: [0, 2, 1,-1, 10, 3, 4]
+	Output: [-1 0 1 2 3 4 10]
 */
 
-const inputArr = [4,5,67,56,3,35,45];
-
-const insertionSort= (arr) => {
-
-    //loop to access each array element
-    for (let i = 1; i < arr.length; i++) {
-      let currentValue = arr[i];
-      const j = 0;
-          
-    // loop to Compare key with each element on the left of it until an element smaller than is found
-    for (let j = i - 1; j >= 0 && arr[j] > currentValue; j--) {
-        arr[j + 1] = arr[j];
-      }
-      // Place key at after the element just smaller than it.
-      arr[j + 1] = currentValue;
+/**
+ * Perform insertion sort on an array of integers in non-decreasing order.
+ * @param {number[]} arr - The input array to sort.
+ * @returns {number[]} The sorted array in non-decreasing order.
+ */
+function insertionSort(arr) {
+  // Loop through each element of the array, starting with the second.
+  for (let i = 1; i < arr.length; i++) {
+    // Save the current element to be inserted later.
+    let current = arr[i];
+    // Loop through the sorted portion of the array backwards.
+    for (let j = i - 1; j >= 0 && arr[j] > current; j--) {
+      // Shift each element that is greater than the current element up one position.
+      arr[j + 1] = arr[j];
     }
-    return arr;
+    // Insert the current element in its proper place.
+    arr[j + 1] = current;
   }
-  console.log(insertionSort(inputArr));
-  
+  // Return the sorted array.
+  return arr;
+}
+
+const inputArr = [4, 5, 67, 56, 3, 35, 45];
+console.log(insertionSort(inputArr));
