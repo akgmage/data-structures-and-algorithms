@@ -1,20 +1,23 @@
 """
-Implementation of insertion sort in go.
-Insertion sort is a simple sorting algorith that iterates through
-the list starting at the second element. We compare each element
-to the preceding elements, slide over the preceding larger (or smaller)
-elements, and insert the original element into the empty position.
+	In this implementation, we define a function called InsertionSort that takes an array of integers and sorts
+	it in ascending order using the Insertion Sort algorithm.
 
-Time Complexity worst-case and average complexity O(n^{2})
+	The algorithm works by iterating over the array from the second element to the end.
 
-Insertion sort is inefficient for large arrays. However it is fast for
-small arrays and typically more efficient than bubble sort and selection
-sort due to not making as many comparisons on average.
+	For each element, it compares it with the previous elements in the array and inserts it in the correct position.
 
-Source: https://en.wikipedia.org/wiki/Insertion_sort
+	The current variable holds the value of the current element being compared.
 
-Sample input: [0, 2, 1,-1, 10, 3, 4]
-Output: [-1 0 1 2 3 4 10]
+	The j variable holds the index of the previous element being compared.
+
+	The loop compares the current value with the previous values in the array and shifts the values to the right to make space for the current value.
+
+	Once the correct position is found, the current value is inserted into the array.
+
+	Finally, the sorted array is returned. In the main function, we define an array of integers, sort it using the InsertionSort function, and print the sorted array.
+
+	Sample input: [0, 2, 1,-1, 10, 3, 4]
+	Output: [-1 0 1 2 3 4 10]
 """
 
 def insertion_sort(arr):
