@@ -17,21 +17,26 @@ Sample input: [0, 2, 1,-1, 10, 3, 4]
 Output: [-1 0 1 2 3 4 10]
 """
 
-def main():
-    a_lst = [0, 2, 1,-1, 10, 3, 4]
-    insertion_sort(a_lst)
-    print(a_lst)
-
-# Typing can be changed if needed as python supports comparison
-# of types other than int (float, strings, etc.)
-def insertion_sort(a_lst: list[int]) -> None:
-    for idx in range(1, len(a_lst)):
-        value = a_lst[idx]
-        position = idx - 1
-        while 0 <= position and value < a_lst[position]:
-            a_lst[position + 1] = a_lst[position]
-            position -= 1
-        a_lst[position + 1] = value
-
-if __name__ == "__main__":
-    main()
+def insertion_sort(arr):
+    """
+        Sorts an array in ascending order using the insertion sort algorithm.
+        
+        @param arr: list of integers to be sorted
+        @return: sorted list of integers
+    """
+    # iterate through every element of the array
+    for i in range(1, len(arr)):
+        # store the current element and its index
+        current = arr[i]
+        j = i - 1
+        
+        # move all elements greater than the current element to the right
+        while j >= 0 and arr[j] > current:
+            arr[j + 1] = arr[j]
+            j -= 1
+        
+        # insert the current element in its correct position
+        arr[j + 1] = current
+    
+    # return the sorted array
+    return arr
