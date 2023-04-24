@@ -12,40 +12,29 @@
 // Output : [0 1 2 3 4 5 9]
 
 
-
-
-package sorting;
-
-import java.util.Arrays;
-
 public class BubbleSort {
-    public static void main(String[] args) {
-        int[] nums = {4, 5, 6, 8, 17, 19, 45, -78, -87, 0, 11};
-        bubble(nums);
-        System.out.println(Arrays.toString(nums));
-
-
-    }
-    static void bubble(int[] arr){
-        boolean swapped;
-        // run the steps n-1 times
-        for(int i = 0; i < arr.length; i++){
-            swapped = false;
-            // for each step, max item will come at the last respective index
-            for(int j = 1; j < arr.length-i; j++){
-                // swap if the item is smaller than the previous item
-                if (arr[j] > arr[j-1]){
+    public static void bubbleSort(int[] arr) {
+        int n = arr.length;
+        // Traverse through all array elements
+        for (int i = 0; i < n - 1; i++) {
+            // Last i elements are already in place
+            for (int j = 0; j < n - i - 1; j++) {
+                // Swap adjacent elements if they are in the wrong order
+                if (arr[j] > arr[j + 1]) {
                     int temp = arr[j];
-                    arr[j] = arr[j-1];
-                    arr[j-1] = temp;
-                    swapped = true;
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
                 }
-            }
-            // if you did not swap for a particular of i, it means the array is sorted hence stop the program
-            if(!swapped){
-                break;
             }
         }
     }
-}
 
+    public static void main(String[] args) {
+        int[] arr = {64, 34, 25, 12, 22, 11, 90};
+        bubbleSort(arr);
+        System.out.println("Sorted array: ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
