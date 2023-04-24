@@ -1,37 +1,45 @@
 """
-Implementation of insertion sort in go.
-Insertion sort is a simple sorting algorith that iterates through
-the list starting at the second element. We compare each element
-to the preceding elements, slide over the preceding larger (or smaller)
-elements, and insert the original element into the empty position.
+	In this implementation, we define a function called InsertionSort that takes an array of integers and sorts
+	it in ascending order using the Insertion Sort algorithm.
 
-Time Complexity worst-case and average complexity O(n^{2})
+	The algorithm works by iterating over the array from the second element to the end.
 
-Insertion sort is inefficient for large arrays. However it is fast for
-small arrays and typically more efficient than bubble sort and selection
-sort due to not making as many comparisons on average.
+	For each element, it compares it with the previous elements in the array and inserts it in the correct position.
 
-Source: https://en.wikipedia.org/wiki/Insertion_sort
+	The current variable holds the value of the current element being compared.
 
-Sample input: [0, 2, 1,-1, 10, 3, 4]
-Output: [-1 0 1 2 3 4 10]
+	The j variable holds the index of the previous element being compared.
+
+	The loop compares the current value with the previous values in the array and shifts the values to the right to make space for the current value.
+
+	Once the correct position is found, the current value is inserted into the array.
+
+	Finally, the sorted array is returned. In the main function, we define an array of integers, sort it using the InsertionSort function, and print the sorted array.
+
+	Sample input: [0, 2, 1,-1, 10, 3, 4]
+	Output: [-1 0 1 2 3 4 10]
 """
 
-def main():
-    a_lst = [0, 2, 1,-1, 10, 3, 4]
-    insertion_sort(a_lst)
-    print(a_lst)
-
-# Typing can be changed if needed as python supports comparison
-# of types other than int (float, strings, etc.)
-def insertion_sort(a_lst: list[int]) -> None:
-    for idx in range(1, len(a_lst)):
-        value = a_lst[idx]
-        position = idx - 1
-        while 0 <= position and value < a_lst[position]:
-            a_lst[position + 1] = a_lst[position]
-            position -= 1
-        a_lst[position + 1] = value
-
-if __name__ == "__main__":
-    main()
+def insertion_sort(arr):
+    """
+        Sorts an array in ascending order using the insertion sort algorithm.
+        
+        @param arr: list of integers to be sorted
+        @return: sorted list of integers
+    """
+    # iterate through every element of the array
+    for i in range(1, len(arr)):
+        # store the current element and its index
+        current = arr[i]
+        j = i - 1
+        
+        # move all elements greater than the current element to the right
+        while j >= 0 and arr[j] > current:
+            arr[j + 1] = arr[j]
+            j -= 1
+        
+        # insert the current element in its correct position
+        arr[j + 1] = current
+    
+    # return the sorted array
+    return arr
