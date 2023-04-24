@@ -10,29 +10,31 @@
 
 // Sample Input : [2, 1, 9, 3, 5, 4, 0]
 // Output : [0 1 2 3 4 5 9]
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
+
 using namespace std;
 
-void BubbleSort(int A[], int n){
-	int flag = 0;
-	for(int i = 0; i < n - 1; i++){
-		for(int j = 0; j < n - i; j++){
-			if(A[j] > A[j+1]){
-				int temp = A[j];
-				A[j] = A[j+1];
-				A[j+1] = temp;
-				flag = 1; //  // hack if the array is already sorted, no need for redundant passes
-			}	 
-		}
-		if(flag == 0){ cout << "Already sorted so no further redundant passes best case O(n)"; break;}
-	}
+void bubbleSort(vector<int>& arr) {
+    int n = arr.size();
+    // Traverse through all array elements
+    for (int i = 0; i < n - 1; i++) {
+        // Last i elements are already sorted
+        for (int j = 0; j < n - i - 1; j++) {
+            // Swap adjacent elements if they are in the wrong order
+            if (arr[j] > arr[j + 1]) {
+                swap(arr[j], arr[j + 1]);
+            }
+        }
+    }
 }
-int main(){
-	int A[] = {5,1,2,3,4,5};
-	BubbleSort(A,6);
-	for(int i = 0; i < 6; i++){
-		cout << A[i] << " ";
-	}
-	
-return 0;
+
+int main() {
+    vector<int> arr = {64, 25, 12, 22, 11};
+    bubbleSort(arr);
+    cout << "Sorted array: ";
+    for (auto i : arr) {
+        cout << i << " ";
+    }
+    return 0;
 }
