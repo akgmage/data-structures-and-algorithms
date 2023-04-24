@@ -10,19 +10,17 @@
 
 # Sample Input : [2, 1, 9, 3, 5, 4, 0]
 # Output : [0 1 2 3 4 5 9]
-data = []
-n = int(input("Enter the number of elements"))  # Total number of elements in an array
 
-for i in range(0,n):
-    num = int(input()) # Asking user the element of an array
-    data.append(num) # Appending the element in an array
+def bubbleSort(arr):
+    n = len(arr)
+    # Traverse through all array elements
+    for i in range(n - 1):
+        # Last i elements are already sorted
+        for j in range(0, n - i - 1):
+            # Swap adjacent elements if they are in the wrong order
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
 
-data_copy = data[:]  # Making copy of the array data
-
-for i in range(0, len(data_copy)):
-    for j in range(0, len(data_copy) - i - 1):
-        if(data_copy[j] > data_copy[j + 1]):
-            data_copy[j], data_copy[j + 1] = data_copy[j + 1], data_copy[j]
-
-print(data_copy)
-print(sorted(data))
+arr = [64, 25, 12, 22, 11]
+bubbleSort(arr)
+print("Sorted array:", arr)
