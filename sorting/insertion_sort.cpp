@@ -17,25 +17,35 @@ Sample input: [0, 2, 1,-1, 10, 3, 4]
 Output: [-1 0 1 2 3 4 10]
 */
 
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
+
 using namespace std;
 
-
-int main(){
-	int temp = 0;
-	int array[] = {5,9,77,1,2,3};
-	for (int i = 1; i < 6; i++) {
-        int j = i;
-        while (j > 0 && array[j] < array[j - 1]) {
-           temp = array[j];
-		   array[j] = array[j - 1];
-		   array[j - 1] = temp;
-            j -= 1;
+void insertionSort(vector<int>& arr) {
+    int n = arr.size();
+    for(int i=1; i<n; i++) { // i starts from 1 as we assume 1st element is already sorted
+        int key = arr[i]; // assign key with current element which needs to be compared and sorted
+        int j = i-1; // set the index j to previous element
+        
+        /* Move elements of arr[0..i-1], that are greater than key, to one position ahead 
+        of their current position */
+        while(j>=0 && arr[j]>key) {
+            arr[j+1] = arr[j];
+            j--;
         }
+        arr[j+1] = key; // insert the key at its sorted position
     }
-	for(int i = 0; i < 6; i++){
-		cout << array[i] << " ";
-	}
-	
-return 0;
+}
+
+int main() {
+    vector<int> arr = {3, 5, 1, 4, 2};
+    insertionSort(arr);
+
+    cout << "Sorted Array: ";
+    for(int num: arr) {
+        cout << num << " ";
+    }
+    cout << endl;
+    return 0;
 }
