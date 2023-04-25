@@ -1,5 +1,21 @@
 /*
-	In this implementation, we define a function called InsertionSort that takes an array of integers and sorts
+    Insertion sort is a simple sorting algorithm that builds the final sorted array one item at a time. 
+    It starts with the second element of the array, compares it with the first element, and swaps them 
+    if necessary. It then continues to the third element, compares it with the first and second elements, 
+    and swaps it into the correct position. This process continues until the last element is compared and 
+    sorted into its correct position in the sorted array.
+
+    At each iteration, the algorithm assumes that the subarray to the left of the current element is already 
+    sorted, and it searches for the correct position of the current element within that subarray by comparing 
+    it to each element from right to left until it finds the correct position. Once it finds the correct 
+    position, it shifts all the larger elements to the right to make space for the current element and 
+    inserts it in its correct position.
+
+    Insertion sort has an average-case time complexity of O(n^2) but can perform better than other O(n^2) 
+    algorithms, such as bubble sort or selection sort, in certain cases. It is also an efficient algorithm 
+    for small data sets or partially sorted data sets.
+	
+    In this implementation, we define a function called InsertionSort that takes an array of integers and sorts
 	it in ascending order using the Insertion Sort algorithm.
 
 	The algorithm works by iterating over the array from the second element to the end.
