@@ -23,27 +23,37 @@
 */
 // Sample Input : [2, 1, 9, 3, 5, 4, 0]
 // Output : [0 1 2 3 4 5 9]
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
+
 using namespace std;
 
-void SelectionSort(int A[], int n){
-	for(int i = 0; i < n - 1; i++){
-		int imin = i;
-		for(int j = i + 1; j < n; j++){
-			if(A[j] < A[imin])
-				imin = j; 
-		}
-		int temp = A[i];
-		A[i] = A[imin];
-		A[imin] = temp;
-	}
+// Function to perform selection sort on a vector
+void selectionSort(vector<int>& arr) {
+    int n = arr.size();
+
+    // Iterate through the array
+    for (int i = 0; i < n - 1; i++) {
+        int minIdx = i;
+
+        // Find the index of the minimum element in the unsorted part of the array
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIdx]) {
+                minIdx = j;
+            }
+        }
+
+        // Swap the minimum element with the first element of the unsorted part of the array
+        swap(arr[i], arr[minIdx]);
+    }
 }
-int main(){
-	int A[] = {5,4,3,6,7,8,9,1,2,10};
-	SelectionSort(A,10);
-	for(int i = 0; i < 10; i++){
-		cout << A[i] << " ";
-	}
-	
-return 0;
+
+int main() {
+    // Example usage
+    vector<int> arr = {64, 25, 12, 22, 11};
+    selectionSort(arr);
+    for (int i = 0; i < arr.size(); i++) {
+        cout << arr[i] << " ";
+    }
+    return 0;
 }
