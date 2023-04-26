@@ -19,6 +19,7 @@
 
 	If no non-repeating character is found, then the function returns -1.
 
+	Overall, the function has a time complexity of O(n) since it loops through the string twice, and a space complexity of O(k), where k is the number of unique characters in the string, since the charFreq map stores the frequency of each unique character.
 */
 package main
 
