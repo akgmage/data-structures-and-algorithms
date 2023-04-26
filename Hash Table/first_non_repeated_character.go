@@ -1,3 +1,25 @@
+/*
+	The FirstNonRepeatingCharacter function takes a string as input and returns the index of the
+	first non-repeating character in the string. If all the characters are repeated, then it returns -1.
+
+	The function works by first creating an empty map called charFreq to keep track of the frequency of
+	each character in the string. Then, it iterates through each character in the string using a for loop.
+
+	Inside the loop, it checks if the current character already exists in the charFreq map.
+
+	If it does, then it increments its frequency by 1, and if it doesn't, it adds the character to the map
+	with a frequency of 1.
+
+	After the map is constructed, the function iterates through the string again using another for loop,
+	this time tracking the index of each character using the idx variable.
+
+	For each character, it checks its frequency in the charFreq map.
+
+	If the frequency is 1, then the character is non-repeating and the function returns its index.
+
+	If no non-repeating character is found, then the function returns -1.
+
+*/
 package main
 
 import "fmt"
