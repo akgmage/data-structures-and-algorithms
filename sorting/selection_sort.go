@@ -27,23 +27,30 @@ package main
 
 import "fmt"
 
-func SelectionSort(arr []int, length int) []int {
-	for i := 0; i < length-1; i++ {
-		imin := i
-		for j := i + 1; j < length; j++ {
-			// find minumim element's index
-			if arr[j] < arr[imin] {
-				imin = j
+// selectionSort sorts an array of integers in ascending order
+// using the selection sort algorithm.
+func selectionSort(arr []int) {
+	// Loop over the array from start to end
+	for i := 0; i < len(arr); i++ {
+		// Assume the current index contains the minimum value
+		minIdx := i
+		// Loop over the rest of the array to find the minimum value
+		for j := i + 1; j < len(arr); j++ {
+			// If a value is found that is smaller than the current minimum,
+			// update the minimum index
+			if arr[j] < arr[minIdx] {
+				minIdx = j
 			}
 		}
-		// bring min element to front
-		arr[i], arr[imin] = arr[imin], arr[i]
+		// Swap the minimum value with the current index
+		arr[i], arr[minIdx] = arr[minIdx], arr[i]
 	}
-	return arr
 }
 
 func main() {
-	arr := []int{2, 1, 9, 3, 5, 4, 0}
-	msg := SelectionSort(arr, 7)
-	fmt.Println(msg)
+	// Example usage
+	arr := []int{5, 3, 6, 2, 10}
+	fmt.Println("Before sorting:", arr)
+	selectionSort(arr)
+	fmt.Println("After sorting:", arr)
 }
