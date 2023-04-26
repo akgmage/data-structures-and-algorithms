@@ -24,43 +24,26 @@
 // Sample Input : [2, 1, 9, 3, 5, 4, 0]
 // Output : [0 1 2 3 4 5 9]
 
-import java.util.Arrays;
-
-class SelectionSort {
-  void selectionSort(int array[])
-   {
-    int size = array.length;
-
-    for (int step = 0; step < size - 1; step++)
-     {
-      int min_idx = step;
-
-      for (int i = step + 1; i < size; i++) 
-      {
-        // To sort in descending order, change > to < in this line.
-        // Select the minimum element in each loop.
-
-        if (array[i] < array[min_idx])
-        {
-          min_idx = i;
+/**
+ * Sorts an array of integers in ascending order using the Selection Sort algorithm.
+ * 
+ * @param arr the array to be sorted
+ * @return the sorted array
+ */
+public static int[] selectionSort(int[] arr) {
+    // iterate through the array
+    for (int i = 0; i < arr.length - 1; i++) {
+        int minIdx = i;
+        // find the index of the smallest element in the unsorted portion of the array
+        for (int j = i + 1; j < arr.length; j++) {
+            if (arr[j] < arr[minIdx]) {
+                minIdx = j;
+            }
         }
-      }
-
-      // put min at the correct position
-      
-      int temp = array[step];
-      array[step] = array[min_idx];
-      array[min_idx] = temp;
+        // swap the smallest element with the first unsorted element
+        int temp = arr[minIdx];
+        arr[minIdx] = arr[i];
+        arr[i] = temp;
     }
-  }
-
-  // driver code
-  public static void main(String args[]) 
-  {
-    int[] data = { 20, 12, 10, 15, 2 };
-    SelectionSort ss = new SelectionSort();
-    ss.selectionSort(data);
-    System.out.println("Sorted Array in Ascending Order: ");
-    System.out.println(Arrays.toString(data));
-  }
+    return arr;
 }
