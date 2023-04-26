@@ -24,31 +24,30 @@
 // Sample Input : [2, 1, 9, 3, 5, 4, 0]
 // Output : [0 1 2 3 4 5 9]
 const inputArr = [4, 5, 67, 56, 3, 35, 45];
-
-const selectionSort = (inputArr) => {
-  let n = inputArr.length;
-
-  //loop to access each array element
-  for (let i = 0; i < n; i++) {
-    //assuming first array element as current minimum
-    let min = i;
-
-    //loop to compare current minimum element to other array element
-    for (let j = i + 1; j < n; j++) {
-      //comparing and updating cureent minimum element
-      if (inputArr[j] < inputArr[min]) {
-        min = j;
+/**
+ * Sorts an array using selection sort algorithm.
+ * @param {number[]} array - The array to be sorted.
+ * @returns {number[]} - The sorted array.
+ */
+function selectionSort(array) {
+  // Loop through the array from the start to the second last element
+  for (let i = 0; i < array.length - 1; i++) {
+    // Assume that the current element is the minimum
+    let minIndex = i;
+    // Loop through the rest of the array to find the minimum element
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] < array[minIndex]) {
+        // If we find a smaller element, update the minimum index
+        minIndex = j;
       }
     }
-
-    //swapping array elements if current minimum changes
-    if (min != i) {
-      let temp = inputArr[i];
-      inputArr[i] = inputArr[min];
-      inputArr[min] = temp;
-    }
+    // Swap the current element with the minimum element
+    let temp = array[i];
+    array[i] = array[minIndex];
+    array[minIndex] = temp;
   }
-  return inputArr;
-};
+  // Return the sorted array
+  return array;
+}
 
 console.log(selectionSort(inputArr));

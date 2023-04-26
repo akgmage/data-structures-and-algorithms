@@ -24,25 +24,31 @@
 #  Sample Input : [2, 1, 9, 3, 5, 4, 0]
 #  Output : [0 1 2 3 4 5 9]
 
-def selectionSort(array, size):
-   
-    for step in range(size):
-        min_idx = step
+def selection_sort(arr):
+    """
+    Sorts an array in ascending order using the selection sort algorithm.
 
-        for i in range(step + 1, size):
-         
-            # to sort in descending order, change > to < in this line
-            # select the minimum element in each loop
+    Args:
+        arr (list): An array of integers.
 
-            if array[i] < array[min_idx]:
-                min_idx = i
-         
-        # put min at the correct position
-        (array[step], array[min_idx]) = (array[min_idx], array[step])
-
+    Returns:
+        list: The sorted array in ascending order.
+    """
+    # Loop through the array
+    for i in range(len(arr)):
+        # Find the minimum element in the unsorted portion of the array
+        min_idx = i
+        for j in range(i+1, len(arr)):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        
+        # Swap the minimum element with the first element in the unsorted portion of the array
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    
+    return arr
 
 data = [-2, 45, 0, 11, -9]
 size = len(data)
-selectionSort(data, size)
+selection_sort(data, size)
 print('Sorted Array in Ascending Order:')
 print(data)
