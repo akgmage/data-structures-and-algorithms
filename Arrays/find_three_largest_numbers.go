@@ -27,6 +27,8 @@
    The `shiftAndUpdate` function takes three arguments: `triplets`, `num`, and `idx`. It iterates through the
    `triplets` array using a `for` loop and shifts each value to the left by one position until it reaches
    the `idx` index. Then it updates the value at the `idx` index with the current number `num`.
+
+   Time and Space complexity : O(n) time | O(1) space - where n is the length of the input array
 */
 package main
 
