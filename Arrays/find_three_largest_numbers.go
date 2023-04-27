@@ -3,6 +3,31 @@
   without sorting the input array, returns a sorted array of the three largest
   integers in the input array.
 */
+/* Explanation
+   This code defines a function called `FindThreeLargestNumbers` that takes an array of integers as input and
+   returns an array of the three largest integers in the input array.
+
+   The `triplets` array is initialized with three smallest possible values. Then, the function iterates through
+   the input array using a `for` loop and calls the `updateLargest` function to update the `triplets` array with
+   the current number if it is larger than one of the values in the array.
+
+   The `updateLargest` function takes two arguments: `triplets` and `num`. It first checks if `num` is greater
+   than the third value in the `triplets` array. If so, it calls the `shiftAndUpdate` function to update the
+   `triplets` array with the current number at the third index.
+
+   If `num` is not greater than the third value in the `triplets` array, it checks if `num` is greater than the second value in the `triplets` array.
+
+   If so, it calls the `shiftAndUpdate` function to update the `triplets` array with the current number at
+   the second index. Finally, if `num` is not greater than either the third or second value in the `triplets`
+   array, it checks if `num` is greater than the first value in the `triplets` array.
+
+   If so, it calls the `shiftAndUpdate` function to update the `triplets` array with the current number at
+   the first index.
+
+   The `shiftAndUpdate` function takes three arguments: `triplets`, `num`, and `idx`. It iterates through the
+   `triplets` array using a `for` loop and shifts each value to the left by one position until it reaches
+   the `idx` index. Then it updates the value at the `idx` index with the current number `num`.
+*/
 package main
 
 import "math"
