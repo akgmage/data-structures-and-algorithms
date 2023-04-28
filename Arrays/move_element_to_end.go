@@ -12,7 +12,9 @@
 	the previous loop), and sets their value to toMove. This effectively moves all instances of toMove to the
 	end of the array.
 
-Finally, the modified array is returned.
+	Finally, the modified array is returned.
+
+	O(n) time | O(1) space - where n is the length of the array
 */
 package main
 
