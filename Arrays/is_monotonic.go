@@ -14,6 +14,8 @@
 
 	At the end of the loop, the function returns true if either isNonDecreasing or isNonIncreasing is still true,
 	indicating that the array is monotonic. Otherwise, it returns false.
+
+	O(n) time | O(1) space - where n is the length of the array
 */
 package main
 
