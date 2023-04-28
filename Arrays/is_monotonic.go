@@ -6,29 +6,24 @@ package main
 
 import "fmt"
 
-func IsMonotonic(Arr []int) bool {
-	if len(Arr) < 2 {
-		return true
-	}
 
-	isIncreasing := 0
-
-	for i := 1; i < len(Arr); i++ {
-		if isIncreasing == 0 {
-			if Arr[i - 1] > Arr[i] {
-				isIncreasing = -1 // means we will check for decreasing
-			} else if Arr[i - 1] < Arr[i] {
-				isIncreasing = 1 // means we will check for increasing	
-			}
+func IsMonotonic(array []int) bool {
+	// assume the array is non-decreasing until we find a decreasing element
+	isNonDecreasing := true 
+	// assume the array is non-increasing until we find an increasing element
+	isNonIncreasing := true 
+	for i := 1; i < len(array); i++ {
+		if array[i] < array[i - 1] {
+			// if the current element is less than the previous element, the array is not non-decreasing
+			isNonDecreasing = false
 		}
-		if isIncreasing == 1 && Arr[i - 1] > Arr[i] {
-			return false // in increasing array element before other element cannot be less so return false
-		}
-		if isIncreasing == -1 && Arr[i - 1] < Arr[i] {
-			return false // in decreasing array element after other element cannot be greater so return false
+		if array[i] > array[i - 1] {
+			// if the current element is greater than the previous element, the array is not non-increasing
+			isNonIncreasing = false
 		}
 	}
-	return true
+	// return true if the array is either non-decreasing or non-increasing
+	return isNonDecreasing || isNonIncreasing 
 }
 
 func main() {
