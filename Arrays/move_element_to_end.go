@@ -1,3 +1,19 @@
+/*
+	This is a function called MoveElementToEnd that takes an array of integers array and an integer toMove as input,
+	and returns a modified array with all instances of toMove moved to the end of the array.
+
+	The function first initializes an integer variable index to 0, which will keep track of the index of the first
+	element in the array that is not equal to toMove. Then, it loops through the array using a for loop, and if the
+	current element is not equal to toMove, it replaces the element at the index position with the current element
+	and increments the index variable by 1. This effectively shifts all elements that are not equal to toMove to the
+	beginning of the array.
+
+	Next, the function loops through the remaining elements of the array (i.e., those that were not overwritten in
+	the previous loop), and sets their value to toMove. This effectively moves all instances of toMove to the
+	end of the array.
+
+Finally, the modified array is returned.
+*/
 package main
 
 func MoveElementToEnd(array []int, toMove int) []int {
