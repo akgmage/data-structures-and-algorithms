@@ -22,3 +22,12 @@ bool IsMonotonic(vector<int>& array) {
     // if either flag is true, return true indicating that array is monotonic
     return isNonDecreasing || isNonIncreasing;
 }
+
+int main() {
+    // example usage
+    vector<int> arr = {1, 2, 3, 3, 4, 5};
+    bool isMonotonic = IsMonotonic(arr);
+    cout << "Array is monotonic: " << isMonotonic << endl;
+    
+    return 0;
+}
