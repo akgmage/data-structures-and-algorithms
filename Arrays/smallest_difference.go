@@ -30,6 +30,8 @@
 	The function returns the result variable, which contains the pair of integers with the smallest absolute difference.
 
 	If there are identical integers in the two input arrays, the function will return them immediately, without any further comparisons.
+
+	O(nlog(n) + mlog(m)) time | O(1) space - where n is the length of the first input array and m is the length of the second input array
 */
 package main
 
