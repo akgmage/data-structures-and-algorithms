@@ -1,3 +1,22 @@
+/*
+
+	This code implements the Smallest Difference problem which takes two arrays of integers as input and returns a pair of integers,
+	one from each array, with the smallest absolute difference between them.
+
+	The function first initializes two variables current and smallest to the maximum integer value. It then sorts both input arrays
+	in ascending order using the sort.Ints function from the sort package.
+
+	The function then iterates through both arrays using two pointers, idx1 and idx2, initialized to 0. Inside the loop, it compares
+	the elements at the current indices of the two arrays, first and second, and calculates the absolute difference between
+	them in the current variable.
+
+	If current is smaller than the smallest variable, it updates smallest to current and assigns the current pair of integers
+	to the result variable.
+
+	The function returns the result variable, which contains the pair of integers with the smallest absolute difference.
+
+	If there are identical integers in the two input arrays, the function will return them immediately, without any further comparisons.
+*/
 package main
 
 import (
