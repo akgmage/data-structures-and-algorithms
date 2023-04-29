@@ -49,3 +49,14 @@ def smallest_difference(array1: List[int], array2: List[int]) -> List[int]:
 
     # Return the result
     return result
+
+def main():
+    array1 = [1, 3, 15, 11, 2]
+    array2 = [23, 127, 235, 19, 8]
+    result = smallest_difference(array1, array2)
+    print("Array 1:", array1)
+    print("Array 2:", array2)
+    print("Smallest Difference Pair:", result)
+
+if __name__ == "__main__":
+    main()
