@@ -26,6 +26,8 @@
 	the bottom row of the matrix from right to left, and appends each element to the result slice. If there is only one row left,
 	the loop is broken to avoid duplicating the elements. Finally, if there is more than one column in the matrix,
 	the function traverses the left
+
+	O(n) time | O(n) space - where n is the total number of elements in the array
 */
 package main
 
