@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func SpiralTraverse(array [][]int) []int {
 	// Initialize an empty slice to hold the result
 	result := []int{}
@@ -45,4 +47,19 @@ func SpiralTraverse(array [][]int) []int {
 	}
 	// Return the result slice
 	return result
+}
+
+func main() {
+	// Example 2D array
+	array := [][]int{
+		{1, 2, 3, 4},
+		{10, 11, 12, 5},
+		{9, 8, 7, 6},
+	}
+
+	// Call SpiralTraverse function on array
+	result := SpiralTraverse(array)
+
+	// Print the result to console
+	fmt.Println(result)
 }
