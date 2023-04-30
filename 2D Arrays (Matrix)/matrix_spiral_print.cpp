@@ -1,49 +1,60 @@
 // Printing Matrix in spiral order 
 #include<bits/stdc++.h>
 using namespace std;
-void print_spiral(int Mat[][10], int R, int C){
-    int startRow = 0, endRow = R-1, startCol = 0, endCol = C-1; 
-    while(startRow <= endRow && startCol <= endCol){
-        // Print first row
-        for(int i = startCol; i <= endCol; i++){
-            cout << Mat[startRow][i];
+
+#include <vector>
+using namespace std;
+
+vector<int> SpiralTraverse(vector<vector<int>> array) {
+    vector<int> result; // vector to store the spiral traversal
+    int rows = array.size(); // number of rows in the input array
+    int cols = array[0].size(); // number of columns in the input array
+    int startRow = 0, endRow = rows - 1; // indices for the start and end row of the current subarray
+    int startCol = 0, endCol = cols - 1; // indices for the start and end column of the current subarray
+
+    // loop until the entire input array is traversed
+    while (startRow <= endRow && startCol <= endCol) {
+        // traverse the top row from left to right
+        for (int col = startCol; col <= endCol; col++) {
+            result.push_back(array[startRow][col]);
         }
+        // traverse the right column from top to bottom
+        for (int row = startRow + 1; row <= endRow; row++) {
+            result.push_back(array[row][endCol]);
+        }
+        // traverse the bottom row from right to left
+        for (int col = endCol - 1; col >= startCol; col--) {
+            // check if there is only one row in the subarray
+            if (startRow == endRow) {
+                break;
+            }
+            result.push_back(array[endRow][col]);
+        }
+        // traverse the left column from bottom to top
+        for (int row = endRow - 1; row > startRow; row--) {
+            // check if there is only one column in the subarray
+            if (startCol == endCol) {
+                break;
+            }
+            result.push_back(array[row][startCol]);
+        }
+        // update the indices for the next subarray to be traversed
         startRow++;
-        // print end col
-        for(int i = startRow; i <= endRow; i++){
-            cout << Mat[i][endCol];
-        }
+        endRow--;
+        startCol++;
         endCol--;
-        // Print end row
-        if(endRow > startRow){
-            for(int i = endCol; i >= startCol; i--){
-                cout << Mat[endRow][i];
-            }
-            endRow--;
-        }
-        // print start row
-        if(startCol < endCol){
-            for(int i = endRow; i >= startRow; i--){
-                cout << Mat[i][startCol];
-            }
-            startCol++;
-        }
     }
-}   
-int main(){
-    int Mat[10][10], R, C;
-    cin >> R >> C;
-    for(int i = 0; i < R; i++){
-        for(int j = 0; j < C; j++){
-            cin >> Mat[i][j];
-        }
+
+    return result;
+}
+
+int main() {
+    vector<vector<int>> array = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    vector<int> result = SpiralTraverse(array);
+    cout << "Spiral traversal: ";
+    for (int i = 0; i < result.size(); i++) {
+        cout << result[i] << " ";
     }
-    for(int i = 0; i < R; i++){
-        for(int j = 0; j < C; j++){
-            cout << Mat[i][j] << " ";
-        }
-        cout << endl;
-    }
-    print_spiral(Mat, R, C);
+    cout << endl;
     return 0;
 }
