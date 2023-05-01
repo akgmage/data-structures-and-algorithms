@@ -18,6 +18,14 @@ package main
 
 import "fmt"
 
+/*
+	This function takes an array of integers as input and returns the first duplicate value found in
+	the array. It uses a hash table, implemented as a Go map, to keep track of the numbers seen so far.
+	For each number in the input array, the function checks if it has already been seen before by
+	checking if it exists as a key in the map. If it has been seen before, the function returns
+	the number as it is the first duplicate value found. Otherwise, the function adds the number
+	to the map with a value of true to indicate that it has been seen.
+*/
 func FirstDuplicateValue(array []int) int {
 	seenSoFar := make(map[int]bool)
 	for _, num := range array {
