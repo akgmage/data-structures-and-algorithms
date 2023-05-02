@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func LongestPeak(array []int) int {
 	longestPeak := 0
 	i := 1
@@ -26,4 +28,10 @@ func LongestPeak(array []int) int {
 		i = rightIndex
 	}
 	return longestPeak
+}
+
+func main() {
+	array := []int{1, 2, 3, 4, 5, 4, 3, 2, 1}
+	longestPeak := LongestPeak(array)
+	fmt.Println(longestPeak) // Output: 9
 }
