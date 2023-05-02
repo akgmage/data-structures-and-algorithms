@@ -24,10 +24,13 @@ def three_max_no(arr:list)-> list:
     # we will iterate through the array and compare the values
     for i in arr:
         if i > max_1:
+            # if the value is greater than the first variable, we will update the variables
             max_1,max_2,max_3 = i, max_1, max_2
         elif i > max_2:
+            # if the value is greater than the second variable, we will update the variables
             max_2, max_3 = i, max_2
         elif i > max_3:
+            # if the value is greater than the third variable, we will update the variables
             max_3 = i
     # return the three max values as a sorted array
     return [max_1, max_2, max_3]
