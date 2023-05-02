@@ -18,7 +18,7 @@ integers in the input array.
 
 
 
-def three_max_noo(arr:list)-> list:
+def three_max_no(arr:list)-> list:
     # give int minvalue to a,b,
     max_1,max_2,max_3= -9999,-9999,-9999
     # we will iterate through the array and compare the values
@@ -35,6 +35,6 @@ def three_max_noo(arr:list)-> list:
 
 # example-1
 arr=[141,1,17,-7,-17,-27,18,541,8,7,7]
-print(three_max_noo(arr))
+print(three_max_no(arr))
 
 # sample output    [541, 141, 18]
