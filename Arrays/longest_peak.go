@@ -28,6 +28,10 @@
 	the entire peak and continue iterating from the end of the peak.
 
 	The function returns the value of longestPeak once it has finished iterating over the array.
+
+	The time complexity of the LongestPeak function is O(n), where n is the length of the input array, because it iterates through the array only once.
+
+	The space complexity of the function is O(1), because it uses a constant amount of extra space, regardless of the size of the input array.
 */
 package main
 
