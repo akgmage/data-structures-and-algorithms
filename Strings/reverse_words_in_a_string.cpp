@@ -25,9 +25,12 @@
 class Solution {
 public:
     string reverseWords(string s) {
+        // Intitalize variables we will be needing
        stack<string> st;
         string ans;
         string curr_word="";
+
+        // Traverse through the string and push each word into the stack seperated by ' '.
         for(int i=0;i<s.length();i++)
         {
             if(s[i]==' '){
@@ -38,7 +41,11 @@ public:
                 curr_word+=s[i];
             }
         }
+        
+        // Push the last word in stack as string may not end with ' '.
         if(curr_word!="") st.push(curr_word);
+        
+        //Pop stored words from stack and add them to the ans string seperated by " " except for the last word.
         while(!st.empty())
         {
             ans+=st.top();
@@ -46,6 +53,8 @@ public:
             if(!st.empty()) ans = ans+" ";
            
         }
+
+        // Return the ans string
         return ans;  
     }
 };
