@@ -3,6 +3,9 @@
   	Given an array of integers between  1 and n, inclusive, where n is the length of the array, write a function
 	that returns the first integer that appears more than once (when the array is read from left to right).
 
+	Sample Input = [2, 1, 5, 2, 3, 3, 4]
+	Output : 2
+
 	The time complexity of the `FirstDuplicateValue` function is O(n), where n is the length of the
 	input `array`. This is because the function iterates through the array once, performing constant
 	time operations (checking if a value exists in a hash map and inserting values into the hash map).
