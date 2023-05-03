@@ -6,6 +6,12 @@
 // Input: nums = [2,0,2,1,1,0]
 // Output: [0,0,1,1,2,2]
 
+// Time and space complexity of the solution
+
+// Time complexity: O(n)
+// Space complexity: O(1)
+
+
 
 
 #include <bits/stdc++.h>
