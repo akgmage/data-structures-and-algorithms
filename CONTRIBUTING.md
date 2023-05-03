@@ -17,6 +17,7 @@ Contributions are always welcome!
 - Add question on top of file
 - Add sample input and output
 - Explain approach with comments
+- Add Time and Space complexity
 - Take care of Readability (Code is written once and read multiple times, so keep this in mind)
 - Provide link for further reading (optional)
 - Send a Pull Request (PR) against main branch
