@@ -19,9 +19,19 @@
 	> At most 104 calls in total will be made to reset and shuffle.
 */
 
+/*
+    APPROACH
+
+    1. Use two lists to store the original nums array. 
+    2. We can keep one array as it is and return it whenever the reset() function is called.
+    3. We use the second list to shuffle the permutation of elements and return a shuffled array when shuffle() function is called.
+    4. For shuffling, choose 2 indices on random basis from the array and swap them. Repeat for n times. (n=size of the array)
+
+*/
+// O(N) Time-Complexity and O(N) Space-Complexity Solution
 class Solution {
 public:
-    // lets make 2 variables, one to storethe shuffled version of the given array and the other to store the original version
+    // lets make 2 variables, one to store the shuffled version of the given array and the other to store the original version
     vector<int> shuffled;
     vector<int> original;
     Solution(vector<int>& nums) {
