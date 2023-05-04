@@ -28,6 +28,21 @@ Constraints:
 1 <= nums[i] <= 100
 */
 
+Explanation of the below cpp code:
+
+This C++ program takes an integer n as input and then reads n integers from the standard input.
+It then creates a vector v to store the input integers and a map m to count the frequency of each input integer.
+Finally, the program computes the number of pairs of input integers that are equal and outputs this count to the standard output.
+
+The algorithm used to compute the count of pairs is based on the following observation:
+for each integer x that appears k times in the input vector, there are k*(k-1)/2 pairs of integers that are equal to x.
+This can be seen by choosing any two of the k occurrences of x, which can be done in k*(k-1)/2 ways.
+
+The program uses the map data structure to count the frequency of each integer in the input vector.
+It then iterates over the pairs (x,k) in the map and adds k*(k-1)/2 to a variable count. Finally, it outputs the value of count.
+
+Overall, this program has a time complexity of O(n log n) due to the use of the map data structure, which has a logarithmic time complexity for insertion and lookup operations.
+However, since the input size is limited to 10^5 integers, the program should run efficiently for typical input sizes.
 -------------------------------------------------------------------------//C++ code begins here---------------------------------------------------------------------------------
 //Array: Find Number of Good Pairs in Go
 
