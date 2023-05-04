@@ -26,7 +26,6 @@ Constraints:
 
 1 <= nums.length <= 100
 1 <= nums[i] <= 100
-*/
 
 Explanation of the below cpp code:
 
@@ -43,6 +42,7 @@ It then iterates over the pairs (x,k) in the map and adds k*(k-1)/2 to a variabl
 
 Overall, this program has a time complexity of O(n log n) due to the use of the map data structure, which has a logarithmic time complexity for insertion and lookup operations.
 However, since the input size is limited to 10^5 integers, the program should run efficiently for typical input sizes.
+*/
 -------------------------------------------------------------------------//C++ code begins here---------------------------------------------------------------------------------
 //Array: Find Number of Good Pairs in Go
 
