@@ -16,6 +16,10 @@ decreasing. At least three integers are required to form a peak.
 5. go to the downhill end
 6. update the ans
 """
+# Time Complexity: O(n)
+# Space Complexity: O(1)
+
+
 
 arr=[1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]
 
