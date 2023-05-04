@@ -1,6 +1,6 @@
 /* Name : Abhinav kumar
 Github username : Abhinavcode13
-Repository name : Algorithms
+Repository name : data-structures-and-algorithms
 Problem :  Find Number of Good Pairs in Go
 Issue Number : #529
 Problem statement : Given an array of integers nums, return the number of good pairs.
