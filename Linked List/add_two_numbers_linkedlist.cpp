@@ -11,7 +11,9 @@
 class Solution {
 public:
    
+    // Since the two lists are given in reverse order, therefore the calculated sum is added at the end of the tail each time 
     void insertattail(ListNode* &head, ListNode* &tail, int val){
+    
         ListNode* temp = new ListNode(val);
         if(head == NULL){
             head = temp;
@@ -23,7 +25,9 @@ public:
             tail = temp;
         }
     }
+    
     ListNode* add(ListNode* l1, ListNode* l2 ){
+    
         int carry = 0;
         ListNode* ansHead = NULL;
         ListNode* ansTail = NULL;
@@ -39,10 +43,13 @@ public:
             }
 
             int sum = val1 + val2 + carry;
+            // the digit that is to be made node and inserted at the end 
             int digit = sum%10;
+            
             // the extracted digit needs to be inserted at the tail 
+            
             insertattail(ansHead, ansTail, digit);
-            // update the carry 
+            // update the value of carry variable 
             carry = sum/10;
 
             if(l1!= NULL){
