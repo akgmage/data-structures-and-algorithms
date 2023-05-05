@@ -1,3 +1,7 @@
+#Problem statement - Given an integer array nums, design an algorithm to randomly shuffle the array. 
+# All permutations of the array should be equally likely as a result of the shuffling.
+# Complete the provided functions 
+
 class Solution:
 
     def __init__(self, nums: List[int]):
