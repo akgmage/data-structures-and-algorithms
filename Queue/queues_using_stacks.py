@@ -11,6 +11,12 @@ In the above code, the Queue class represents a queue implemented using two stac
 
 The program provides the user with a menu to select the operation they want to perform - enqueue, dequeue, or quit. The user can input the value to enqueue, and the program prints the enqueued or dequeued value accordingly.
 
+Summary about the code and time complexity:
+
+This code implements a queue using two stacks.
+The enqueue operation is simply implemented by appending an element to one of the stacks, while the dequeue operation involves reversing the order of the elements by popping from one stack and pushing onto the other, and then popping the top element from the second stack.
+The time complexity of the enqueue operation is O(1), while the time complexity of the dequeue operation is O(n) in the worst case, where n is the number of elements in the queue. This is because in the worst case, all the elements will need to be moved from one stack to the other during the dequeue operation.
+
 
 
 ----------------------------------------------------------------------------------------------------------//Python code begins here-----------------------------------------------------------------------------------------------------------------------
