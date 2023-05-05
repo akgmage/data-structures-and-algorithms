@@ -11,6 +11,12 @@
 ////           	Maximum of 1, 7 is 7
 ////           	Maximum of 7, 3 is 7
 
+// Approach:
+
+//// We will travel from 0 to (N-K)th element of the given array. 
+//// At each index, we will find the maximum of K indexes including the current index and print.
+//// Suppose we are at ith index then we will find maximum of i, i+1, i+2, .. i+k-1 elements and print it.    
+
 // Complexity:
 
 //// Time  Complexity: O(N*K)
