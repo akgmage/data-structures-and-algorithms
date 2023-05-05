@@ -1,0 +1,55 @@
+/* Name : Saishree Kouda
+Github username : saishreekouda
+Repository name : data-structures-and-algorithms
+Problem : Add Two Numbers Linked List in C++
+Issue Number : #620
+Problem statement : Add Two Numbers4
+
+Description:
+You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+
+You may assume the two numbers do not contain any leading zero, except the number 0 itself. 
+
+Example:
+Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+Output: 7 -> 0 -> 8
+
+Constraints:
+The number of nodes in each linked list is in the range [1, 100].
+0 <= Node.val <= 9
+It is guaranteed that the list represents a number that does not have leading zeros.*/
+
+/*-----------------------------------------------------------------------------------------------------------//C++ code begins here------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+class Solution {
+public:
+// Iterative approach
+    
+  /*  ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+    int c = 0;
+    ListNode newHead(0);
+    ListNode *t = &newHead;
+    while(c || l1 || l2) {
+        c += (l1? l1->val : 0) + (l2? l2->val : 0);
+        t->next = new ListNode(c%10);
+        t = t->next;
+        c /= 10;
+        if(l1) l1 = l1->next;
+        if(l2) l2 = l2->next;
+    }
+    return newHead.next;
+} */
+
+// Recursive approach
+ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+    if(!l1 && !l2) return NULL;
+    int c = (l1? l1->val:0) + (l2? l2->val:0);
+    ListNode *newHead = new ListNode(c%10), *next = l1? l1->next:NULL;
+    c /= 10;
+    if(next) next->val += c;
+    else if(c) next = new ListNode(c);
+    newHead->next = addTwoNumbers(l2? l2->next:NULL, next);
+    return newHead;
+}
+   
+};
