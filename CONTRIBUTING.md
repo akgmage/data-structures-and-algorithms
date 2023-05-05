@@ -20,7 +20,7 @@ Contributions are always welcome!
 - Add Time and Space complexity
 - Take care of Readability (Code is written once and read multiple times, so keep this in mind)
 - Provide link for further reading (optional)
-- Send a Pull Request (PR) against main branch
+- Send a Pull Request (PR) against main branch and mention issue number in the request
 
 ## What if the problem you want to add is not present in the issue?
 
