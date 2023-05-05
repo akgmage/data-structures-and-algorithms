@@ -1,4 +1,4 @@
-/* Name : Abhinav kumar
+''' Name : Abhinav kumar
 Github username : Abhinavcode13
 Repository name : data-structures-and-algorithms
 Problem : Implement Stack using Queues in Python
@@ -21,8 +21,8 @@ The deque data structure from the collections module is used to implement the tw
 
 Overall, this implementation is quite simple and efficient, since the push and pop operations take O(1) time complexity on average, while the top and empty operations take constant time.
 
-*/
 -------------------------------------------------------------------------//Python code begins here----------------------------------------------------------------------------
+'''
 
 from collections import deque
 
