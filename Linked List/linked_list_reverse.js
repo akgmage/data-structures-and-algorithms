@@ -23,6 +23,8 @@ var reverseList = function(head) {
   // Returning the head of the reversed linked list 
         return prev;    
 };
+// Time complexity - O(N)
+// Space complexity - O(1)
 
 // Recursively 
 var reverseList = function(head) {
@@ -41,3 +43,5 @@ var reverseList = function(head) {
   // Returning the head of the reversed linked list 
   return reversedList; 
 };
+// Time complexity - O(N)
+// Space complexity - O(N)
