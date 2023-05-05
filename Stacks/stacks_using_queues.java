@@ -24,64 +24,77 @@ import java.util.Queue;
 import java.util.Scanner;
 
 public class StackUsingQueues {
+// Create two queues as instance variables
+private Queue<Integer> q1 = new LinkedList<>();
+private Queue<Integer> q2 = new LinkedList<>();
 
-    private Queue<Integer> q1 = new LinkedList<>();
-    private Queue<Integer> q2 = new LinkedList<>();
-    private int top;
+// Create a variable to hold the top element of the stack
+private int top;
 
-    public void push(int x) {
-        q1.add(x);
-        top = x;
+// Method to push an element onto the stack
+public void push(int x) {
+    q1.add(x); // Add the element to the first queue
+    top = x; // Update the top variable to hold the new element
+}
+
+// Method to pop an element from the stack
+public int pop() {
+    // Move all elements except the last one from the first queue to the second queue
+    while (q1.size() > 1) {
+        top = q1.remove();
+        q2.add(top);
     }
+    // Remove the last element from the first queue, which is the element to be popped
+    int popValue = q1.remove();
+    // Swap the queues so that the second queue becomes the first queue for the next operation
+    Queue<Integer> temp = q1;
+    q1 = q2;
+    q2 = temp;
+    return popValue; // Return the popped element
+}
 
-    public int pop() {
-        while (q1.size() > 1) {
-            top = q1.remove();
-            q2.add(top);
-        }
-        int popValue = q1.remove();
-        Queue<Integer> temp = q1;
-        q1 = q2;
-        q2 = temp;
-        return popValue;
-    }
+// Method to peek at the top element of the stack
+public int peek() {
+    return top; // Return the top element of the stack
+}
 
-    public int peek() {
-        return top;
-    }
+// Method to check if the stack is empty
+public boolean isEmpty() {
+    return q1.isEmpty(); // Return whether the first queue is empty
+}
 
-    public boolean isEmpty() {
-        return q1.isEmpty();
-    }
-
-    public static void main(String[] args) {
-        StackUsingQueues stack = new StackUsingQueues();
-        Scanner scanner = new Scanner(System.in);
-        while (true) {
-            System.out.println("Select operation -\n"
-                    + "1. Push\n"
-                    + "2. Pop\n"
-                    + "3. Quit");
-
-            int choice = scanner.nextInt();
-
-            if (choice == 1) {
-                System.out.print("Enter value to push: ");
-                int val = scanner.nextInt();
-                stack.push(val);
-                System.out.println("Pushed value: " + val);
-            } else if (choice == 2) {
-                if (stack.isEmpty()) {
-                    System.out.println("Stack is empty.");
-                } else {
-                    int val = stack.pop();
-                    System.out.println("Popped value: " + val);
-                }
-            } else if (choice == 3) {
-                break;
+// Main method to run the program
+public static void main(String[] args) {
+    // Create a new instance of the StackUsingQueues class
+    StackUsingQueues stack = new StackUsingQueues();
+    // Create a new Scanner object to read input from the user
+    Scanner scanner = new Scanner(System.in);
+    // Create a loop to continuously prompt the user for input
+    while (true) {
+        System.out.println("Select operation -\n"
+                + "1. Push\n"
+                + "2. Pop\n"
+                + "3. Quit");
+        // Read the user's choice
+        int choice = scanner.nextInt();
+        // Check the user's choice and perform the corresponding operation
+        if (choice == 1) {
+            System.out.print("Enter value to push: ");
+            int val = scanner.nextInt();
+            stack.push(val);
+            System.out.println("Pushed value: " + val);
+        } else if (choice == 2) {
+            if (stack.isEmpty()) {
+                System.out.println("Stack is empty.");
             } else {
-                System.out.println("Invalid choice. Please try again.");
+                int val = stack.pop();
+                System.out.println("Popped value: " + val);
             }
+        } else if (choice == 3) {
+            break;
+        } else {
+            System.out.println("Invalid choice. Please try again.");
         }
     }
+}
 }
