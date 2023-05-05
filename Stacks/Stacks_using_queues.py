@@ -27,25 +27,25 @@ Overall, this implementation is quite simple and efficient, since the push and p
 from collections import deque
 
 class Stack:
-    def __init__(self):
+    def __init__(self):             #The Stack class is defined with a constructor that initializes a deque object as the Stack's underlying data structure.
         self.queue = deque()
 
     def push(self, x: int) -> None:
         self.queue.append(x)
-        # Move all existing elements to the end of the queue
+        # Move all existing elements to the end of the queue      #The push method takes an integer value as input and appends it to the end of the deque. It then moves all the existing elements in the deque to the end, effectively simulating the addition of the new element to the top of the Stack.
         for _ in range(len(self.queue) - 1):
             self.queue.append(self.queue.popleft())
 
     def pop(self) -> int:
-        return self.queue.popleft()
+        return self.queue.popleft()     #The pop method removes and returns the element at the top of the Stack, which is the first element in the deque.
 
-    def top(self) -> int:
+    def top(self) -> int:             #The top method returns the element at the top of the Stack without removing it, which is the first element in the deque.
         return self.queue[0]
 
-    def empty(self) -> bool:
+    def empty(self) -> bool:           #The empty method returns True if the Stack is empty (i.e., the deque has length 0), and False otherwise.
         return len(self.queue) == 0
 
-# Example usage
+
 stack = Stack()
 while True:
     print("1. Push")
@@ -59,7 +59,7 @@ while True:
         stack.push(x)
         print("Element pushed to stack")
     elif choice == 2:
-        if stack.empty():
+        if stack.empty():                                 '''The code above shows an example usage of the Stack class, where the user can interact with the Stack through a command-line interface.The user is prompted with a menu of options to choose from, and their choice is read in as an integer value using the input() functiom'''                                            Depending on the user's choice, the appropriate method is called on the stack object and the results are printed to the console.
             print("Stack is empty")
         else:
             x = stack.pop()
