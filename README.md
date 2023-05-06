@@ -708,9 +708,9 @@ Many problems in the real world use the top K elements pattern. Let’s look at 
 
 ## Practice problems for Top K Elements
 
-- Kth largest element in a stream
-- Reorganize string
-- K closest point to origin
-- Top K frequent element
-- Kth largest element in an array
-- Kth smallest element in an BST
+- [Kth largest element in a stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/)
+- [Reorganize string](https://leetcode.com/problems/reorganize-string/)
+- [K closest point to origin](https://leetcode.com/problems/k-closest-points-to-origin/)
+- [Top K frequent element](https://leetcode.com/problems/top-k-frequent-elements/)
+- [Kth largest element in an array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
+- [Kth smallest element in an BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
