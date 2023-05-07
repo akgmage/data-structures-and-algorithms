@@ -1,49 +1,93 @@
-// In computer science, merge sort (also commonly spelled as mergesort) is an efficient, general-purpose,
-// and comparison-based sorting algorithm. Most implementations produce a stable sort,
-// which means that the order of equal elements is the same in the input and output.
-// Merge sort is a divide-and-conquer algorithm that was invented by John von Neumann in 1945.
-// A detailed description and analysis of bottom-up merge sort appeared in a report by Goldstine and von Neumann as early as 1948.
-// Conceptually, a merge sort works as follows:
+// Merge Sort
+/*
+	The MergeSort function is the main function that takes an integer array as input and sorts it using the Merge Sort algorithm.
 
-// Divide the unsorted list into n sublists, each containing one element (a list of one element is considered sorted).
-// Repeatedly merge sublists to produce new sorted sublists until there is only one sublist remaining. This will be the sorted list
-// Source(https://en.wikipedia.org/wiki/Merge_sort)
+	In the MergeSort function, if the length of the input array is only one element, it is already sorted, so we return it as is.
+	Otherwise, we find the middle point of the array and split it into two halves. We then recursively call the MergeSort
+	function on the left half and the right half of the array. Finally, we merge the two sorted halves using the merge function.
 
+	The merge function takes two sorted arrays as input and merges them into one sorted array. We initialize a new array to hold
+	the merged result and three index variables for the left, right, and result arrays. We then iterate over the left and right
+	arrays and compare their elements. We add the smaller element to the result array and move the corresponding index variable.
+	Finally, we append the remaining elements of the left or right array to the result array and return it.
+
+	The time complexity of Merge Sort is O(n*log n), where n is the number of elements in the array,
+	and the space complexity is O(n) due to the use of the temporary arrays during the merging phase.
+
+*/
 package main
 
-// Approach: Divide by finding the number mid of the position midway between left and right. Do this step the same
-// way we found the midpoint in binary search
-// Conquer by recursively sorting the subarrays in each of the two subproblems created by the divide step.
-// That is, recursively sort the subarray Arr[left. . mid] and recursively sort the subarray Arr[mid + 1. . right].
-// Combine by merging the two sorted subarrays back into the single sorted subarray Arr[left. . right].
-func MergeSort(Arr []int) []int {
-	if len(Arr) <= 1 {
-		return Arr
+import "fmt"
+
+// MergeSort is the main function that takes an integer array as input
+// and sorts it using the Merge Sort algorithm.
+func MergeSort(arr []int) []int {
+	// If the array has only one element, return it.
+	if len(arr) == 1 {
+		return arr
 	}
-	middle := len(Arr) / 2
-	left := MergeSort(Arr[:middle])
-	right := MergeSort(Arr[middle:])
-	return Merge(left, right)
+
+	// Find the middle point to divide the array into two halves.
+	mid := len(arr) / 2
+
+	// Split the array into two halves.
+	left := arr[:mid]
+	right := arr[mid:]
+
+	// Recursively sort the left half of the array.
+	left = MergeSort(left)
+
+	// Recursively sort the right half of the array.
+	right = MergeSort(right)
+
+	// Merge the two sorted halves.
+	return merge(left, right)
 }
 
-func Merge(left, right []int) []int {
-	result := make([]int, len(left) + len(right))
-	for i:=0; len(left) > 0 || len(right) > - 0; i++ {
-		if len(left) > 0 && len(right) > 0 {
-			if left[0] < right[0] {
-				result[i] = left[0]
-				left = left[1:]
-			} else {
-				result[i] = right[0]
-				right = right[1:]
-			}
-		} else if len(left) > 0 {
-			result[i] = left[0]
-			left = left[1:]
-		} else if len(right) > 0 {
-			result[i] = right[0]
-			right = right[1:]
+// Merge is a helper function that takes two sorted arrays and merges them into one sorted array.
+func merge(left, right []int) []int {
+	// Initialize a new array to hold the merged result.
+	result := make([]int, len(left)+len(right))
+
+	// Initialize the index variables for the left, right, and result arrays.
+	i := 0 // Index for left array
+	j := 0 // Index for right array
+	k := 0 // Index for result array
+
+	// Iterate over the left and right arrays and compare their elements.
+	// Add the smaller element to the result array and move the corresponding index variable.
+	for i < len(left) && j < len(right) {
+		if left[i] < right[j] {
+			result[k] = left[i]
+			i++
+		} else {
+			result[k] = right[j]
+			j++
 		}
+		k++
 	}
+
+	// Append the remaining elements of the left or right array to the result array.
+	for i < len(left) {
+		result[k] = left[i]
+		i++
+		k++
+	}
+
+	for j < len(right) {
+		result[k] = right[j]
+		j++
+		k++
+	}
+
+	// Return the merged and sorted result array.
 	return result
+}
+
+func main() {
+	// Example usage
+	arr := []int{3, 2, 1, 5, 4}
+	fmt.Println("Unsorted array:", arr)
+	arr = MergeSort(arr)
+	fmt.Println("Sorted array:", arr)
 }

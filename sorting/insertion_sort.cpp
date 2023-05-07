@@ -1,43 +1,73 @@
 /*
-Implementation of insertion sort in C++.
-Insertion sort is a simple sorting algorith that iterates through
-the list starting at the second element. We compare each element
-to the preceding elements, slide over the preceding larger (or smaller)
-elements, and insert the original element into the empty position.
+    Insertion sort is a simple sorting algorithm that builds the final sorted array one item at a time. 
+    It starts with the second element of the array, compares it with the first element, and swaps them 
+    if necessary. It then continues to the third element, compares it with the first and second elements, 
+    and swaps it into the correct position. This process continues until the last element is compared and 
+    sorted into its correct position in the sorted array.
 
-Time Complexity worst-case and average complexity O(n^{2})
+    At each iteration, the algorithm assumes that the subarray to the left of the current element is already 
+    sorted, and it searches for the correct position of the current element within that subarray by comparing 
+    it to each element from right to left until it finds the correct position. Once it finds the correct 
+    position, it shifts all the larger elements to the right to make space for the current element and 
+    inserts it in its correct position.
 
-Insertion sort is inefficient for large arrays. However it is fast for
-small arrays and typically more efficient than bubble sort and selection
-sort due to not making as many comparisons on average.
+    Insertion sort has an average-case time complexity of O(n^2) but can perform better than other O(n^2) 
+    algorithms, such as bubble sort or selection sort, in certain cases. It is also an efficient algorithm 
+    for small data sets or partially sorted data sets.
+	
+    In this implementation, we define a function called InsertionSort that takes an array of integers and sorts
+	it in ascending order using the Insertion Sort algorithm.
 
-Source: https://en.wikipedia.org/wiki/Insertion_sort
+	The algorithm works by iterating over the array from the second element to the end.
 
-Sample input: [0, 2, 1,-1, 10, 3, 4]
-Output: [-1 0 1 2 3 4 10]
+	For each element, it compares it with the previous elements in the array and inserts it in the correct position.
+
+	The current variable holds the value of the current element being compared.
+
+	The j variable holds the index of the previous element being compared.
+
+	The loop compares the current value with the previous values in the array and shifts the values to the right to make space for the current value.
+
+	Once the correct position is found, the current value is inserted into the array.
+
+	Finally, the sorted array is returned. In the main function, we define an array of integers, sort it using the InsertionSort function, and print the sorted array.
+
+	Sample input: [0, 2, 1,-1, 10, 3, 4]
+	Output: [-1 0 1 2 3 4 10]
 */
 
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
+
 using namespace std;
 
-void InsertionSort(int A[], int n){
-	int flag = 0;
-	for(int i = 1; i < n; i++){
-		int hole = i;
-		int value = A[i];
-		while(hole > 0 && A[hole-1] > value){
-			A[hole] = A[hole-1];
-			hole = hole - 1;
-		}
-		A[hole] = value;
-	}
+
+// InsertionSort is a function that takes an array of integers and sorts it in
+// ascending order using the Insertion Sort algorithm.
+void insertionSort(vector<int>& arr) {
+    int n = arr.size();
+    for(int i=1; i<n; i++) { // i starts from 1 as we assume 1st element is already sorted
+        int key = arr[i]; // assign key with current element which needs to be compared and sorted
+        int j = i-1; // set the index j to previous element
+        
+        /* Move elements of arr[0..i-1], that are greater than key, to one position ahead 
+        of their current position */
+        while(j>=0 && arr[j]>key) {
+            arr[j+1] = arr[j];
+            j--;
+        }
+        arr[j+1] = key; // insert the key at its sorted position
+    }
 }
-int main(){
-	int A[] = {5,9,77,1,2,3,4,5};
-	InsertionSort(A,6);
-	for(int i = 0; i < 6; i++){
-		cout << A[i] << " ";
-	}
-	
-return 0;
+
+int main() {
+    vector<int> arr = {3, 5, 1, 4, 2};
+    insertionSort(arr);
+
+    cout << "Sorted Array: ";
+    for(int num: arr) {
+        cout << num << " ";
+    }
+    cout << endl;
+    return 0;
 }
