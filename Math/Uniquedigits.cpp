@@ -17,21 +17,20 @@ Finally, we return the value of ans.
 
 -------------------------------------------------------------------------//C++ code begins here----------------------------------------------------------------------------
 
-
 class Solution {
 public:
     int countNumbersWithUniqueDigits(int n) {
         if (n == 0) {
-            return 1;
+            return 1;   // return 1 for n = 0
         }
-        int ans = 10;
-        int unique_digits = 9;
-        int available_digits = 9;
+        int ans = 10;   // start with 10 unique digits, as we can have numbers 0-9
+        int unique_digits = 9;  // start with 9 digits, as we cannot use 0 as first digit
+        int available_digits = 9;   // remaining available digits
         while (n-- > 1 && available_digits > 0) {
-            unique_digits *= available_digits;
-            ans += unique_digits;
-            available_digits--;
+            unique_digits *= available_digits; // calculate number of unique numbers that can be formed
+            ans += unique_digits; // add number of unique numbers to the answer
+            available_digits--; // reduce available digits by 1
         }
-        return ans;
+        return ans; // return final answer
     }
 };
