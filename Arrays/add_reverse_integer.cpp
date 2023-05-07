@@ -14,6 +14,17 @@ Input: x = -123
 Output: -321
 */
 
+/* 
+
+APPROACH: The reverse function takes an integer as input and returns the reversed integer. The function first initializes a variable to store the reversed integer and then iterates over each digit of the input integer. In each iteration, the function extracts the rightmost digit of the input integer, checks if multiplying the reversed integer by 10 and adding the rightmost digit will cause integer overflow or underflow, adds the rightmost digit to the reversed integer, and removes the rightmost digit from the input integer. Finally, the function returns the reversed integer.
+
+Time Complexity:
+The time complexity of the reverse function is O(log(x)), where x is the input integer. This is because the function needs to iterate over each digit of the input integer, which is proportional to the logarithm of the integer.
+
+Space Complexity:
+The space complexity of the reverse function is O(1), because it only uses a constant amount of additional space to store the reversed integer and the remainder.
+
+*/
 
 class Solution {
     public boolean validPalindrome(String s) {
@@ -33,16 +44,3 @@ class Solution {
         return true;                // if the loop completes without returning false, the substring is a palindrome
     }
 }
-
-
-/* 
-
-APPROACH: The reverse function takes an integer as input and returns the reversed integer. The function first initializes a variable to store the reversed integer and then iterates over each digit of the input integer. In each iteration, the function extracts the rightmost digit of the input integer, checks if multiplying the reversed integer by 10 and adding the rightmost digit will cause integer overflow or underflow, adds the rightmost digit to the reversed integer, and removes the rightmost digit from the input integer. Finally, the function returns the reversed integer.
-
-Time Complexity:
-The time complexity of the reverse function is O(log(x)), where x is the input integer. This is because the function needs to iterate over each digit of the input integer, which is proportional to the logarithm of the integer.
-
-Space Complexity:
-The space complexity of the reverse function is O(1), because it only uses a constant amount of additional space to store the reversed integer and the remainder.
-
-*/
