@@ -19,6 +19,12 @@ Example 3:
 Input: nums = [1,3,5,6], target = 7
 Output: 4
 
+Explanation:
+    In a given sorted array this code uses binary search where we divide the array into two parts and check if the number is present then we return the index of element otherwise we return what should be index of that target in the given array.
+    The loops iterates until the start index and end index of array is same.
+    We calculate the middle index on each iteration of loop as start index / end index might change on the basis of last iteration result.
+    If the middle index element is the target element then we return middle index otherwise we loop through the entire array until last one or two elements left.
+    On the basis of last one or two elements we decide what is going to be the index of target in the array.
 */
 
 function findSearchPosition(nums, target) {
@@ -28,12 +34,12 @@ function findSearchPosition(nums, target) {
     while (startIndex <= endIndex) {
         const midIndex = startIndex + Math.floor((endIndex - startIndex) / 2);
 
-        console.log(startIndex, endIndex, midIndex);
-
+        // Base case if middle index element is our target then we will return the middle index
         if (nums[midIndex] === target) {
             return midIndex;
         }
 
+        // In case if element is not present in the given array then in the final iteration when only last one or two elements are remaining we will check what should be our target number index in the given array
         if (startIndex === endIndex || startIndex + 1 === endIndex) {
             // If element at start index is greater then target then target then start index will be assigned to target
             if (nums[startIndex] > target) {
@@ -46,6 +52,7 @@ function findSearchPosition(nums, target) {
             }
         }
 
+        // if the target element is greater then the middle index element then we will change the start index next to middle index otherwise we will change last index to middle index - 1
         if (nums[midIndex] < target) {
             startIndex = midIndex + 1;
         } else {
