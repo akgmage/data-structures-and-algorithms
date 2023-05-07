@@ -14,16 +14,18 @@ The implementation is quite similar to the C++ implementation. We iterate over t
 '''
 
 ----------------------------------------------------------------------------------------------//Python code begins here--------------------------------------------------------------------------------------------------------------------------------------
-
 class Solution:
     def numSub(self, s: str) -> int:
-        count = 0
-        ans = 0
+        count = 0  # count the number of consecutive ones
+        ans = 0    # variable to store the final answer
         for i in range(len(s)):
             if s[i] == '1':
                 count += 1
             else:
+                # calculate the number of possible substrings that can be formed
+                # from the current consecutive ones and add it to the final answer
                 ans = (ans + (count*(count+1))//2) % (10**9 + 7)
                 count = 0
+        # handle the case when the string ends with consecutive ones
         ans = (ans + (count*(count+1))//2) % (10**9 + 7)
         return ans
