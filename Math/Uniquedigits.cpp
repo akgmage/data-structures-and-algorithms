@@ -13,8 +13,11 @@ Next, we enter a loop that runs n-1 times (since we have already considered the 
 
 Finally, we return the value of ans.
 
-*/
+The time complexity of this algorithm is O(n), where n is the input parameter representing the number of digits.
 
+The space complexity of this algorithm is O(1), as we are only using a constant amount of extra memory to store the variables ans, unique_digits, and available_digits, regardless of the input size.
+
+*/
 -------------------------------------------------------------------------//C++ code begins here----------------------------------------------------------------------------
 
 class Solution {
