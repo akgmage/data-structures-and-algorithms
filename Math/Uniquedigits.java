@@ -13,6 +13,12 @@ We then enter a loop that runs n-1 times (since we have already considered the c
 
 Finally, we return the value of ans.
 
+The time complexity of the given code is O(n), where n is the input parameter, because the loop runs n-1 times.
+
+The space complexity is O(1), because the amount of memory used by the algorithm does not depend on the size of the input n. The algorithm only uses a few constant amount of variables for computation, such as ans, unique_digits and available_digits.
+
+Therefore, the time complexity of the code is linear and the space complexity is constant.
+
 
 */
 
