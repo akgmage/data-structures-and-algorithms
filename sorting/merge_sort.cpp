@@ -1,46 +1,68 @@
-// In computer science, merge sort (also commonly spelled as mergesort) is an efficient, general-purpose, 
-// and comparison-based sorting algorithm. Most implementations produce a stable sort, 
-// which means that the order of equal elements is the same in the input and output. 
-// Merge sort is a divide-and-conquer algorithm that was invented by John von Neumann in 1945. 
-// A detailed description and analysis of bottom-up merge sort appeared in a report by Goldstine and von Neumann as early as 1948.
-// Conceptually, a merge sort works as follows:
+// Merge Sort
+/*
+	Here's how the merge sort algorithm works:
 
-// Divide the unsorted list into n sublists, each containing one element (a list of one element is considered sorted).
-// Repeatedly merge sublists to produce new sorted sublists until there is only one sublist remaining. This will be the sorted list
-// Source(https://en.wikipedia.org/wiki/Merge_sort)
-#include<bits/stdc++.h>
+	1. It divides the input array into two halves, recursively sorts them, and then merges the sorted halves.
+	2. To merge two sorted sub-arrays, we need to create a temporary array and then compare the elements of the two sub-arrays, 
+	   one by one, and add the smaller element to the temporary array.
+	3. After we have exhausted one of the sub-arrays, we simply copy the remaining elements of the other sub-array to the temporary array.
+	4. Finally, we copy the elements of the temporary array back to the original array.
+
+	The time complexity of merge sort is O(n log n), where n is the number of elements in the array. 
+	The space complexity is O(n), because we create a temporary array of size n during the merging process.
+*/
+#include <iostream>
+#include <vector>
+
 using namespace std;
-void Merge(int *A, int *L, int leftCount, int *R, int rightCount){
-	int i, j, k;
-	i = 0; j = 0; k = 0;
-	while(i < leftCount && j < rightCount){
-		if(L[i] < R[j])
-			A[k++] = L[i++];
-		else
-			A[k++] = R[j++];		
-	}
-	while(i < leftCount) A[k++] = L[i++];
-	while(j < rightCount) A[k++] = R[j++];	
+
+void merge(vector<int>& arr, int start, int mid, int end) {
+    vector<int> temp(end - start + 1);
+    int i = start, j = mid + 1, k = 0;
+
+    while (i <= mid && j <= end) {
+        if (arr[i] <= arr[j]) {
+            temp[k] = arr[i];
+            ++i;
+        } else {
+            temp[k] = arr[j];
+            ++j;
+        }
+        ++k;
+    }
+
+    while (i <= mid) {
+        temp[k] = arr[i];
+        ++i;
+        ++k;
+    }
+
+    while (j <= end) {
+        temp[k] = arr[j];
+        ++j;
+        ++k;
+    }
+
+    for (int l = start; l <= end; ++l) {
+        arr[l] = temp[l - start];
+    }
 }
 
-void MergeSort(int *A, int n){
-	int mid, *L, *R;
-	if(n < 2) return; // base condition if array has less then 2 elements do nothing
-	mid = n / 2;
-	L = (int*)malloc(mid * sizeof(int));
-	R = (int*)malloc((n - mid) * sizeof(int));
-	for(int i = 0; i < mid; i++) L[i] = A[i];
-	for(int i = mid; i < n; i++) R[i - mid] = A[i];
-	MergeSort(L, mid);
-	MergeSort(R, n - mid);
-	Merge(A, L, mid, R, n - mid);
-	free(L);
-	free(R);
+void merge_sort(vector<int>& arr, int start, int end) {
+    if (start < end) {
+        int mid = (start + end) / 2;
+        merge_sort(arr, start, mid);
+        merge_sort(arr, mid + 1, end);
+        merge(arr, start, mid, end);
+    }
 }
-int main(){
-	int A[] = {2,1,4,3,5,99,32,47,106,1,4,6,8,7,0,9};
-	MergeSort(A,16);
-	for(int i = 0; i < 16; i++)
-		cout << A[i] << " ";
-	return 0;	
+
+int main() {
+    vector<int> arr = {5, 2, 8, 1, 9, 4};
+    merge_sort(arr, 0, arr.size() - 1);
+    for (int num : arr) {
+        cout << num << " ";
+    }
+    cout << endl;
+    return 0;
 }
