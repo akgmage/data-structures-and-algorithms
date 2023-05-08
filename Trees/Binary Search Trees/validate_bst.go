@@ -31,6 +31,8 @@
 	If all of the nodes in the tree satisfy the BST property, the method returns true, indicating that the tree 
 	is a valid BST.
 
+	O(n) time | O(d) space - where n is the number of nodes in the BST and d is the depth (height) of the BST
+
 */
 package main
 
