@@ -1,46 +1,56 @@
-/* QUESTION and SAMPLE I/O
-
-    Given the head of a singly linked list, return the middle node of the linked list.
-    If there are two middle nodes, return the second middle node.
-
-    Sample Input = [1,2,3,4,5]
-    Sample Output = 3
-    
-   APPROACH and EXPLANATION
-   
-    This program is done using two pointers: slow pointer and fast pointer. 
-        * Both pointer starts from the head node.
-        * Slow pointer moves one step at a time.
-        * Fast pointer moves two steps at a time.
-        * As the fast pointer reaches the end, slow pointer will be at the middle of the linked list.
-        * Accessing the slow pointer's value for 'val' will give you the value for the middle element of linked list.
-
-
-    Time Complexity: O(n)
-    Space Complexity: O(1)
-
- */
-
- 
 /**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
+ * Given the head of a singly linked list, return the middle node of the linked list.
+ *
+ * If there are two middle nodes, return the second middle node.
+ *
+ * Input: head = [1,2,3,4,5]
+ * Output: [3,4,5]
+ * Explanation: The middle node of the list is node 3.
  */
+package Linear.LinkedLists;
 
-class Solution {
-    public ListNode middleNode(ListNode head) {
-        ListNode slow_pointer = head;       //initialize slow pointer
-        ListNode fast_pointer = head;       //initialize fast pointer
-        while(fast_pointer!=null && fast_pointer.next!=null){
-            slow_pointer = slow_pointer.next;       //moves to next node
-            fast_pointer = fast_pointer.next.next;      //moves two nodes forward
+import java.awt.*;
+import java.util.ArrayList;
+
+public class MiddleOfLinkedList {
+    public static class ListNode {
+      int val;
+      ListNode next;
+      ListNode() {}
+      ListNode(int val) { this.val = val; }
+      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+  }
+    public static void main(String[] args) {
+
+        ListNode tail =  new ListNode(8, null);
+        ListNode node2 = new ListNode(2, tail);
+        ListNode node1 = new ListNode(4, node2);
+        ListNode head = new ListNode(3, node1);
+
+
+        ListNode ans  = solve(head);
+
+        System.out.println(ans.val);
+    }
+    public static ListNode solve(ListNode head) {
+
+        // O(N) time | O(N) space
+//        ListNode[] array = new ListNode[100];
+//
+//        int t = 0;
+//        while (head != null) {
+//            array[t++] = head;
+//            head = head.next;
+//            t++;
+//        }
+//        return array[t / 2];
+
+        // O(N) time | O(1) space
+        ListNode slow = head, fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
         }
-        return slow_pointer;
+        return slow;
     }
 }
