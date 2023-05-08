@@ -1,4 +1,5 @@
-#by TheCodeVenturer[Niraj Modi]
+# Dynamic Programming: Given a rows x cols binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area in Python #1011
+#Program Author : TheCodeVenturer [Niraj Modi]
 class Solution:
     def maxArea(self,matrix, rows, cols):
         shiftRow = [0]*cols
