@@ -11,6 +11,26 @@
 1            14
 	Output : True
 
+	Explanation:
+	This code defines a Binary Search Tree (BST) struct with an integer value and left and right nodes that can 
+	point to other BST nodes. The struct also has a method called ValidateBst() that returns a boolean indicating 
+	whether the tree is a valid BST or not.
+
+	The BST struct has another method called validateBST() that is used by ValidateBst() to check whether the tree
+	is a valid BST or not. The validateBST() method takes in two arguments, min and max, which represent the minimum 
+	and maximum values that the current node's value can take in order to be a valid BST.
+
+	The validateBST() method first checks whether the current node's value is within the valid range determined 
+	by the min and max arguments. If not, the method returns false, indicating that the tree is not a valid BST.
+
+	If the current node's value is within the valid range, the method then recursively calls itself on the left 
+	and right child nodes to check whether their values are within their valid ranges. The valid range for the 
+	left child node is defined by the minimum value and the parent node's value, while the valid range for the 
+	right child node is defined by the parent node's value and the maximum value.
+
+	If all of the nodes in the tree satisfy the BST property, the method returns true, indicating that the tree 
+	is a valid BST.
+
 */
 package main
 
