@@ -48,13 +48,19 @@
 */
 
 /*
- The function begins by initializing two variables - "count" and "answer" - to 0. "count" will be used to keep track of the current number of consecutive 1's in the string, while "answer" will eventually store the final answer.
+ The function begins by initializing two variables - "count" and "answer" - to 0. 
+ "count" will be used to keep track of the current number of consecutive 1's in the string,
+ while "answer" will eventually store the final answer.
 
-The constant "mod" is defined to be 10^9+7, which will be used to take modulo of the answer at each step, in order to prevent overflow.
+The constant "mod" is defined to be 10^9+7, which will be used to take modulo of the answer
+at each step, in order to prevent overflow.
 
-The function then iterates through the input string using a for loop. For each character in the string, it checks if it is a 1 or a 0. If it is a 1, the "count" variable is incremented by 1. If it is a 0, the "count" variable is reset to 0.
+The function then iterates through the input string using a for loop.
+For each character in the string, it checks if it is a 1 or a 0. If it is a 1,
+the "count" variable is incremented by 1. If it is a 0, the "count" variable is reset to 0.
 
-At each step of the loop, the value of "count" is added to "answer" and then taken modulo "mod". This is done to count the number of substrings with all 1's and prevent overflow of the result.
+At each step of the loop, the value of "count" is added to "answer" and then taken modulo "mod".
+This is done to count the number of substrings with all 1's and prevent overflow of the result.
 
 After the loop has finished, the final value of "answer" is returned as the solution to the problem.
 
@@ -106,9 +112,13 @@ var numSub = function(s) {
 
 /* Time and Space complexity
 
-The time complexity of this code is O(n), where n is the length of the input string s. This is because we iterate through the entire string once, and each operation inside the loop takes O(1) time.
+The time complexity of this code is O(n),
+where n is the length of the input string s. This is because we iterate through the entire string once,
+and each operation inside the loop takes O(1) time.
 
-The space complexity of this code is O(1), because we only use a fixed amount of extra space to store the variables count, answer, mod, and i. We do not use any additional space that depends on the length of the input string.
+The space complexity of this code is O(1),
+because we only use a fixed amount of extra space to store the variables count, answer, mod, and i.
+We do not use any additional space that depends on the length of the input string.
 
 
 
