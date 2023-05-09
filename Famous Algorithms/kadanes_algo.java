@@ -39,7 +39,7 @@ it updates the maximum. Finally, it returns the maximum sum.
 // ----------------------------------------------------------------------------- code begins now!
 import java.util.Scanner;
 
-public class kadane_algo {
+public class kadanes_algo {
 	public static int maxSubArraySum(int[] arr) {
         if (arr == null || arr.length == 0) {
             return 0;
