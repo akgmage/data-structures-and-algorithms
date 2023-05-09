@@ -47,7 +47,8 @@
       s[i] is either '0' or '1'.
 */
 
-/*
+/* Explaination
+
  The function begins by initializing two variables - "count" and "answer" - to 0. 
  "count" will be used to keep track of the current number of consecutive 1's in the string,
  while "answer" will eventually store the final answer.
