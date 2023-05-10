@@ -3,6 +3,9 @@ Heap sort is a sorting algorithm that works by transforming an unsorted list int
 which is a binary tree where each parent node is greater than or equal to its children if any.
 then it repeatedly extracts the maximum element from the heap and puts it into its correct sorted position until the whole list is sorted.
 
+Sample_input : [5,16,8,14,20,1,26]
+Sample_output : [1,5,8,14,16,20,26]
+  
 def heap_sort(arr):
     # Build the initial heap
     n = len(arr)
@@ -37,12 +40,11 @@ ere's how the algorithm works:
 
 The heap_sort function takes an unsorted list arr as input.
 It starts by building the initial heap by calling the heapify function on each parent node in the tree. 
-It does this by iterating over the parent nodes in reverse order (starting from the last parent node),
+It does this by iterating over the parent nodes in reverse order starting from the last parent node,
 and calling heapify on each of them. This builds a heap where each parent node is greater than or equal to its children.
 It then repeatedly extracts the maximum element from the heap and puts it into its correct sorted position. 
-It does this by swapping the maximum element (which is always at the root of the heap) with the last element in the heap, 
+It does this by swapping the maximum element which is always at the root of the heap with the last element in the heap, 
 and then calling heapify on the root node to restore the heap property.
 Finally, it returns the sorted list.
 
-Sample_input : [5,16,8,14,20,1,26]
-Sample_output : [1,5,8,14,16,20,26]
+
