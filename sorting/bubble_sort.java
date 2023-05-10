@@ -20,7 +20,9 @@
     Output : [0 1 2 3 4 5 9]
 */
 
-public class BubbleSort {
+import java.util.Arrays;
+
+public class bubble_sort {
     public static void bubbleSort(int[] arr) {
         int n = arr.length;
         // Traverse through all array elements
@@ -40,9 +42,6 @@ public class BubbleSort {
     public static void main(String[] args) {
         int[] arr = {64, 34, 25, 12, 22, 11, 90};
         bubbleSort(arr);
-        System.out.println("Sorted array: ");
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
+        System.out.println(Arrays.toString(arr));
     }
 }
