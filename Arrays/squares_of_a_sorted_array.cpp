@@ -13,34 +13,28 @@
 	>  nums is sorted in non-decreasing order.
 */
 
+// The optimised approch will be to use two pointer from both the ends and then compare the two numbers and the greter number square will be placed in its right position and move the pointer accordinly until they meet in the middle. 
+// O(N) Time Complexity
+// O(N) Space Complexity
+
 class Solution {
 public:
-    int N=10001;
     vector<int> sortedSquares(vector<int>& nums) {
-        // Initialize variables
-        vector<int> trk(N,0);
+        int n= nums.size();
+        vector<int> ans(n);  
 
-        // Store the frquency of the absolute of each number from the list
-        for(int i=0;i<nums.size();i++)
-        {
-            trk[abs(nums[i])]++;
-        }
+        int neg = 0, pos = n-1;
+        int k = n-1;   
 
-        //Traverse the frequency list trk and store the squares of the numbers as per their frequency
-        for(int i=0;i<N;i++)
-        {
-            if(trk[i]>0)
-            {
-                int square=i*i;
-                while(trk[i])
-                {
-                    ans.push_back(square);
-                    trk[i]--;
-                }
+        while( neg<=pos ){
+            if(abs(nums[neg]) >= nums[pos]){
+                ans[k--] = nums[neg]*nums[neg++];
+            }
+            else{
+                ans[k--] = nums[pos]*nums[pos--];
             }
         }
 
-        // Return the final ans
-        return ans;
+        return ans; 
     }
 };
