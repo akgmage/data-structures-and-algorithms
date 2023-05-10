@@ -12,6 +12,11 @@
         and insert it if the new start time is Greater then previous one(end) or will merge it with previous Start Time,end Time(start,end).
         and at finally when the loop is over again will insert the start and end for the final Interval
         then Will the mergedIntervals Array
+    Complexity:
+        Time Complexity: O(n logn) for sorting the array and additional O(n) for the complete iteration
+                All Over It will be O(n logn)
+        Space Complexity: O(1) as we are not using any extra Spaces
+                Space to Store Solution is not counted in Space complexity
     Sample input/outputs:
 		Example 1:
 		Input: [[1,9],[4,5]]

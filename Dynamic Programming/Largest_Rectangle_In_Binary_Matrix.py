@@ -26,6 +26,10 @@
             next we will iterate through the shiftRow and will first check for the list is not empty and (it's top element is greater than or equal to current element or value of current column is equal to row size)
                 then will store it's height from the current row array and will update width of the rectangle with stack's top element and will finally update the sol
             and will insert the element to the stack
+        Complexity:
+        Time Complexity: O(rows * col) for for traversing through each elements of the array 
+                Here in each iteration we are doint three times O(n) => O(3n) ~ O(n)
+        Space Complexity: O(n) for the shiftRow and O(n) for the stack we are using => O(2n) ~ O(n)
         Sample input/outputs:
 		Example 1:
 		Input: [[0,1,1,0],[1,1,1,1],[1,1,1,1],[1,1,0,0]]
