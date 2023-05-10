@@ -1,3 +1,23 @@
+/*
+Heap sort is a sorting technique based on comparison based on binary heap data.
+Similar to sorting, it finds the largest number first and then puts the largest number last.
+
+
+This sorting algorithm uses a tree structure called the stack, where the stack is a kind of binary tree. 
+A binary decision tree in which the value of the root of a tree is less than or equal to the value of one of its roots is called a min-heap. 
+A decision binary tree is called maximum heap when the value of the root of a tree is greater than or equal to the value of one of its trees. 
+In this post, we'll learn more about C++ Stack Sorting.
+
+Working of heap sort in C++
+To sort any list into a logical order following steps are followed:-
+
+Convert the list into a heap.
+Now convert this heap into a max heap.
+As the heap is converted to max heap largest element in the list is stored in the root of the heap, replace it with the last item of the heap.
+Now delete this node and reduce the size of the heap by 1.
+Follow these steps until the list is sorted.  
+*/
+
 #include<iostream>
 using namespace std;
 void heapify(int arr[], int n, int i){
