@@ -27,6 +27,10 @@
 	4. Repeat steps 1-3 until the queue is empty.
 
 	At the end of the algorithm, the `array` contains the names of all the nodes visited in breadth-first order. The method returns this `array`.
+
+	Time complexity: O(v + e)
+	Space complexity: O(v)
+	where v is the number of vertices of the input graph and e is the number of edges of the input graph
 */
 package main
 
