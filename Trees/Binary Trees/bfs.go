@@ -9,6 +9,24 @@
      / \   \
     I   J   K
 	Output: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"]
+
+	Explanation:
+	This code defines a struct `Node` with two properties: `Name`, a string representing the name of the node,
+	and `Children`, a slice of pointers to other `Node` objects representing the children of the node.
+
+	The method `BreadthFirstSearch` is defined on `Node`. This method takes an empty string slice `array` as
+	an argument and performs a breadth-first search traversal of the tree rooted at the current node.
+
+	It returns a slice of strings representing the names of the nodes visited in breadth-first order.
+
+	The breadth-first search algorithm starts with a queue containing only the current node. The algorithm then proceeds as follows:
+
+	1. Dequeue the first node from the queue.
+	2. Add the name of the dequeued node to the `array`.
+	3. Enqueue all the children of the dequeued node to the end of the queue.
+	4. Repeat steps 1-3 until the queue is empty.
+
+	At the end of the algorithm, the `array` contains the names of all the nodes visited in breadth-first order. The method returns this `array`.
 */
 package main
 
