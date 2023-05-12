@@ -1,4 +1,18 @@
 // Implementation of Depth First Search
+/*
+	This code demonstrates a basic implementation of Depth-First Search (DFS) on a graph represented by nodes.
+	It uses a recursive approach to traverse the graph in a depth-first manner, printing the values of the visited nodes.
+	The algorithm maintains a set of visited nodes to avoid visiting the same node multiple times.
+	The DFS function serves as the entry point to start the DFS traversal, and the dfsHelper
+	function recursively visits each node and its children.
+	Sample Input :
+	//          1
+	//        /   \
+	//       2     3
+	//      / \   / \
+	//     4   5 6   7
+	Output : 1 2 4 5 3 6 7
+*/
 package main
 
 import "fmt"
