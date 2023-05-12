@@ -13,6 +13,9 @@
 
             now for this we will apply this formula for all group of ones so that total no.of substrings can be generated
             [Note: for each group of use the formula and add the result to 2nd variable sol and set count to zero for next group of ones]
+    Complexity:
+		The time complexity of this solution is O(n) because i will parent and nested folder will together run for n times only. 
+		The space complexity is O(1),we are not using any Auxiliary Spaces.
     Sample input/outputs:
 		Example 1:
 		Input: "0110111"
