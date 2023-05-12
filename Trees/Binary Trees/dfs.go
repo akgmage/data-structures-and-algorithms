@@ -12,6 +12,15 @@
 	//      / \   / \
 	//     4   5 6   7
 	Output : 1 2 4 5 3 6 7
+
+	The time complexity of Depth-First Search (DFS) on a graph is O(V + E), where V represents the number of vertices (nodes)
+	in the graph and E represents the number of edges. In the worst case, DFS may visit all vertices and edges of the graph.
+
+	The space complexity of DFS is determined by the maximum depth of the recursion stack. In the case of a tree-like
+	structure, where each node has only one child, the maximum depth is equal to the height of the tree.
+	Therefore, the space complexity of DFS on such a tree-like structure is O(H), where H represents the height of the tree.
+	In the worst case, where the graph is a linear structure, the height of the tree is equal to the number of vertices,
+	so the space complexity becomes O(V).
 */
 package main
 
