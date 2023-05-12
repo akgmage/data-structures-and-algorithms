@@ -8,7 +8,7 @@ Heapify: Heapify the root element again so that we have the highest element at r
 
 The process is repeated until all the items of the list are sorted.*/
 
-// Heap Sort in Java
+// Heap Sort in Java language
   
 public class heap_sort {
   
