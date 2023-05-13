@@ -26,17 +26,21 @@ class Solution {
     public int[][] updateMatrix(int[][] mat) {
         int m = mat.length;
         int n = mat[0].length;
-        int[][] distances = new int[m][n];
-        Queue<int[]> queue = new LinkedList<>();
+        int[][] distances = new int[m][n]; // Initialize a distances matrix
+        Queue<int[]> queue = new LinkedList<>(); // Initialize a queue for BFS
+
+         // Loop through the matrix and set distances to MAX_VALUE except for cells with 0
         for (int i = 0; i < m; i++) {
             Arrays.fill(distances[i], Integer.MAX_VALUE);
             for (int j = 0; j < n; j++) {
                 if (mat[i][j] == 0) {
                     distances[i][j] = 0;
-                    queue.offer(new int[]{i, j});
+                    queue.offer(new int[]{i, j});  // Add the cell to the queue 
                 }
             }
         }
+
+        // Perform BFS
         while (!queue.isEmpty()) {
             int[] cell = queue.poll();
             int i = cell[0];
@@ -44,17 +48,17 @@ class Solution {
             for (int[] direction : DIRECTIONS) {
                 int x = i + direction[0];
                 int y = j + direction[1];
-                if (x < 0 || x >= m || y < 0 || y >= n) {
+                if (x < 0 || x >= m || y < 0 || y >= n) { // Check if cell is out of bounds
                     continue;
                 }
-                if (distances[x][y] <= distances[i][j] + 1) {
+                if (distances[x][y] <= distances[i][j] + 1) {// Check if distance is already smaller
                     continue;
                 }
-                distances[x][y] = distances[i][j] + 1;
-                queue.offer(new int[]{x, y});
+                distances[x][y] = distances[i][j] + 1; // Update the distance
+                queue.offer(new int[]{x, y});// Add the cell to the queue
             }
         }
-        return distances;
+        return distances; // Return the updated distances matrix 
     }
 }
 
