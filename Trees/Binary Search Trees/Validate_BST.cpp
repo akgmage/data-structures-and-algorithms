@@ -24,10 +24,14 @@
 
 
 
+// C++ program to check if a given tree is BST.
 #include <bits/stdc++.h>
 using namespace std;
 
+
+
 struct Node {
+	// structure of a node of the tree.
 	int data;
 	struct Node *left, *right;
 
@@ -41,13 +45,18 @@ struct Node {
 
 bool validate(Node* root,long long int min , long long int max){
     if(!root)
-        return true;
-    bool ans = false;    
+        return true;  // if the root is null then it is a valid BST. it means that the tree is empty or we had reached the end of tree. 
+    // initializing the ans variable to false (temporarily).
+	bool ans = false;    
+
+	// checking if the root's data is in the range of min and max.
     if(root->data<max && root->data>min)
         ans = true;
     else    
-        return ans;
-    return ans && validate(root->left,min,root->data) &&
+        return ans; // if the root's data is not in the range of min and max then it is not a valid BST. hence returning false.
+    
+	// changing min and max for the left and right subtree. and checking for the left and right subtree with respesct to tree root and returning the ans.
+	return ans && validate(root->left,min,root->data) &&
     validate(root->right,root->data,max);       
 }
 
@@ -55,17 +64,22 @@ bool validate(Node* root,long long int min , long long int max){
     bool isValidBST(Node* root) {
         if(!root)
             return true;
+
+	// calling  validate function so that it can check for the left and right subtree .. while giving the range of the values of the nodes.
         return  validate(root ,-9223372036854775807,9223372036854775807 );
     }
 
 int main()
 {
+
+	// Initializing the tree.
 	struct Node* root = new Node(3);
 	root->left = new Node(2);
 	root->right = new Node(5);
 	root->left->left = new Node(1);
 	root->left->right = new Node(4);
 
+	// calling the function to check BST.
 	if (isValidBST(root))
 		cout << "Is BST";
 	else
