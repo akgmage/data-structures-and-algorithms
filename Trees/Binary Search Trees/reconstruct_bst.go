@@ -10,6 +10,16 @@
 
     The input array will contain the values of BST nodes in the order in which these nodes would be visited with a pre-order traversal.
 
+	Sample Input: [10, 4, 2, 1, 5, 17, 19, 18]
+	Sample Output:
+	    10
+      /    \
+     4      17
+   /   \      \
+  2     5     19
+ /           /
+1           18
+
 	Explanation:
 
 	Approach 1:
