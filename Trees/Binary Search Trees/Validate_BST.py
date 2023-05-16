@@ -16,12 +16,16 @@ def is_bst(root):
 
     def inorder_traversal(node):
         global prev
+        
+        # traverse the tree in inorder fashion and // keep track of prev node
         if node is None:
             return True
-
+        
+        # If Left Node is not BST then return false
         if not inorder_traversal(node.left):
             return False
-
+    
+        # Check if current node is less than its parent node
         if prev is not None and node.data <= prev.data:
             return False
 
