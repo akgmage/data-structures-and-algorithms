@@ -3,7 +3,7 @@
 // Additionally, the left and right subtrees themselves must also be valid BSTs.
 
 ////// Code:
-class HelloWorld {
+class validateBST {
     public static class Node {
 		public int data;
 		public Node left, right;
@@ -23,19 +23,22 @@ class HelloWorld {
 		if (root == null) 
 		    return true;
 		    
+		//If Left Node is not BST then return false
 		if (!isBST(root.left)) 
 		    return false;
 		    
+		//Check if current node is less than its parent node
 		if (prev != null && root.data <= prev.data) 
 		    return false;
 		    
-        prev = root;
+        	prev = root;
 		return isBST(root.right);
 	}
 
     public static void main(String[] args) {
         
-        Node root = new Node(1);
+	    //Creating BST 
+       	    Node root = new Node(1);
 	    root.left = new Node(-2);
 	    root.right = new Node(3);
 	    root.left.left = new Node(-4);
