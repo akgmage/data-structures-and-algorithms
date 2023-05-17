@@ -13,7 +13,7 @@
 	>  nums is sorted in non-decreasing order.
 */
 
-class Solution {
+/*class Solution {
 public:
     int N=10001;
     vector<int> sortedSquares(vector<int>& nums) {
@@ -42,5 +42,28 @@ public:
 
         // Return the final ans
         return ans;
+    }
+};
+*/
+class Solution {
+public:
+    vector<int> sortedSquares(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> res(n); // Create a vector to store the squared values
+        int left = 0, right = n - 1; // Initialize two pointers at the start and end of the array
+
+        for (int i = n - 1; i >= 0; i--) {
+            if (abs(nums[left]) > abs(nums[right])) {
+                // If the absolute value of the number at the left pointer is greater than the absolute value of the number at the right pointer
+                res[i] = nums[left] * nums[left]; // Square the number at the left pointer and store it in the result array
+                left++; // Move the left pointer to the right
+            } else {
+                // If the absolute value of the number at the left pointer is less than or equal to the absolute value of the number at the right pointer
+                res[i] = nums[right] * nums[right]; // Square the number at the right pointer and store it in the result array
+                right--; // Move the right pointer to the left
+            }
+        }
+
+        return res; // Return the result array
     }
 };

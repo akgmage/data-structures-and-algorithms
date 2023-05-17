@@ -1,25 +1,25 @@
-/* Name : Aneesh
-Github username : 007aneesh
+/* Name : Rajeev Kumar
+Github username : Tonystark121
 Repository name : data-structures-and-algorithms
-Problem : Kadane's algorithm in Javascript
-Issue Number : #1182
+Problem : Kadane's algorithm in C++
+Issue Number : #1179
 Problem statement : Given an integer array nums, find the subarray with the largest sum, and return its sum.
 
 Sample testcases: 
 
 Testcase 1 --> 
 
-Input: number of elements in array = 9
-nums = [-2,1,-3,4,-1,2,1,-5,4]
-Output: 6
+Input: number of elements in array = 8
+nums = [-2,-3,5,-1,-2,1,5,-3]
+Output: 8
 
 Testcase 2 -->
-Input: number of elements in array
+Input: number of elements in array = 5
 nums = [5,4,-1,7,8]
 Output: 23
 
 Time Complexity = O(n)
-Space Complexity = O(n)
+Space Complexity = O(1)
 
 
 Explanation:
@@ -37,51 +37,40 @@ it updates the maximum. Finally, it returns the maximum sum.
 */
 
 // ----------------------------------------------------------------------------- code begins now!
-const readline = require("readline");
 
-function kadaneAlgorithm(arr) {
-  if (!arr) return 0;
-  let sum = 0;
-  let max = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    max += arr[i];
+#include<bits/stdc++.h>
+using namespace std;
 
-    if (max < 0) {
-      max = 0;
+int main(){
+
+    // taking input number of array elements.
+    int n; 
+    cin>>n;
+
+    // taking input array elements.
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
     }
 
-    if (sum < max) {
-      sum = max;
-    }
-  }
+    // declare current maximum and maximum so far variable.
+    int curr_max=0,max_so_far=INT_MIN;
 
-  return sum;
+    for(int i=0;i<n;i++){
+        
+        curr_max += arr[i];
+
+        if(curr_max<0){
+            curr_max=0;
+        }
+
+        if(curr_max>max_so_far){
+            max_so_far = curr_max;
+        }
+    }
+
+    // output result.
+    cout<<max_so_far<<endl;
+    return 0;
 }
-
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-
-let arr = [];
-
-rl.question("Enter number of elements in the array: ", function (n) {
-  let count = 0;
-
-  function getArrayInput() {
-    if (count < n) {
-      rl.question("Enter element in array: ", function (input) {
-        arr.push(Number(input));
-        count++;
-        getArrayInput();
-      });
-    } else {
-      let ans = kadaneAlgorithm(arr);
-      console.log(ans);
-      rl.close();
-    }
-  }
-
-  getArrayInput();
-});
