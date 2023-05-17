@@ -63,52 +63,69 @@ to print the elements of the list in forward and backward order, respectively.
 
 #include <iostream>
 using namespace std;
-class Node{
-    public:
+
+// Define a Node class
+class Node {
+public:
     int data;
     Node* next;
     Node* prev;
-    Node(int d){
+    Node(int d) {
         this->data = d;
         next = NULL;
         prev = NULL;
     }
 };
-void PrintForward(Node* head){
+
+// Function to print the linked list forward
+void PrintForward(Node* head) {
     Node* traverse = head;
-    while(traverse!=NULL){
-        cout<<traverse->data<<endl;
-        traverse=traverse->next;
+    while (traverse != NULL) {
+        cout << traverse->data << endl;
+        traverse = traverse->next;
     }
 }
-void PrintBackward(Node* tail){
+
+// Function to print the linked list backward
+void PrintBackward(Node* tail) {
     Node* traverse = tail;
-    while(tail!=NULL){
-        cout<<traverse->data<<endl;
-        traverse=traverse->prev; 
+    while (tail != NULL) {
+        cout << traverse->data << endl;
+        traverse = traverse->prev;
     }
 }
-int main(){
+
+int main() {
     int n, value;
-    cin>>n;
-    Node *head = nullptr;
-    Node *tail = nullptr;
-    for(int i=0; i<n; i++){
-        cin>>value;
-        Node *newNode = new Node(value);
-        if(head == NULL){
+    cin>>n; // Read the number of nodes to be created
+    Node *head = nullptr; // Initialize head pointer
+    Node *tail = nullptr; // Initialize tail pointer
+
+    // Read 'n' values and create a doubly linked list
+    for (int i = 0; i < n; i++) {
+        cin >> value; // Read the value for the current node
+        Node* newNode = new Node(value);  // Create a new node with the value
+        
+        // If the list is empty, set the head and tail to the new node
+        if (head == NULL) {
             head = newNode;
             tail = newNode;
-        }else{
+        } else {
+            // Add the new node to the end of the list
             newNode->next = nullptr;
             newNode->prev = tail;
             tail->next = newNode;
             tail = newNode;
         }
     }
-    cout<<"Printing forwardly................................"<<endl;
+
+    // Print the linked list forward
+    cout << "Printing forwardly................................" << endl;
     PrintForward(head);
-    cout<<"Printing backwardly................................"<<endl;
+
+    // Print the linked list backward
+    cout << "Printing backwardly................................" << endl;
     PrintBackward(tail);
+
     return 0;
 }
