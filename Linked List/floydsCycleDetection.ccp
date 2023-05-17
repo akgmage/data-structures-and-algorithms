@@ -14,7 +14,7 @@ Auxiliary Space: O(1), only two pointers are used therefore constant space compl
 
 #include <bits/stdc++.h>
 using namespace std;
- 
+
 class Node {
 public:
     int data;
