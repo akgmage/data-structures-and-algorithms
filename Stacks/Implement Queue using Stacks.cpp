@@ -6,32 +6,74 @@ Then just empty out the stack s2 back into s1. But the element x would be at the
 The other Operations are the same as we have already implemented as a queue.*/
 
 
+/*Complexity Analysis: 
 
-class MyQueue {
-private:
-    stack<int> s1,s2;
-public:
-    MyQueue() { 
-    }
-    void push(int x) {
-        s1.push(x);
-    }
-    int pop() {
-        int res = peek();
-        s2.pop();
-        return res;
-    }
-    int peek() {
-        if(s2.empty()){
-            while(!s1.empty()){
-                s2.push(s1.top());
-                s1.pop();
-            }
-        }
-        int res = s2.top();   
-        return res;
-    }
-    bool empty() {
-        return s1.empty()&&s2.empty();
-    }
+Time Complexity: 
+Push operation : O(1). 
+Same as pop operation in stack.
+Pop operation : O(N). 
+The difference from above method is that in this method element is returned and all elements are restored back in a single call.
+Auxiliary Space: O(N). 
+Use of stack for storing values.
+*/
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Queue {
+	stack<int> s;
+
+	// Enqueue an item to the queue
+	void enQueue(int x)
+	{
+		s.push(x);
+	}
+
+	// Dequeue an item from the queue
+	int deQueue()
+	{
+		if (s.empty()) {
+			cout << "Q is empty";
+			exit(0);
+		}
+
+		// pop an item from the stack
+		int x = s.top();
+		s.pop();
+
+		// if stack becomes empty, return
+		// the popped item
+		if (s.empty())
+			return x;
+
+		// recursive call
+		int item = deQueue();
+
+		// push popped item back to the stack
+		s.push(x);
+
+		// return the result of deQueue() call
+		return item;
+	}
 };
+
+// Driver code
+int main()
+{
+	Queue q;
+	q.enQueue(10);
+	q.enQueue(20);
+	q.enQueue(30);
+
+	cout << q.deQueue() << '\n';
+	cout << q.deQueue() << '\n';
+	cout << q.deQueue() << '\n';
+
+	return 0;
+}
+
+
+
+
+
