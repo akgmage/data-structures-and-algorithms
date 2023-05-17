@@ -1,3 +1,55 @@
+/*Given an m x n binary matrix mat, return the distance of the nearest 0 for each cell.
+
+The distance between two adjacent cells is 1.
+
+ 
+
+Example 1:
+
+
+Input: mat = [[0,0,0],[0,1,0],[0,0,0]]
+Output: [[0,0,0],[0,1,0],[0,0,0]]
+Example 2:
+
+
+Input: mat = [[0,0,0],[0,1,0],[1,1,1]]
+Output: [[0,0,0],[0,1,0],[1,2,1]]
+ 
+
+Constraints:
+
+m == mat.length
+n == mat[i].length
+1 <= m, n <= 104
+1 <= m * n <= 104
+mat[i][j] is either 0 or 1.
+There is at least one 0 in mat.
+
+
+explanation: 
+
+stepwise explanation of the code: 
+
+1. We start by initializing the dimensions of the input matrix mat as m (number of rows) and n (number of columns). This will be used later in the code.
+
+2. We create a result matrix called result of size m x n to store the distance of the nearest 0 for each cell. Initially, we set all the values in result to a large value (in this case, INT_MAX) to represent an unreachable distance.
+
+3. We create a queue called q to store the cell indices that need to be processed during the breadth-first search.
+
+4. We iterate through the input matrix mat and enqueue the indices of all the cells with value 0 into the queue. Additionally, we mark the distance of these cells in the result matrix as 0. This initialization step ensures that the cells with value 0 are considered as starting points for the breadth-first search.
+
+5. Now, we perform the breadth-first search using the queue q. While the queue is not empty, we process the cells in a breadth-first manner.
+
+6. For each cell (row, col) popped from the queue, we check its neighboring cells in four directions: up, down, left, and right. We define the directions as a vector of pairs called directions, where each pair represents the change in row and column indices to move in a specific direction.
+
+7. If the neighboring cell indices (newRow, newCol) are within the valid range of the matrix and the current distance in the result matrix for (newRow, newCol) is greater than the distance of the current cell plus 1, we update the distance in the result matrix and enqueue the neighboring cell (newRow, newCol) into the queue for further processing.
+
+8. Once the breadth-first search is completed, the result matrix will contain the distance of the nearest 0 for each cell in the input matrix.
+
+9. Finally, we return the result matrix.
+
+*/
+
 #include <iostream>
 #include <vector>
 #include <queue>
