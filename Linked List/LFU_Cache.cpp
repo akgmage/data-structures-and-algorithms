@@ -15,6 +15,10 @@
 
 // solution -->
 
+//minFreq is the smallest frequency so far
+//The main idea is to put all keys with the same frequency to a linked list so the most recent one can be evicted;
+//mIter stored the key's position in the linked list;
+
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -77,3 +81,5 @@ public:
         size++; // increase size
     }
 };
+
+
