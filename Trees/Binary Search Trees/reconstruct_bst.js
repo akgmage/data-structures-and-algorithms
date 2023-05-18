@@ -79,5 +79,5 @@ However, in the average case, when the BST is balanced, the time complexity can 
 /**
  * In each recursive call, the function creates new arrays for the left and right subtrees using the slice method. The space required for these arrays is proportional to the size of the pre-order traversal array.
 In the worst case, when the BST is completely unbalanced, the size of the arrays will be O(N), where N is the number of elements in the pre-order traversal array.
-Therefore, the overall space complexity of the `construct
+Therefore, the overall space complexity of the `constructBST function is O(N) in the worst case.
  */
