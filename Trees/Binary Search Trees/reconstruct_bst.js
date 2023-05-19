@@ -1,3 +1,25 @@
+/** Reconstruct BST
+	The pre-order traversal of a Binary Tree is a traversal technique that starts at the tree's root 
+        node and visits nodes in the following order:
+		Current Node
+		Left Subtree
+		Right Subtree
+
+  	Given a non-empty array of integers representing the pre-order traversal of a Binary Search Tree 
+        (BST), write a function that creates the relevant BST and returns its root node.
+
+        The input array will contain the values of BST nodes in the order in which these nodes would be 
+        visited with a pre-order traversal.
+	Sample Input: [10, 4, 2, 1, 5, 17, 19, 18]
+	Sample Output:
+	      10
+      /    \
+     4      17
+   /   \      \
+  2     5     19
+ /           /
+1           18         
+*/
 /**
  * Class representing a node in the Binary Search Tree (BST).
  */
