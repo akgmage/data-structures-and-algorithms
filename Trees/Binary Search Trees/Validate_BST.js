@@ -1,8 +1,39 @@
-////// Explanation:
-// To validate a Binary Search Tree (BST), we need to ensure that the values of nodes in the left subtree of any node are less than the value of the node, and the values of nodes in the right subtree are greater than the value of the node. 
-// Additionally, the left and right subtrees themselves must also be valid BSTs.
+/*
+	Write a function that takes in a potentially invalid Binary Search Tree (BST)
+  	and returns a boolean representing whether the BST is valid.
+  	Sample Input :
+   	     10
+       /     \
+      5      15
+    /   \   /   \
+   2     5 13   22
+ /           \
+1            14
+	Output : True
 
-////// Code:
+	Explanation:
+	This code defines a Binary Search Tree (BST) struct with an integer value and left and right nodes that can 
+	point to other BST nodes. The struct also has a method called ValidateBst() that returns a boolean indicating 
+	whether the tree is a valid BST or not.
+
+	The BST struct has another method called validateBST() that is used by ValidateBst() to check whether the tree
+	is a valid BST or not. The validateBST() method takes in two arguments, min and max, which represent the minimum 
+	and maximum values that the current node's value can take in order to be a valid BST.
+
+	The validateBST() method first checks whether the current node's value is within the valid range determined 
+	by the min and max arguments. If not, the method returns false, indicating that the tree is not a valid BST.
+
+	If the current node's value is within the valid range, the method then recursively calls itself on the left 
+	and right child nodes to check whether their values are within their valid ranges. The valid range for the 
+	left child node is defined by the minimum value and the parent node's value, while the valid range for the 
+	right child node is defined by the parent node's value and the maximum value.
+
+	If all of the nodes in the tree satisfy the BST property, the method returns true, indicating that the tree 
+	is a valid BST.
+
+	O(n) time | O(d) space - where n is the number of nodes in the BST and d is the depth (height) of the BST
+
+*/
 class Node {
      constructor(data) {
          this.data = data;
@@ -11,7 +42,8 @@ class Node {
      }
  }
  
- function isBST(root) {
+// isBst is a method of BST that checks if the binary search tree is valid 
+function isBST(root) {
      let prev = null;
  
      function inorderTraversal(node) {
@@ -21,12 +53,12 @@ class Node {
              return true;
          }
          
-         // If left subtree is not BST return false
+         // recursively check the left subtree, making sure all values are less than the current node's value
          if (!inorderTraversal(node.left)) {
              return false;
          }
  
-        // If current node is greater than parent node return false
+        // if the current node's value is outside the allowed range, then the tree is invalid
          if (prev !== null && node.data <= prev.data) {
              return false;
          }
