@@ -27,15 +27,24 @@ There is at least one 0 in mat.
 
 Explanation:
 
-In this Python implementation, we define a TreeNode class to represent each node in the binary tree. The constructBST function takes the pre-order traversal array as input and returns the root node of the constructed BST.
+In this Python implementation, we define a TreeNode class to represent each node in the binary tree.
+ The constructBST function takes the pre-order traversal array as input and returns the root node of
+ the constructed BST.
 
-We create the root node using the first element of the pre-order array and also initialize a stack with the root node. Then, for each element in the pre-order array (starting from the second element), we create a new node. We compare the value of the new node with the top of the stack to determine its position in the BST.
+We create the root node using the first element of the pre-order array and also initialize a stack
+with the root node. Then, for each element in the pre-order array (starting from the second element),
+we create a new node. We compare the value of the new node with the top of the stack to determine its position in the BST.
 
-If the value is less than the top of the stack, we add it as the left child of the top node. Otherwise, we pop nodes from the stack until we find a node with a value greater than the new node. The last popped node becomes the parent of the new node and we add the new node as its right child.
+If the value is less than the top of the stack, we add it as the left child of the top node. 
+Otherwise, we pop nodes from the stack until we find a node with a value greater than the new node.
+ The last popped node becomes the parent of the new node and we add the new node as its right child.
 
-Finally, we return the root node of the constructed BST. The inorderTraversal function is used to verify the correctness of the construction by performing an in-order traversal of the BST and printing the values.
+Finally, we return the root node of the constructed BST. The inorderTraversal functionis used to 
+verify the correctness of the construction by performing an in-order traversal of the BST and 
+printing the values.
 
-When executed, this code will output the in-order traversal of the constructed BST, which should match the expected output you provided.
+When executed, this code will output the in-order traversal of the constructed BST, which should
+ match the expected output you provided.
 
 '''
 
