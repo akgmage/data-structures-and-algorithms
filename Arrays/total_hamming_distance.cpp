@@ -78,7 +78,7 @@ Explaination :
 using namespace std;
 
 int totalHammingDistance(vector<int>& nums) {
-        int ans=0;
+        int totalDistance=0;
         int n=nums.size();
         // Here we are assuing that the 32 bits are sufficient to represent all the numbers in the array
         for(int i=0;i<32;i++){
@@ -87,9 +87,9 @@ int totalHammingDistance(vector<int>& nums) {
 					if((nums[j]&(1<<i)))
                     c++;     //Checking if i'th bit is set ot not.
             }
-            ans+=(c*(n-c));      //Adding count of differences
+            totalDistance+=(c*(n-c));      //Adding count of differences
         }
-        return ans;
+        return totalDistance;
     }
 
 
