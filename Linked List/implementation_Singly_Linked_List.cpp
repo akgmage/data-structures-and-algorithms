@@ -1,5 +1,6 @@
 // Implementation of singly LinkedList
 
+// Author : Mohit Singh
 /*Search for a node in the list
 You can determine and retrieve a specific node from the front, end, or anywhere in the list.
 The worst-case​ Time Complexity for retrieving a node from anywhere in the list is O(n).
