@@ -1,3 +1,15 @@
+/*	
+  You're given the root node of a Binary Tree. Write a function that returns true  if this Binary Tree is height balanced and
+  false if it isn't.
+  
+*/          
+		  1
+        /   \
+       2     3
+      / \     \
+     4   5     6
+              /
+             7
 package main
 
 import "fmt"
