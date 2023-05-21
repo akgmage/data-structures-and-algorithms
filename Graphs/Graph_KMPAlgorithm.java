@@ -1,17 +1,34 @@
-/*
- * KMP Algorithm for Pattern Searching  
+/**
+ * Summary:
+ * This program implements the Knuth-Morris-Pratt (KMP) algorithm for string pattern matching.
+ * Given a text string and a pattern string, the algorithm searches for the pattern in the text and returns
+ * the index where the pattern is found in the text. If the pattern is not found, it returns -1.
  * 
- * Given a text txt[0..n-1] and a pattern pat[0..m-1], write a function
- * search(char pat[], char txt[]) that prints all occurrences of pat[] in txt[].
- * You may assume that n > m.
+ * Inputs:
+ * The program expects two strings as inputs: text and pattern.
  * 
- * Examples:
+ * Outputs:
+ * The output of the program is the index where the pattern is found in the text, or -1 if the pattern is not found.
  * 
- * Input:  txt[] = "THIS IS A TEST TEXT"
- *         pat[] = "TEST"
+ * Example Usage:
+ * // Input
+ * String text = "ABABDABACDABABCABAB";
+ * String pattern = "ABABCABAB";
  * 
- * Output: Pattern found at index 10
- *  
+ * // Execute the KMP algorithm for string pattern matching
+ * int index = searchPattern(text, pattern);
+ * 
+ * // Output
+ * if (index != -1) {
+ *     System.out.println("Pattern found at index: " + index);
+ * } else {
+ *     System.out.println("Pattern not found in the text.");
+ * }
+ * 
+ * Complexity Analysis:
+ * The time complexity of the KMP algorithm is O(n + m), where n is the length of the text and m is the length of the pattern.
+ * This is because the algorithm avoids unnecessary comparisons by utilizing the computed Longest Proper Prefix-Suffix (LPS) array.
+ * The space complexity is O(m) as it requires storing the LPS array of the pattern.
  */
 
 public class Graph_KMPAlgorithm {
