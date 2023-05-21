@@ -33,6 +33,22 @@
 	These helper functions are used in the main logic of the code.
 
 	Overall, the code efficiently determines whether a binary tree is height-balanced by recursively calculating the tree information and checking the balance status based on height differences.
+
+	The time complexity of the `HeightBalancedBinaryTree` function, which calls the `getTreeInfo` helper function, is O(n), where n is the number of nodes in the binary tree.
+	This is because the function traverses each node once in a depth-first manner, calculating the tree information for each node.
+
+	The space complexity is O(h), where h is the height of the binary tree. This is because the recursive calls consume memory on the call
+	stack proportional to the height of the tree. In the worst case, for a skewed tree where the height is equal to the number of nodes,
+	the space complexity would be O(n).
+
+	However, in a balanced binary tree, the height is logarithmic in the number of nodes, resulting in a space complexity of O(log n).
+
+	Additionally, the `max` and `abs` helper functions have constant time complexity as they perform simple
+	mathematical operations on two integers. They do not depend on the size of the tree.
+
+	Overall, the time complexity is O(n) and the space complexity is O(h) or O(log n) in the case of a
+	balanced binary tree.
+
 */
 
 package main
