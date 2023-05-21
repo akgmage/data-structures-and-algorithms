@@ -1,4 +1,4 @@
-/*	
+/*
   You're given the root node of a Binary Tree. Write a function that returns true  if this Binary Tree is height balanced and
   false if it isn't.
   Sample Input:
@@ -9,9 +9,31 @@
      4   5     6
               /
              7
-	Output: False		 
-  
-*/          
+	Output: False
+
+	Explanation:
+
+ 	The code checks whether a given binary tree is height-balanced or not. A binary tree is height-balanced if
+	the heights of its left and right subtrees differ by at most 1, and both the left and right subtrees
+	are themselves height-balanced.
+
+	The HeightBalancedBinaryTree function is the entry point of the code. It calls the getTreeInfo helper
+	function to retrieve the tree information, including the balance status and height.
+
+	The getTreeInfo function recursively calculates the tree information of the current node by
+	obtaining the tree information of its left and right subtrees. It checks if both subtrees are
+	balanced and calculates the height of the current tree.
+
+	The balance status is determined by checking if the left and right subtrees are balanced and if their
+	height difference is at most 1.
+
+	The height of the current tree is the maximum height between the left and right subtrees plus 1.
+
+	The max function returns the maximum of two integers, and the abs function returns the absolute value of an integer.
+	These helper functions are used in the main logic of the code.
+
+	Overall, the code efficiently determines whether a binary tree is height-balanced by recursively calculating the tree information and checking the balance status based on height differences.
+*/
 
 package main
 
