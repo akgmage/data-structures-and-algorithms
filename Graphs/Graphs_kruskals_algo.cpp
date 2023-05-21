@@ -7,14 +7,16 @@ Issue Number : #1301
 
 Explanation of the below C++ code :
 
-In this implementation, we have a dijkstra function that takes a graph represented as an adjacency list, the starting node, and the total number of nodes. It returns a vector containing the shortest distances from the start node to all other nodes.
+In this implementation, In Kruskal’s algorithm, sort all edges of the given graph in increasing order. 
+Then it keeps on adding new edges and nodes in the MST if the newly added edge does not form a cycle. 
+It picks the minimum weighted edge at first at the maximum weighted edge at last.
+Thus we can say that it makes a locally optimal choice in each step in order to find the optimal solution
 
-The dijkstra function initializes all distances to infinity except for the start node, which is set to 0. It uses a min heap priority queue to process nodes based on their distances. The algorithm iteratively selects the node with the minimum distance, updates the distances of its neighbors if a shorter path is found, and adds them to the priority queue.
-
-In the main function, we create a graph using the adjacency list representation. Each element of the graph vector is a vector of pairs, where the first element of the pair represents the neighbor node, and the second element represents the weight of the edge.
-
-We then call the dijkstra function with the graph, starting node, and the total number of nodes. Finally, we print the shortest distances from the start node to all other nodes.
-
+pseudosteps
+1. Sort all the edges in non-decreasing order of their weight. 
+2. Pick the smallest edge. Check if it forms a cycle with the spanning tree formed so far. 
+    If the cycle is not formed, include this edge. Else, discard it. 
+3. Repeat step#2 until there are (V-1) edges in the spanning tree.
 -------------------------------------------------------------------------//C++ code begins here------------------------------------------------------------------------
 */
 
@@ -22,19 +24,18 @@ We then call the dijkstra function with the graph, starting node, and the total 
 using namespace std;
  
 // DS data structure
-// path compression + rank by union
 class D_S {
     int* parent;
-    int* rank;
+    int* child;
  
 public:
     D_S(int n)
     {
         parent = new int[n];
-        rank = new int[n];
+        child = new int[n];
         for (int i = 0; i < n; i++) {
             parent[i] = -1;
-            rank[i] = 1;
+            child[i] = 1;
         }
     }
  
@@ -53,13 +54,13 @@ public:
         int s2 = find(y);
  
         if (s1 != s2) {
-            if (rank[s1] < rank[s2])
+            if (child[s1] < child[s2])
                 parent[s1] = s2;
-            else if (rank[s1] > rank[s2])
+            else if (child[s1] > child[s2])
                 parent[s2] = s1;
             else {
                 parent[s2] = s1;
-                rank[s1] += 1;
+                child[s1] += 1;
             }
         }
     }
