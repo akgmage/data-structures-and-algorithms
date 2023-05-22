@@ -1,5 +1,12 @@
 /*
-Expalination:
+Problem statement:-Find K Closest Elements
+Given a sorted integer array arr, two integers k and x, return the k closest integers to x in the array. The result should also be sorted in ascending order.
+
+An integer a is closer to x than an integer b if:
+
+|a - x| < |b - x|, or
+|a - x| == |b - x| and a < b
+Explaination:
 
 Input: points = [[1,3],[-2,2]], k = 1
 Output: [[-2,2]]
@@ -31,17 +38,22 @@ public:
         // Construction of max heap
         for (auto& p : points) {
             int x = p[0], y = p[1];
+             // Calculate the squared distance from the origin using the formula x^2 + y^2
+            // Store the distance along with the coordinates (x, y) in the maxHeap
             maxHeap.push({x * x + y * y, x, y});
+            // If the size of the maxHeap exceeds k, remove the point with the maximum distance
             if (maxHeap.size() > k) {
                 maxHeap.pop();
             }
         }
-        
+        // Extract the k closest points from the maxHeap and store them in the result vector
         for (int i = k - 1; i >= 0; --i) {
             vector<int> top = maxHeap.top();
             maxHeap.pop();
             result[i] = {top[1], top[2]};
         }
+        
+        // Return the result vector containing the k closest points
         
         return result;
     }
