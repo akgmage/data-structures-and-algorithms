@@ -1,4 +1,6 @@
 /*
+ Author: SUYASH SINGH
+
 Problem statement:-Find K Closest Elements
 Given a sorted integer array arr, two integers k and x, return the k closest integers to x in the array. The result should also be sorted in ascending order.
 
@@ -72,4 +74,15 @@ int main() {
     }
     
     return 0;
-}
+}/*
+Time Complexity:
+
+Constructing the maxHeap:  the overall time complexity is O(N log K).
+Extracting the k closest points: O(K log K). We extract the top element from the maxHeap k times, each operation taking O(log K) time. Hence, the time complexity is O(K log K).
+Therefore, the overall time complexity of the solution is O(N log K), where N is the number of points and K is the value of k.
+
+Space Complexity:
+
+The maxHeap stores at most k elements, so the space complexity for the maxHeap is O(K).
+The result vector stores k closest points, resulting in O(K) space.
+Apart from these, the solution uses a constant amount of space for variables and temporary storage.*/
