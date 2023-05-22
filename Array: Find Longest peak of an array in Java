@@ -1,0 +1,30 @@
+public static int longestPeak(int[] arr) {
+        int longestPeakLength = 0;
+        int i = 1;
+
+        while (i < arr.length - 1) {
+            boolean isPeak = arr[i] > arr[i - 1] && arr[i] > arr[i + 1];
+
+            if (!isPeak) {
+                i++;
+                continue;
+            }
+
+            int leftIdx = i - 2;
+            while (leftIdx >= 0 && arr[leftIdx] < arr[leftIdx + 1]) {
+                leftIdx--;
+            }
+
+            int rightIdx = i + 2;
+            while (rightIdx < arr.length && arr[rightIdx] < arr[rightIdx - 1]) {
+                rightIdx++;
+            }
+
+            int currentPeakLength = rightIdx - leftIdx - 1;
+            longestPeakLength = Math.max(longestPeakLength, currentPeakLength);
+
+            i = rightIdx;
+        }
+        System.out.println(longestPeakLength);
+        return longestPeakLength;
+    }
