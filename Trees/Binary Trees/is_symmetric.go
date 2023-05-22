@@ -28,6 +28,39 @@ func treesAreMirrored(left, right *BinaryTree) bool {
 	return left == right
 }
 
+/*  Explanation:
+
+	The code snippet defines a function SymmetricalTree that checks if a binary tree is symmetrical. 
+	The binary tree is represented by the BinaryTree struct, which has a Value field and pointers to 
+	its left and right child nodes.
+
+	The function uses two stacks, stackLeft and stackRight, to perform a mirror traversal of the 
+	left and right subtrees of the input tree. It starts by pushing the left child of the root 
+	node onto stackLeft and the right child of the root node onto stackRight.
+
+	The function then enters a loop that continues until the stackLeft is empty. In each iteration 
+	of the loop, it pops the top nodes from stackLeft and stackRight, assigning them to variables 
+	left and right, respectively.
+
+	If both left and right are nil, it means the corresponding subtrees are symmetric, so the loop 
+	continues to the next iteration.
+
+	If either left or right is nil, or their values are not equal, it means the tree is not symmetric, 
+	and the function returns false.
+
+	Otherwise, it pushes the left child of left and the right child of right onto stackLeft and stackRight, 
+	respectively, in reverse order. This ensures that the subsequent nodes popped from the stacks are 
+	compared as mirror images.
+
+	Once the loop is completed, and no asymmetry has been detected, the function returns true, indicating 
+	that the binary tree is symmetric.
+
+	The time complexity of this algorithm is O(n), where n is the number of nodes in the binary tree, as 
+	it traverses each node once. The space complexity is O(max(d, h)), where d is the maximum width of 
+	the tree (number of nodes at the widest level) and h is the height of the tree. The space complexity 
+	depends on the maximum number of nodes stored in the stacks during the traversal.
+*/
+
 // Approach 2: Iterative Approach using Stack
 func SymmetricalTreeIterative(tree *BinaryTree) bool {
 	stackLeft := []*BinaryTree{tree.Left}   // Initialize stackLeft with the left child of the root node
