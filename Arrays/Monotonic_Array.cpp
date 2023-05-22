@@ -1,4 +1,4 @@
-/*The isMonotonic function takes a std::vector<int> as input and iterates over the array to check if it is either strictly increasing or strictly decreasing. It uses two boolean variables, increasing and decreasing, to keep track of whether the array satisfies those conditions. If both variables remain true after the loop, it means the array is monotonic. The function returns true if the array is monotonic and false otherwise.*/
+/*The problem is about determining whether an array is monotonic. A monotonic array is defined as an array that is either entirely non-increasing or non-decreasing.*/
 /*The time complexity of the isMonotonic function is O(n)
 The space complexity of the isMonotonic function is O(1)*/
 
