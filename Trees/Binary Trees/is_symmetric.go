@@ -1,3 +1,7 @@
+/*
+  Write a function that takes in a Binary Tree and returns if that tree is symmetrical. A tree is symmetrical 
+  if the left and right subtrees are mirror images of each other.
+*/
 package main
 
 // This is an input class. Do not edit.
