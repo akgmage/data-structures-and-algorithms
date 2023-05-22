@@ -7,7 +7,52 @@ type BinaryTree struct {
 	Left  *BinaryTree
 	Right *BinaryTree
 }
+/*
+The code consists of two functions. The SymmetricalTree function serves as an entry point and checks if the 
+binary tree is symmetrical by calling the treesAreMirrored helper function with the left and right subtrees 
+of the root node.
 
+The treesAreMirrored function is a recursive helper function that checks if two binary trees are mirrored. 
+It uses a bottom-up approach to compare corresponding nodes of the left and right subtrees. 
+
+The function performs the following steps:
+
+	1. Base case: If both the left and right trees are non-nil and have the same value, recursively check if 
+	their respective subtrees are mirrored by calling treesAreMirrored with the left subtree's left and 
+	the right subtree's right children, as well as the left subtree's right and the right subtree's left children.
+
+	2. If either the left or right tree is nil or their values are not equal, they are not mirrored, and the function returns false.
+
+	3. If both the left and right trees are nil, they are considered mirrored, and the function returns true.
+	
+	The recursive nature of the treesAreMirrored function allows it to traverse and compare corresponding nodes 
+	in a symmetrical manner. If the function successfully reaches the base case for all nodes, it indicates 
+	that the binary tree is symmetrical.
+
+	Overall, the code leverages recursion and the concept of mirror images to determine if a binary tree is symmetrical or not.
+	The time and space complexity of the code snippet can be analyzed as follows:
+
+	Time Complexity:
+	The time complexity of the SymmetricalTree function primarily depends on the size of the binary tree. 
+	In the worst case, where the tree is symmetric, the function needs to traverse all the nodes of the tree once.
+
+	Let's assume there are 'n' nodes in the tree. In the worst case, the function will visit each node exactly once. 
+	Therefore, the time complexity is O(n), where 'n' is the number of nodes in the binary tree.
+
+	Space Complexity:
+	The space complexity is determined by the recursive calls and the stack space used during the recursion.
+
+	In the worst case, when the binary tree is highly unbalanced and resembles a linked list, the depth of the 
+	recursion can be 'n' (the number of nodes in the tree). This means that the space required on the function 
+	call stack will be O(n).
+
+	Additionally, the space complexity also includes the space used to store the function arguments and local variables. 
+	However, as these are constant-sized values (pointers), they don't contribute significantly to the overall space complexity.
+
+	Therefore, the overall space complexity is O(n), where 'n' is the number of nodes in the binary tree, considering the worst-case scenario.
+
+	In summary, the time complexity is O(n), and the space complexity is O(n), where 'n' is the number of nodes in the binary tree.
+*/
 // Approach 1: Recursive Approach
 // SymmetricalTree checks if a binary tree is symmetrical.
 func SymmetricalTreerecursive(tree *BinaryTree) bool {
