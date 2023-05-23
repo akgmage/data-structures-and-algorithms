@@ -1,3 +1,26 @@
+/*
+  Write a function that takes in a Binary Tree and returns if that tree is symmetrical. A tree is symmetrical 
+  if the left and right subtrees are mirror images of each other.
+
+    Explanation:
+    
+    1. The code defines a class `BinaryTree` representing a binary tree node. It has an `int` value and pointers 
+       to its left and right children.
+    2. The `SymmetricalTree` function is the main entry point. It calls the helper function `treesAreMirrored` 
+       to check if the left and right subtrees are mirrored.
+    3. The `treesAreMirrored` function checks if two binary trees are mirrored. It uses recursion to compare 
+       corresponding nodes in the left and right subtrees.
+    4. In the `treesAreMirrored` function, the base case checks if both the left and right trees are non-null 
+       and have the same value. If so, it recursively checks if their subtrees are mirrored.
+    5. If either the left or right tree is null or their values are not equal, they are not mirrored. 
+       If both the left and right trees are null, they are considered mirrored.
+    6. In the `main` function, a binary tree is created for testing purposes.
+    7. The `SymmetricalTree` function is called to check if the binary tree is symmetrical.
+    8. The result is printed to the console.
+    9. Memory cleanup is performed by deleting the dynamically allocated nodes.
+
+Note: This code snippet assumes the use of a C++ compiler and standard library.
+*/
 #include <iostream>
 
 using namespace std;
