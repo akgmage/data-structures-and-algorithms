@@ -74,6 +74,12 @@ bool treesAreMirrored(BinaryTree* left, BinaryTree* right) {
     maintain the mirror traversal. The loop continues until both stacks are empty or an asymmetry is detected. 
     Finally, the function returns whether the tree is symmetric or not.
 
+    The time complexity of this algorithm is O(n), where n is the number of nodes in the binary tree, as 
+	it traverses each node once. The space complexity is O(max(d, h)), where d is the maximum width of 
+	the tree (number of nodes at the widest level) and h is the height of the tree. The space complexity 
+	depends on the maximum number of nodes stored in the stacks during the traversal.
+
+
 */
 struct BinaryTree {
     int value;
