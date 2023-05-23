@@ -31,7 +31,7 @@
    - Therefore, the space complexity is O(N) due to the recursion stack usage.
 
     It's important to note that the space complexity can be optimized by using an iterative approach instead of recursion. By using an iterative algorithm that leverages a stack or queue to perform a level-order traversal, we can achieve a space complexity of O(W), where W is the maximum width (number of nodes at the same level) of the binary tree.
-    
+
 */
 #include <iostream>
 
@@ -46,7 +46,7 @@ public:
 };
 
 // SymmetricalTree checks if a binary tree is symmetrical.
-bool SymmetricalTree(BinaryTree* tree) {
+bool SymmetricalTreeRecursive(BinaryTree* tree) {
     // Call the helper function to check if the left and right subtrees are mirrored.
     return treesAreMirrored(tree->Left, tree->Right);
 }
@@ -63,6 +63,55 @@ bool treesAreMirrored(BinaryTree* left, BinaryTree* right) {
     // Also, if both left and right trees are null, they are considered mirrored.
     return left == right;
 }
+
+// Approach 2: Iterative Approach using Stack
+/*
+    In this iterative approach, we use two stacks (stackLeft and stackRight) to perform a mirror traversal of the 
+    left and right subtrees. The process is similar to the original code snippet but implemented iteratively 
+    using a while loop and stacks. The stacks are initialized with the left and right children of the root node, 
+    and in each iteration, we compare the corresponding nodes from both stacks and check for asymmetry. 
+    The children of the left and right nodes are pushed onto their respective stacks in reverse order to 
+    maintain the mirror traversal. The loop continues until both stacks are empty or an asymmetry is detected. 
+    Finally, the function returns whether the tree is symmetric or not.
+
+*/
+struct BinaryTree {
+    int value;
+    BinaryTree* left;
+    BinaryTree* right;
+};
+
+bool SymmetricalTreeIterative(BinaryTree* tree) {
+    std::stack<BinaryTree*> stackLeft;
+    std::stack<BinaryTree*> stackRight;
+    stackLeft.push(tree->left);   // Initialize stackLeft with the left child of the root node
+    stackRight.push(tree->right); // Initialize stackRight with the right child of the root node
+
+    // Perform mirror traversal of the left and right subtrees
+    while (!stackLeft.empty()) {
+        BinaryTree* left = stackLeft.top();
+        BinaryTree* right = stackRight.top();
+        stackLeft.pop();
+        stackRight.pop();
+
+        if (left == nullptr && right == nullptr) {
+            continue; // Both left and right subtrees are symmetric, continue to the next iteration
+        }
+
+        if (left == nullptr || right == nullptr || left->value != right->value) {
+            return false; // Asymmetry detected, tree is not symmetric
+        }
+
+        // Push the children of left and right onto the respective stacks in reverse order
+        stackLeft.push(left->left);
+        stackLeft.push(left->right);
+        stackRight.push(right->right);
+        stackRight.push(right->left);
+    }
+
+    return true; // Tree is symmetric
+}
+
 
 int main() {
     // Create a binary tree for testing
