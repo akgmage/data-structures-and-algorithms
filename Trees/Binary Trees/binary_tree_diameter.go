@@ -44,6 +44,10 @@
 
 	Overall, the code effectively calculates the diameter of a binary tree by recursively calculating the height and
 	diameter of the tree and considering the longest path passing through the root.
+
+	Average case:
+	Time Complexity O(n) when the tree is balanced
+	Space complexity: O(h) where n is the number of nodes in the Binary Tree and h is the height of the Binary Tree
 */
 package main
 
