@@ -1,6 +1,19 @@
 /*
-	Write a function that takes in a Binary Tree and returns its diameter. The diameter of a binary tree 
+	Write a function that takes in a Binary Tree and returns its diameter. The diameter of a binary tree
 	is defined as the length of its longest path, even if that path doesn't pass through the root of the tree.
+
+	Sample Input :
+	          1
+            /   \
+           3     2
+         /   \
+        7     4
+       /       \
+      8         5
+     /           \
+    9             6
+	Output: 6
+	Diameter being 9 -> 8 -> 7 -> 3 -> 4 -> 5 -> 6
 */
 package main
 
