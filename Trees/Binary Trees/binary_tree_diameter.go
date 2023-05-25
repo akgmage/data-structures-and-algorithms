@@ -14,6 +14,36 @@
     9             6
 	Output: 6
 	Diameter being 9 -> 8 -> 7 -> 3 -> 4 -> 5 -> 6
+
+	Explanation:
+	This code calculates the diameter of a binary tree, which is defined as the length of the longest path between any two
+	nodes in the tree. The BinaryTreeDiameter function takes the root of the binary tree as input and returns the diameter.
+
+	The getTreeInfo function is a helper function that recursively calculates the height and diameter of the binary tree.
+	It takes a node of the binary tree as input and returns a TreeInfo struct containing the height and diameter of the tree.
+
+	In the getTreeInfo function:
+
+	The base case is when the tree is nil, indicating an empty tree. In this case, it returns a TreeInfo with height 0 and
+	diameter 0.
+
+	The height and diameter of the left and right subtrees are calculated recursively by calling getTreeInfo on the left
+	and right child nodes.
+
+	The longest path passing through the root node is determined by adding the heights of the left and right subtrees.
+
+	The maximum diameter seen so far is calculated by taking the maximum of the diameters of the left and right subtrees.
+
+	The current diameter is determined by taking the maximum among the longest path through the root and the maximum
+	diameter seen so far.
+
+	The current height is calculated by taking the maximum height among the left and right subtrees and adding 1.
+
+	Finally, the function returns a TreeInfo struct with the current height and diameter.
+	The max function is a helper function that returns the maximum of two integers.
+
+	Overall, the code effectively calculates the diameter of a binary tree by recursively calculating the height and
+	diameter of the tree and considering the longest path passing through the root.
 */
 package main
 
