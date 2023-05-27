@@ -20,8 +20,8 @@ Constraints:
 
 m == mat.length
 n == mat[i].length
-1 <= m, n <= 104
-1 <= m * n <= 104
+1 <= m, n <= 10^4
+1 <= m * n <= 10^4
 mat[i][j] is either 0 or 1.
 There is at least one 0 in mat.
 
