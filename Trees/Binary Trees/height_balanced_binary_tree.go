@@ -1,3 +1,8 @@
+/*
+	You're given the root node of a Binary Tree. Write a function that returns true
+	if this Binary Tree is height balanced and false if it isn't.
+  
+*/
 package main
 
 // This is an input class. Do not edit.
