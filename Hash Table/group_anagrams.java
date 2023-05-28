@@ -22,7 +22,7 @@
 */
 import java.util.*;
 
-public class GroupAnagrams {
+public class group_anagrams{
     
     public List<List<String>> groupAnagrams(String[] strs) {
         // Create a HashMap to store the groups of anagrams
@@ -49,7 +49,7 @@ public class GroupAnagrams {
     }
     
     public static void main(String[] args) {
-        GroupAnagrams ga = new GroupAnagrams();
+        group_anagrams ga = new group_anagrams();
         
         // Example input
         String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
