@@ -53,6 +53,8 @@
 */
 package main
 
+import "fmt"
+
 // This is an input class. Do not edit.
 type BinaryTree struct {
 	Value int
@@ -114,4 +116,39 @@ func abs(a int) int {
 		return -a
 	}
 	return a
+}
+
+func main() {
+	// Create a binary tree
+	tree := &BinaryTree{
+		Value: 1,
+		Left: &BinaryTree{
+			Value: 2,
+			Left: &BinaryTree{
+				Value: 4,
+			},
+			Right: &BinaryTree{
+				Value: 5,
+			},
+		},
+		Right: &BinaryTree{
+			Value: 3,
+			Right: &BinaryTree{
+				Value: 6,
+				Left: &BinaryTree{
+					Value: 7,
+				},
+			},
+		},
+	}
+
+	// Check if the binary tree is height-balanced
+	isBalanced := HeightBalancedBinaryTree(tree)
+
+	// Output the result
+	if isBalanced {
+		fmt.Println("The binary tree is height-balanced.")
+	} else {
+		fmt.Println("The binary tree is not height-balanced.")
+	}
 }
