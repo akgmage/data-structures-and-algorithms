@@ -10,6 +10,14 @@
 			str = "AbhayChetri"
 			Output: No 
 			Explaination: The given string doesn't contain all the letters from a to z. 
+
+Approach:-  1.Convert each letter of the string to the lower or upper case.
+	    2.Create a frequency array to mark the frequency of each letter from a to z.
+	    3.Then, traverse the frequency array and if there is any letter that is not present in the given string then print "No", otherwise print "Yes".
+
+	Time Complexity: O(N) 
+	Auxiliary Space: O(26)
+
 */
 
 class Abhay {
