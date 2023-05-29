@@ -2,7 +2,7 @@
 // So we have to subtract the first value from the second value to get the exact value.
 // Example: CM --> C=100, M=1000, so CM=1000-100=900.
 // Therefore, we can conclude that in such cases, we have to subtract the first value from the whole result.
-
+// Time complexity O(1) and Space complexity O(1).
 var romanToInt = function(s) {
     let map = new Map(); // Create a hashmap to store (symbol, value) pairs.
     map['I'] = 1;
