@@ -6,7 +6,20 @@ public class PrimMST {
     public PrimMST(int v) {
         V = v;
     }
+     public static void main(String[] args) {
+        int V = 5;
+        int[][] graph = {
+            { 0, 2, 0, 6, 0 },
+            { 2, 0, 3, 8, 5 },
+            { 0, 3, 0, 0, 7 },
+            { 6, 8, 0, 0, 9 },
+            { 0, 5, 7, 9, 0 }
+        };
 
+        PrimMST mst = new PrimMST(V);
+        mst.primMST(graph);
+    }
+}
     /**
      * Finds the minimum key value among the vertices not yet included in the MST.
      *
@@ -73,20 +86,7 @@ public class PrimMST {
         printMST(parent, graph);
     }
 
-    public static void main(String[] args) {
-        int V = 5;
-        int[][] graph = {
-            { 0, 2, 0, 6, 0 },
-            { 2, 0, 3, 8, 5 },
-            { 0, 3, 0, 0, 7 },
-            { 6, 8, 0, 0, 9 },
-            { 0, 5, 7, 9, 0 }
-        };
-
-        PrimMST mst = new PrimMST(V);
-        mst.primMST(graph);
-    }
-}
+   
 
 // Problem: Minimum Spanning Tree (Prim's Algorithm)
 // Given an undirected, weighted graph, find the minimum spanning tree using Prim's algorithm.
