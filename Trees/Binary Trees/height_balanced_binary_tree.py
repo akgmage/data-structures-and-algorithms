@@ -100,3 +100,38 @@ def max(a, b):
 def abs(a):
     return -a if a < 0 else a
 
+# Main function
+def main():
+    # Create a sample binary tree
+    #          1
+    #        /   \
+    #       2     3
+    #      / \   /
+    #     4   5 6
+    node1 = BinaryTree(1)
+    node2 = BinaryTree(2)
+    node3 = BinaryTree(3)
+    node4 = BinaryTree(4)
+    node5 = BinaryTree(5)
+    node6 = BinaryTree(6)
+    
+    node1.left = node2
+    node1.right = node3
+    node2.left = node4
+    node2.right = node5
+    node3.left = node6
+    
+    # Check if the binary tree is height-balanced
+    is_balanced = height_balanced_binary_tree(node1)
+    
+    # Print the result
+    if is_balanced:
+        print("The binary tree is height-balanced.")
+    else:
+        print("The binary tree is not height-balanced.")
+
+# Call the main function
+if __name__ == "__main__":
+    main()
+
+
