@@ -51,101 +51,92 @@
 	determined by the number of nodes in the binary tree.
 
 */
-#include <iostream>
-#include <cmath>
-
 // Node class represents a node in a binary tree
 class BinaryTree {
-public:
-    int value;
-    BinaryTree* left;
-    BinaryTree* right;
-
-    BinaryTree(int value) {
-        this->value = value;
-        this->left = nullptr;
-        this->right = nullptr;
-    }
-};
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
 
 // TreeInfo class represents the information of a binary tree, including its balance status and height
 class TreeInfo {
-public:
-    bool isBalanced;
-    int height;
-
-    TreeInfo(bool isBalanced, int height) {
-        this->isBalanced = isBalanced;
-        this->height = height;
-    }
-};
+  constructor(isBalanced, height) {
+    this.isBalanced = isBalanced;
+    this.height = height;
+  }
+}
 
 // heightBalancedBinaryTree checks if a binary tree is height-balanced
-bool heightBalancedBinaryTree(BinaryTree* tree) {
-    // Retrieve the tree information using the helper function
-    TreeInfo treeInfo = getTreeInfo(tree);
+function heightBalancedBinaryTree(tree) {
+  // Retrieve the tree information using the helper function
+  const treeInfo = getTreeInfo(tree);
 
-    // Return the balance status of the tree
-    return treeInfo.isBalanced;
+  // Return the balance status of the tree
+  return treeInfo.isBalanced;
 }
 
 // getTreeInfo retrieves the information of a binary tree, including its balance status and height
-TreeInfo getTreeInfo(BinaryTree* tree) {
-    // Base case: If the tree is nullptr, it is considered balanced with height -1
-    if (tree == nullptr) {
-        return TreeInfo(true, -1);
-    }
+function getTreeInfo(tree) {
+  // Base case: If the tree is null, it is considered balanced with height -1
+  if (tree === null) {
+    return new TreeInfo(true, -1);
+  }
 
-    // Recursively calculate the tree information of the left and right subtrees
-    TreeInfo leftSubtreeInfo = getTreeInfo(tree->left);
-    TreeInfo rightSubtreeInfo = getTreeInfo(tree->right);
+  // Recursively calculate the tree information of the left and right subtrees
+  const leftSubtreeInfo = getTreeInfo(tree.left);
+  const rightSubtreeInfo = getTreeInfo(tree.right);
 
-    // Check if both left and right subtrees are balanced and their height difference is at most 1
-    bool isBalanced = leftSubtreeInfo.isBalanced && rightSubtreeInfo.isBalanced &&
-                      std::abs(leftSubtreeInfo.height - rightSubtreeInfo.height) <= 1;
+  // Check if both left and right subtrees are balanced and their height difference is at most 1
+  const isBalanced =
+    leftSubtreeInfo.isBalanced &&
+    rightSubtreeInfo.isBalanced &&
+    Math.abs(leftSubtreeInfo.height - rightSubtreeInfo.height) <= 1;
 
-    // Calculate the height of the current tree by taking the maximum height of the left and right subtrees plus 1
-    int height = std::max(leftSubtreeInfo.height, rightSubtreeInfo.height) + 1;
+  // Calculate the height of the current tree by taking the maximum height of the left and right subtrees plus 1
+  const height = Math.max(leftSubtreeInfo.height, rightSubtreeInfo.height) + 1;
 
-    // Create and return the tree information
-    return TreeInfo(isBalanced, height);
+  // Create and return the tree information
+  return new TreeInfo(isBalanced, height);
 }
 
 // Helper function to create a binary tree
-BinaryTree* createBinaryTree(int value) {
-    return new BinaryTree(value);
+function createBinaryTree(value) {
+  return new BinaryTree(value);
 }
 
 // Main function
-int main() {
-    // Create a sample binary tree
-    //          1
-    //        /   \
-    //       2     3
-    //      / \   /
-    //     4   5 6
-    BinaryTree* node1 = createBinaryTree(1);
-    BinaryTree* node2 = createBinaryTree(2);
-    BinaryTree* node3 = createBinaryTree(3);
-    BinaryTree* node4 = createBinaryTree(4);
-    BinaryTree* node5 = createBinaryTree(5);
-    BinaryTree* node6 = createBinaryTree(6);
+function main() {
+  // Create a sample binary tree
+  //          1
+  //        /   \
+  //       2     3
+  //      / \   /
+  //     4   5 6
+  const node1 = createBinaryTree(1);
+  const node2 = createBinaryTree(2);
+  const node3 = createBinaryTree(3);
+  const node4 = createBinaryTree(4);
+  const node5 = createBinaryTree(5);
+  const node6 = createBinaryTree(6);
 
-    node1->left = node2;
-    node1->right = node3;
-    node2->left = node4;
-    node2->right = node5;
-    node3->left = node6;
+  node1.left = node2;
+  node1.right = node3;
+  node2.left = node4;
+  node2.right = node5;
+  node3.left = node6;
 
-    // Check if the binary tree is height-balanced
-    bool isBalanced = heightBalancedBinaryTree(node1);
+  // Check if the binary tree is height-balanced
+  const isBalanced = heightBalancedBinaryTree(node1);
 
-    // Print the result
-    if (isBalanced) {
-        std::cout << "The binary tree is height-balanced." << std::endl;
-    } else {
-        std::cout << "The binary tree is not height-balanced." << std::endl;
-    }
-
-    return 0;
+  // Print the result
+  if (isBalanced) {
+    console.log("The binary tree is height-balanced.");
+  } else {
+    console.log("The binary tree is not height-balanced.");
+  }
 }
+
+// Call the main function
+main();
