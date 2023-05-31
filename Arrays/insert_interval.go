@@ -1,3 +1,25 @@
+/*
+
+	In this implementation, the `Interval` struct represents an interval with a start and end value.
+	The `insert` function takes a sorted list of intervals and a new interval as input and returns a new
+	list of intervals after merging the new interval with the existing intervals.
+
+	Here's how the `insert` function works:
+
+	1. It initializes an empty `result` slice to store the merged intervals and sets the index `i` to 0.
+	2. It iterates over the existing intervals and adds intervals that end before the new interval starts to the
+	`result` slice.
+	3. It merges intervals that overlap with the new interval by updating the start and end values of the new
+	interval accordingly.
+	4. It adds the merged new interval to the `result` slice.
+	5. It adds any remaining intervals from the original list to the `result` slice.
+	6. Finally, it returns the `result` slice containing the merged intervals.
+
+	The `min` and `max` functions are helper functions to find the minimum and maximum of two integers.
+
+	In the `main` function, an example input is provided with a list of intervals and a new interval.
+	The `insert` function is called with these inputs, and the result is printed to the console.
+*/
 package main
 
 import (
