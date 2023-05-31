@@ -5,6 +5,13 @@ Program Author : SNEHA CHAUHAN
 Problem: Given a text txt and a pattern pat, write a function search(char pat[], char txt[]) 
 that prints all occurrences of pat[] in txt[]. 
 
+KMP algorithm is used to find the pattern in the given string. This is naive approach to find 
+the pattern in the given string.
+
+Example: 
+    input: txt = “AAAABAAABA” pat = “AAAA”
+    output: Pattern found at index 0
+
 Appproach:
 1. Preprocess pattern to get lps array (longest proper prefix which is also suffix array)
 2. Use lps array to traverse the text.
