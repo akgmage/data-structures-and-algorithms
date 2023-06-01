@@ -1,3 +1,20 @@
+/*
+   Explanation:
+
+   The function takes an array of intervals as input.
+   First, a copy of the input intervals is made and sorted by the start time of each interval. This is stored in a
+   temporary variable called sortedIntervals.
+   A new array called mergedIntervals is created to store the merged intervals. The first interval in sortedIntervals
+   is added to mergedIntervals to start the merging process.
+   Next, a loop iterates through each interval in sortedIntervals. For each interval, the start and end times of
+   the current interval and the next interval are compared. If they overlap, the end time of the current interval
+   is updated to the maximum of the two end times.
+   If they don't overlap, the next interval becomes the current interval and is added to mergedIntervals.
+   The loop continues until all intervals have been compared and merged, and the final mergedIntervals array
+   is returned.
+   To find the maximum of two numbers, the function uses a helper function called max. This function simply
+   compares the two numbers and returns the greater one.
+*/
 package main
 
 import "sort"
