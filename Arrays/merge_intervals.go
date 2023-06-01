@@ -2,6 +2,9 @@
    Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals,
    and return an array of the non-overlapping intervals that cover all the intervals in the input.
 
+   Sample Input: [[1, 2], [3, 5], [4, 7], [6, 8], [9, 10]]
+   Output: [[1, 2], [3, 8], [9, 10]]
+   
    Explanation:
 
    The function takes an array of intervals as input.
