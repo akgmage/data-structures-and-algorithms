@@ -4,7 +4,7 @@
 
    Sample Input: [[1, 2], [3, 5], [4, 7], [6, 8], [9, 10]]
    Output: [[1, 2], [3, 8], [9, 10]]
-   
+
    Explanation:
 
    The function takes an array of intervals as input.
@@ -20,6 +20,9 @@
    is returned.
    To find the maximum of two numbers, the function uses a helper function called max. This function simply
    compares the two numbers and returns the greater one.
+
+   Time complexity O(nlog(n))
+   Space complexity: | O(n) where n is the length of the input array
 */
 package main
 
