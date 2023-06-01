@@ -23,13 +23,14 @@ pseudosteps
 #include <bits/stdc++.h>
 using namespace std;
  
-// DS data structure
+// DS data structure class will help in building graph 
 class D_S {
-    int* parent;
-    int* child;
- 
+    int* parent;                                        // to create a parent relationship b/w two nodes
+    int* child;                                         // to create a child relationship b/w two nodes
 public:
-    D_S(int n)
+
+    //This function will create a user defined data structure which will help to create a graph
+    D_S(int n)                                          
     {
         parent = new int[n];
         child = new int[n];
@@ -39,7 +40,7 @@ public:
         }
     }
  
-    // Find function
+    // Find function to find edges b/w vertices
     int find(int i)
     {
         if (parent[i] == -1)
@@ -47,7 +48,7 @@ public:
         return parent[i] = find(parent[i]);
     }
  
-    // Union function
+    // Union function to joint two nodes via smallest possible weighted edge
     void unite(int x, int y)
     {
         int s1 = find(x);
@@ -67,6 +68,8 @@ public:
 };
  
 class Graph {
+    //As we know for kruskal's algorithm we have to maintain a list for edges b/w two vertices 
+    //from lowest weight to highest weight in increasing order
     vector<vector<int>> edgelist;
     int V;
  
@@ -79,6 +82,8 @@ public:
         edgelist.push_back({ w, x, y });
     }
  
+
+    //Kruskal's Algorithm
     void kruskals_mst()
     {
         // Arrange all edges in ascending order to find minimum weight edge
