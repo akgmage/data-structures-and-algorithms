@@ -608,7 +608,7 @@ Many problems in the real world use the merge intervals pattern. Let’s look at
 
 ## Practice problems for merge intervals
 
-- Merge Intervals
+- Merge Intervals [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/merge_intervals.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/merge_intervals.java) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/merge_intervals.py) [Javacript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/merge_intervals.js)
 - Insert Interval
 - Interval List Intersections
 - Employee Free Time

@@ -35,45 +35,71 @@
 	Overall, the algorithm has a linear time complexity and linear space complexity with respect to the number
 	of intervals in the input list.
 */
-class Interval {
-  constructor(start, end) {
-    this.start = start;
-    this.end = end;
-  }
+package main
+
+import (
+	"fmt"
+)
+
+// Interval represents an interval with a start and end value.
+type Interval struct {
+	Start int
+	End   int
 }
 
-function insertInterval(intervals, newInterval) {
-  const mergedIntervals = [];
-  let i = 0;
+// insert merges a new interval into a sorted list of intervals.
+func insert(intervals []Interval, newInterval Interval) []Interval {
+	result := make([]Interval, 0)
+	i := 0
 
-  // Skip all intervals that end before the new interval starts
-  while (i < intervals.length && intervals[i].end < newInterval.start) {
-    mergedIntervals.push(intervals[i]);
-    i++;
-  }
+	// Add intervals that end before the new interval starts
+	for i < len(intervals) && intervals[i].End < newInterval.Start {
+		result = append(result, intervals[i])
+		i++
+	}
 
-  // Merge intervals that overlap with the new interval
-  while (i < intervals.length && intervals[i].start <= newInterval.end) {
-    newInterval.start = Math.min(intervals[i].start, newInterval.start);
-    newInterval.end = Math.max(intervals[i].end, newInterval.end);
-    i++;
-  }
+	// Merge intervals that overlap with the new interval
+	for i < len(intervals) && intervals[i].Start <= newInterval.End {
+		newInterval.Start = min(newInterval.Start, intervals[i].Start)
+		newInterval.End = max(newInterval.End, intervals[i].End)
+		i++
+	}
 
-  mergedIntervals.push(newInterval);
+	// Add the merged new interval
+	result = append(result, newInterval)
 
-  // Add the remaining intervals to the merged intervals list
-  while (i < intervals.length) {
-    mergedIntervals.push(intervals[i]);
-    i++;
-  }
+	// Add remaining intervals
+	for i < len(intervals) {
+		result = append(result, intervals[i])
+		i++
+	}
 
-  return mergedIntervals;
+	return result
 }
 
-// Example usage
-const intervals = [new Interval(1, 3), new Interval(6, 9)];
-const newInterval = new Interval(2, 5);
+// min returns the minimum of two integers.
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
 
-console.log("Original intervals:", intervals);
-const mergedIntervals = insertInterval(intervals, newInterval);
-console.log("Merged intervals:", mergedIntervals);
+// max returns the maximum of two integers.
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func main() {
+	intervals := []Interval{
+		{1, 3},
+		{6, 9},
+	}
+	newInterval := Interval{2, 5}
+
+	result := insert(intervals, newInterval)
+	fmt.Println("Merged Intervals:", result)
+}
