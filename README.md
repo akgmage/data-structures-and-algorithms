@@ -608,8 +608,8 @@ Many problems in the real world use the merge intervals pattern. Let’s look at
 
 ## Practice problems for merge intervals
 
-- Merge Intervals [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/merge_intervals.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/merge_intervals.java) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/merge_intervals.py) [Javacript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/merge_intervals.js)
-- Insert Interval
+- Merge Intervals [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/merge_intervals.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/merge_intervals.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/merge_intervals.java) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/merge_intervals.py) [Javacript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/merge_intervals.js)
+- Insert Interval [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/insert_interval.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/insert_interval.cpp) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/insert_interval.py) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/insert_interval.java) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Arrays/insert_interval.js)
 - Interval List Intersections
 - Employee Free Time
 - Meeting Rooms
