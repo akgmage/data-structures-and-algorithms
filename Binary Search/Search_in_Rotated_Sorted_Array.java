@@ -28,33 +28,42 @@ Constraints:
   -104 <= target <= 104
   
 Approach: 
-  This approach has a time complexity of O(log n).
-  
+  This approach has a time complexity of O(log n) using binary Search. 
 */
   
-class Search_in_Rotated_Sorted_Array {
-    public int search(int[] nums, int target) {
-        int start = 0, end = nums.length - 1;
-        int mid = (start + end) / 2;    //finding the mid element
-        while (start <= end) {    //until the target element is found or the start pointer becomes greater than the end pointer
-            mid = (start + end) / 2;
-            if (target == nums[mid]) {    //comparing it with the target element.
-                return mid;   //If they are equal, it returns the mid index       
-            }
-            if (nums[start] <= nums[mid]) {   //If the left half of the array is sorted
-                if (nums[start] <= target && nums[mid] >= target) {   // checking if the target lies between the start and the mid
-                    end = mid - 1;    // updating the end pointer accordingly.
-                } else {    //checking if the target lies between mid and end
-                    start = mid + 1;    //updating the start pointer accordingly.
-                }
-            } else {     // If the right half of the array is sorted
-                if (nums[end] >= target && nums[mid] <= target) {   //checking if the target lies between mid and end
-                    start = mid + 1;    //updating the start pointer accordingly.
-                } else {    //checking if the target lies between start and mid
-                    end = mid - 1;    //updating the end pointer accordingly.
-                }
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+public class Search_in_Rotated_Sorted_Array {
+    public static int search(int[] nums, int target) {
+        int n = nums.length;
+        int left = 0, right = n-1;
+        while(low<=high){
+            int mid = (left+right)/2;
+            // check if the current element is target
+            if(nums[mid] == target)
+                return mid;
+            // if the starting index of the search space has smaller element than current element
+            else if(nums[left]<=nums[mid]){
+                // if target lies in non-rotated search space or subarray
+                if(target >= nums[left] && target < nums[mid])
+                    high = mid - 1;
+                else
+                    left = mid + 1;
+            } else {
+                // if target lies in non-rotated subarray
+                if(target>nums[mid] && target<=nums[right])
+                    left = mid + 1;
+                else
+                    right = mid - 1;
             }
         }
-        return -1;    //returns -1 if element not found
+        // if couldn't find the target element until now then it does not exists
+        return -1;
+    }
+    
+    public static void main(String[] args){
+      int nums[] = {4,5,6,7,0,1,2};
+      System.out.println(search(nums, 4));
     }
 }
