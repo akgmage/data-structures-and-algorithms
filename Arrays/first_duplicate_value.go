@@ -1,3 +1,11 @@
+/*
+	Given an array of integers between 1 and n, inclusive where n  is the length of the array, write a function
+	that returns the first integer that appears more than once (when the array isread from left to right).
+
+	Sample Input: [2, 3, 1, 4, 2, 5, 3]
+	Output: 2
+*/
+
 package main
 
 import "fmt"
