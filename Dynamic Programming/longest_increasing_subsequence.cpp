@@ -9,18 +9,29 @@
 using namespace std;
 
 int find_longest_increasing_subsequence(vector<int> V, int n){
-    int dp[1004];
-    for(int i = 0; i < 1000; i++) dp[i] = 1;
+    int dp[n];
     int best = INT_MIN;
-    for(int i = 1; i < n; i++){
-        for(int j = 0; j < i; j++){
-            if(V[j] <= V[i]){ // this means its in increasing order and we can take value stored at dp[j] and add 1 to it
-                int curr_len = 1 + dp[j];
-                dp[i] = max(curr_len, dp[i]);
-            }
-        }
-        best = max(dp[i], best);
-    }
+    for(int i=n-1;i>=0;i--)
+    {
+         int maxx =0;
+          if(i==n-1)
+          {
+              dp[i]=1;
+              best= max(best,dp[i]);
+              continue;
+           }
+       for(int j=i+1;j<n;j++)
+       {  
+         if(V[i]<V[j])
+         { 
+          
+             maxx= max(maxx,dp[j]);
+           }
+       }
+        dp[i]= 1+maxx;
+        best= max(best,dp[i]);
+     }
+
     return best;
 }
 int main(){
