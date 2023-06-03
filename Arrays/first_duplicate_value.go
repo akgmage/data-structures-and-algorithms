@@ -71,11 +71,40 @@ Approach2:
 	Overall, this approach uses constant extra space and has a time complexity of O(n), where n is the
 	length of the input array.
 */
+// Function to find the first duplicate value in an array.
+func FirstDuplicateValue2(array []int) int {
+   // Iterate over each element in the array.
+   for _, num := range array {
+       // Get the absolute value of the current element.
+       absValue := abs(num)
 
+       // Check if the value at the index (absValue - 1) in the array is negative.
+       if array[absValue - 1] < 0 {
+           // If it is negative, then the current element is the first duplicate value.
+           return absValue
+       }
+
+       // Otherwise, mark the value at the index (absValue - 1) in the array as negative.
+       array[absValue - 1] *= -1
+   }
+
+   // If no duplicates are found, return -1.
+   return -1
+}
+
+// Function to get the absolute value of a number.
+func abs(num int) int {
+    if num < 0 {
+        return -num
+    }
+    return num
+}
 
 func main() {
 	// Example usage of FirstDuplicateValue function
 	array := []int{2, 3, 1, 4, 2, 5, 3}
 	firstDuplicate := FirstDuplicateValue(array)
+	fmt.Println("First Duplicate Value:", firstDuplicate)
+	firstDuplicate = FirstDuplicateValue2(array)
 	fmt.Println("First Duplicate Value:", firstDuplicate)
 }
