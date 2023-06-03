@@ -28,57 +28,33 @@ Constraints:
   -104 <= target <= 104
   
 Approach: 
-  Search for the peak element i.e. pivot then search from 0 to pivot. If found return index else search from pivot+1 to nums.length
+  This approach has a time complexity of O(log n).
   
 */
   
 class Search_in_Rotated_Sorted_Array {
     public int search(int[] nums, int target) {
-        int pivot=findpivot(nums);
-        if(pivot==-1){
-            return searcharray(0,nums.length-1,nums,target);
-        }
-        if(nums[pivot]==target){
-            return pivot;
-        }
-        if(target>=nums[0]){
-            return searcharray(0,pivot,nums,target);
-        }
-        return searcharray(pivot+1,nums.length-1,nums,target);
-    }
-    
-    int searcharray(int start,int end,int[] arr,int target){
-        int middle;
-        while (start <= end) {
-            middle = start + ((end - start) / 2);
-            if (arr[middle] == target) {
-                return middle;
-            } else if (arr[middle] > target) {
-                end = middle - 1;
-            } else if (arr[middle] < target) {
-                start = middle + 1;
+        int start = 0, end = nums.length - 1;
+        int mid = (start + end) / 2;    //finding the mid element
+        while (start <= end) {    //until the target element is found or the start pointer becomes greater than the end pointer
+            mid = (start + end) / 2;
+            if (target == nums[mid]) {    //comparing it with the target element.
+                return mid;   //If they are equal, it returns the mid index       
+            }
+            if (nums[start] <= nums[mid]) {   //If the left half of the array is sorted
+                if (nums[start] <= target && nums[mid] >= target) {   // checking if the target lies between the start and the mid
+                    end = mid - 1;    // updating the end pointer accordingly.
+                } else {    //checking if the target lies between mid and end
+                    start = mid + 1;    //updating the start pointer accordingly.
+                }
+            } else {     // If the right half of the array is sorted
+                if (nums[end] >= target && nums[mid] <= target) {   //checking if the target lies between mid and end
+                    start = mid + 1;    //updating the start pointer accordingly.
+                } else {    //checking if the target lies between start and mid
+                    end = mid - 1;    //updating the end pointer accordingly.
+                }
             }
         }
-        return -1;
-    }
-    
-    int findpivot(int[] nums){
-        int start=0,end=nums.length-1,mid;
-        while(start<=end){
-            mid=start+((end-start)/2);
-            if(mid<end && nums[mid]>nums[mid+1]){
-                return mid;
-            }
-            if(mid>start && nums[mid]<nums[mid-1]){
-                return mid-1;
-            }
-            if(nums[mid]<=nums[start]){
-                end=mid-1;
-            }
-            else{
-                start=mid;
-            }
-        }
-        return -1;
+        return -1;    //returns -1 if element not found
     }
 }
