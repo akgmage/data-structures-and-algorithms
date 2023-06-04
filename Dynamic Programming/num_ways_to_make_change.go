@@ -36,6 +36,10 @@
 
 	In summary, this algorithm utilizes dynamic programming to calculate the number of ways to make change for a given
 	amount using a set of denominations. By iteratively building up the solutions for smaller amounts, it efficiently computes the result in O(n * m) time complexity, where "n" is the target amount and "m" is the number of denominations. The space complexity is O(n), as the algorithm uses an array of size "n+1" to store the intermediate results.
+
+	Time complexity : O(nd)
+	Space complexity : O(n) where n is the target amount and d is the number of coin denominations
+
 */
 package main
 
