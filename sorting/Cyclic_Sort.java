@@ -2,6 +2,11 @@
 What is Cyclic Sort?
 The basic idea behind cycle sort is to divide the input array into cycles, where each cycle consists of elements that belong to the same position in the sorted output array. The algorithm then performs a series of swaps to place each element in its correct position within its cycle, until all cycles are complete and the array is sorted.
 It is usually used where elements are in the range of (1,n)
+
+Time Complexity Analysis: 
+    Worst Case: O(n2) 
+    Best Case: O(n2)
+Auxiliary Space: O(1)
 */
 
 import java.util.Arrays;
