@@ -1,3 +1,6 @@
+// Bloom Filter Implementation
+// Question: How does the Bloom filter work, and how is it implemented in the C++
+
 // Approach and Explanation
 
 // 1. **Hash Functions**: The Bloom filter uses four hash functions (`h1`, `h2`, `h3`, `h4`) to map input strings to positions in the bit array. These hash functions generate different indexes based on the input string and the size of the bit array.
@@ -14,117 +17,119 @@
 
 // In this implementation, the size of the bit array is fixed at 1000000, and four hash functions are used. The elements are inserted by setting the corresponding positions in the bit array to 1. The `lookup` function checks if all the positions for an element are set (1), indicating its possible presence in the filter.
 
-
-
-
 // Time Complexity->	O(1) on average, O(n) in the worst case
 // Space Complexity->	O(n)
-
-
-
-
-
 
 #include <iostream>
 #include <bitset>
 #include <cmath>
 #define ll long long
 
-// hash 1
+// Hash function 1
+// This function calculates the hash value of a string using a simple additive approach.
 int h1(std::string s, int arrSize)
 {
     ll int hash = 0;
     for (int i = 0; i < s.size(); i++)
     {
-        hash = (hash + ((int)s[i]));
-        hash = hash % arrSize;
+        hash = (hash + ((int)s[i])); // Add the ASCII value of each character to the hash
+        hash = hash % arrSize;       // Take the modulus to ensure the hash value is within the array size
     }
     return hash;
 }
 
-// hash 2
+// Hash function 2
+// This function calculates the hash value of a string using an exponential approach.
 int h2(std::string s, int arrSize)
 {
     ll int hash = 1;
     for (int i = 0; i < s.size(); i++)
     {
-        hash = hash + pow(19, i) * s[i];
-        hash = hash % arrSize;
+        hash = hash + pow(19, i) * s[i]; // Multiply each character by a power of 19 and add to the hash
+        hash = hash % arrSize;           // Take the modulus to ensure the hash value is within the array size
     }
     return hash % arrSize;
 }
 
-// hash 3
+// Hash function 3
+// This function calculates the hash value of a string using a polynomial approach.
 int h3(std::string s, int arrSize)
 {
     ll int hash = 7;
     for (int i = 0; i < s.size(); i++)
     {
-        hash = (hash * 31 + s[i]) % arrSize;
+        hash = (hash * 31 + s[i]) % arrSize; // Multiply the hash by 31, add the character, and take the modulus
     }
     return hash % arrSize;
 }
 
-// hash 4
+// Hash function 4
+// This function calculates the hash value of a string using a combination of multiplication and exponentiation.
 int h4(std::string s, int arrSize)
 {
     ll int hash = 3;
     int p = 7;
     for (int i = 0; i < s.size(); i++)
     {
-        hash += hash * 7 + s[i] * pow(p, i);
-        hash = hash % arrSize;
+        hash += hash * 7 + s[i] * pow(p, i); // Multiply the hash by 7, add the character multiplied by a power of 7
+        hash = hash % arrSize;               // Take the modulus to ensure the hash value is within the array size
     }
     return hash;
 }
 
-// lookup operation
+// Lookup operation
+// This function checks if a given string is present in the bit array.
 bool lookup(std::bitset<1000000> &bitarray, std::string s)
 {
-    int a = h1(s, bitarray.size());
-    int b = h2(s, bitarray.size());
-    int c = h3(s, bitarray.size());
-    int d = h4(s, bitarray.size());
+    int a = h1(s, bitarray.size()); // Calculate hash using h1
+    int b = h2(s, bitarray.size()); // Calculate hash using h2
+    int c = h3(s, bitarray.size()); // Calculate hash using h3
+    int d = h4(s, bitarray.size()); // Calculate hash using h4
 
-    return bitarray[a] && bitarray[b] && bitarray[c] && bitarray[d];
+    return bitarray[a] && bitarray[b] && bitarray[c] && bitarray[d]; // Check if all corresponding bits are set in the bit array
 }
 
-// insert operation
+// Insert operation
+// This function inserts a string into the bit array.
 void insert(std::bitset<1000000> &bitarray, std::string s)
 {
-    // check if the element is already present or not
+    // Check if the element is already present or not
     if (lookup(bitarray, s))
     {
         std::cout << s << " is probably already present" << std::endl;
     }
     else
     {
-        int a = h1(s, bitarray.size());
-        int b = h2(s, bitarray.size());
-        int c = h3(s, bitarray.size());
-        int d = h4(s, bitarray.size());
+        int a = h1(s, bitarray.size()); // Calculate hash using h1
+        int b = h2(s, bitarray.size()); // Calculate hash using h2
+        int c = h3(s, bitarray.size()); // Calculate hash using h3
+        int d = h4(s, bitarray.size()); // Calculate hash using h4
 
-        bitarray[a] = true;
-        bitarray[b] = true;
-        bitarray[c] = true;
-        bitarray[d] = true;
+        bitarray[a] = true; // Set corresponding bit in the bit array for hash a
+        bitarray[b] = true; // Set corresponding bit in the bit array for hash b
+        bitarray[c] = true; // Set corresponding bit in the bit array for hash c
+        bitarray[d] = true; // Set corresponding bit in the bit array for hash d
 
         std::cout << s << " inserted" << std::endl;
     }
 }
 
-int main() {
+int main()
+{
     std::bitset<1000000> bitarray;
-    std::string sarray[] = { "apple", "banana", "cherry", "orange", "grape", "kiwi" };
+    std::string sarray[] = {"apple", "banana", "cherry", "orange", "grape", "kiwi"};
 
-    for (const auto& s : sarray) {
-        if (lookup(bitarray, s)) {
+    for (const auto &s : sarray)
+    {
+        if (lookup(bitarray, s))
+        {
             std::cout << s << " is already present" << std::endl;
-        } else {
+        }
+        else
+        {
             insert(bitarray, s);
         }
     }
 
     return 0;
 }
-
