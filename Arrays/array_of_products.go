@@ -30,32 +30,29 @@
 	three times. It has a space complexity of O(n), since it creates a new result array of size n, and two additional integer variables.
  */
 
-package main
+ package main
 
-func ArrayOfProducts(array []int) []int {
-	// create two arrays to store the products of all elements to the left and right of each element in the input array
-	leftProduct := make([]int, len(array))
-	rightProduct := make([]int, len(array))
-
-	// compute the product of all elements to the left of each element in the input array
-	leftRunningProduct := 1
-	for i := 0; i < len(array); i++ {
-		leftProduct[i] = leftRunningProduct
-		leftRunningProduct *= array[i]
-	}
-
-	// compute the product of all elements to the right of each element in the input array
-	rightRunningProduct := 1
-	for i := len(array) - 1; i >= 0; i-- {
-		rightProduct[i] = rightRunningProduct
-		rightRunningProduct *= array[i]
-	}
-
-	// compute the product of all elements to the left and right of each element in the input array
-	for i := 0; i < len(array); i++ {
-		rightProduct[i] = leftProduct[i] * rightProduct[i]
-	}
-
-	// return the array of products
-	return rightProduct
-}
+ // Given an array of integers, returns an array where each element
+ // is the product of all the integers in the input array except for the one at that index.
+ func ArrayOfProducts(array []int) []int {
+	 result := make([]int, len(array))
+ 
+	 // Compute the running product of all elements to the left of each index
+	 // and store it in the result array.
+	 leftRunningProduct := 1
+	 for i := 0; i < len(array); i++ {
+		 result[i] = leftRunningProduct // Store left product in the result array
+		 leftRunningProduct *= array[i] // Update left product
+	 }
+ 
+	 // Compute the running product of all elements to the right of each index
+	 // and multiply it with the corresponding left product in the result array.
+	 rightRunningProduct := 1
+	 for i := len(array) - 1; i >= 0; i-- {
+		 result[i] = rightRunningProduct * result[i] // Multiply the right product with the corresponding left product
+		 rightRunningProduct *= array[i]             // Update right product
+	 }
+ 
+	 return result
+ }
+ 
