@@ -1,4 +1,5 @@
-
+# Bloom Filter Implementation
+# Question: How can I implement a Bloom filter in Python?
 
 #  explanation of the approach:
 
@@ -23,7 +24,6 @@
 # The Bloom filter uses the MurmurHash3 hash function (`mmh3.hash()`) to generate hash values for the items. The number of hash functions and the size of the bit array are calculated based on the desired false positive rate and capacity. The Bloom filter provides a probabilistic check for membership, with a possibility of false positives but no false negatives.
 
 
-
 import math
 import mmh3
 from bitarray import bitarray
@@ -39,27 +39,34 @@ class BloomFilter:
         self.bit_array.setall(0)
 
     def calculate_size(self):
-        size = - (self.capacity * math.log(self.false_positive_rate)) / (math.log(2) ** 2)
+        # Calculate the size of the bit array based on the capacity and false positive rate
+        size = - (self.capacity * math.log(self.false_positive_rate)
+                  ) / (math.log(2) ** 2)
         return int(size)
 
     def calculate_num_hashes(self):
+        # Calculate the number of hash functions based on the size and capacity
         num_hashes = (self.size / self.capacity) * math.log(2)
         return int(num_hashes)
 
     def add(self, item):
+        # Add an item to the Bloom filter
         for seed in range(self.num_hashes):
+            # Generate a hash value using the MurmurHash3 algorithm with different seeds
             index = mmh3.hash(item, seed) % self.size
             self.bit_array[index] = 1
 
     def contains(self, item):
+        # Check if an item is possibly in the Bloom filter
         for seed in range(self.num_hashes):
+            # Generate a hash value using the MurmurHash3 algorithm with different seeds
             index = mmh3.hash(item, seed) % self.size
             if self.bit_array[index] == 0:
                 return False
         return True
 
 
-# Example usage
+# Create a Bloom filter with a capacity of 1000 items and a false positive rate of 0.01
 bloom_filter = BloomFilter(capacity=1000, false_positive_rate=0.01)
 
 # Add items to the filter
@@ -68,7 +75,7 @@ bloom_filter.add("banana")
 bloom_filter.add("cherry")
 
 # Check if items are in the filter
-print(bloom_filter.contains("apple"))    
-print(bloom_filter.contains("banana"))   
-print(bloom_filter.contains("cherry"))   
-print(bloom_filter.contains("orange"))  
+print(bloom_filter.contains("apple"))    # Expected output: True
+print(bloom_filter.contains("banana"))   # Expected output: True
+print(bloom_filter.contains("cherry"))   # Expected output: True
+print(bloom_filter.contains("orange"))   # Expected output: False
