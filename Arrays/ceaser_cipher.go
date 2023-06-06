@@ -12,23 +12,29 @@
 */
 package main
 
-import "fmt"
-
+// CaesarCipherEncryptor takes a string and a key (integer) as input and returns
+// a new string obtained by shifting each character of the input string by the
+// key number of positions to the right in the alphabet, wrapping around if necessary.
 func CaesarCipherEncryptor(str string, key int) string {
-	key = key % 26 // mod with 26 just in case the key is not bigger
-	result := ""
-	// find out ascii value if its greater than ascii value of 'z' then reduce 26 from value
-	for i := 0; i < len(str); i++ {
-		asciiValue := int(str[i]) + key
-		if asciiValue > 122 {
-			asciiValue -= 26
-		}
-		result += string(asciiValue)
-	}
-	return result
-}
-
-func main() {
-	msg := CaesarCipherEncryptor("abcadzxc", 10)
-	fmt.Println(msg)
+	// Calculate the shift amount and offset value
+	shift, offset := rune(key % 26), rune(26)
+	
+	// Convert the input string to a rune slice (for ease of manipulation)
+    runes := []rune(str)
+    
+    // Iterate over each character in the rune slice
+    for i, char := range runes {
+    	// If the character is a lowercase letter and shifting it will still be within the lowercase range
+        if char >= 'a' && char + shift <= 'z' {
+            char += shift
+        } else {
+        	// If the character is outside of the lowercase range after shifting, wrap it around
+            char += shift - offset
+        }
+        // Update the character in the rune slice
+        runes[i] = char
+    }
+    
+    // Convert the resulting rune slice back to a string and return it
+    return string(runes)
 }
