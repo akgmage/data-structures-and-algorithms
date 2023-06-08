@@ -1,81 +1,83 @@
 /*
-Write a function that takes in an array of at least three integers and, 
-without sorting the input array, returns a sorted array of the three largest integers in the input array.
+    Write a function that takes in an array of at least three integers and,
+    without sorting the input array, returns a sorted array of the three largest
+    integers in the input array.
 
+    Explanation:
 
-Approach:
+    This code defines a function called `FindThreeLargestNumbers` that takes an array of integers as input and
+    returns an array of the three largest integers in the input array.
 
-Before implementing the task logic the array will be checked to see if it meets the criteria.
-Here the input array will be checked to see if it´s at least 3 elements big and if it
-only contains integers.
+    The `triplets` array is initialized with three smallest possible values. Then, the function iterates through
+    the input array using a `for` loop and calls the `updateLargest` function to update the `triplets` array with
+    the current number if it is larger than one of the values in the array.
 
-After that the logic is implemented.
-Because the given array should not be sorted for this task, the used logic works as following:
-1. Initialize a result array with 3 values, each of these 3 is initialized as -Infinity
-2. Check if first element of array is bigger than the third result value
-    2.1 If value is bigger set new value (will be true for the first check as initialized with -Infinity)
-    2.2 shift current numbers in result array
-    2.3 checks if element is bigger than value 2, and also value 1 - following above logic
-3. Sorty the result array in descending order and console logs the result.
+    The `updateLargest` function takes two arguments: `triplets` and `num`. It first checks if `num` is greater
+    than the third value in the `triplets` array. If so, it calls the `shiftAndUpdate` function to update the
+    `triplets` array with the current number at the third index.
+
+    If `num` is not greater than the third value in the `triplets` array, it checks if `num` is greater than the second value in the `triplets` array.
+
+    If so, it calls the `shiftAndUpdate` function to update the `triplets` array with the current number at
+    the second index. Finally, if `num` is not greater than either the third or second value in the `triplets`
+    array, it checks if `num` is greater than the first value in the `triplets` array.
+
+    If so, it calls the `shiftAndUpdate` function to update the `triplets` array with the current number at
+    the first index.
+
+    The `shiftAndUpdate` function takes three arguments: `triplets`, `num`, and `idx`. It iterates through the
+    `triplets` array using a `for` loop and shifts each value to the left by one position until it reaches
+    the `idx` index. Then it updates the value at the `idx` index with the current number `num`.
+
+    Time and Space complexity : O(n) time | O(1) space - where n is the length of the input array
 */
+function findThreeLargestNumbers(array) {
+  // Initialize an array to hold the three largest numbers, starting with negative infinity
+  let triplets = [-Infinity, -Infinity, -Infinity];
 
-function findThreeLargestInteger(array) {
+  // Iterate through each number in the input array
+  for (let num of array) {
+    // Call the updateLargest function to determine if the number should be included in the triplet
+    updateLargest(triplets, num);
+  }
 
-    /************************************************************************
-     *        This block checks if given array matches the criteria         *
-    ************************************************************************/
-    let arrayLength = 0;
-    let onlyIntegers = true;
-    // iterate over given array and check each element 
-    array.forEach(element => {
-        // is element an integer
-        if (!Number.isInteger(element)) {
-            onlyIntegers = false;
-        }
-        // count length of array
-        arrayLength++;
-    });
-
-
-    /************************************************************************
-     *                    Implementing the task logic                       *
-    ************************************************************************/
-    if (onlyIntegers && arrayLength >= 3) {
-        // initialize result array with -Infinite
-        let result = [-Infinity, -Infinity, -Infinity];
-
-        // Loop through the input array
-        for (const num of array) {
-            // Check if the current number is larger than the third largest number
-            if (num > result[2]) {
-                // Shift the current numbers down the result array
-                result[0] = result[1];
-                result[1] = result[2];
-                result[2] = num;
-            } else if (num > result[1]) {
-                // Shift the current numbers down the result array
-                result[0] = result[1];
-                result[1] = num;
-            } else if (num > result[0]) {
-                // Shift the current number down the result array
-                result[0] = num;
-            }
-        }
-        // sorts the result in descending order (big to small)
-        result.sort(function (a, b) { return b - a });
-        console.log(result);
-
-    } else {
-        console.log("The passed array does not match the expected criteria.");
-    }
-
+  // Return the array containing the three largest numbers
+  return triplets;
 }
 
-const testArray = [5, -3, 5, 100, 3, 55, 999, -18];
-const functionCheck = findThreeLargestInteger(testArray); // prints [999, 100, 55] to console
+function updateLargest(triplets, num) {
+  // If the number is larger than the third-largest element in the triplet
+  if (num > triplets[2]) {
+    // Shift the other elements to make room and add the number as the new third-largest element
+    shiftAndUpdate(triplets, num, 2);
+  }
+  // Otherwise, if the number is larger than the second-largest element
+  else if (num > triplets[1]) {
+    // Shift and update the triplet accordingly
+    shiftAndUpdate(triplets, num, 1);
+  }
+  // Otherwise, if the number is larger than the first-largest element
+  else if (num > triplets[0]) {
+    // Shift and update the triplet accordingly
+    shiftAndUpdate(triplets, num, 0);
+  }
+}
 
-const arrayToShort = [100, 999];
-const unctionCheck1 = findThreeLargestInteger(arrayToShort); // prints "The passed array does not match the expected criteria." to console
+function shiftAndUpdate(triplets, num, idx) {
+  // Iterate through the elements of the triplet
+  for (let i = 0; i <= idx; i++) {
+    // If the loop reaches the specified index, add the new number to the triplet
+    if (i === idx) {
+      triplets[i] = num;
+    }
+    // Otherwise, shift the elements to the right
+    else {
+      triplets[i] = triplets[i + 1];
+    }
+  }
+}
 
-const arrayNoInt = [100, 999, 8.5];
-const unctionCheck2 = findThreeLargestInteger(arrayNoInt); // prints "The passed array does not match the expected criteria." to console
+// Test the findThreeLargestNumbers function
+const array = [1, 5, 2, 9, 10, 3];
+const result = findThreeLargestNumbers(array);
+console.log(result);
