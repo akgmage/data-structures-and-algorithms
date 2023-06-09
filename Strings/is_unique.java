@@ -1,6 +1,6 @@
 /*
-    // Implement an algorithm to determine if a string has all unique characters.
-    // what if you cannot use additional data structures?
+    Implement an algorithm to determine if a string has all unique characters.
+    what if you cannot use additional data structures?
 
     Explanation:
    - The `isUniqueUsingBitVector` function takes a string `s` as input and returns a boolean value indicating whether the string has all unique characters.
