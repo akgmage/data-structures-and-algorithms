@@ -1,76 +1,79 @@
 /*
-	Problem definition:
-		You are given an array of non-overlapping intervals intervals where intervals[i] = [starti, endi] represent 
-		the start and the end of the ith interval and intervals is sorted in ascending order by starti. 
-		You are also given an interval newInterval = [start, end] that represents the start and end of another interval.
-		
-		Insert newInterval into intervals such that intervals is still sorted in ascending order by starti and intervals still does not have any overlapping intervals (merge overlapping intervals if necessary).
+	Insert Interval
 
-	Approach:
-		The approach used here is to first add all the intervals before the newInterval to the result array.
-		Then, we merge overlapping intervals by iterating through the intervals array and comparing the start and end times of the newInterval and the current interval.
-		After all overlapping intervals have been merged, we add the newInterval to the result array and then add all the remaining intervals after the newInterval.
-		The resulting array will be sorted in ascending order by start time.
+	In this implementation, the `Interval` struct represents an interval with a start and end value.
+	The `insert` function takes a sorted list of intervals and a new interval as input and returns a new
+	list of intervals after merging the new interval with the existing intervals.
 
-	Complexity:
-		Time Complexity: O(n), where n is the length of intervals array.
-		We iterate through the intervals array only once in the worst case.
-		Space Complexity: O(n), where n is the length of intervals array.
-		We use an array to store the result, which could potentially contain all the intervals.
+	Here's how the `insert` function works:
 
-	Sample input/outputs:
-		Example 1:
-		Input:
-		intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]]
-		newInterval = [4,8]
+	1. It initializes an empty `result` slice to store the merged intervals and sets the index `i` to 0.
+	2. It iterates over the existing intervals and adds intervals that end before the new interval starts to the
+	`result` slice.
+	3. It merges intervals that overlap with the new interval by updating the start and end values of the new
+	interval accordingly.
+	4. It adds the merged new interval to the `result` slice.
+	5. It adds any remaining intervals from the original list to the `result` slice.
+	6. Finally, it returns the `result` slice containing the merged intervals.
 
-		Output:
-		[[1,2],[3,10],[12,16]]
-		
-		Example 2:
-		Input:
-		intervals = [[1,3],[6,9]]
-		newInterval = [2,5]
+	The `min` and `max` functions are helper functions to find the minimum and maximum of two integers.
 
-		Output:
-		[[1,5],[6,9]]
-		
-		Example 3:
-		Input:
-		intervals = [[1,5]]
-		newInterval = [2,3]
-		
-		Output:
-		[[1,5]]
+	In the `main` function, an example input is provided with a list of intervals and a new interval.
+	The `insert` function is called with these inputs, and the result is printed to the console.
+
+	Time Complexity:
+	The time complexity is O(n), where n is the number of intervals in the input list. This is because we need to
+	iterate through each interval in the list to merge and insert the new interval. In the worst case, we may
+	need to traverse all intervals in the list.
+
+	Space Complexity:
+	The space complexity is O(n), where n is the number of intervals in the input list. This is because we
+	create a new result slice to store the merged intervals, which can potentially contain all the intervals
+	from the input list plus the merged new interval. Therefore, the space required is proportional to the
+	number of intervals in the input list.
+
+	Overall, the algorithm has a linear time complexity and linear space complexity with respect to the number
+	of intervals in the input list.
 */
+class Interval {
+  constructor(start, end) {
+    this.start = start;
+    this.end = end;
+  }
+}
 
-const insert = function(intervals, newInterval) {
-    const result = [];
-    let i = 0;
+function insertInterval(intervals, newInterval) {
+  const mergedIntervals = [];
+  let i = 0;
 
-    // Add all the intervals before the newInterval
-    while (i < intervals.length && intervals[i][1] < newInterval[0]) {
-		result.push(intervals[i]);
-		i++;
-    }
+  // Skip all intervals that end before the new interval starts
+  while (i < intervals.length && intervals[i].end < newInterval.start) {
+    mergedIntervals.push(intervals[i]);
+    i++;
+  }
 
-    // Merge overlapping intervals
-    while (i < intervals.length && intervals[i][0] <= newInterval[1]) {
-		newInterval[0] = Math.min(intervals[i][0], newInterval[0]);
-		newInterval[1] = Math.max(intervals[i][1], newInterval[1]);
-		i++;
-    }
+  // Merge intervals that overlap with the new interval
+  while (i < intervals.length && intervals[i].start <= newInterval.end) {
+    newInterval.start = Math.min(intervals[i].start, newInterval.start);
+    newInterval.end = Math.max(intervals[i].end, newInterval.end);
+    i++;
+  }
 
-    result.push(newInterval);
+  mergedIntervals.push(newInterval);
 
-    // Add all the intervals after the newInterval
-    while (i < intervals.length) {
-		result.push(intervals[i]);
-		i++;
-    }
+  // Add the remaining intervals to the merged intervals list
+  while (i < intervals.length) {
+    mergedIntervals.push(intervals[i]);
+    i++;
+  }
 
-    return result;
-};
+  return mergedIntervals;
+}
 
-console.log("The resulting array of intervals is:");
-console.log(insert([[1,2],[3,5],[6,7],[8,10],[12,16]], [4,8]));
+// Example usage
+const intervals = [new Interval(1, 3), new Interval(6, 9)];
+const newInterval = new Interval(2, 5);
+
+console.log("Original intervals:", intervals);
+const mergedIntervals = insertInterval(intervals, newInterval);
+console.log("Merged intervals:", mergedIntervals);
