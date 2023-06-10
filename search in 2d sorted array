@@ -7,8 +7,16 @@ You are given an m x n integer matrix matrix with the following two properties:
 Each row is sorted in non-decreasing order.
 The first integer of each row is greater than the last integer of the previous row.
 Given an integer target, return true if target is in matrix or false otherwise.
-time
+Time:
 You must write a solution in O(log(m * n)) time complexity.
+Example 1:
+Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3
+Output: true
+
+Example 2:
+Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 13
+Output: false
+ 
 Explanation:
 In this code, we have the Solution class with the searchMatrix method that takes a 2D matrix and a target value as parameters. It iterates through each element in the matrix and checks if the current element is equal to the target value. If a match is found, it returns true. If no match is found after checking all elements, it returns false.
 
