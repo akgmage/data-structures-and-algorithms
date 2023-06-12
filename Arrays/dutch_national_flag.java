@@ -8,7 +8,6 @@
 
     Explanation:
 
-
     The algorithm partitions the array into three sections: elements with the value 0, elements with the value 1, and elements 
     with the value 2. It uses three pointers, `start`, `low`, and `end`, to keep track of the boundaries between these sections.
 
@@ -36,43 +35,38 @@
     Time complexity: O(n)
     Space complexity: O(1)
 */
+public class Main {
+    public static void sortColors(int[] nums) {
+        int start = 0;
+        int low = 0;
+        int end = nums.length - 1;
 
-
-
-#include <bits/stdc++.h>
-using namespace std;
-
-void sortColors(vector<int> &nums)
-{
-    // created 3 variables start , low and end which are pointing start and low which are pointing to first index , end is pointing to last index .
-
-    int start = 0, low = 0, end = nums.size() - 1;
-    while (low <= end)
-    {
-        if (nums[low] == 0) // checking if element of low is 0 . If yes then  swap to start and low .
-        {
-            swap(nums[low], nums[start]);
-            start++, low++;
-        }
-        else if (nums[low] == 1) // checking if element at low index is 1 , If yes then increase the index by 1 .
-        {
-            low++;
-        }
-        else // else swap the element of low index to end .
-        {
-            swap(nums[low], nums[end]);
-            end--;
+        while (low <= end) {
+            if (nums[low] == 0) {
+                // Swap the element at low with the element at start
+                int temp = nums[low];
+                nums[low] = nums[start];
+                nums[start] = temp;
+                start++;
+                low++;
+            } else if (nums[low] == 1) {
+                // Move to the next element
+                low++;
+            } else {
+                // Swap the element at low with the element at end
+                int temp = nums[low];
+                nums[low] = nums[end];
+                nums[end] = temp;
+                end--;
+            }
         }
     }
-}
-int main()
-{
-    vector<int> nums{2, 0, 2, 1, 1, 0};
-    sortColors(nums);
 
-    // Printing array's elements ..
-    for (auto i : nums)
-    {
-        cout << i << " ";
+    public static void main(String[] args) {
+        int[] nums = {2, 0, 2, 1, 1, 0};
+        sortColors(nums);
+        for (int num : nums) {
+            System.out.print(num + " ");
+        }
     }
 }
