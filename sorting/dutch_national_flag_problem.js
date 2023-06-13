@@ -32,13 +32,18 @@ function dutchNationalFlagProblem(arr) {
 
   while (mid <= high) {
     if (arr[mid] === 0) {
+      // Swap current element at mid with element at low
       [arr[mid], arr[low]] = [arr[low], arr[mid]];
+      // Increment both low and mid pointers
       low++;
       mid++;
     } else if (arr[mid] === 1) {
+      // Move to the next element in the 1s region
       mid++;
     } else {
+      // Swap current element at mid with element at high
       [arr[mid], arr[high]] = [arr[high], arr[mid]];
+      // Decrement the high pointer
       high--;
     }
   }
