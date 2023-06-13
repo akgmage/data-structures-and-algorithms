@@ -15,6 +15,20 @@ Implement the MyQueue class:
 ~int pop() Removes the element from the front of the queue and returns it.
 ~int peek() Returns the element at the front of the queue.
 ~boolean empty() Returns true if the queue is empty, false .
+//Example:
+
+>> Sample Input:
+["MyQueue", "push", "push", "peek", "pop", "empty"]
+[[], [1], [2], [], [], []]
+>>Sample Output:
+[null, null, null, 1, 1, false]
+Explanation
+MyQueue myQueue = new MyQueue();
+myQueue.push(1); // queue is: [1](here we are not returning push element so in output we got null)
+myQueue.push(2); // queue is: [1, 2] (leftmost is front of the queue)
+myQueue.peek(); // return 1
+myQueue.pop(); // return 1, queue is [2]
+myQueue.empty(); // return false
 //Complexity:
 
 >>Time Complexity
@@ -23,6 +37,8 @@ pop:O(1)
 peek:O(1)
 empty:O(1)
 >>Space Complexity:O(n)
+//Example:
+
 //Explanation
 
 >>The provided code implements a queue using two stacks (`s1` and `s2`). 
