@@ -9,12 +9,12 @@
 #  and it is printed as the output.
 
 # input the list
-list1=list(map(int,input().split()))
+list1 = list(map(int, input().split()))
 # calculate sum of the list
-s=sum(list1)
+s = sum(list1)
 #find the max of the array and calculate sum of n natural numbers
-n=max(list1)
-ans=(n*(n+1))//2 
+n = max(list1)
+ans = (n*(n+1))//2 
 print(ans-s)
 
 # Time complexity is O(n)
