@@ -31,30 +31,32 @@
 
 	This algorithm avoids using division and solves the problem in linear time complexity, making two passes over the input array. The space complexity is also linear, as it uses an additional array to store the products.
 */
+function arrayOfProducts(array) {
+  const n = array.length;
+  const result = new Array(n).fill(1);
 
-package main
+  // Compute the running product of all elements to the left of each index
+  // and store it in the result array.
+  let leftRunningProduct = 1;
+  for (let i = 0; i < n; i++) {
+    result[i] = leftRunningProduct; // Store left product in the result array
+    leftRunningProduct *= array[i]; // Update left product
+  }
 
-// Given an array of integers, returns an array where each element
-// is the product of all the integers in the input array except for the one at that index.
- func ArrayOfProducts(array []int) []int {
-	 result := make([]int, len(array))
- 
-	 // Compute the running product of all elements to the left of each index
-	 // and store it in the result array.
-	 leftRunningProduct := 1
-	 for i := 0; i < len(array); i++ {
-		 result[i] = leftRunningProduct // Store left product in the result array
-		 leftRunningProduct *= array[i] // Update left product
-	 }
- 
-	 // Compute the running product of all elements to the right of each index
-	 // and multiply it with the corresponding left product in the result array.
-	 rightRunningProduct := 1
-	 for i := len(array) - 1; i >= 0; i-- {
-		 result[i] = rightRunningProduct * result[i] // Multiply the right product with the corresponding left product
-		 rightRunningProduct *= array[i]             // Update right product
-	 }
- 
-	 return result
- }
- 
+  // Compute the running product of all elements to the right of each index
+  // and multiply it with the corresponding left product in the result array.
+  let rightRunningProduct = 1;
+  for (let i = n - 1; i >= 0; i--) {
+    result[i] *= rightRunningProduct; // Multiply the right product with the corresponding left product
+    rightRunningProduct *= array[i]; // Update right product
+  }
+
+  return result;
+}
+
+// Example usage
+const inputArray = [1, 2, 3, 4, 5];
+const outputArray = arrayOfProducts(inputArray);
+
+// Print the result
+console.log(outputArray);

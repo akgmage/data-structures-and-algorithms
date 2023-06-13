@@ -1,4 +1,4 @@
-/*
+'''
     Write a function that takes in an array of at least three integers and,
     without sorting the input array, returns a sorted array of the three largest
     integers in the input array.
@@ -30,54 +30,48 @@
     the `idx` index. Then it updates the value at the `idx` index with the current number `num`.
 
     Time and Space complexity : O(n) time | O(1) space - where n is the length of the input array
-*/
-function findThreeLargestNumbers(array) {
-  // Initialize an array to hold the three largest numbers, starting with negative infinity
-  let triplets = [-Infinity, -Infinity, -Infinity];
 
-  // Iterate through each number in the input array
-  for (let num of array) {
-    // Call the updateLargest function to determine if the number should be included in the triplet
-    updateLargest(triplets, num);
-  }
+'''
+def find_three_largest_numbers(array):
+    # Initialize a list to hold the three largest numbers, starting with negative infinity
+    triplets = [float('-inf'), float('-inf'), float('-inf')]
+    
+    # Iterate through each number in the input array
+    for num in array:
+        # Call the update_largest function to determine if the number should be included in the triplet
+        update_largest(triplets, num)
+    
+    # Return the list containing the three largest numbers
+    return triplets
 
-  // Return the array containing the three largest numbers
-  return triplets;
-}
 
-function updateLargest(triplets, num) {
-  // If the number is larger than the third-largest element in the triplet
-  if (num > triplets[2]) {
-    // Shift the other elements to make room and add the number as the new third-largest element
-    shiftAndUpdate(triplets, num, 2);
-  }
-  // Otherwise, if the number is larger than the second-largest element
-  else if (num > triplets[1]) {
-    // Shift and update the triplet accordingly
-    shiftAndUpdate(triplets, num, 1);
-  }
-  // Otherwise, if the number is larger than the first-largest element
-  else if (num > triplets[0]) {
-    // Shift and update the triplet accordingly
-    shiftAndUpdate(triplets, num, 0);
-  }
-}
+def update_largest(triplets, num):
+    # If the number is larger than the third-largest element in the triplet
+    if num > triplets[2]:
+        # Shift the other elements to make room and add the number as the new third-largest element
+        shift_and_update(triplets, num, 2)
+    # Otherwise, if the number is larger than the second-largest element
+    elif num > triplets[1]:
+        # Shift and update the triplet accordingly
+        shift_and_update(triplets, num, 1)
+    # Otherwise, if the number is larger than the first-largest element
+    elif num > triplets[0]:
+        # Shift and update the triplet accordingly
+        shift_and_update(triplets, num, 0)
 
-function shiftAndUpdate(triplets, num, idx) {
-  // Iterate through the elements of the triplet
-  for (let i = 0; i <= idx; i++) {
-    // If the loop reaches the specified index, add the new number to the triplet
-    if (i === idx) {
-      triplets[i] = num;
-    }
-    // Otherwise, shift the elements to the right
-    else {
-      triplets[i] = triplets[i + 1];
-    }
-  }
-}
 
-// Test the findThreeLargestNumbers function
-const array = [1, 5, 2, 9, 10, 3];
-const result = findThreeLargestNumbers(array);
-console.log(result);
+def shift_and_update(triplets, num, idx):
+    # Iterate through the elements of the triplet
+    for i in range(idx + 1):
+        # If the loop reaches the specified index, add the new number to the triplet
+        if i == idx:
+            triplets[i] = num
+        # Otherwise, shift the elements to the right
+        else:
+            triplets[i] = triplets[i + 1]
+
+
+# Test the find_three_largest_numbers function
+array = [1, 5, 2, 9, 10, 3]
+result = find_three_largest_numbers(array)
+print(result)

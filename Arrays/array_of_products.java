@@ -31,30 +31,38 @@
 
 	This algorithm avoids using division and solves the problem in linear time complexity, making two passes over the input array. The space complexity is also linear, as it uses an additional array to store the products.
 */
+import java.util.Arrays;
 
-package main
+public class ArrayOfProducts {
+    public static int[] arrayOfProducts(int[] array) {
+        int n = array.length;
+        int[] result = new int[n];
 
-// Given an array of integers, returns an array where each element
-// is the product of all the integers in the input array except for the one at that index.
- func ArrayOfProducts(array []int) []int {
-	 result := make([]int, len(array))
- 
-	 // Compute the running product of all elements to the left of each index
-	 // and store it in the result array.
-	 leftRunningProduct := 1
-	 for i := 0; i < len(array); i++ {
-		 result[i] = leftRunningProduct // Store left product in the result array
-		 leftRunningProduct *= array[i] // Update left product
-	 }
- 
-	 // Compute the running product of all elements to the right of each index
-	 // and multiply it with the corresponding left product in the result array.
-	 rightRunningProduct := 1
-	 for i := len(array) - 1; i >= 0; i-- {
-		 result[i] = rightRunningProduct * result[i] // Multiply the right product with the corresponding left product
-		 rightRunningProduct *= array[i]             // Update right product
-	 }
- 
-	 return result
- }
- 
+        // Compute the running product of all elements to the left of each index
+        // and store it in the result array.
+        int leftRunningProduct = 1;
+        for (int i = 0; i < n; i++) {
+            result[i] = leftRunningProduct;  // Store left product in the result array
+            leftRunningProduct *= array[i];  // Update left product
+        }
+
+        // Compute the running product of all elements to the right of each index
+        // and multiply it with the corresponding left product in the result array.
+        int rightRunningProduct = 1;
+        for (int i = n - 1; i >= 0; i--) {
+            result[i] *= rightRunningProduct;  // Multiply the right product with the corresponding left product
+            rightRunningProduct *= array[i];   // Update right product
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        // Example usage
+        int[] input = {1, 2, 3, 4, 5};
+        int[] output = arrayOfProducts(input);
+
+        // Print the result
+        System.out.println(Arrays.toString(output));
+    }
+}

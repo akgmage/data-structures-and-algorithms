@@ -32,29 +32,46 @@
 	This algorithm avoids using division and solves the problem in linear time complexity, making two passes over the input array. The space complexity is also linear, as it uses an additional array to store the products.
 */
 
-package main
+#include <iostream>
+#include <vector>
+
+using namespace std;
 
 // Given an array of integers, returns an array where each element
 // is the product of all the integers in the input array except for the one at that index.
- func ArrayOfProducts(array []int) []int {
-	 result := make([]int, len(array))
- 
-	 // Compute the running product of all elements to the left of each index
-	 // and store it in the result array.
-	 leftRunningProduct := 1
-	 for i := 0; i < len(array); i++ {
-		 result[i] = leftRunningProduct // Store left product in the result array
-		 leftRunningProduct *= array[i] // Update left product
-	 }
- 
-	 // Compute the running product of all elements to the right of each index
-	 // and multiply it with the corresponding left product in the result array.
-	 rightRunningProduct := 1
-	 for i := len(array) - 1; i >= 0; i-- {
-		 result[i] = rightRunningProduct * result[i] // Multiply the right product with the corresponding left product
-		 rightRunningProduct *= array[i]             // Update right product
-	 }
- 
-	 return result
- }
- 
+vector<int> ArrayOfProducts(vector<int>& array) {
+    int n = array.size();
+    vector<int> result(n, 1);
+
+    // Compute the running product of all elements to the left of each index
+    // and store it in the result array.
+    int leftRunningProduct = 1;
+    for (int i = 0; i < n; i++) {
+        result[i] = leftRunningProduct;  // Store left product in the result array
+        leftRunningProduct *= array[i];  // Update left product
+    }
+
+    // Compute the running product of all elements to the right of each index
+    // and multiply it with the corresponding left product in the result array.
+    int rightRunningProduct = 1;
+    for (int i = n - 1; i >= 0; i--) {
+        result[i] *= rightRunningProduct;  // Multiply the right product with the corresponding left product
+        rightRunningProduct *= array[i];   // Update right product
+    }
+
+    return result;
+}
+
+int main() {
+    // Example usage
+    vector<int> input = {1, 2, 3, 4, 5};
+    vector<int> output = ArrayOfProducts(input);
+
+    // Print the result
+    for (int num : output) {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
