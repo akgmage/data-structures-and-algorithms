@@ -563,7 +563,7 @@ The key idea is that the pointers start at the same location, but they move forw
 
 ## Practice problems for fast and slow pointers
 
-- Linked List cycle detection [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Fast%20and%20Slow%20Pointers/linked_floyds_cycle_detection.cpp)
+- Linked List cycle detection [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Fast%20and%20Slow%20Pointers/linked_floyds_cycle_detection.cpp) [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/floyds_cycle_detection.go) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/floyds_cycle_detection.java)
 - Find middle of Linked List [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Fast%20and%20Slow%20Pointers/linked_list_compute_midpoint.cpp) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Fast%20and%20Slow%20Pointers/linked_list_find_middle.py)
 - Happy Number [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Fast%20and%20Slow%20Pointers/happy_number.go)
 - Pallindrome Linked List [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_pallindrome.cpp)
