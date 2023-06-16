@@ -5,6 +5,13 @@ A minimum spanning tree (MST) or minimum weight spanning tree for a weighted, co
 What is Kruskal’s algorithm?
 In Kruskal’s algorithm, sort all edges of the given graph in increasing order. Then it keeps on adding new edges and nodes in the MST if the newly added edge does not form a cycle. It picks the minimum weighted edge at first at the maximum weighted edge at last. Thus we can say that it makes a locally optimal choice in each step in order to find the optimal solution.
 
+How Kruskal's algorithm works
+It falls under a class of algorithms called greedy algorithms that find the local optimum in the hopes of finding a global optimum. We start from the edges with the lowest weight and keep adding edges until we reach our goal.
+The steps for implementing Kruskal's algorithm are as follows:
+1. Sort all the edges from low weight to high
+2. Take the edge with the lowest weight and add it to the spanning tree. If adding the edge created a cycle, then reject this edge.
+3. Keep adding edges until we reach all vertices.
+
 Time Complexity: O(E * logE) or O(E * logV)
 Auxiliary Space: O(V + E), where V is the number of vertices and E is the number of edges in the graph.
 */
