@@ -1,5 +1,15 @@
 /* OPTIMAL PARTITION OF STRING */
 /* PROGRAM AUTHOR : VARUN GARG */
+
+/*
+      sample input : abacaba
+      sample output : a b 
+                      a c
+                      a b
+                      a
+                      The minimum number of substrings required for partition
+                      4
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -20,7 +30,7 @@ int main(){
                   cout<<x<<" ";
             }
             cout<<endl;
-            cnt++;
+            cnt++; // counting the unique substrings 
       }
 
       cout<<"The minimum number of substrings required for partition"<<endl;
