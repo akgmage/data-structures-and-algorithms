@@ -17,95 +17,102 @@
     should return null / none
 
 	Explanation:
-	The code snippet you provided implements the Union-Find data structure, which is used for efficient operations on disjoint
-	sets. Here's a detailed explanation of each part:
+	The provided code snippet is an optimized version of the Union-Find data structure. Here's a detailed explanation:
 
+	- `UnionFind` struct: It contains two fields, `parents` and `ranks`. The `parents` map stores the parent of
+	each element, and the `ranks` map stores the rank of each element. The rank is used to optimize the Union operation.
 
-	- The `UnionFind` struct represents the Union-Find data structure. It contains a map called `parents` that will store the
-	parent element for each set element.
+	- `NewUnionFind` function: It initializes a new instance of the UnionFind struct by creating empty maps for
+	`parents` and `ranks`.
 
+	- `CreateSet` method: It creates a new set with the given value. It sets the parent of the value to itself and
+	initializes its rank to 0.
 
-	- `NewUnionFind()` is a constructor function that creates a new instance of the Union-Find data structure and initializes
-	an empty `parents` map.
+	- `Find` method: It finds the root/representative of the set to which the given value belongs. It starts from the
+	given value and traverses the parent pointers until it reaches the root. It uses path compression optimization to
+	update the parent pointers along the path to the root. Finally, it returns a pointer to the root.
 
+	`Union` method: It performs the union of two sets represented by the given values. It first checks if both values exist
+	in the data structure. If either value is missing, it returns without performing any union operation. Otherwise, it finds
+	the roots of the two sets using the `Find` method. It compares the ranks of the two roots and performs the union accordingly:
 
-	- `CreateSet(value int)` is a method of the `UnionFind` struct. It creates a new set with the given `value` as the
-	representative (parent) of the set. It adds an entry to the `parents` map, where the `value` maps to itself.
+	If the rank of the root of `valueOne` is less than the rank of the root of `valueTwo`, it sets the parent of `valueOne`'s
+	root to `valueTwo`'s root.
 
+	If the rank of the root of `valueOne` is greater than the rank of the root of `valueTwo`, it sets the parent of `valueTwo`'s
+	root to `valueOne`'s root.
 
-	- `Find(value int)` is a method that finds and returns the representative (parent) of the set that contains the given
-	`value`. It starts from the given `value` and iteratively follows the parent links until it reaches the representative.
-	The method returns a pointer to the representative value. If the `value` is not present in the `parents` map, it returns `nil`.
+	If the ranks are equal, it chooses one root as the parent and increments its rank by 1.
 
-
-	- `Union(valueOne, valueTwo int)` is a method that performs the union of two sets that contain `valueOne` and `valueTwo`.
-	It first checks if both `valueOne` and `valueTwo` exist in the `parents` map. If either of them is missing, it returns
-	without performing the union operation. It then finds the representatives of both sets using the `Find()` method.
-	It updates the parent of `valueTwoRoot` to be `valueOneRoot`, effectively merging the two sets into one.
-
-	Overall, this code provides a basic implementation of the Union-Find data structure, allowing the creation of sets,
-	finding the representative of a set, and performing unions between sets.
+	By considering the ranks of the roots during the union, the height of the resulting union-find tree can be minimized. 
 
 	The time and space complexity of the operations in the `UnionFind` data structure are as follows:
 
-	- `NewUnionFind`: This operation has a time complexity of O(1) as it simply initializes a new `UnionFind` instance.
-	The space complexity is also O(1) as it only requires memory to store the instance itself.
-
-	- `CreateSet`: This operation has a time complexity of O(1) as it performs a constant number of operations to add
-	a value to the `parents` map. The space complexity is also O(1) as it only requires memory to store the mapping between values and their parents.
-
-	- `Find`: has a time complexity of O(n) in the worst case, where n is the number of elements in the disjoint sets
-
-	- `Union`: Union operation in the given implementation has a time complexity of O(n), where n is the number of elements in the data structure.
-		The space complexity is O(1) as it does not use any additional memory.
 
 */
 package main
 
-import "fmt"
-
 type UnionFind struct {
-	parents map[int]int
+	parents map[int]int // Map to store the parent of each element
+	ranks   map[int]int // Map to store the rank of each element
 }
 
+// NewUnionFind creates a new instance of the UnionFind struct.
 func NewUnionFind() *UnionFind {
 	return &UnionFind{
 		parents: map[int]int{},
+		ranks:   map[int]int{},
 	}
 }
 
+// CreateSet creates a new set with the given value.
 func (union *UnionFind) CreateSet(value int) {
-	union.parents[value] = value
+	union.parents[value] = value  // Set the parent of the value to itself
+	union.ranks[value] = 0       // Initialize the rank of the value to 0
 }
 
+// Find finds the root/representative of the set to which the given value belongs.
 func (union *UnionFind) Find(value int) *int {
-	// Check if the value exists in the parents map
 	if _, found := union.parents[value]; !found {
-		return nil // Value not found, return nil
+		return nil // Return nil if the value is not found (not part of any set)
 	}
-
 	currentParent := value
-	// Find the representative (parent) by following the parent links
 	for currentParent != union.parents[currentParent] {
-		currentParent = union.parents[currentParent]
+		currentParent = union.parents[currentParent] // Traverse the parent pointers until reaching the root
 	}
 
-	return &currentParent
+	// Perform path compression by updating parent pointers along the path to the root
+	// This optimization flattens the tree structure, reducing future lookup time
+	for value != currentParent {
+		nextParent := union.parents[value]
+		union.parents[value] = currentParent
+		value = nextParent
+	}
+
+	return &currentParent // Return a pointer to the root/representative
 }
 
+// Union performs the union of two sets represented by the given values.
 func (union *UnionFind) Union(valueOne, valueTwo int) {
-	// Check if both values exist in the parents map
-	_, parentContainsOne := union.parents[valueOne]
-	_, parentContainsTwo := union.parents[valueTwo]
-	if !parentContainsOne || !parentContainsTwo {
-		return // One or both values are missing, return without union
+	_, parentFoundOne := union.parents[valueOne]
+	_, parentFoundTwo := union.parents[valueTwo]
+	if !parentFoundOne || !parentFoundTwo {
+		return // Return if either value is not found (not part of any set)
 	}
 
-	valueOneRoot := *union.Find(valueOne)
-	valueTwoRoot := *union.Find(valueTwo)
-	// Perform union by updating the parent of valueTwoRoot to valueOneRoot
-	union.parents[valueTwoRoot] = valueOneRoot
+	valueOneRoot := *union.Find(valueOne) // Find the root of the set containing valueOne
+	valueTwoRoot := *union.Find(valueTwo) // Find the root of the set containing valueTwo
+
+	if union.ranks[valueOneRoot] < union.ranks[valueTwoRoot] {
+		union.parents[valueOneRoot] = valueTwoRoot // Set the parent of valueOne's root to valueTwo's root
+	} else if union.ranks[valueOneRoot] > union.ranks[valueTwoRoot] {
+		union.parents[valueTwoRoot] = valueOneRoot // Set the parent of valueTwo's root to valueOne's root
+	} else {
+		union.parents[valueOneRoot] = valueTwoRoot       // Set the parent of valueOne's root to valueTwo's root
+		union.ranks[valueTwoRoot] += 1 // Increment the rank of valueTwo's root
+	}
 }
+
 
 func main() {
 	// Create a new instance of UnionFind
