@@ -1,3 +1,34 @@
+/*
+	Explanation:
+	The code snippet you provided implements the Union-Find data structure, which is used for efficient operations on disjoint
+	sets. Here's a detailed explanation of each part:
+
+
+	- The `UnionFind` struct represents the Union-Find data structure. It contains a map called `parents` that will store the
+	parent element for each set element.
+
+
+	- `NewUnionFind()` is a constructor function that creates a new instance of the Union-Find data structure and initializes
+	an empty `parents` map.
+
+
+	- `CreateSet(value int)` is a method of the `UnionFind` struct. It creates a new set with the given `value` as the
+	representative (parent) of the set. It adds an entry to the `parents` map, where the `value` maps to itself.
+
+
+	- `Find(value int)` is a method that finds and returns the representative (parent) of the set that contains the given
+	`value`. It starts from the given `value` and iteratively follows the parent links until it reaches the representative.
+	The method returns a pointer to the representative value. If the `value` is not present in the `parents` map, it returns `nil`.
+
+
+	- `Union(valueOne, valueTwo int)` is a method that performs the union of two sets that contain `valueOne` and `valueTwo`.
+	It first checks if both `valueOne` and `valueTwo` exist in the `parents` map. If either of them is missing, it returns
+	without performing the union operation. It then finds the representatives of both sets using the `Find()` method.
+	It updates the parent of `valueTwoRoot` to be `valueOneRoot`, effectively merging the two sets into one.
+
+	Overall, this code provides a basic implementation of the Union-Find data structure, allowing the creation of sets,
+	finding the representative of a set, and performing unions between sets.
+*/
 package main
 
 import "fmt"
