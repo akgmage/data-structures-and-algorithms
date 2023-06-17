@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type UnionFind struct {
 	parents map[int]int
 }
@@ -43,3 +45,26 @@ func (union *UnionFind) Union(valueOne, valueTwo int) {
 	union.parents[valueTwoRoot] = valueOneRoot
 }
 
+func main() {
+	// Create a new instance of UnionFind
+	union := NewUnionFind()
+
+	// Create individual sets
+	union.CreateSet(1)
+	union.CreateSet(2)
+	union.CreateSet(3)
+
+	// Perform union operations
+	union.Union(1, 2)
+	union.Union(2, 3)
+
+	// Find representatives of values
+	representative := union.Find(3)
+
+	// Check if the representative is found
+	if representative != nil {
+		fmt.Println("The representative of 3 is:", *representative)
+	} else {
+		fmt.Println("Value 3 is not found.")
+	}
+}
