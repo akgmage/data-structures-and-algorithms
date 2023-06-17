@@ -32,35 +32,32 @@ maxLen stores the length of the longest palindrome found so far, and lo stores t
 >>Finally, the function returns the substring of the original string from the starting position lo to lo + maxLen, which represents the longest palindrome found.
 
 */
+class Solution {
+    int maxLen = 0;  // Length of the longest palindrome
+    int lo = 0;     // Starting position of the longest palindrome
 
-class Solution
-{
-    int maxLen = 0;
-    int lo = 0;
+    public String longestPalindrome(String s) {
+        char[] input = s.toCharArray(); // Convert the input word to individual characters
 
-    public String longestPalindrome(String s)
-    {
-        char[] input = s.toCharArray();
         if (s.length() < 2) {
-            return s;
+            return s;   // If word has less than 2 letters, it is already a palindrome
         }
 
-        for (int i = 0; i < input.length; i++)
-        {
-            expandPalindrome(input, i, i);
-            expandPalindrome(input, i, i + 1);
+        for (int i = 0; i < input.length; i++) {
+            expandPalindrome(input, i, i);      // Check odd-length palindromes with current letter as center
+            expandPalindrome(input, i, i + 1);  // Check even-length palindromes with current and next letters as center
         }
-        return s.substring(lo, lo + maxLen);
+        return s.substring(lo, lo + maxLen);    // Return the longest palindrome found
     }
 
     public void expandPalindrome(char[] s, int j, int k) {
         while (j >= 0 && k < s.length && s[j] == s[k]) {
-            j--;
-            k++;
+            j--;    // Move left to expand potential palindrome
+            k++;    // Move right to expand potential palindrome
         }
         if (maxLen < k - j - 1) {
-            maxLen = k - j - 1;
-            lo = j + 1;
+            maxLen = k - j - 1; // Update length of longest palindrome if longer one is found
+            lo = j + 1;         // Update starting position of longest palindrome
         }
     }
 
@@ -71,7 +68,6 @@ class Solution
         System.out.println("Longest Palindrome: " + longestPalindrome);
     }
 }
-
 
 
 
