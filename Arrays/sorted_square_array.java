@@ -36,38 +36,46 @@
 
 	Overall, the function has a linear time complexity and linear space complexity.
 */
-package main
+import java.util.Arrays;
 
-import "fmt"
+public class Main {
 
-func SortedSquaredArray(array []int) []int {
-	// initialize empty result array of same length as original array
-	result := make([]int, len(array))
-	// mark start and end, and end_pos
-	end_pos := len(array) - 1
-	start := 0
-	sq1 := 0
-	sq2 := 0
-	end := len(array) - 1
-	// using two pointer appraoch take the  absolute value's square 
-	// add the greatest at end of output array
-	for start <= end {
-		sq1 = array[start] * array[start]
-		sq2 = array[end] * array[end]
-		if sq1 > sq2 {
-			result[end_pos] = sq1
-			start++ // square of start pointer is greater so increment start by 1 
-		} else {
-			result[end_pos] = sq2
-			end-- // // square of end pointer is greater so decrement end by 1 
-		}
-		end_pos--
-	}
-	return result
-}
+    public static int[] sortedSquaredArray(int[] array) {
+        // Initialize an empty result array of the same length as the original array
+        int[] result = new int[array.length];
 
-func main() {
-	arr := []int{-6, 1, 2, 3, 4, 5}
-	msg := SortedSquaredArray(arr)
-	fmt.Println(msg)
+        // Set the start and end positions and the end_pos
+        int end_pos = array.length - 1;
+        int start = 0;
+        int sq1 = 0;
+        int sq2 = 0;
+        int end = array.length - 1;
+
+        // Using the two-pointer approach, calculate the square of the absolute value and add the greatest value to the end of the result array
+        while (start <= end) {
+            sq1 = array[start] * array[start];
+            sq2 = array[end] * array[end];
+
+            if (sq1 > sq2) {
+                result[end_pos] = sq1;
+                start++; // Square of the start pointer is greater, so increment start by 1
+            } else {
+                result[end_pos] = sq2;
+                end--; // Square of the end pointer is greater, so decrement end by 1
+            }
+            end_pos--;
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {-6, 1, 2, 3, 4, 5};
+        int[] result = sortedSquaredArray(arr);
+
+        for (int num : result) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
 }

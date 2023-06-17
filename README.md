@@ -545,9 +545,9 @@ The pointers can be used to iterate the data structure in one or both directions
 
 - Valid Pallindrome [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/is_pallindrome.go) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/is_pallindrome.js) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/is_pallindrome.cpp) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/is_pallindrome.py) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/is_pallindrome.java)
 
-- Reverse Word in a String [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/reverse_word_in_a_string.go) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/reverse_words_in_a_string.js)
+- Reverse Word in a String [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/reverse_words_in_a_string.go) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/reverse_words_in_a_string.jd) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/reverse_words_in_a_string.cpp) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/reverse_words_in_a_string.java)
 
-- Valid Pallindrome II [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/valid_pallindrome2.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/valid_pallindrome2.cpp) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/valid_pallindrome2.py) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/valid_pallindrome2.js)
+- Valid Pallindrome II [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/valid_pallindrome2.go) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/valid_pallindrome2.cpp) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/valid_pallindrome2.py) [Javascript](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/valid_pallindrome2.js) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Strings/valid_pallindrome2.java)
 
 # Pattern 2: Fast and Slow Pointers
 
@@ -563,7 +563,7 @@ The key idea is that the pointers start at the same location, but they move forw
 
 ## Practice problems for fast and slow pointers
 
-- Linked List cycle detection [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Fast%20and%20Slow%20Pointers/linked_floyds_cycle_detection.cpp)
+- Linked List cycle detection [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Fast%20and%20Slow%20Pointers/linked_floyds_cycle_detection.cpp) [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/floyds_cycle_detection.go) [Java](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/floyds_cycle_detection.java)
 - Find middle of Linked List [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Fast%20and%20Slow%20Pointers/linked_list_compute_midpoint.cpp) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Fast%20and%20Slow%20Pointers/linked_list_find_middle.py)
 - Happy Number [Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Fast%20and%20Slow%20Pointers/happy_number.go)
 - Pallindrome Linked List [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Linked%20List/linked_list_pallindrome.cpp)

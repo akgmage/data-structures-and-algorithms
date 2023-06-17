@@ -1,4 +1,4 @@
-/*
+'''
 	Given an array of integers A, find and return the product array of the same size where the ith
 	element of the product array will be equal to the product of all the elements divided by the ith
 	element of the array.
@@ -30,31 +30,30 @@
 	12. Finally, it returns the result array.
 
 	This algorithm avoids using division and solves the problem in linear time complexity, making two passes over the input array. The space complexity is also linear, as it uses an additional array to store the products.
-*/
+'''
+def array_of_products(array):
+    n = len(array)
+    result = [1] * n
 
-package main
+    # Compute the running product of all elements to the left of each index
+    # and store it in the result array.
+    left_running_product = 1
+    for i in range(n):
+        result[i] = left_running_product  # Store left product in the result array
+        left_running_product *= array[i]  # Update left product
 
-// Given an array of integers, returns an array where each element
-// is the product of all the integers in the input array except for the one at that index.
- func ArrayOfProducts(array []int) []int {
-	 result := make([]int, len(array))
- 
-	 // Compute the running product of all elements to the left of each index
-	 // and store it in the result array.
-	 leftRunningProduct := 1
-	 for i := 0; i < len(array); i++ {
-		 result[i] = leftRunningProduct // Store left product in the result array
-		 leftRunningProduct *= array[i] // Update left product
-	 }
- 
-	 // Compute the running product of all elements to the right of each index
-	 // and multiply it with the corresponding left product in the result array.
-	 rightRunningProduct := 1
-	 for i := len(array) - 1; i >= 0; i-- {
-		 result[i] = rightRunningProduct * result[i] // Multiply the right product with the corresponding left product
-		 rightRunningProduct *= array[i]             // Update right product
-	 }
- 
-	 return result
- }
- 
+    # Compute the running product of all elements to the right of each index
+    # and multiply it with the corresponding left product in the result array.
+    right_running_product = 1
+    for i in range(n - 1, -1, -1):
+        result[i] *= right_running_product  # Multiply the right product with the corresponding left product
+        right_running_product *= array[i]   # Update right product
+
+    return result
+
+# Example usage
+input_array = [1, 2, 3, 4, 5]
+output_array = array_of_products(input_array)
+
+# Print the result
+print(output_array)
