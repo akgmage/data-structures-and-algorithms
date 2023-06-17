@@ -28,6 +28,20 @@
 
 	Overall, this code provides a basic implementation of the Union-Find data structure, allowing the creation of sets,
 	finding the representative of a set, and performing unions between sets.
+
+	The time and space complexity of the operations in the `UnionFind` data structure are as follows:
+
+	- `NewUnionFind`: This operation has a time complexity of O(1) as it simply initializes a new `UnionFind` instance.
+	The space complexity is also O(1) as it only requires memory to store the instance itself.
+
+	- `CreateSet`: This operation has a time complexity of O(1) as it performs a constant number of operations to add
+	a value to the `parents` map. The space complexity is also O(1) as it only requires memory to store the mapping between values and their parents.
+
+	- `Find`: has a time complexity of O(n) in the worst case, where n is the number of elements in the disjoint sets
+
+	- `Union`: Union operation in the given implementation has a time complexity of O(n), where n is the number of elements in the data structure.
+		The space complexity is O(1) as it does not use any additional memory.
+
 */
 package main
 
