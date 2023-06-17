@@ -44,13 +44,20 @@
 
 	If the ranks are equal, it chooses one root as the parent and increments its rank by 1.
 
-	By considering the ranks of the roots during the union, the height of the resulting union-find tree can be minimized. 
+	By considering the ranks of the roots during the union, the height of the resulting union-find tree can be minimized.
 
 	The time and space complexity of the operations in the `UnionFind` data structure are as follows:
+
+	CreateSet : O(n) time O(1) space
+	Find : O(log(n)) time O(1) space where n is total number of values
+	Union : O(log(n)) time O(1) space where n is total number of values
+
 
 
 */
 package main
+
+import "fmt"
 
 type UnionFind struct {
 	parents map[int]int // Map to store the parent of each element
