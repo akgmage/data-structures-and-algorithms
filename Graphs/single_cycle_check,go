@@ -1,3 +1,37 @@
+/*
+	Explanation:
+
+	The HasSingleCycle function takes an integer array as input and returns a boolean value indicating whether the array
+	has a single cycle. It initializes two variables: nextElementVisited to keep track of the number of elements visited, and
+	currIdx to track the current index in the array.
+
+	The function enters a loop that continues until all elements in the array are visited. It checks if nextElementVisited is
+	greater than 0 (indicating that at least one element has been visited) and currIdx is 0. If this condition is true, it means
+	the loop has returned to the starting index prematurely, indicating multiple cycles. In such a case, the function returns
+	false.
+
+	Inside the loop, nextElementVisited is incremented by 1, and the currIdx is updated using the getNextIdx function, which we
+	will examine next.
+
+	The getNextIdx function takes an integer array and the current index as input and returns the index of the next element in
+	the cycle.
+
+	It first retrieves the jump value from the current index in the array. The jump value represents the number of steps to take
+	from the current element.
+
+	The nextIdx is calculated by adding the jump value to the current index and taking the modulo % operator with the length of
+	the array. This ensures that the index stays within the valid range of the array.
+
+	Finally, there is a check to ensure that nextIdx is non-negative. If it is negative, it means the index has wrapped around to
+	the beginning of the array. In such a case, the function adds the length of the array to nextIdx to correctly calculate the next index.
+
+	Once the loop in the HasSingleCycle function completes, the final check is made to ensure that the currIdx is back at the
+	starting index (0). If it is, it means all elements have been visited in a single cycle, and the function returns true.
+	Otherwise, it returns false.
+
+	Overall, this code snippet implements the logic to determine whether an array has a single cycle by tracking the indices
+	and jumps between elements.
+*/
 package main
 
 func HasSingleCycle(array []int) bool {
