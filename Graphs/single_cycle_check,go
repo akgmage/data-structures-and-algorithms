@@ -44,6 +44,9 @@
 
 	Overall, this code snippet implements the logic to determine whether an array has a single cycle by tracking the indices
 	and jumps between elements.
+
+	Time Complexity : O(n) where n is the length of the input array
+	Space Complexity : O(1)
 */
 package main
 
