@@ -1,0 +1,29 @@
+package main
+
+func HasSingleCycle(array []int) bool {
+	nextElementVisited := 0
+	currIdx := 0
+
+	for nextElementVisited < len(array) {
+		// Check if more than one element has been visited and current index is back to the starting index (0)
+		if nextElementVisited > 0 && currIdx == 0 {
+			return false // Multiple cycles detected, return false
+		}
+
+		nextElementVisited += 1 // Increment the count of visited elements
+		currIdx = getNextIdx(array, currIdx) // Get the index of the next element
+	}
+
+	return currIdx == 0 // Return true if all elements have been visited in a single cycle
+}
+
+func getNextIdx(array []int, currIdx int) int {
+	jump := array[currIdx]                   // Get the jump value from the current index
+	nextIdx := (currIdx + jump) % len(array) // Calculate the index of the next element
+
+	if nextIdx >= 0 {
+		return nextIdx // Return the next index if it is non-negative
+	}
+
+	return nextIdx + len(array) // Adjust the next index if it is negative (wrapped around to the beginning)
+}
