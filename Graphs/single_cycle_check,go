@@ -9,6 +9,9 @@
 	cycle. A single cycle occurs if, starting at any index in the array and following the jumps, every
 	element in the array is visited exactly once before landing back on the starting index.
 
+	Sample Input: [2, 3, 1, -4, -4, 2]
+	Output:  True
+
 	Explanation:
 
 	The HasSingleCycle function takes an integer array as input and returns a boolean value indicating whether the array
