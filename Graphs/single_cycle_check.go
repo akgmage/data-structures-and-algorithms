@@ -1,5 +1,4 @@
 /*
-
   	You're given an array of integers where each integer represents a jump of its value in the array. For instance, the integer
 	2  represents a jump of two indices forward in the array; the integer -3  represents a jump of three indices backward in the array.
 	If a jump spills past the array's bounds, it wraps over to the other side. For instance, a jump of -1  at index 0 brings us to the
@@ -50,6 +49,9 @@
 */
 package main
 
+import "fmt"
+
+
 func HasSingleCycle(array []int) bool {
 	nextElementVisited := 0
 	currIdx := 0
@@ -76,4 +78,14 @@ func getNextIdx(array []int, currIdx int) int {
 	}
 
 	return nextIdx + len(array) // Adjust the next index if it is negative (wrapped around to the beginning)
+}
+
+
+func main() {
+	// Test cases
+	array1 := []int{2, 3, 1, -4, -4, 2} // has a single cycle
+	fmt.Println("Array 1:", HasSingleCycle(array1)) // Output: true
+
+	array2 := []int{2, 2, -1} // does  have a single cycle
+	fmt.Println("Array 2:", HasSingleCycle(array2)) // Output: true
 }
