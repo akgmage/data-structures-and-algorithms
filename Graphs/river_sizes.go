@@ -11,6 +11,14 @@
   	Write a function that returns an array of the sizes of all rivers represented in the input matrix.
 	The sizes don't need to be in any particular order.
 
+	Sample Input:[
+					[1, 0, 0, 1, 0],
+					[1, 0, 1, 0, 0],
+					[0, 0, 1, 0, 1],
+					[1, 0, 1, 0, 1],
+					[1, 0, 1, 1, 0],
+				]
+	Output: [1, 2, 2, 2, 5]
 
 	Explanation:
 
