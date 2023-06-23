@@ -110,3 +110,12 @@ func factorial(num int) int {
 	}
 	return result
 }
+
+// Recursive solution
+
+func NumberOfWaysToTraverseGraphRecursive(width int, height int) int {
+	if width == 1  || height == 1 {
+        return 1
+    }
+    return NumberOfWaysToTraverseGraph(width - 1, height) + NumberOfWaysToTraverseGraph(width, height - 1)
+}
