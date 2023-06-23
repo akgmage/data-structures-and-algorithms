@@ -83,3 +83,30 @@ func NumberOfWaysToTraverseGraph(width int, height int) int {
 	// Return the number of ways to reach the bottom-right corner of the graph
 	return numberOfWays[height][width]
 }
+
+
+// Combinatorics Solution
+
+func NumberOfWaysToTraverseGraphCombinatorics(width int, height int) int {
+	// Calculate the distance to the bottom-right corner of the graph
+	xDistanceToCorner := width - 1
+	yDistanceToCorner := height - 1
+
+	// Calculate the number of ways to traverse the graph using combinatorics
+	// by calculating the binomial coefficient of (xDistanceToCorner + yDistanceToCorner) choose xDistanceToCorner
+	// where (n choose k) = n! / (k! * (n-k)!)
+	numerator := factorial(xDistanceToCorner + yDistanceToCorner)
+	denominator := factorial(xDistanceToCorner) * factorial(yDistanceToCorner)
+
+	// Return the result by dividing the numerator by the denominator
+	return numerator / denominator
+}
+
+func factorial(num int) int {
+	// Calculate the factorial of a number using an iterative approach
+	result := 1
+	for n := 2; n <= num; n++ {
+		result *= n
+	}
+	return result
+}
