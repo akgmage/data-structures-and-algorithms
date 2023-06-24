@@ -121,3 +121,48 @@ def number_of_ways_to_traverse_graph_combinatorics(width, height):
 
     # Return the result by dividing the numerator by the denominator
     return numerator // denominator
+
+'''
+	Recursive solution
+	The given solution aims to calculate the number of ways to traverse a graph from the top-left corner to the bottom-right 
+	corner. It uses a recursive approach to break down the problem into smaller subproblems.
+
+	Here's how the solution works:
+
+	1. The function `NumberOfWaysToTraverseGraph` takes the width and height of the graph as input and returns the number of ways to traverse it.
+
+	2. The base case of the recursion is when either the width or height is equal to 1. In this case, there is only one way to traverse the graph: either by moving only horizontally or vertically. Therefore, the function returns 1.
+
+	3. For other cases where the width and height are both greater than 1, the function recursively calls itself with two smaller subproblems:
+	- One subproblem is created by reducing the width by 1 and keeping the same height.
+	- The other subproblem is created by keeping the same width and reducing the height by 1.
+
+	4. The number of ways to traverse the current graph is calculated by summing up the number of ways from the two subproblems.
+
+	5. The recursion continues until it reaches the base case, where the width or height becomes 1, and eventually returns the total number of ways to traverse the graph.
+
+	While this recursive approach is conceptually simple, it suffers from efficiency issues due to exponential time complexity and redundant 
+	calculations. As the graph size increases, the number of recursive calls grows exponentially, leading to a significant increase in computation time. Additionally, without memoization, the function recalculates the same subproblems multiple times, further reducing efficiency.
+
+	To address these drawbacks, alternative approaches like dynamic programming or memoization can be employed to store and 
+	reuse the results of previously solved subproblems, avoiding redundant calculations and improving efficiency.
+
+	The given solution uses a recursive approach to calculate the number of ways to traverse a graph from the top-left corner 
+	to the bottom-right corner. However, this solution has some drawbacks that make it inefficient for larger inputs:
+
+	1. Exponential Time Complexity: The recursive function makes multiple recursive calls, each with a smaller width or height. 
+	As a result, the number of function calls grows exponentially with the size of the input. This leads to a high time complexity, making the solution inefficient for larger graphs. The time complexity is O(2^(width+height)), which can quickly become unmanageable.
+
+	2. Overlapping Subproblems: The recursive function suffers from redundant calculations of the same subproblems. For example,
+	 when calculating the number of ways for a specific width and height, the function may recursively calculate the number of ways for smaller widths and heights multiple times. This leads to redundant work and decreases efficiency.
+
+	3. Lack of Memoization: The solution does not utilize memoization to store the results of previously solved subproblems. 
+	Without memoization, the recursive function ends up recalculating the same subproblems multiple times, further reducing efficiency.
+
+	Due to these reasons, the given recursive solution is considered inefficient and impractical for larger graph sizes. 
+	It is prone to exponential time complexity and redundant calculations, making it unsuitable for real-world scenarios where efficiency is crucial. Alternative approaches, such as the dynamic programming solution mentioned earlier, can provide better performance by avoiding redundant calculations and improving time complexity.
+'''
+def number_of_ways_to_traverse_graph_recursive(width, height):
+    if width == 1 or height == 1:
+        return 1
+    return number_of_ways_to_traverse_graph_recursive(width - 1, height) + number_of_ways_to_traverse_graph_recursive(width, height - 1)
