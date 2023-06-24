@@ -73,3 +73,51 @@ def number_of_ways_to_traverse_graph(width, height):
 
     # Return the number of ways to reach the bottom-right corner of the graph
     return numberOfWays[height][width]
+
+'''
+	Combinatorics Solution
+
+	The given code snippet aims to calculate the number of ways to traverse a graph from the top-left corner to the bottom-right 
+	corner. Let's break down the solution and provide a detailed explanation:
+
+	1. The `NumberOfWaysToTraverseGraph` function takes two parameters: `width` and `height`, representing the dimensions of 
+	   the graph.
+
+	2. The variables `xDistanceToCorner` and `yDistanceToCorner` are calculated by subtracting 1 from the `width` and `height` 
+	   respectively. These variables represent the distances from the top-left corner to the bottom-right corner along the x-axis and y-axis.
+
+	3. The `factorial` function is defined separately to calculate the factorial of a number. It takes a number `num` as input 
+	   and uses an iterative approach to calculate the factorial.
+
+	4. In the `NumberOfWaysToTraverseGraph` function, the numerator is calculated as the factorial of the sum of 
+	   `xDistanceToCorner` and `yDistanceToCorner`. This represents the total number of possible paths from the top-left 
+	   corner to the bottom-right corner.
+
+	5. The denominator is calculated as the product of the factorials of `xDistanceToCorner` and `yDistanceToCorner`. 
+	   This represents the number of ways to arrange the steps along the x-axis and y-axis.
+
+	6. Finally, the function returns the result by dividing the numerator by the denominator, giving the total number of 
+	   ways to traverse the graph.
+
+	The solution relies on the concept of combinatorics, specifically the binomial coefficient, to calculate the number of 
+	ways to traverse the graph. By using factorials, it accounts for all possible paths and eliminates duplicate paths. 
+	This approach provides an efficient solution to the problem.
+
+	O(n + m) time | O(1) space - where n is the width of the graph and m is the height
+'''
+
+import math
+
+def number_of_ways_to_traverse_graph_combinatorics(width, height):
+    # Calculate the distance to the bottom-right corner of the graph
+    x_distance_to_corner = width - 1
+    y_distance_to_corner = height - 1
+
+    # Calculate the number of ways to traverse the graph using combinatorics
+    # by calculating the binomial coefficient of (x_distance_to_corner + y_distance_to_corner) choose x_distance_to_corner
+    # where (n choose k) = n! / (k! * (n-k)!)
+    numerator = math.factorial(x_distance_to_corner + y_distance_to_corner)
+    denominator = math.factorial(x_distance_to_corner) * math.factorial(y_distance_to_corner)
+
+    # Return the result by dividing the numerator by the denominator
+    return numerator // denominator
