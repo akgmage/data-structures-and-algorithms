@@ -71,3 +71,58 @@ int numberOfWaysToTraverseGraph(int width, int height) {
 }
 
 
+/*
+	Combinatorics Solution
+
+	The given code snippet aims to calculate the number of ways to traverse a graph from the top-left corner to the bottom-right 
+	corner. Let's break down the solution and provide a detailed explanation:
+
+	1. The `NumberOfWaysToTraverseGraph` function takes two parameters: `width` and `height`, representing the dimensions of 
+	   the graph.
+
+	2. The variables `xDistanceToCorner` and `yDistanceToCorner` are calculated by subtracting 1 from the `width` and `height` 
+	   respectively. These variables represent the distances from the top-left corner to the bottom-right corner along the x-axis and y-axis.
+
+	3. The `factorial` function is defined separately to calculate the factorial of a number. It takes a number `num` as input 
+	   and uses an iterative approach to calculate the factorial.
+
+	4. In the `NumberOfWaysToTraverseGraph` function, the numerator is calculated as the factorial of the sum of 
+	   `xDistanceToCorner` and `yDistanceToCorner`. This represents the total number of possible paths from the top-left 
+	   corner to the bottom-right corner.
+
+	5. The denominator is calculated as the product of the factorials of `xDistanceToCorner` and `yDistanceToCorner`. 
+	   This represents the number of ways to arrange the steps along the x-axis and y-axis.
+
+	6. Finally, the function returns the result by dividing the numerator by the denominator, giving the total number of 
+	   ways to traverse the graph.
+
+	The solution relies on the concept of combinatorics, specifically the binomial coefficient, to calculate the number of 
+	ways to traverse the graph. By using factorials, it accounts for all possible paths and eliminates duplicate paths. 
+	This approach provides an efficient solution to the problem.
+
+	O(n + m) time | O(1) space - where n is the width of the graph and m is the height
+*/
+
+int numberOfWaysToTraverseGraphCombinatorics(int width, int height) {
+    // Calculate the distances to the bottom-right corner of the graph
+    int xDistanceToCorner = width - 1;
+    int yDistanceToCorner = height - 1;
+
+    // Calculate the numerator and denominator for the binomial coefficient
+    int numerator = factorial(xDistanceToCorner + yDistanceToCorner);
+    int denominator = factorial(xDistanceToCorner) * factorial(yDistanceToCorner);
+
+    // Return the result by dividing the numerator by the denominator
+    return numerator / denominator;
+}
+
+int factorial(int n) {
+    // Base case: factorial of 0 or 1 is 1
+    if (n <= 1) {
+        return 1;
+    }
+
+    // Recursive case: compute factorial by multiplying n with factorial(n-1)
+    return n * factorial(n - 1);
+}
+
