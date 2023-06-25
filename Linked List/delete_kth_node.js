@@ -14,10 +14,6 @@ Now you can create a linked list and call the removeKthFromEnd function to remov
 
 */
 
--------------------------------------------------------------------------//Javascript code begins here------------------------------------------------------------------------
-
-
-
 class Node {
   constructor(value) {
     this.value = value;
@@ -72,7 +68,6 @@ while (current !== null) {
   console.log(current.value);
   current = current.next;
 }
-
 
 /*
 OUTPUT:
