@@ -1,23 +1,24 @@
-/*Name : Shruti Swarupa Dhar
-Github username : Shr-reny
-Repository name : data-structures-and-algorithms
-Problem :  Implement Ford Fulkerson algorithm in C++ 
-Issue Number : #1386
-Problem statement : 
+/*
+	Name : Shruti Swarupa Dhar
+	Github username : Shr-reny
+	Repository name : data-structures-and-algorithms
+	Problem :  Implement Ford Fulkerson algorithm in C++ 
+	Issue Number : #1386
+	Problem statement : 
 
-Given a graph which represents a flow network where every edge has a capacity. Also, given two vertices source ‘s’ and sink ‘t’ in the graph, find the maximum possible flow from s to t with the following constraints:
-Flow on an edge doesn’t exceed the given capacity of the edge.
-Incoming flow is equal to outgoing flow for every vertex except s and t.
+	Given a graph which represents a flow network where every edge has a capacity. Also, given two vertices source ‘s’ and sink ‘t’ in the graph, find the maximum possible flow from s to t with the following constraints:
+	Flow on an edge doesn’t exceed the given capacity of the edge.
+	Incoming flow is equal to outgoing flow for every vertex except s and t.
 
-Explanation of the below C++ code :
+	Explanation of the below C++ code :
 
-The Ford-Fulkerson algorithm is a widely used algorithm to solve the maximum flow problem in a flow network. The maximum flow problem involves determining the maximum amount of flow that can be sent from a source vertex to a sink vertex in a directed weighted graph, subject to capacity constraints on the edges.
-The algorithm works by iteratively finding an augmenting path, which is a path from the source to the sink in the residual graph, i.e., the graph obtained by subtracting the current flow from the capacity of each edge. The algorithm then increases the flow along this path by the maximum possible amount, which is the minimum capacity of the edges along the path.
+	The Ford-Fulkerson algorithm is a widely used algorithm to solve the maximum flow problem in a flow network. The maximum flow problem involves determining the maximum amount of flow that can be sent from a source vertex to a sink vertex in a directed weighted graph, subject to capacity constraints on the edges.
+	The algorithm works by iteratively finding an augmenting path, which is a path from the source to the sink in the residual graph, i.e., the graph obtained by subtracting the current flow from the capacity of each edge. The algorithm then increases the flow along this path by the maximum possible amount, which is the minimum capacity of the edges along the path.
 
-Time Complexity : O(|V| * E^2) ,where E is the number of edges and V is the number of vertices.
+	Time Complexity : O(|V| * E^2) ,where E is the number of edges and V is the number of vertices.
 
-Space Complexity :O(V) , as we created queue.*/
--------------------------------------------------------------------------//C++ code begins here------------------------------------------------------------------------
+	Space Complexity :O(V) , as we created queue.
+*/
 
 
 // C++ program for implementation of Ford Fulkerson
