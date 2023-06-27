@@ -1,4 +1,9 @@
 /*
+	Coin Change Problem
+    You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount
+    of money.Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any 
+    combination of the coins, return -1.You may assume that you have an infinite number of each kind of coin.
+
 	This implementation uses a bottom-up approach to fill in a 2D table of minimum coin counts for each amount 
 	up to the target amount. The table is initialized with the base cases (0 coins for an amount of 0, infinity 
 	for an amount greater than 0) and then filled in using the recurrence relation:

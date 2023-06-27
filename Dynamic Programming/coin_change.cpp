@@ -1,5 +1,9 @@
-// Coin Change problem using DP
 /*
+    Coin Change Problem
+    You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount
+    of money.Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any 
+    combination of the coins, return -1.You may assume that you have an infinite number of each kind of coin.
+
     The code uses a dynamic programming approach to solve the coin change problem. The dp vector is used to 
     store the minimum number of coins needed to make each amount from 0 to amount. The minimum number 
     of coins needed to make an amount of 0 is 0. Then, for each coin, the code iterates through each 
