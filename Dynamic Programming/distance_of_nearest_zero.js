@@ -1,8 +1,24 @@
-Example:
-Input: mat = [[0,0,0],[0,1,0],[0,0,0]]
-Output: [[0,0,0],[0,1,0],[0,0,0]]
+// Given an m x n binary matrix mat, return the distance of the nearest 0 for each cell in Java
 
-It can be solved using a Breadth First Search Algorithm(BFS)
+
+// Solution
+// // This solution uses a breadth-first search (BFS) approach to calculate the distance of the nearest 0 for each cell in the matrix. 
+// // The idea is to initialize a distances matrix with all values set to the maximum integer value, except for the cells that contain 0s,
+// // which are set to 0 and added to a queue. We then perform a BFS on the queue, updating the distances of neighboring cells as we go.
+// // Finally, we return the updated distances matrix.
+
+
+// Time Complexity:
+
+// We traverse the entire matrix in the worst case to fill the distances matrix with initial values, which takes O(m * n) time.
+// We use Breadth-First Search (BFS) to update the distances matrix, which in the worst case can visit each cell once, taking O(m * n) time.
+// Therefore, the total time complexity of this solution is O(m * n).
+
+// Space Complexity:
+
+// We store the distances matrix, which requires O(m * n) space.
+// We use a queue to implement the BFS algorithm, which can store at most m * n cells in the worst case, taking O(m * n) space.
+// Therefore, the total space complexity of this solution is O(m * n).
 
 function updateMatrix(mat) {
   const m = mat.length;
