@@ -3,6 +3,9 @@
     target value as inputs, and returns the minimum number of coins required to reach the target value. 
     It uses a bottom-up approach to build a table of minimum coin counts for each target value up to the 
     input target. 
+
+    Sample Input : [1, 2, 5] target : 11
+	Output 3 (5, 5, 1)
     
     The time complexity of this implementation is O(amount * n), where n is the number of coins. 
     The space complexity is O(amount).

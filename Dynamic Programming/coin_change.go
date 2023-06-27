@@ -16,6 +16,9 @@
 	target amount. If this value is infinity, then it's not possible to make the amount using the given coins, 
 	so we return -1.
 
+	Sample Input : [1, 2, 5] target : 11
+	Output 3 (5, 5, 1)
+
 	The time complexity of this implementation is O(nm), where n is the number of coins and m is the target amount. 
 	The space complexity is also O(nm) because we're storing a 2D table of size (n+1) x (m+1).
 
