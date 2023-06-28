@@ -1,3 +1,26 @@
+'''
+__init__() - This method initializes the stack by creating two queues. Since no operations are performed on the queues in this method, the time complexity is O(1).
+
+push(item) - This method adds an item to the top of the stack. Initially, it adds the item to an empty queue, which takes O(1) time. Then, it moves all the elements from the other queue to the empty queue, which takes O(n) time, where n is the number of elements in the stack. Finally, it swaps the names of the two queues, which is a constant time operation. Therefore, the overall time complexity of push(item) is O(n).
+
+pop() - This method removes and returns the item at the top of the stack. It checks if the stack is empty, which takes O(1) time. Then, it removes and returns the front element of the non-empty queue, which is a constant time operation. Therefore, the overall time complexity of pop() is O(1).
+
+top() - This method returns the item at the top of the stack without removing it. It checks if the stack is empty, which takes O(1) time. Then, it retrieves the front element of the non-empty queue, which is a constant time operation. Therefore, the overall time complexity of top() is O(1).
+
+is_empty() - This method checks if the stack is empty by checking if the queue is empty, which takes O(1) time. Therefore, the time complexity of is_empty() is O(1).
+
+size() - This method returns the number of items in the stack by returning the size of the queue, which is a constant time operation. Therefore, the time complexity of size() is O(1).
+
+the time complexity of the operations in the Stack class implemented using queues is as follows:
+
+push(item): O(n)
+pop(): O(1)
+top(): O(1)
+is_empty(): O(1)
+size(): O(1)
+
+'''
+
 from queue import Queue
 
 class Stack:
@@ -58,25 +81,4 @@ class Stack:
         """
         return self.queue2.qsize()
 
-'''
-__init__() - This method initializes the stack by creating two queues. Since no operations are performed on the queues in this method, the time complexity is O(1).
 
-push(item) - This method adds an item to the top of the stack. Initially, it adds the item to an empty queue, which takes O(1) time. Then, it moves all the elements from the other queue to the empty queue, which takes O(n) time, where n is the number of elements in the stack. Finally, it swaps the names of the two queues, which is a constant time operation. Therefore, the overall time complexity of push(item) is O(n).
-
-pop() - This method removes and returns the item at the top of the stack. It checks if the stack is empty, which takes O(1) time. Then, it removes and returns the front element of the non-empty queue, which is a constant time operation. Therefore, the overall time complexity of pop() is O(1).
-
-top() - This method returns the item at the top of the stack without removing it. It checks if the stack is empty, which takes O(1) time. Then, it retrieves the front element of the non-empty queue, which is a constant time operation. Therefore, the overall time complexity of top() is O(1).
-
-is_empty() - This method checks if the stack is empty by checking if the queue is empty, which takes O(1) time. Therefore, the time complexity of is_empty() is O(1).
-
-size() - This method returns the number of items in the stack by returning the size of the queue, which is a constant time operation. Therefore, the time complexity of size() is O(1).
-
-the time complexity of the operations in the Stack class implemented using queues is as follows:
-
-push(item): O(n)
-pop(): O(1)
-top(): O(1)
-is_empty(): O(1)
-size(): O(1)
-
-'''
