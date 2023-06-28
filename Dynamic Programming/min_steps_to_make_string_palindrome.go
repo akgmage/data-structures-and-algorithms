@@ -27,22 +27,22 @@ import (
 
 func lcs(s1, s2 string) int {
 	n, m := len(s1), len(s2)
-	dp := make([][]int, n+1)
+	dp := make([][]int, n+1) // Create a 2D matrix dp to store the lengths of LCS
 	for i := 0; i <= n; i++ {
 		dp[i] = make([]int, m+1)
 	}
 
 	for i := 1; i <= n; i++ {
 		for j := 1; j <= m; j++ {
-			if s1[i-1] == s2[j-1] {
-				dp[i][j] = 1 + dp[i-1][j-1]
+			if s1[i-1] == s2[j-1] { // If characters at the current positions match
+				dp[i][j] = 1 + dp[i-1][j-1] // Increase the length of LCS by 1
 			} else {
-				dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+				dp[i][j] = max(dp[i-1][j], dp[i][j-1]) // Take the maximum length from the previous positions
 			}
 		}
 	}
 
-	return dp[n][m]
+	return dp[n][m] // Return the length of the LCS of s1 and s2
 }
 
 func max(a, b int) int {
@@ -55,16 +55,16 @@ func max(a, b int) int {
 func minInsertions(s string) int {
 	reverseS := ""
 	for i := len(s) - 1; i >= 0; i-- {
-		reverseS += string(s[i])
+		reverseS += string(s[i]) // Reverse the string s
 	}
 
-	lcsLength := lcs(s, reverseS)
-	return len(s) - lcsLength
+	lcsLength := lcs(s, reverseS) // Find the length of the LCS of s and its reverse
+	return len(s) - lcsLength // Return the number of insertions required to make s a palindrome
 }
 
 func main() {
 	var s string
-	fmt.Scanln(&s)
-	ans := minInsertions(s)
-	fmt.Println(ans)
+	fmt.Scanln(&s) // Read input string
+	ans := minInsertions(s) // Calculate the minimum number of insertions required
+	fmt.Println(ans) // Print the result
 }
