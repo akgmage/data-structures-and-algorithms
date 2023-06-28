@@ -1,3 +1,11 @@
+/*
+Problem: Given an integer N, the task is to print the ladder with N steps using ‘*’. The ladder will be with the gap of 3 spaces between two side rails.
+
+Time complexity: O(N) for given input N steps
+Auxiliary Space:  O(1) as constant extra space is used
+
+*/
+
 import java.util.Scanner;  
 public class Ladder_Pattern 
 {  
