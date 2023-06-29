@@ -3,6 +3,14 @@
 The algorithm iterates through the string s from left to right and checks all possible substrings to find palindromes. If a palindrome is found, it updates the cuts table based on the previous cuts. Finally, it returns the minimum cuts needed for the entire string.
 
 In the main function, we provide an example string "aabba" and print the minimum cuts required. You can replace "aabba" with your own string to find its optimal partition.
+
+Time Complexity:
+The outer loop iterates through the string s once, and for each character, it checks all possible substrings. Therefore, the time complexity of the solution is O(n^2), where n is the length of the string.
+
+Space Complexity:
+The space complexity is determined by the two tables used: cuts and palindrome. Both tables have a size of n, where n is the length of the string s. Therefore, the space complexity is O(n).
+
+Overall, the solution has a time complexity of O(n^2) and a space complexity of O(n).
 */
 
 
