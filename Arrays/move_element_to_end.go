@@ -1,6 +1,6 @@
 /*
-	Move 0's to end
-	Sample Input : [1, 0, 3, 0, 0, 5]
+	Move Element to end
+	Sample Input : [1, 0, 3, 0, 0, 5] To move: 0
 	Output : [1, 3, 5, 0, 0, 0]
 
 	This is a function called MoveElementToEnd that takes an array of integers array and an integer toMove as input,
