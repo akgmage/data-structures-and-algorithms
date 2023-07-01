@@ -20,18 +20,21 @@
 
 	O(n) time | O(1) space - where n is the length of the array
 */
-package main
 
-func MoveElementToEnd(array []int, toMove int) []int {
-	index := 0 // initialize a variable to keep track of the index where elements should be moved to
-    for i := 0; i < len(array); i++ { // loop through the entire array
-        if array[i] != toMove { // check if the current element is not equal to the element to be moved
-            array[index] = array[i] // move the current element to the left side of the array by replacing the element at the current index (index) with the current element (array[i])
-            index++ // increment the index variable by 1 to keep track of the index where the next non-target element should be moved
+import java.util.List;
+
+public class MoveElementToEnd {
+    public static List<Integer> moveElementToEnd(List<Integer> array, int toMove) {
+        int index = 0; // initialize a variable to keep track of the index where elements should be moved to
+        for (int i = 0; i < array.size(); i++) { // loop through the entire array
+            if (array.get(i) != toMove) { // check if the current element is not equal to the element to be moved
+                array.set(index, array.get(i)); // move the current element to the left side of the array by replacing the element at the current index (index) with the current element (array.get(i))
+                index++; // increment the index variable by 1 to keep track of the index where the next non-target element should be moved
+            }
         }
+        for (int i = index; i < array.size(); i++) { // loop through the remaining elements in the array from index to the end
+            array.set(i, toMove); // set each element to be the target element
+        }
+        return array; // return the modified array
     }
-    for i := index; i < len(array); i++ { // loop through the remaining elements in the array from index to the end
-        array[i] = toMove // set each element to be the target element
-    }
-    return array // return the modified array
 }
