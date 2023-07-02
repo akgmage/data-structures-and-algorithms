@@ -325,7 +325,7 @@ while (a <= b) {
 
 ## Example
 
-[Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Binary%20Search/binary_search_iterative.go) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Binary%20Search/binary_search.py) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Binary%20Search/binary_search.cpp)
+[Go](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Binary%20Search/binary_search_iterative.go) [Python](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Binary%20Search/binary_search.py) [C++](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Binary%20Search/binary_search.cpp) [JS](https://github.com/akgmage/data-structures-and-algorithms/blob/main/Binary%20Search/binary_search.js)
 
 ## Method 2
 
