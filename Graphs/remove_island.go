@@ -71,6 +71,8 @@
 
 		Finally, the modified matrix is returned as the result.
 
+		O(wh) time | O(wh) space - where w and h are the width and height of the input matrix	
+
 		Note: The code snippet provided assumes that the matrix is a 2D integer slice (`[][]int`) and uses Go syntax..
 */
 package main
