@@ -1,3 +1,59 @@
+/*
+	Explanation:
+	The provided code snippet is an implementation of the "Remove Islands" algorithm. This algorithm aims to identify and remove islands in a binary matrix. An island is a connected region of 1s surrounded by 0s. The algorithm marks islands connected to the border of the matrix as non-islands and returns the modified matrix.
+
+		Let's break down the code snippet and explain each part:
+
+		1. Initialization:
+	
+		onesConnectedToBorder := make([][]bool, len(matrix))
+		for i := range matrix {
+			onesConnectedToBorder[i] = make([]bool, len(matrix[0]))
+		}
+		
+		This part initializes a 2D boolean array `onesConnectedToBorder`, which has the same dimensions as the input matrix. It is used to mark cells that are connected to the border.
+
+		2. Marking Ones Connected to Border:
+	
+		for row := 0; row < len(matrix); row++ {
+			for col := 0; col < len(matrix[row]); col++ {
+				rowIsBorder := row == 0 || row == len(matrix)-1
+				colIsBorder := col == 0 || col == len(matrix[row])-1
+				isBorder := rowIsBorder || colIsBorder
+				if !isBorder {
+					continue
+				}
+				if matrix[row][col] != 1 {
+					continue
+				}
+				findOnesConnectedToBorder(matrix, row, col, onesConnectedToBorder)
+			}
+		}
+		
+		This part iterates through the matrix and checks if each cell is on the border. If a cell is on the border and contains a 1, it calls the `findOnesConnectedToBorder` function to mark the connected 1s using a depth-first search approach. The connected 1s are marked in the `onesConnectedToBorder` array.
+
+		3. Removing Non-Border Islands:
+		
+		for row := 0; row < len(matrix)-1; row++ {
+			for col := 0; col < len(matrix[row])-1; col++ {
+				if onesConnectedToBorder[row][col] {
+					continue
+				}
+				matrix[row][col] = 0
+			}
+		}
+		
+		This part iterates through the matrix again, excluding the border cells. If a cell is not marked as connected to the border (an island cell), it is set to 0, effectively removing the island.
+
+		4. Utility Functions:
+		The code also includes two utility functions:
+		- `findOnesConnectedToBorder`: This function performs a depth-first search (DFS) to mark all the 1s connected to a border cell. It uses a stack to keep track of the cells to visit next.
+		- `getNeighbors`: This function returns the valid neighboring cells (up, down, left, right) for a given cell in the matrix.
+
+		Finally, the modified matrix is returned as the result.
+
+		Note: The code snippet provided assumes that the matrix is a 2D integer slice (`[][]int`) and uses Go syntax..
+*/
 package main
 
 // Function to remove islands in a binary matrix
