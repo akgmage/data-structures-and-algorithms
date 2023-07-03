@@ -1,6 +1,25 @@
 /*
+	Remoev island that are not connected to Border
+
+	Sample Input:
+
+	1 0 0 0 0 0
+	0 1 0 1 0 1
+	0 0 1 0 1 1
+	1 1 0 0 1 0
+	1 0 1 1 0 0
+
+	Output:
+	1 0 0 0 0 0
+	0 0 0 0 0 1
+	0 0 0 0 1 1
+	1 1 0 0 1 0
+	1 0 1 1 0 0
+
 	Explanation:
-	The provided code snippet is an implementation of the "Remove Islands" algorithm. This algorithm aims to identify and remove islands in a binary matrix. An island is a connected region of 1s surrounded by 0s. The algorithm marks islands connected to the border of the matrix as non-islands and returns the modified matrix.
+	The provided code snippet is an implementation of the "Remove Islands" algorithm. This algorithm aims to identify and remove
+	islands in a binary matrix. An island is a connected region of 1s surrounded by 0s. The algorithm marks islands connected
+	to the border of the matrix as non-islands and returns the modified matrix.
 
 		Let's break down the code snippet and explain each part:
 
