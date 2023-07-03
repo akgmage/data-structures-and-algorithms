@@ -5,16 +5,16 @@
 		Let's break down the code snippet and explain each part:
 
 		1. Initialization:
-	
+
 		onesConnectedToBorder := make([][]bool, len(matrix))
 		for i := range matrix {
 			onesConnectedToBorder[i] = make([]bool, len(matrix[0]))
 		}
-		
+
 		This part initializes a 2D boolean array `onesConnectedToBorder`, which has the same dimensions as the input matrix. It is used to mark cells that are connected to the border.
 
 		2. Marking Ones Connected to Border:
-	
+
 		for row := 0; row < len(matrix); row++ {
 			for col := 0; col < len(matrix[row]); col++ {
 				rowIsBorder := row == 0 || row == len(matrix)-1
@@ -29,11 +29,11 @@
 				findOnesConnectedToBorder(matrix, row, col, onesConnectedToBorder)
 			}
 		}
-		
+
 		This part iterates through the matrix and checks if each cell is on the border. If a cell is on the border and contains a 1, it calls the `findOnesConnectedToBorder` function to mark the connected 1s using a depth-first search approach. The connected 1s are marked in the `onesConnectedToBorder` array.
 
 		3. Removing Non-Border Islands:
-		
+
 		for row := 0; row < len(matrix)-1; row++ {
 			for col := 0; col < len(matrix[row])-1; col++ {
 				if onesConnectedToBorder[row][col] {
@@ -42,7 +42,7 @@
 				matrix[row][col] = 0
 			}
 		}
-		
+
 		This part iterates through the matrix again, excluding the border cells. If a cell is not marked as connected to the border (an island cell), it is set to 0, effectively removing the island.
 
 		4. Utility Functions:
@@ -55,6 +55,8 @@
 		Note: The code snippet provided assumes that the matrix is a 2D integer slice (`[][]int`) and uses Go syntax..
 */
 package main
+
+import "fmt"
 
 // Function to remove islands in a binary matrix
 func RemoveIslands(matrix [][]int) [][]int {
@@ -145,3 +147,37 @@ func getNeighbors(matrix [][]int, row, col int) [][]int {
 
 	return neighbors
 }
+
+func main() {
+	// Example usage
+	matrix := [][]int{
+		{1, 0, 0, 0, 0, 0},
+		{0, 1, 0, 1, 0, 1},
+		{0, 0, 1, 0, 1, 1},
+		{1, 1, 0, 0, 1, 0},
+		{1, 0, 1, 1, 0, 0},
+	}
+
+	fmt.Println("Original Matrix:")
+	printMatrix(matrix)
+
+	updatedMatrix := RemoveIslands(matrix)
+
+	fmt.Println("Updated Matrix:")
+	printMatrix(updatedMatrix)
+}
+
+// Helper function to print the matrix
+func printMatrix(matrix [][]int) {
+	for _, row := range matrix {
+		for _, val := range row {
+			fmt.Printf("%d ", val)
+		}
+		fmt.Println()
+	}
+}
+
+
+
+
+
