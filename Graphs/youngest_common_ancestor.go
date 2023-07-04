@@ -1,4 +1,7 @@
 /*
+
+  	Write a function that returns the youngest common ancestor to the two descendants.
+
 	Sample Input:
 	Top ancestor: node A
 	descendantOne: node e
@@ -38,6 +41,8 @@ H     I
 	O(d) time | O(1) space - where d is the depth (height) of the ancestral tree
 */
 package main
+
+import "fmt"
 
 type AncestralTree struct {
 	Name     string
@@ -85,4 +90,34 @@ func backTrackAncestralTree(lowestDescendant, higherDescendant *AncestralTree, d
 	}
 
 	return lowestDescendant
+}
+
+
+func main() {
+	// Create the ancestral tree
+	topAncestor := &AncestralTree{Name: "A"}
+	B := &AncestralTree{Name: "B", Ancestor: topAncestor}
+	C := &AncestralTree{Name: "C", Ancestor: topAncestor}
+	D := &AncestralTree{Name: "D", Ancestor: B}
+	F := &AncestralTree{Name: "F", Ancestor: C}
+	I := &AncestralTree{Name: "I", Ancestor: D}
+
+	// Set up the ancestral relationships
+
+	//          A
+	//        /   \
+	//       B     C
+	//      / \   / \
+	//     D   E F   G
+	//    /
+	//   H
+	//  /
+	// I
+
+	// Find the youngest common ancestor of two descendants
+	descendantOne := F
+	descendantTwo := I
+	yca := GetYoungestCommonAncestor(topAncestor, descendantOne, descendantTwo)
+
+	fmt.Printf("The youngest common ancestor of %s and %s is %s.\n", descendantOne.Name, descendantTwo.Name, yca.Name)
 }
