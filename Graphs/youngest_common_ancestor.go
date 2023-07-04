@@ -29,15 +29,23 @@ type AncestralTree struct {
 	Ancestor *AncestralTree
 }
 
+// GetYoungestCommonAncestor finds the youngest common ancestor of two descendants in an ancestral tree.
 func GetYoungestCommonAncestor(topAncestor, descendantOne, descendantTwo *AncestralTree) *AncestralTree {
+	// Calculate the depths of the two descendants from the top ancestor
 	depthOne := getDescendantDepth(descendantOne, topAncestor)
 	depthTwo := getDescendantDepth(descendantTwo, topAncestor)
+
 	if depthOne > depthTwo {
+		// If depthOne is greater, backtrack the ancestral tree from descendantOne to align the depths
 		return backTrackAncestralTree(descendantOne, descendantTwo, depthOne-depthTwo)
 	}
+
+	// If depthTwo is greater or both depths are equal, backtrack the ancestral tree from descendantTwo
+	// to align the depths
 	return backTrackAncestralTree(descendantTwo, descendantOne, depthTwo-depthOne)
 }
 
+// getDescendantDepth calculates the depth of a descendant node from the top ancestor.
 func getDescendantDepth(descendant, topAncestor *AncestralTree) int {
 	depth := 0
 	for descendant != topAncestor {
@@ -47,14 +55,19 @@ func getDescendantDepth(descendant, topAncestor *AncestralTree) int {
 	return depth
 }
 
+// backTrackAncestralTree backtracks the ancestral tree to find the youngest common ancestor.
 func backTrackAncestralTree(lowestDescendant, higherDescendant *AncestralTree, diff int) *AncestralTree {
+	// Adjust the position of the lowest descendant based on the depth difference
 	for diff > 0 {
 		lowestDescendant = lowestDescendant.Ancestor
 		diff--
 	}
+
+	// Move both descendants up the tree until they reach the same ancestor node
 	for lowestDescendant != higherDescendant {
 		lowestDescendant = lowestDescendant.Ancestor
 		higherDescendant = higherDescendant.Ancestor
 	}
+
 	return lowestDescendant
 }
