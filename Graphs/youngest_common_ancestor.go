@@ -21,6 +21,8 @@
 	To use this code, you need to create instances of the `AncestralTree` struct representing the ancestral tree and its nodes.
 	You can then call the `GetYoungestCommonAncestor` function with the appropriate parameters to find the youngest common
 	ancestor of two descendants.
+
+	O(d) time | O(1) space - where d is the depth (height) of the ancestral tree
 */
 package main
 
