@@ -102,19 +102,6 @@ func main() {
 	F := &AncestralTree{Name: "F", Ancestor: C}
 	I := &AncestralTree{Name: "I", Ancestor: D}
 
-	// Set up the ancestral relationships
-
-	//          A
-	//        /   \
-	//       B     C
-	//      / \   / \
-	//     D   E F   G
-	//    /
-	//   H
-	//  /
-	// I
-
-	// Find the youngest common ancestor of two descendants
 	descendantOne := F
 	descendantTwo := I
 	yca := GetYoungestCommonAncestor(topAncestor, descendantOne, descendantTwo)
