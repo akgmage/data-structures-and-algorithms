@@ -1,4 +1,17 @@
 /*
+	Sample Input:
+	Top ancestor: node A
+	descendantOne: node e
+	descandantTwo: node I
+
+	Output: node B
+          A
+       /     \
+      B       C
+    /   \   /   \
+   D     E F     G
+ /   \
+H     I
 	Explanation:
 
 	This code snippet implements a solution for finding the youngest common ancestor of two descendants in an ancestral tree.
