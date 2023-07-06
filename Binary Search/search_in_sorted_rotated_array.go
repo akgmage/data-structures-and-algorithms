@@ -22,6 +22,9 @@
 
 	Overall, the code has a time complexity of O(N + M), where N is the number of rows in the matrix and M is the number of
 	columns, as it performs a linear search through the matrix.
+
+	Time complexity: O(n + m) time where n is the length of the matrix's rows and m is the length of the matrix's columns
+	Space complexity: O(1)
 */
 package main
 
