@@ -3,9 +3,11 @@ What is Cyclic Sort?
 The basic idea behind cycle sort is to divide the input array into cycles, where each cycle consists of elements that belong to the same position in the sorted output array. The algorithm then performs a series of swaps to place each element in its correct position within its cycle, until all cycles are complete and the array is sorted.
 It is usually used where elements are in the range of (1,n)
 
+Note : This Algorithm solution is for elements from 1-N , where N is the number of elements in the array.
 Time Complexity Analysis: 
-    Worst Case: O(n2) 
-    Best Case: O(n2)
+    Worst Case: O(n) 
+    Average Case: O(n)
+    Best Case: O(n)
 Auxiliary Space: O(1)
 */
 
