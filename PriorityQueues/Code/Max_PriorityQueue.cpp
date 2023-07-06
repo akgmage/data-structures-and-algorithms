@@ -11,7 +11,11 @@ Return the maximum element present in the priority queue without deleting. Retur
 5. removeMax -
 Delete and return the maximum element present in the priority queue. Return -Infinity if priority queue is empty.
 Note : main function is given for your reference which we are using internally to test the class.
+
+Explaination :
+    This code implements a priority queue using a max-heap data structure. Let's go through the code and add comments to explain each section:
 */
+
 #include <iostream>
 #include <vector>
 #include <climits>
@@ -22,13 +26,6 @@ class PriorityQueue
     vector<int> pq;
 
 public:
-    PriorityQueue()
-    {
-        // Implement the constructor here
-    }
-
-    /**************** Implement all the public functions here ***************/
-
     void insert(int element)
     {
         pq.push_back(element);

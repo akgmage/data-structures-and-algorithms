@@ -49,7 +49,19 @@ Sample Output 2 :
 
 4
 
+Explaination :
+    The code first defines two data structures: a priority queue and a queue. The priority queue is used to store the priorities of all the people in the queue, and the queue is used to store the indices of the people in the queue.
+
+    The function buyTicket() takes three parameters: an array of priorities, the number of people in the queue, and the index of the person who is buying the ticket. The function first pushes all the priorities into the priority queue. Then, it pushes all the indices into the queue.
+
+    The function then enters a loop. In each iteration of the loop, the function checks if the priority of the person at the front of the queue is equal to the priority of the person who is buying the ticket. If it is, the function increments the time by 1, pops the person at the front of the queue, and pops the person at the front of the queue. If it is not, the function pops the person at the front of the queue and pushes them back into the queue.
+
+    The function continues looping until the person who is buying the ticket is at the front of the queue. The function then returns the time it took for the person to buy the ticket.
+
+    The main function of the code first prompts the user to enter the number of people in the queue. Then, it creates an array of priorities and prompts the user to enter the priorities of all the people in the queue. Finally, it prompts the user to enter the index of the person who is buying the ticket, and it prints the time it took for the person to buy the ticket.
+
 */
+
 #include <iostream>
 #include <vector>
 #include <queue>
@@ -57,19 +69,26 @@ using namespace std;
 
 int buyTicket(int *arr, int n, int k)
 {
+    // Initialize a priority queue to store the priorities of all the people in the queue.
     priority_queue<int> pq;
+    // Initialize a queue to store the indices of all the people in the queue.
+    queue<int> indices;
+    // Push all the priorities into the priority queue.
     for (int i = 0; i < n; i++)
     {
         pq.push(arr[i]);
     }
-    queue<int> indices;
+    // Push all the indices into the queue.
     for (int i = 0; i < n; i++)
     {
         indices.push(i);
     }
+    // Initialize the time it took for the person to buy the ticket.
     int time = 0;
+    // Loop until the person who is buying the ticket is at the front of the queue.
     while (!indices.empty())
     {
+        // Check if the priority of the person at the front of the queue is equal to the priority of the person who is buying the ticket.
         if (arr[indices.front()] == pq.top() && indices.front() == k)
         {
             time++;
@@ -77,12 +96,14 @@ int buyTicket(int *arr, int n, int k)
             indices.pop();
             break;
         }
+        // If the priorities match, increment the time by 1 and break out of the loop.
         if (arr[indices.front()] == pq.top())
         {
             time++;
             pq.pop();
             indices.pop();
         }
+        // If the priorities do not match, pop the person at the front of the queue and push them back into the queue.
         else
         {
             int temp = indices.front();
@@ -90,25 +111,29 @@ int buyTicket(int *arr, int n, int k)
             indices.push(temp);
         }
     }
+    // Return the time it took for the person to buy the ticket.
     return time;
 }
 
 int main()
 {
+    // Prompt the user to enter the number of people in the queue.
     int n;
     cin >> n;
-
+    // Create an array of priorities and prompt the user to enter the priorities of all the people in the queue.
     int *arr = new int[n];
-
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
     }
 
+    // Prompt the user to enter the index of the person who is buying the ticket.
     int k;
     cin >> k;
 
+    // Print the time it took for the person to buy the ticket.
     cout << buyTicket(arr, n, k);
 
+    // Delete the array of priorities.
     delete[] arr;
 }

@@ -26,6 +26,19 @@ Sample Output 1 :
 
 1 2 3 5
 
+Explaination :
+
+    The code first defines a function called kSmallest(). This function takes three parameters: an array of integers, the size of the array, and the number of smallest elements to find. The function uses a priority queue to find the k smallest elements in the array.
+
+    The code then defines a main function. The main function prompts the user to enter the size of the array and the number of smallest elements to find. The main function then creates an array of integers and prompts the user to enter the elements of the array. The main function then calls the kSmallest() function and prints the k smallest elements in the array.
+
+    The kSmallest() function works as follows:
+
+        The function first creates a priority queue and pushes the first k elements of the array onto the priority queue.
+        The function then iterates through the remaining elements of the array. If the current element is less than the top element of the priority queue, the function pushes the current element onto the priority queue and pops the top element of the priority queue.
+        The function then returns a vector of the elements in the priority queue.
+
+
 */
 #include <iostream>
 #include <vector>
@@ -33,13 +46,20 @@ Sample Output 1 :
 #include <queue>
 using namespace std;
 
+// This function finds the k smallest elements in an array.
 vector<int> kSmallest(int arr[], int n, int k)
 {
+
+    // Create a priority queue and push the first k elements of the array onto the priority queue.
     priority_queue<int> pq;
     for (int i = 0; i < k; i++)
     {
         pq.push(arr[i]);
     }
+
+    // Iterate through the remaining elements of the array.
+    // If the current element is less than the top element of the priority queue,
+    // push the current element onto the priority queue and pop the top element of the priority queue.
     for (int i = k; i < n; i++)
     {
         if (arr[i] < pq.top())
@@ -48,6 +68,8 @@ vector<int> kSmallest(int arr[], int n, int k)
             pq.pop();
         }
     }
+
+    // Return a vector of the elements in the priority queue.
     vector<int> vec;
     while (!pq.empty())
     {
@@ -57,28 +79,40 @@ vector<int> kSmallest(int arr[], int n, int k)
     return vec;
 }
 
+// This is the main function.
 int main()
 {
+
+    // Prompt the user to enter the size of the array and the number of smallest elements to find.
     int size;
     cin >> size;
 
+    // Create an array of integers.
     int *input = new int[size];
 
+    // Prompt the user to enter the elements of the array.
     for (int i = 0; i < size; i++)
     {
         cin >> input[i];
     }
 
+    // Prompt the user to enter the number of smallest elements to find.
     int k;
     cin >> k;
 
+    // Call the `kSmallest()` function and print the k smallest elements in the array.
     vector<int> output = kSmallest(input, size, k);
+
+    // Sort the output vector in ascending order.
     sort(output.begin(), output.end());
 
+    // Print the output vector.
     for (int i = 0; i < output.size(); i++)
     {
         cout << output[i] << " ";
     }
 
+    // Delete the array.
     delete[] input;
+    return 0;
 }
