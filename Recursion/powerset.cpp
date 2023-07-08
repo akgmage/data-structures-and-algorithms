@@ -74,3 +74,31 @@ vector<vector<int>> Powerset(vector<int>& array) {
     // Call the helper function to generate the powerset starting from the last index
     return powerset(array, array.size() - 1);
 }
+
+// Iterative approach
+vector<vector<int>> powerset(vector<int>& array) {
+    vector<vector<int>> subset;
+    subset.push_back({}); // Initialize the powerset with the empty subset
+
+    // Iterate over each element in the input array
+    for (int ele : array) {
+        int length = subset.size(); // Get the current length of the subset
+
+        // Iterate over each existing subset
+        for (int i = 0; i < length; i++) {
+            vector<int> currentSubset = subset[i]; // Get the current subset
+
+            // Create a new subset by making a copy of the current subset
+            vector<int> newSubset = currentSubset;
+
+            // Add the current element to the new subset
+            newSubset.push_back(ele);
+
+            // Append the new subset to the powerset
+            subset.push_back(newSubset);
+        }
+    }
+
+    // Return the powerset
+    return subset;
+}

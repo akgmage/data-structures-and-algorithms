@@ -72,3 +72,34 @@ func powerset(array []int, index int) [][]int {
 	// Return the updated subset slice containing all the subsets of the original array
 	return subset
 }
+
+// Iterative approach
+
+func PowersetIterative(array []int) [][]int {
+	// Initialize the powerset with the empty subset
+	subset := [][]int{{}}
+
+	// Iterate over each element in the input array
+	for _, ele := range array {
+		// Get the current length of the subset
+		length := len(subset)
+
+		// Iterate over each existing subset
+		for i := 0; i < length; i++ {
+			// Get the current subset
+			currentSubset := subset[i]
+
+			// Create a new subset by making a copy of the current subset
+			newSubset := append([]int{}, currentSubset...)
+
+			// Add the current element to the new subset
+			newSubset = append(newSubset, ele)
+
+			// Append the new subset to the powerset
+			subset = append(subset, newSubset)
+		}
+	}
+
+	// Return the powerset
+	return subset
+}

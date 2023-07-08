@@ -66,3 +66,31 @@ def powerset(array):
 def Powerset(array):
     # Call the helper function to generate the powerset starting from the last index
     return powerset(array, len(array) - 1)
+
+
+# Iterative approach
+def powersetIterative(array):
+  # Initialize the powerset with the empty subset
+  subset = [[]]
+
+  # Iterate over each element in the input array
+  for ele in array:
+    # Get the current length of the subset
+    length = len(subset)
+
+    # Iterate over each existing subset
+    for i in range(length):
+      # Get the current subset
+      currentSubset = subset[i]
+
+      # Create a new subset by making a copy of the current subset
+      newSubset = list(currentSubset)
+
+      # Add the current element to the new subset
+      newSubset.append(ele)
+
+      # Append the new subset to the powerset
+      subset.append(newSubset)
+
+  # Return the powerset
+  return subset

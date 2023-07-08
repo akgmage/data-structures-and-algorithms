@@ -77,3 +77,33 @@ const subsets = getPowerSet(array);
 subsets.forEach((subset) => {
   console.log(subset);
 });
+
+// Iterative approach
+function powersetIterative(array) {
+  // Initialize the powerset with the empty subset
+  let subset = [[]];
+
+  // Iterate over each element in the input array
+  for (let ele of array) {
+    // Get the current length of the subset
+    let length = subset.length;
+
+    // Iterate over each existing subset
+    for (let i = 0; i < length; i++) {
+      // Get the current subset
+      let currentSubset = subset[i];
+
+      // Create a new subset by making a copy of the current subset
+      let newSubset = [...currentSubset];
+
+      // Add the current element to the new subset
+      newSubset.push(ele);
+
+      // Append the new subset to the powerset
+      subset.push(newSubset);
+    }
+  }
+
+  // Return the powerset
+  return subset;
+}
