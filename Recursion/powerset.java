@@ -88,3 +88,40 @@ class Main {
         }
     }
 }
+
+
+// Iterative approach
+public class Powerset {
+    public static List<List<Integer>> powerset(int[] array) {
+        List<List<Integer>> subset = new ArrayList<>();
+        subset.add(new ArrayList<>()); // Initialize the powerset with the empty subset
+
+        // Iterate over each element in the input array
+        for (int ele : array) {
+            int length = subset.size(); // Get the current length of the subset
+
+            // Iterate over each existing subset
+            for (int i = 0; i < length; i++) {
+                List<Integer> currentSubset = new ArrayList<>(subset.get(i)); // Get the current subset
+
+                // Create a new subset by making a copy of the current subset
+                List<Integer> newSubset = new ArrayList<>(currentSubset);
+
+                // Add the current element to the new subset
+                newSubset.add(ele);
+
+                // Append the new subset to the powerset
+                subset.add(newSubset);
+            }
+        }
+
+        // Return the powerset
+        return subset;
+    }
+
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3};
+        List<List<Integer>> result = powerset(array);
+        System.out.println(result);
+    }
+}
