@@ -13,7 +13,16 @@
 	be completed by one worker. The pairs should be in the following format: [task1, task2] , where the order of task1 and 
 	task2  doesn't matter. Your function can return the pairs in any order. If multiple optimal assignments exist, any 
 	correct answer will be accepted.
-	
+
+	Sample Input: K = 3
+	tasks : [1, 3, 5, 3, 1, 4]
+
+	Output: [
+		[0, 2],
+		[4, 5],
+		[1, 3]
+	]
+
 	Explanation:
 	The code snippet is an implementation of the "Task Assignment" algorithm. It pairs tasks from a list based on their durations. The goal is to assign tasks to workers in a way that minimizes the total execution time.
 
