@@ -22,6 +22,8 @@
 
 	Overall, the algorithm pairs tasks based on their durations while considering the shortest and longest durations together. 
 	The result is a list of paired task indices.
+
+	O(nlog(n)) time | O(n) space - where n is the number of tasks
 */
 import "sort"
 
