@@ -1,147 +1,137 @@
+/*
+	Implement a Min-Heap class that supports
+
+		Building a Min Heap from an input array of integers.
+		Inserting integers in the heap.
+		Removing the heap's minimum / root value.
+		Peeking at the heap's minimum / root value.
+		Sifting integers up and down the heap, which is to be used when inserting and removing values.
+
+	Note that the heap should be represented in the form of an array.
+
+	Explanation:
+
+	The code snippet implements a MinHeap data structure in Go.
+
+	- `NewMinHeap`: This function creates a new MinHeap from an input array and returns a pointer to the MinHeap object.
+	   It calls the `BuildHeap` method to construct the heap structure.
+	- `BuildHeap`: This method constructs the heap by iteratively calling `siftDown` on each parent node starting from the
+	   last non-leaf node.
+	- `siftDown`: This method corrects the heap property by moving an element down the heap until it reaches its correct position. It compares the element with its children and swaps it with the smaller child if necessary.
+	- `siftUp`: This method corrects the heap property by moving an element up the heap until it reaches its correct position.
+	   It compares the element with its parent and swaps it if necessary.
+	- `Peek`: This method returns the minimum element in the heap (the root of the heap) without removing it.
+	- `Remove`: This method removes and returns the minimum element in the heap. It swaps the root with the last element,
+	   removes the last element from the heap, and then calls `siftDown` to maintain the heap property.
+	- `Insert`: This method inserts a new element into the heap. It appends the element to the end of the heap and then
+	   calls `siftUp` to maintain the heap property.
+	- `swap`: This method swaps two elements in the heap given their indices.
+	- `length`: This method returns the number of elements in the heap.
+
+	Overall, this code provides a basic implementation of a MinHeap data structure, allowing for efficient insertion, removal,
+	and retrieval of the minimum element.
+
+	BuildHeap: O(n) time | O(1) space - where n is the length of the input array
+	SiftDown: O(log(n)) time | O(1) space - where n is the length of the heap
+	SiftUp: O(log(n)) time | O(1) space - where n is the length of the heap
+	Peek: O(1) time | O(1) space
+	Remove: O(log(n)) time | O(1) space - where n is the length of the heap
+	Insert: O(log(n)) time | O(1) space - where n is the length of the heap
+
+*/
 package main
 
-import (
-	"fmt"
-	"math"
-)
+// MinHeap represents a min heap data structure.
+type MinHeap []int
 
-// Item: Defines the interface for an element to be held by a Heap instance
-type Item interface {
-	Less(item Item) bool
-}
-// Heap: binary heap with support for min heap operations
-type Heap struct {
-	size int
-	data []Item
+// NewMinHeap creates a new MinHeap from an input array and returns a pointer to it.
+func NewMinHeap(array []int) *MinHeap {
+	// Create a heap from the input array
+	heap := MinHeap(array)
+	ptr := &heap
+	// Build the heap structure
+	ptr.BuildHeap(array)
+	return ptr
 }
 
-// New: returns a pointer to an empty min-heap
-func New() *Heap {
-	return &Heap{}
-}
-
-// Parent: For a node at ith location its parent is ar (i - 1) / 2 location
-func Parent(i int) int {
-	return int(math.Floor(float64(i - 1) / 2.0))
-}
-
-// LeftChild: For a node at ith location its left children is at 2 * i + 1 location
-func LeftChild(parent int) int {
-	return (2 * parent) + 1
-}
-
-// RightChild: For a node at ith location its right children is at 2 * i + 2 th locations
-func RightChild(parent int) int {
-	return (2 * parent) + 2
-}
-
-// GetMinimum: Minimum element is always at root
-func GetMinimum(h *Heap) (Item, error) {
-	if h.size == 0 {
-		return nil, fmt.Errorf("Unable to get element from empty heap")
+// BuildHeap constructs the heap by calling siftDown on each parent node.
+func (h *MinHeap) BuildHeap(array []int) {
+	// Calculate the index of the first parent node
+	first := (len(array) - 2) / 2
+	// Iterate over each parent node and sift it down
+	for currentIdx := first + 1; currentIdx >= 0; currentIdx-- {
+		h.siftDown(currentIdx, len(array)-1)
 	}
-	return h.data[0], nil
 }
 
-// Note: Deleting an element uses percolateUp, and inserting an element uses percolateDown.
-// PercolateUp: move from bottom to top
-// Heap is a complete binary tree and in the worst case we start at the root and come
-// down to the leaf. This is equal to the height of the complete binary tree.
-// Time Complexity: O(log n) Space Complexity: O(1).
-func (h *Heap) percolateUp() {
-	idx := h.size
-	if idx <= 0 {
-		return
-	}
-	for {
-		p := Parent(idx)
-		if p < 0 || h.data[p].Less(h.data[idx]) {
-			break
+// siftDown moves an element down the heap until it reaches its correct position.
+func (h *MinHeap) siftDown(currentIndex, endIndex int) {
+	childOneIdx := currentIndex*2 + 1
+	for childOneIdx <= endIndex {
+		childTwoIdx := -1
+		if currentIndex*2+2 <= endIndex {
+			childTwoIdx = currentIndex*2 + 2
 		}
-		swap(h, p, idx)
-		idx = p
-	}
-}
-
-// To delete an element from heap, we just need to delete the element from the root. This is the only operation
-// (maximum element) supported by standard heap. After deleting the root element, copy the last element of the heap
-// (tree) and delete that last element.
-// After replacing the last element, the tree may not satisfy the heap property. To make it heap again, call the
-// percolateDown function.
-// 1 Copy the first element into some variable
-// 2 Copy the last element into first element location
-// 3 percolateDown the first element
-// Time Complexity: O(log n) Space Complexity: O(1).
-func (h *Heap) percolateDown(i int) {
-	p := i
-	for {
-		l := LeftChild(p)
-		r := RightChild(p)
-		s := p
-		if l < h.size && h.data[l].Less(h.data[s]) {
-			s = l
+		indexToSwap := childOneIdx
+		if childTwoIdx > -1 && (*h)[childOneIdx] > (*h)[childTwoIdx] {
+			indexToSwap = childTwoIdx
 		}
-		if r < h.size && h.data[r].Less(h.data[s]) {
-			s = r
+		if (*h)[currentIndex] > (*h)[indexToSwap] {
+			h.swap(currentIndex, indexToSwap)
+			currentIndex = indexToSwap
+			childOneIdx = currentIndex*2 + 1
+		} else {
+			return
 		}
-		if s == p {
-			break
+	}
+}
+
+// siftUp moves an element up the heap until it reaches its correct position.
+func (h *MinHeap) siftUp() {
+	currentIdx := h.length() - 1
+	parentIdx := (currentIdx - 1) / 2
+	for currentIdx > 0 {
+		current, parent := (*h)[currentIdx], (*h)[parentIdx]
+		if current < parent {
+			h.swap(currentIdx, parentIdx)
+			currentIdx = parentIdx
+			parentIdx = (currentIdx - 1) / 2
+		} else {
+			return
 		}
-		swap(h, p, s)
-		p = s
 	}
 }
 
-func swap(h *Heap, i int, j int) {
-	temp := h.data[i]
-	h.data[i] = h.data[j]
-	h.data[j] = temp
+// Peek returns the minimum element in the heap without removing it.
+func (h MinHeap) Peek() int {
+	if len(h) == 0 {
+		return -1
+	}
+	return h[0]
 }
 
-// Extract - removes and returns the 'item' at the top of the heap, maintaining the min-heap invariant
-func (h *Heap) Extract() (Item, error) {
-	n := h.size
-	if n == 0 {
-		return nil, fmt.Errorf("Unable to extract from empty Heap")
-	}
-	m := h.data[0]
-	h.data[0] = h.data[n-1]
-	h.data = h.data[:n-1]
-	h.size--
-	if h.size > 0 {
-		h.percolateDown(0)
-	} else {
-		h.data = nil
-	}
-	return m, nil
+// Remove removes and returns the minimum element in the heap.
+func (h *MinHeap) Remove() int {
+	l := h.length()
+	h.swap(0, l-1)
+	peeked := (*h)[l-1]
+	*h = (*h)[:l-1]
+	h.siftDown(0, l-1)
+	return peeked
 }
 
-// Insert - inserts 'item' into the Heap, maintaining the min-heap
-func (h *Heap) Insert(item Item) { 
-	if h.size == 0 {
-		h.data = make([]Item, 1)
-		h.data[0] = item
-	} else {
-		h.data = append(h.data, item)
-	}
-	h.size++
-	h.percolateUp()
+// Insert inserts a new element into the heap.
+func (h *MinHeap) Insert(value int) {
+	*h = append(*h, value)
+	h.siftUp()
 }
 
-// Heapify - returns a pointer to a min-heap composed of the elements of 'items'
-// One simple approach for building the heap is, take n input items and place them into an empty heap. This can be
-// done with n successive inserts and takes O(nlogn) in the worst case. This is due to the fact that each insert
-// operation takes O(logn).
-func Heapify(items []Item) *Heap {
-	h := New()
-	n := len(items)
-	h.data = make([]Item, n)
-	copy(h.data, items)
-	h.size = len(items)
-	i := int(n/2)
-	for i >= 0 {
-		h.percolateDown(i)
-		i--
-	}
-	return h
+// swap swaps two elements in the heap given their indices.
+func (h MinHeap) swap(i, j int) {
+	h[i], h[j] = h[j], h[i]
+}
+
+// length returns the number of elements in the heap.
+func (h MinHeap) length() int {
+	return len(h)
 }
