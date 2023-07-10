@@ -9,6 +9,28 @@
 
 	Note that the heap should be represented in the form of an array.
 
+	Explanation:
+
+	The code snippet implements a MinHeap data structure in Go.
+
+	- `NewMinHeap`: This function creates a new MinHeap from an input array and returns a pointer to the MinHeap object.
+	   It calls the `BuildHeap` method to construct the heap structure.
+	- `BuildHeap`: This method constructs the heap by iteratively calling `siftDown` on each parent node starting from the
+	   last non-leaf node.
+	- `siftDown`: This method corrects the heap property by moving an element down the heap until it reaches its correct position. It compares the element with its children and swaps it with the smaller child if necessary.
+	- `siftUp`: This method corrects the heap property by moving an element up the heap until it reaches its correct position.
+	   It compares the element with its parent and swaps it if necessary.
+	- `Peek`: This method returns the minimum element in the heap (the root of the heap) without removing it.
+	- `Remove`: This method removes and returns the minimum element in the heap. It swaps the root with the last element,
+	   removes the last element from the heap, and then calls `siftDown` to maintain the heap property.
+	- `Insert`: This method inserts a new element into the heap. It appends the element to the end of the heap and then
+	   calls `siftUp` to maintain the heap property.
+	- `swap`: This method swaps two elements in the heap given their indices.
+	- `length`: This method returns the number of elements in the heap.
+
+	Overall, this code provides a basic implementation of a MinHeap data structure, allowing for efficient insertion, removal,
+	and retrieval of the minimum element.
+
 */
 package main
 
