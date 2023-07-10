@@ -31,6 +31,13 @@
 	Overall, this code provides a basic implementation of a MinHeap data structure, allowing for efficient insertion, removal,
 	and retrieval of the minimum element.
 
+	BuildHeap: O(n) time | O(1) space - where n is the length of the input array
+	SiftDown: O(log(n)) time | O(1) space - where n is the length of the heap
+	SiftUp: O(log(n)) time | O(1) space - where n is the length of the heap
+	Peek: O(1) time | O(1) space
+	Remove: O(log(n)) time | O(1) space - where n is the length of the heap
+	Insert: O(log(n)) time | O(1) space - where n is the length of the heap
+
 */
 package main
 
