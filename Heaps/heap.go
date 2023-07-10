@@ -34,88 +34,97 @@
 */
 package main
 
-// Do not edit the class below except for the buildHeap,
-// siftDown, siftUp, peek, remove, and insert methods.
-// Feel free to add new properties and methods to the class.
+// MinHeap represents a min heap data structure.
 type MinHeap []int
 
+// NewMinHeap creates a new MinHeap from an input array and returns a pointer to it.
 func NewMinHeap(array []int) *MinHeap {
-	// Do not edit the lines below.
+	// Create a heap from the input array
 	heap := MinHeap(array)
 	ptr := &heap
+	// Build the heap structure
 	ptr.BuildHeap(array)
 	return ptr
 }
 
+// BuildHeap constructs the heap by calling siftDown on each parent node.
 func (h *MinHeap) BuildHeap(array []int) {
+	// Calculate the index of the first parent node
 	first := (len(array) - 2) / 2
-    for currentIdx := first + 1; currentIdx >= 0; currentIdx-- {
-        h.siftDown(currentIdx, len(array) - 1)
-    }
+	// Iterate over each parent node and sift it down
+	for currentIdx := first + 1; currentIdx >= 0; currentIdx-- {
+		h.siftDown(currentIdx, len(array)-1)
+	}
 }
 
+// siftDown moves an element down the heap until it reaches its correct position.
 func (h *MinHeap) siftDown(currentIndex, endIndex int) {
-	childOneIdx := currentIndex * 2 + 1
-    for childOneIdx <= endIndex {
-        childTwoIdx := -1
-        if currentIndex * 2 + 2 <= endIndex {
-            childTwoIdx = currentIndex * 2 + 2
-        }
-        indexToSwap := childOneIdx
-        if childTwoIdx > -1 && (*h)[childOneIdx] > (*h)[childTwoIdx] {
-            indexToSwap = childTwoIdx
-        }
-        if (*h)[currentIndex] > (*h)[indexToSwap] {
-            h.swap(currentIndex, indexToSwap)
-            currentIndex = indexToSwap
-            childOneIdx = currentIndex * 2 + 1
-        } else {
-            return
-        }
-    }
-    
+	childOneIdx := currentIndex*2 + 1
+	for childOneIdx <= endIndex {
+		childTwoIdx := -1
+		if currentIndex*2+2 <= endIndex {
+			childTwoIdx = currentIndex*2 + 2
+		}
+		indexToSwap := childOneIdx
+		if childTwoIdx > -1 && (*h)[childOneIdx] > (*h)[childTwoIdx] {
+			indexToSwap = childTwoIdx
+		}
+		if (*h)[currentIndex] > (*h)[indexToSwap] {
+			h.swap(currentIndex, indexToSwap)
+			currentIndex = indexToSwap
+			childOneIdx = currentIndex*2 + 1
+		} else {
+			return
+		}
+	}
 }
 
+// siftUp moves an element up the heap until it reaches its correct position.
 func (h *MinHeap) siftUp() {
 	currentIdx := h.length() - 1
-    parentIdx := (currentIdx - 1) / 2
-    for currentIdx > 0 {
-        current, parent := (*h)[currentIdx], (*h)[parentIdx]
-        if current < parent {
-            h.swap(currentIdx, parentIdx)
-            currentIdx = parentIdx
-            parentIdx = (currentIdx - 1) / 2
-        } else {
-            return
-        }
-    }
+	parentIdx := (currentIdx - 1) / 2
+	for currentIdx > 0 {
+		current, parent := (*h)[currentIdx], (*h)[parentIdx]
+		if current < parent {
+			h.swap(currentIdx, parentIdx)
+			currentIdx = parentIdx
+			parentIdx = (currentIdx - 1) / 2
+		} else {
+			return
+		}
+	}
 }
 
+// Peek returns the minimum element in the heap without removing it.
 func (h MinHeap) Peek() int {
 	if len(h) == 0 {
-        return -1
-    }
-    return h[0]
+		return -1
+	}
+	return h[0]
 }
 
+// Remove removes and returns the minimum element in the heap.
 func (h *MinHeap) Remove() int {
 	l := h.length()
-    h.swap(0, l - 1)
-    peeked := (*h)[l - 1]
-    *h = (*h)[: l - 1]
-    h.siftDown(0, l - 1)
-    return peeked
+	h.swap(0, l-1)
+	peeked := (*h)[l-1]
+	*h = (*h)[:l-1]
+	h.siftDown(0, l-1)
+	return peeked
 }
 
+// Insert inserts a new element into the heap.
 func (h *MinHeap) Insert(value int) {
 	*h = append(*h, value)
-    h.siftUp()
+	h.siftUp()
 }
 
+// swap swaps two elements in the heap given their indices.
 func (h MinHeap) swap(i, j int) {
-    h[i], h[j] = h[j], h[i]
+	h[i], h[j] = h[j], h[i]
 }
 
+// length returns the number of elements in the heap.
 func (h MinHeap) length() int {
-    return len(h)
+	return len(h)
 }
