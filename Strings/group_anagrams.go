@@ -1,6 +1,9 @@
 /*
 	Group Anagrams
 
+	Sample Input:  = ["yo", "act", "flop", "tac", "foo", "cat", "oy", "olfp"]
+	Output: [["yo", "oy"], ["flop", "olfp"], ["act", "tac", "cat"], ["foo"]]
+
 	Explanation:
 
 	The code snippet is a function that groups anagrams together. An anagram is a word or phrase formed by rearranging
