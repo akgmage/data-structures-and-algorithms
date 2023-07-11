@@ -16,6 +16,9 @@
 
 	The sortWord function works by converting the word to a byte array and then calling the sort.Slice function to sort
 	the byte array. The function then returns a string that contains the sorted byte array.
+
+	O(w * n * log(n)) time | O(wn) space - where w is the number of words and n is the length of the longest word
+
 */
 package main
 
