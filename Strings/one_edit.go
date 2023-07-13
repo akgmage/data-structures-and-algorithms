@@ -8,6 +8,10 @@
     Add:: One character is added at any index in one string.
     Remove: One character is removed at any index in one string.
 
+	Sample Input: StringOne: alaska StringTwo: aloska
+	Output: True
+
+
 	Explanation:
 	The code snippet is implementing the "One Edit Away" algorithm, which determines whether two given 
 	strings are one edit away from each other. An edit is defined as either inserting a character, removing a character, or replacing a character.
