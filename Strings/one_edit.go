@@ -1,3 +1,15 @@
+/*
+    You're given two strings stringone and stringtwo. Write a function that determines if these 
+	two strings can be made equal using only one edit.
+
+	
+    There are 3 possible edits:
+    Replace: One character in one string is swapped for a different character.
+    Add:: One character is added at any index in one string.
+    Remove: One character is removed at any index in one string.
+        
+  
+*/
 func OneEdit(stringOne string, stringTwo string) bool {
     lengthOne := len(stringOne)
     lengthTwo := len(stringTwo)
