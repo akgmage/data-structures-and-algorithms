@@ -35,6 +35,8 @@
 	   and minimum of two integers, respectively.
 
 	The algorithm efficiently checks for the possibility of one edit by comparing the characters at corresponding indices and handling cases where the lengths of the strings are different.
+
+	O(n) time | O(1) space - where n is the length of the shorter string
         
   
 */
