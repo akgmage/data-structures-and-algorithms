@@ -1,4 +1,4 @@
-'''
+/*
 
   	Write a function that takes in an array of integers and returns a new array containing, at each index, the next
 	element in the input array that's greater than the element at that index in the input array.
@@ -38,26 +38,34 @@
 
 	The algorithm utilizes a stack to efficiently find the next greater element for each element in the input array.
 	By iterating over the array twice in a circular manner, it ensures that all elements have been considered for finding the next greater elements.
-	
+
 	The time complexity of the `NextGreaterElement` function is O(n), where n is the length of the input array.
 	This is because the function performs two passes over the input array, and in each pass, it processes each element once. The operations performed within each iteration, such as stack operations, have constant time complexity.
 
     The space complexity of the function is O(n) as well. This is because the function creates two additional
 	slices: `result` and `stack`, each with a maximum size of n. Therefore, the space required by the function grows linearly with the size of the input array.
-'''
+*/
 
-def next_greater_element(array):
-    result = [-1] * len(array)  # Initialize result array with -1 for all elements
-    stack = []  # Stack to store indices of elements
-    
-    for idx in range(len(array) * 2):
-        circular_idx = idx % len(array)  # Obtain the circular index of the current element
+import java.util.*;
+
+public class NextGreaterElement {
+    public int[] nextGreaterElement(int[] array) {
+        int[] result = new int[array.length];
+        Arrays.fill(result, -1); // Initialize result array with -1 for all elements
+        Stack<Integer> stack = new Stack<>(); // Stack to store indices of elements
         
-        while stack and array[circular_idx] > array[stack[-1]]:
-            # While the stack is not empty and the current element is greater than the element at the top of the stack
-            top = stack.pop()  # Pop the index from the stack
-            result[top] = array[circular_idx]  # Update the result for the popped index
+        for (int idx = 0; idx < array.length * 2; idx++) {
+            int circularIdx = idx % array.length; // Obtain the circular index of the current element
+            
+            while (!stack.isEmpty() && array[circularIdx] > array[stack.peek()]) {
+                // While the stack is not empty and the current element is greater than the element at the top of the stack
+                int top = stack.pop(); // Pop the index from the stack
+                result[top] = array[circularIdx]; // Update the result for the popped index
+            }
+            
+            stack.push(circularIdx); // Push the current index to the stack
+        }
         
-        stack.append(circular_idx)  # Push the current index to the stack
-    
-    return result
+        return result;
+    }
+}
