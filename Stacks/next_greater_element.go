@@ -2,6 +2,9 @@
 
   	Write a function that takes in an array of integers and returns a new array containing, at each index, the next
 	element in the input array that's greater than the element at that index in the input array.
+
+	Sample Input:[2, 5, -3, -4, 6, 7, 2]
+	Output: [5, 6, 6, 6, 7, -1, 5]
 	Explanation:
 
 	The given code snippet implements the Next Greater Element algorithm. Here's how it works:
