@@ -39,7 +39,6 @@
 	The algorithm utilizes a stack to efficiently find the next greater element for each element in the input array.
 	By iterating over the array twice in a circular manner, it ensures that all elements have been considered for finding the next greater elements.
 
-	Note that this implementation assumes the availability of the built-in append function to modify slices in Go.
 
 	The time complexity of the `NextGreaterElement` function is O(n), where n is the length of the input array.
 	This is because the function performs two passes over the input array, and in each pass, it processes each element once. The operations performed within each iteration, such as stack operations, have constant time complexity.
