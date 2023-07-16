@@ -1,3 +1,43 @@
+/*
+
+  	Write a function that takes in an array of integers and returns a new array containing, at each index, the next
+	element in the input array that's greater than the element at that index in the input array.
+	Explanation:
+
+	The given code snippet implements the Next Greater Element algorithm. Here's how it works:
+
+	1. The function `NextGreaterElement` takes an input array of integers and returns an array of the same length
+	   where each element represents the next greater element in the input array. If there is no greater element, the corresponding output element is set to -1.
+
+	2. The `result` slice is initialized with -1 values, indicating that there are no greater elements initially.
+
+	3. The `stack` is used to keep track of indices of elements from the input array. It will store indices in a
+	   way that maintains a decreasing order of values from the input array.
+
+	4. The algorithm performs two passes over the input array. In each pass, it considers the array elements in a
+	   circular manner by using the modulo operator `%` on the index.
+
+	5. In the inner loop, the algorithm checks if the current element is greater than the element at the top of the stack.
+	   If it is, it means the current element is the next greater element for the element at the top of the stack.
+
+	6. If a greater element is found, the top index is retrieved from the stack, and the corresponding element in the
+	   `result` slice is updated with the current element from the input array.
+
+	7. After updating the `result` slice, the top index is removed from the stack.
+
+	8. The current circular index is then pushed onto the stack to potentially find the next greater element for it in
+	   the future.
+
+	9. Once the algorithm completes the two passes over the input array, the `result` slice contains the next greater
+	   elements for each element in the input array, or -1 if there is no greater element.
+
+	10. The `result` slice is returned as the output.
+
+	The algorithm utilizes a stack to efficiently find the next greater element for each element in the input array.
+	By iterating over the array twice in a circular manner, it ensures that all elements have been considered for finding the next greater elements.
+
+	Note that this implementation assumes the availability of the built-in append function to modify slices in Go.
+*/
 package main
 
 // NextGreaterElement finds the next greater element for each element in the input array.
