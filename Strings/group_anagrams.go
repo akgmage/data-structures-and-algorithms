@@ -23,56 +23,43 @@
 	O(w * n * log(n)) time | O(wn) space - where w is the number of words and n is the length of the longest word
 
 */
+package main
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <unordered_map>
+import "sort"
 
-// Function to sort a word and return the sorted string
-std::string sortWord(const std::string& word) {
-    std::string sortedWord = word;
-    std::sort(sortedWord.begin(), sortedWord.end());
-    return sortedWord;
-}
-
-// Function to group anagrams together
-std::vector<std::vector<std::string>> GroupAnagrams(const std::vector<std::string>& words) {
+// `GroupAnagrams` groups anagrams together.
+func GroupAnagrams(words []string) [][]string {
     // Create a map where the keys are sorted strings of words and the values are lists of words
     // that have the same sorted string.
-    std::unordered_map<std::string, std::vector<std::string>> anagrams;
+    anagrams := map[string][]string{}
+    for _, word := range words {
+        // Get the sorted string for the word.
+        sortedWord := sortWord(word)
 
-    // Iterate through the words
-    for (const std::string& word : words) {
-        // Get the sorted string for the word
-        std::string sortedWord = sortWord(word);
-
-        // Add the word to the list of words associated with the sorted string in the map
-        anagrams[sortedWord].push_back(word);
+        // Add the word to the list of words associated with the sorted string in the map.
+        anagrams[sortedWord] = append(anagrams[sortedWord], word)
     }
 
-    // Create a vector of vectors, where each inner vector contains all the anagrams of a word in the original list
-    std::vector<std::vector<std::string>> result;
-    for (const auto& pair : anagrams) {
-        result.push_back(pair.second);
+    // Create a list of lists, where each inner list contains all the anagrams of a word in the original list.
+    result := [][]string{}
+    for _, group := range anagrams {
+        result = append(result, group)
     }
 
-    // Return the vector of vectors
-    return result;
+    // Return the list of lists.
+    return result
 }
 
-int main() {
-    // Example usage
-    std::vector<std::string> words = { "eat", "tea", "tan", "ate", "nat", "bat" };
-    std::vector<std::vector<std::string>> groupedAnagrams = GroupAnagrams(words);
+// `sortWord` takes a word as input and returns a string that contains the word's letters in sorted order.
+func sortWord(word string) string {
+    // Convert the word to a byte array.
+    wordBytes := []byte(word)
 
-    // Print the grouped anagrams
-    for (const std::vector<std::string>& group : groupedAnagrams) {
-        for (const std::string& word : group) {
-            std::cout << word << " ";
-        }
-        std::cout << std::endl;
-    }
+    // Sort the byte array.
+    sort.Slice(wordBytes, func(i, j int) bool {
+        return wordBytes[i] < wordBytes[j]
+    })
 
-    return 0;
+    // Return a string that contains the sorted byte array.
+    return string(wordBytes)
 }
