@@ -43,6 +43,9 @@
    11. The `getVertexWithMinDistance` function returns the vertex with the minimum distance from the `distances` slice and the current minimum distance.
 
    Overall, the code implements Dijkstra's algorithm to find the shortest path from a starting vertex to all other vertices in a graph, using an adjacency list representation. It keeps track of minimum distances, visited vertices, and updates the distances based on the neighboring vertices.
+
+   Time Complexity: O(V^2 + e)
+   Space complexity: O(V)
 */
 package main
 
