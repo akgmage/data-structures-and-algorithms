@@ -2,6 +2,18 @@
 
    Write a function that computes the lengths of the shortest paths between start and all of the other vertices in the graph using Dijkstra's algorithm and returns them in an array.
 
+   Sample Input:
+   Start: 0
+   Edges :  = [
+        [[1, 7]],
+        [[2, 6], [3, 20], [4, 3]],
+        [[3, 14]],
+        [[4, 2]],
+        [],
+        [],
+    ]
+    Output: [0, 7, 13, 27, 10, -1]
+
    Dijkstras Algorithm
 
    Explanation:
