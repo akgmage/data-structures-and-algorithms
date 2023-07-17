@@ -1,4 +1,9 @@
 /*
+
+   Write a function that computes the lengths of the shortest paths between start and all of the other vertices in the graph using Dijkstra's algorithm and returns them in an array.
+
+   Dijkstras Algorithm
+
    Explanation:
 
    The code snippet is an implementation of Dijkstra's algorithm for finding the shortest path from a given starting vertex to all other vertices in a graph. Here's a breakdown of the code:
