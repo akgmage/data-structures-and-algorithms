@@ -1,3 +1,51 @@
+/*
+	Dijkstras heap based
+
+	Explanation:
+	The given code snippet implements Dijkstra's algorithm to find the shortest path from a given start vertex to all other
+	vertices in a weighted directed graph. Here's how the code works:
+
+	1. The `DijkstrasAlgorithm` function takes the start vertex and the edges of the graph as input and returns an array of
+	   shortest distances from the start vertex to all other vertices.
+
+	2. First, it initializes the `minDistances` array with the maximum integer value except for the start vertex, which is
+	   set to 0. This array will store the minimum distances from the start vertex to each vertex.
+
+	3. It creates a min-heap data structure called `minDistancesHeap` to keep track of the minimum distances. Each item in
+	   the heap represents a vertex and its distance from the start vertex.
+
+	4. The algorithm starts by removing the vertex with the minimum distance from the `minDistancesHeap` and explores its
+	   outgoing edges.
+
+	5. For each edge, it calculates the new path distance from the start vertex to the destination vertex through the
+	   current vertex. If the new path distance is smaller than the current distance, it updates the `minDistances` array and the `minDistancesHeap` with the new distance.
+
+	6. The process continues until all vertices have been visited.
+
+	7. Finally, it constructs the final distances array (`finalDistances`) based on the `minDistances` array. If a vertex's
+	   distance is still set to the maximum integer value, it means there is no path from the start vertex to that vertex, so -1
+	   is stored instead.
+
+	8. The `Item` struct represents a vertex and its distance in the min-heap.
+
+	9. The `MinHeap` struct represents the min-heap data structure. It contains an array of `Item` structs and a vertex-to-index
+	   map to efficiently update and access items in the heap.
+
+	10. The `Remove` method removes the item with the minimum distance from the heap and returns its vertex and distance.
+
+	11. The `Update` method updates the distance of a vertex in the heap and maintains the heap property by performing sift-up
+	   or sift-down operations.
+
+	12. The `siftDown` method performs the sift-down operation to maintain the heap property by comparing the distance of the
+	   current item with its children and swapping if necessary.
+
+	13. The `siftUp` method performs the sift-up operation to maintain the heap property by comparing the distance of the
+	   current item with its parent and swapping if necessary.
+
+	The time complexity of Dijkstra's algorithm with a min-heap implementation is typically O((V + E) log V), where V is the
+	number of vertices and E is the number of edges in the graph.
+	The space complexity is O(V) for storing the `minDistances` array and the min-heap.
+*/
 package main
 
 import "math"
