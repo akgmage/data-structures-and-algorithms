@@ -66,6 +66,8 @@
 	- `Visited` and `Visiting` are boolean flags used during the depth-first traversal to track the traversal status of each node.
 
 	Overall, the code implements the topological sorting algorithm using depth-first traversal to find the order in which jobs can be executed without violating their dependencies. It efficiently handles circular dependencies and returns the ordered jobs or an empty list if a circular dependency is detected.
+
+	O(j + d) time | O(j + d) space - where j is the number of jobs and d is the number of dependencies
 */
 package main
 
