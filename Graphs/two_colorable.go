@@ -31,6 +31,8 @@
 	Note: The algorithm assumes that the graph is connected, meaning there is a path from any vertex to any other vertex.
 	If the graph is not connected, the algorithm will only determine whether the connected component containing vertex 0 is two-colorable.
 
+	O(v + e) time | O(v) space - where v is the number of vertices and e is the number of edges in the graph
+
 */
 package main
 
