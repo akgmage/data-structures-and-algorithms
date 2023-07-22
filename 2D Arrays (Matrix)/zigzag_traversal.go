@@ -1,3 +1,39 @@
+/*
+	Explanation:
+	The given code snippet implements the ZigzagTraverse algorithm, which traverses a 2D array in a zigzag pattern and
+	returns the elements in a 1D array.
+
+	Here's an explanation of the code:
+
+	1. `ZigzagTraverse`: This is the main function that takes a 2D array `array` as input and returns a 1D array containing
+	   the elements traversed in zigzag order.
+
+	2. `height` and `width`: These variables store the height and width of the 2D array, respectively.
+	   The `height` represents the number of rows (minus 1 as it is 0-based indexing), and the `width` represents the number of columns (minus 1 as it is 0-based indexing).
+
+	3. `row` and `col`: These variables keep track of the current position while traversing the 2D array.
+
+	4. `goingDown`: This boolean variable determines the direction of traversal. When `goingDown` is `true`, the traversal
+	   is in the downward direction; otherwise, it is in the upward direction.
+
+	5. `result`: This array stores the elements of the 2D array in zigzag order, which will be returned as the final result.
+
+	6. The main loop: The loop runs until the current position is within bounds (not out of the 2D array).
+
+	7. Append element to result: The code appends the current element at position `(row, col)` to the `result` array.
+
+	8. Traversal logic: The algorithm decides the next position for traversal based on the current position and the `goingDown` flag.
+	   If `goingDown` is `true`, it will traverse diagonally downwards (towards the bottom-right or the bottom-left corner, depending on the position). Otherwise, it will traverse diagonally upwards (towards the top-right or the top-left corner, depending on the position).
+
+	9. `isOutOfBounds`: This is a helper function that checks if the current position `(row, col)` is out of bounds of the
+	   2D array (i.e., if `row` or `col` is less than 0 or greater than the height or width, respectively).
+
+	10. Return result: After the traversal is complete, the function returns the `result` array, which contains the elements of
+	   the 2D array in zigzag order.
+
+	The ZigzagTraverse algorithm efficiently zigzags through the 2D array by changing the direction of traversal whenever it reaches
+	the boundary or the corners of the array, allowing it to cover all elements in zigzag order.
+*/
 package main
 
 // ZigzagTraverse traverses a 2D array in a zigzag pattern and returns the elements in a 1D array.
