@@ -45,6 +45,8 @@
 
 	The ZigzagTraverse algorithm efficiently zigzags through the 2D array by changing the direction of traversal whenever it reaches
 	the boundary or the corners of the array, allowing it to cover all elements in zigzag order.
+
+	O(n) time | O(n) space - where n is the total number of elements in the two-dimensional array
 */
 package main
 
