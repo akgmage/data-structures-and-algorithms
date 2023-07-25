@@ -1,9 +1,9 @@
 /*
-  Write a function that takes in a non-empty array of integers and returns the greatest sum  that can be generated
-  from a strictly-increasing subsequence in the array as well as an array of the numbers in that subsequence.
+	Write a function that takes in a non-empty array of integers and returns the greatest sum  that can be generated
+	from a strictly-increasing subsequence in the array as well as an array of the numbers in that subsequence.
 
-  Explanation:
-  The given code snippet implements a function called `MaxSumIncreasingSubsequence`, which finds the maximum sum increasing subsequence in a given array of integers. An increasing subsequence is a sequence of array elements where each element is strictly greater than the previous element.
+	Explanation:
+	The given code snippet implements a function called `MaxSumIncreasingSubsequence`, which finds the maximum sum increasing subsequence in a given array of integers. An increasing subsequence is a sequence of array elements where each element is strictly greater than the previous element.
 
 	Here's a step-by-step explanation of the code:
 
@@ -22,6 +22,8 @@
 	7. The `reverse` function is a helper function used to reverse the elements in the `sequence` array since the subsequence was built backward.
 
 	8. The function returns the maximum sum of the increasing subsequence (`sum`) and the subsequence itself (`sequence`).
+
+	O(n^2) time | O(n) space - where n is the length of the input array
 */
 package main
 
