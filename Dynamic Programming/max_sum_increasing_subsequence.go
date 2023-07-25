@@ -1,3 +1,8 @@
+/*
+  Write a function that takes in a non-empty array of integers and returns the greatest sum  that can be generated 
+  from a strictly-increasing subsequence in the array as well as an array of the numbers in that subsequence.
+  
+*/
 package main
 
 import "math"
