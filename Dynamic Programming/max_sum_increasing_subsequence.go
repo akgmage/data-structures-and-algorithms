@@ -2,6 +2,9 @@
 	Write a function that takes in a non-empty array of integers and returns the greatest sum  that can be generated
 	from a strictly-increasing subsequence in the array as well as an array of the numbers in that subsequence.
 
+	Sample Input:  = [10, 70, 20, 30, 50, 11, 30]
+	Output : [110, [10, 20, 30, 50]]
+	
 	Explanation:
 	The given code snippet implements a function called `MaxSumIncreasingSubsequence`, which finds the maximum sum increasing subsequence in a given array of integers. An increasing subsequence is a sequence of array elements where each element is strictly greater than the previous element.
 
