@@ -1,3 +1,35 @@
+/*
+	This Go code snippet implements the `MinNumberOfJumps` function, which calculates the minimum number of jumps required to reach the
+	last element of the `array` by starting from the first element. Each element of the array represents the maximum number of steps that
+	can be taken from that position.
+
+	Here's a step-by-step explanation of the code:
+
+	1. The function `MinNumberOfJumps` takes an array `array` as input and returns the minimum number of jumps required.
+
+	2. The `ways` array is initialized to store the minimum number of jumps required to reach each position in the input array. The length of
+	the `ways` array is the same as the input array, and all values are initialized to `math.MaxInt32`, which represents an unreachable state.
+
+	3. The base case is set for the first element of the `ways` array. Since we are already at the first element, the minimum number of jumps
+	required is 0. So, `ways[0]` is set to 0.
+
+	4. Starting from the second element (i = 1) to the last element (i = len(array) - 1), the function iterates through the `array`.
+
+	5. For each element, it iterates through all previous elements (j) up to the current position (i) to check if it is possible to jump from j to i.
+
+	6. If `array[j] + j >= i`, it means we can jump from position `j` to position `i`.
+
+	7. The `ways[i]` value is then updated using the minimum between the current `ways[i]` value and `ways[j] + 1`. The `ways[j] + 1` represents
+	the minimum number of jumps required to reach position `j`, and then from position `j` to position `i`.
+
+	8. After all iterations, `ways[len(ways) - 1]` will contain the minimum number of jumps required to reach the last element of the array.
+
+	9. The `min` function is a helper function that returns the minimum of two integers.
+
+	The `MinNumberOfJumps` function uses dynamic programming to find the minimum number of jumps efficiently by keeping track of the minimum number
+	of jumps required to reach each position from the previous positions. The time complexity of this function is O(n^2), where n is the length of
+	the input array. The space complexity is O(n), as the `ways` array is used to store the minimum jumps for each position in the array.
+*/
 package main
 
 import "math"
