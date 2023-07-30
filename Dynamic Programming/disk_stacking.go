@@ -62,66 +62,87 @@
 package main
 
 import "sort"
+
+// Custom type for representing a single disk's dimensions (width, depth, height)
 type Disk []int
+
+// Custom type for representing a collection of disks
 type Disks []Disk
 
+// Implementing sort.Interface for Disks to allow sorting based on height (third dimension)
 func (disks Disks) Len() int           { return len(disks) }
 func (disks Disks) Swap(i, j int)      { disks[i], disks[j] = disks[j], disks[i] }
-func (disks Disks) Less(i, j int) bool { return disks[i][2] < disks[j][2]} 
+func (disks Disks) Less(i, j int) bool { return disks[i][2] < disks[j][2] }
 
+// Main function to solve the Disk Stacking problem
 func DiskStacking(input [][]int) [][]int {
+    // Convert input to Disks slice and sort it based on height in increasing order
     disks := make(Disks, len(input))
     for i, disk := range input {
         disks[i] = disk
     }
-    
     sort.Sort(disks)
+
+    // Initialize slices to store the maximum height and the sequence of disks
     heights := make([]int, len(disks))
     sequences := make([]int, len(disks))
-    
     for i := range disks {
         heights[i] = disks[i][2]
         sequences[i] = -1
     }
 
+    // Dynamic programming loop to find the maximum height and contributing disks
     for i := 1; i < len(disks); i++ {
         currentDisk := disks[i]
         for j := 0; j < i; j++ {
             other := disks[j]
-            // conditions met
+
+            // Check if conditions are met to stack currentDisk on top of other
             if areValidDimensions(other, currentDisk) {
-                if heights[i] <= currentDisk[2] + heights[j] {
+                // Update maximum height and contributing disk index if needed
+                if heights[i] <= currentDisk[2]+heights[j] {
                     heights[i] = currentDisk[2] + heights[j]
                     sequences[i] = j
                 }
             }
         }
     }
+
+    // Find the index with the maximum height (topmost disk in the stack)
     maxIndex := 0
     for i, height := range heights {
         if height > heights[maxIndex] {
             maxIndex = i
         }
     }
+
+    // Build the sequence of disks contributing to the maximum height
     sequence := buildSequence(disks, sequences, maxIndex)
+
+    // Return the sequence of disks that should be stacked to achieve the maximum height
     return sequence
 }
 
+// Function to check if the conditions are met for placing current disk on top of other
 func areValidDimensions(o Disk, c Disk) bool {
     return o[0] < c[0] && o[1] < c[1] && o[2] < c[2]
 }
 
+// Function to build the sequence of disks contributing to the maximum height
 func buildSequence(disks []Disk, sequences []int, index int) [][]int {
     sequence := [][]int{}
     for index != -1 {
         sequence = append(sequence, disks[index])
         index = sequences[index]
     }
+    // Since the sequence is built in reverse order (top to bottom), reverse it to get correct order
     reverse(sequence)
     return sequence
 }
+
+// Function to reverse the order of elements in a 2D slice
 func reverse(numbers [][]int) {
-    for i, j := 0, len(numbers) - 1; i < j; i, j = i + 1, j - 1 {
+    for i, j := 0, len(numbers)-1; i < j; i, j = i+1, j-1 {
         numbers[i], numbers[j] = numbers[j], numbers[i]
     }
 }
