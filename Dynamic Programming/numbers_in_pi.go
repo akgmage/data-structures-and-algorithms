@@ -43,43 +43,61 @@
 */
 package main
 
-import (
-	"math"
-)
+import "math"
+
+// NumbersInPi finds the minimum number of spaces needed to divide the pi string
+// into valid numbers from the given list of numbers.
 func NumbersInPi(pi string, numbers []string) int {
 	numbersTable := map[string]bool{}
-    for _, number := range numbers {
-        numbersTable[number] = true
-    }
-    minSpaces := getMinSpaces(pi, numbersTable, map[int]int{}, 0)
-    if minSpaces == math.MaxInt32 {
-        return -1
-    }
-    return minSpaces
+	for _, number := range numbers {
+		numbersTable[number] = true
+	}
+
+	// Cache to store results of subproblems to avoid redundant calculations
+	cache := map[int]int{}
+	minSpaces := getMinSpaces(pi, numbersTable, cache, 0)
+
+	if minSpaces == math.MaxInt32 {
+		return -1
+	}
+	return minSpaces
 }
 
+// getMinSpaces calculates the minimum number of spaces needed to divide the remaining
+// suffix of the pi string into valid numbers from the numbersTable.
 func getMinSpaces(pi string, numbersTable map[string]bool, cache map[int]int, idx int) int {
-    if idx == len(pi) {
-        return -1
-    } else if val, found := cache[idx]; found {
-        return val
-    }
-    minSpaces := math.MaxInt32
-    for i := idx; i < len(pi); i++ {
-        prefix := pi[idx : i + 1]
-        if _, found := numbersTable[prefix]; found {
-            minSpacesInSuffix := getMinSpaces(pi, numbersTable, cache, i + 1)
-            minSpaces = min(minSpaces, minSpacesInSuffix + 1)
-        }
-    }
-    cache[idx] = minSpaces
-    return cache[idx]
-    
+	// Base case: If the end of the pi string is reached, return -1.
+	// This indicates that the suffix of the pi string cannot be divided into valid numbers.
+	if idx == len(pi) {
+		return -1
+	} else if val, found := cache[idx]; found {
+		// If the result for the current index is already in the cache, return it.
+		return val
+	}
+
+	minSpaces := math.MaxInt32
+	// Iterate over possible prefixes starting from the current index.
+	for i := idx; i < len(pi); i++ {
+		prefix := pi[idx : i+1]
+
+		// If the prefix is found in the numbersTable, it is a valid number prefix.
+		if _, found := numbersTable[prefix]; found {
+			// Recursively calculate the minimum number of spaces in the suffix.
+			minSpacesInSuffix := getMinSpaces(pi, numbersTable, cache, i+1)
+			// Update the minimum spaces with the current prefix if it leads to a valid number.
+			minSpaces = min(minSpaces, minSpacesInSuffix+1)
+		}
+	}
+
+	// Cache the result for the current index to avoid redundant calculations.
+	cache[idx] = minSpaces
+	return cache[idx]
 }
 
+// min returns the minimum of two integers.
 func min(a, b int) int {
-    if a < b {
-        return a
-    }
-    return b
+	if a < b {
+		return a
+	}
+	return b
 }
