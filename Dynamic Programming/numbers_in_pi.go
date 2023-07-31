@@ -1,3 +1,34 @@
+/*
+	The given code snippet is for solving the "Numbers in Pi" problem using a recursive approach with memoization (dynamic programming) to find the minimum number of spaces required to divide the given string representation of pi into valid numbers from a list of given numbers.
+
+	The problem is as follows: Given a string representation of the irrational number pi and a list of numbers, find the minimum number of spaces required to divide the string into valid numbers such that each number is present in the given list.
+
+	Let's go through the code step by step:
+
+	1. `NumbersInPi` function:
+	- This is the main function that takes the string representation of pi and a list of numbers as input and returns the minimum number of spaces required. It initializes a `numbersTable` to store the numbers from the input list for quick lookup and then calls the `getMinSpaces` function with initial parameters.
+
+	2. `getMinSpaces` function:
+	- This is a recursive function with memoization. It takes the string representation of pi, the `numbersTable`, a `cache` (a map to store previously calculated values to avoid redundant calculations), and the current `idx` (position in the pi string) as input.
+	- It first checks if the base case has been reached by comparing `idx` with the length of the pi string. If so, it returns -1.
+	- Next, it checks if the result for the current `idx` is already present in the cache. If yes, it returns the cached result.
+	- If the base case is not reached and the result is not in the cache, it initializes a variable `minSpaces` to store the minimum spaces required for the current `idx`. It sets `minSpaces` to a large value (initialized as `math.MaxInt32`) to ensure correct comparisons later.
+	- Then, it iterates from the current `idx` to the end of the pi string and forms a prefix string from `idx` to the current iteration index (`i`).
+	- If the prefix string is found in the `numbersTable`, it means it is a valid number from the given list. The function then recursively calls itself with the suffix (remaining part) of the pi string starting from index `i+1`.
+	- The result of the recursive call is stored in `minSpacesInSuffix`.
+	- The minimum of `minSpaces` and `minSpacesInSuffix + 1` is computed and assigned back to `minSpaces`. The "+1" indicates the current valid number prefix, which requires one space.
+	- The loop continues, trying all possible valid prefixes from the current index.
+	- Finally, the `minSpaces` value is stored in the `cache` to avoid redundant calculations and returned as the result for the current `idx`.
+
+	3. `min` function:
+	- A simple utility function to return the minimum of two integers.
+
+	The `NumbersInPi` function is the entry point, and the `getMinSpaces` function handles the recursive computation with memoization.
+	By using memoization, the code optimizes and reduces redundant calculations, making it more efficient than a pure
+	recursive solution. The result returned by `NumbersInPi` is the minimum number of spaces required to divide the pi string
+	into valid numbers from the given list. If it is not possible to form valid numbers using the given list,
+	the function returns -1.
+*/
 package main
 
 import (
