@@ -1,4 +1,16 @@
 /*
+
+	Given a string representation of the first n digits of Pi and a list of positive integers (all in string format), write a function that returns the
+	smallest number of spaces that can be added to the n digits of Pi such that all resulting numbers are found in the list of integers.
+
+	Sample Input pi = "3141592653589793238462643383279"
+	numbers : ["314159265358979323846", "26433", "8", "3279", "314159265", "35897932384626433832", "79"]
+
+	Output: 2
+
+
+	Explanation:
+
 	The given code snippet is for solving the "Numbers in Pi" problem using a recursive approach with memoization (dynamic programming) to find the minimum number of spaces required to divide the given string representation of pi into valid numbers from a list of given numbers.
 
 	The problem is as follows: Given a string representation of the irrational number pi and a list of numbers, find the minimum number of spaces required to divide the string into valid numbers such that each number is present in the given list.
