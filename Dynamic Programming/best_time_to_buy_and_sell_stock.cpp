@@ -15,20 +15,17 @@
 */
 #include <iostream>
 #include <vector>
-#include <climits> // for INT_MIN
+#include <climits>
 
 using namespace std;
 
 int maxProfit(vector<int>& prices) {
     int minPrice = INT_MAX; // initialize to maximum value to start with
-    int maxProfit = 0; // initialize to 0
+    int maxProfit = 0;// initialize to 0
 
-    for (int i = 0; i < prices.size(); i++) {
-        if (prices[i] < minPrice) {
-            minPrice = prices[i]; // update minimum price seen so far
-        } else if (prices[i] - minPrice > maxProfit) {
-            maxProfit = prices[i] - minPrice; // update maximum profit seen so far
-        }
+    for (int price : prices) {
+        minPrice = min(minPrice, price); // update minimum price seen so far
+        maxProfit = max(maxProfit, price - minPrice); // update maximum profit seen so far
     }
 
     return maxProfit;
@@ -42,3 +39,4 @@ int main() {
 
     return 0;
 }
+
