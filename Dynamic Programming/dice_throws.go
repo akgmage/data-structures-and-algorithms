@@ -7,9 +7,8 @@
 	[2, 3] vs [3, 2] ) count as different dice-roll permutations. If there's no possible dice-roll combination that sums up to the target
 	given the input dice, your function should return 0.
 
-
-
-
+	Sample Input : numDice = 2 numSides = 6 target = 7
+	Output:  6  [1, 6], [2, 5], [3, 4], [4, 3], [5, 2], [6, 1]
 
 	Explanation:
 
