@@ -7,6 +7,8 @@ Finally, we will return the factorial.
 Time Complexity: O(n)
 Space Complexity: O(1)
 
+Sample Input: 5
+Sample Output: Factorial of 5 is 120
 '''
 
 # Initializing the factorial to 1
@@ -24,13 +26,5 @@ def factorial(num):
 num = int(input("Enter a number: "))
 #Calculating and printing the factorial of the number
 print("Factorial of", num, "is", factorial(num))
-
-
-'''
-Sample Input: 5
-Sample Output: Factorial of 5 is 120
-'''
-
-
 
 
