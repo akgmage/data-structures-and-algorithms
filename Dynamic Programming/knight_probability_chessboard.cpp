@@ -32,17 +32,25 @@ using namespace std;
 class Solution {
 public:
     double knightProbability(int n, int k, int row, int column) {
+        // Create a 3D vector for memoization
         vector<vector<vector<double>>> dp(k + 1, vector<vector<double>>(n, vector<double>(n, -1.0)));
+        
+        // Call the DFS function to compute the probability
         return dfs(n, k, row, column, dp);
     }
 
     double dfs(int n, int k, int row, int column, vector<vector<vector<double>>>& dp) {
+        // Base case: Check if the knight goes off the board
         if (row < 0 || row >= n || column < 0 || column >= n) {
             return 0.0;
         }
+        
+        // Base case: If no more moves left, knight remains on the board
         if (k == 0) {
             return 1.0;
         }
+        
+        // If result is already computed, return it
         if (dp[k][row][column] != -1.0) {
             return dp[k][row][column];
         }
@@ -50,12 +58,14 @@ public:
         double probability = 0.0;
         int directions[8][2] = {{-2, -1}, {-1, -2}, {-2, 1}, {-1, 2}, {2, -1}, {1, -2}, {2, 1}, {1, 2}};
 
+        // Try all 8 possible knight moves
         for (int i = 0; i < 8; ++i) {
             int newRow = row + directions[i][0];
             int newColumn = column + directions[i][1];
             probability += 0.125 * dfs(n, k - 1, newRow, newColumn, dp);
         }
 
+        // Memoize the result and return it
         dp[k][row][column] = probability;
         return probability;
     }
@@ -63,11 +73,15 @@ public:
 
 int main() {
     Solution solution;
+    
+    // Example 1
     int n1 = 3, k1 = 2, row1 = 0, column1 = 0;
     cout << "Output 1: " << solution.knightProbability(n1, k1, row1, column1) << endl;
 
+    // Example 2
     int n2 = 1, k2 = 0, row2 = 0, column2 = 0;
     cout << "Output 2: " << solution.knightProbability(n2, k2, row2, column2) << endl;
 
     return 0;
 }
+
