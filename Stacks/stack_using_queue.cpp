@@ -1,4 +1,4 @@
-// stack using queue
+// stack using queues
 #include <iostream>
 #include <queue>
 
