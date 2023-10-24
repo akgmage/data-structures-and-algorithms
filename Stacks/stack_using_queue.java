@@ -1,4 +1,4 @@
-// stack using queue
+// stack using queues
 import java.util.LinkedList;
 import java.util.Queue;
 
