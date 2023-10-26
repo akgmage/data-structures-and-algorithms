@@ -41,34 +41,47 @@
 */
 import java.util.ArrayList;
 
+// Class to represent a graph node
 public class GraphNode {
     public String name;
     public int index;
+    
+    // Constructor to initialize name and index
     GraphNode(String name, int index) {
         this.name = name;
         this.index = index;
     }
 }
 
+// Class to represent a graph using an adjacency matrix
 public class AdjacencyMatrix {
     ArrayList<GraphNode> nodeList = new ArrayList<GraphNode>();
     int[][] adjacencyMatrix;
+    
+    // Constructor to initialize nodeList and adjacencyMatrix
     public AdjacencyMatrix(ArrayList<GraphNode> nodeList) {
         this.nodeList = nodeList;
         adjacencyMatrix = new int[nodeList.size()][nodeList.size()];
     }
-
+    
+    // Method to add an undirected edge between two nodes
     public void addUndirectedEdge(int i, int j) {
         adjacencyMatrix[i][j] = 1;
         adjacencyMatrix[j][i] = 1;
     }
+    
+    // Method to print a human-readable representation of the graph
     public String printGraph() {
         StringBuilder s = new StringBuilder();
+        
+        // Print column headers (node names)
         s.append("   ");
         for (int i = 0; i < nodeList.size(); i++) {
             s.append(nodeList.get(i).name + " ");
         }
         s.append("\n");
+        
+        // Print node names and adjacency matrix
         for (int i = 0; i < nodeList.size(); i++) {
             s.append(nodeList.get(i).name + ": ");
             for (int j : adjacencyMatrix[i]) {
@@ -78,10 +91,9 @@ public class AdjacencyMatrix {
         }
         return s.toString();
     }
-
 }
 
-
+// Main class to demonstrate the graph creation
 public class Main {
     public static void main(String[] args) {
         ArrayList<GraphNode> nodeList = new ArrayList<GraphNode>();
@@ -91,12 +103,16 @@ public class Main {
         nodeList.add(new GraphNode("D", 3));
         nodeList.add(new GraphNode("E", 4));
         AdjacencyMatrix am = new AdjacencyMatrix(nodeList);
-        am.addUndirectedEdge(0, 1); // A-B
-        am.addUndirectedEdge(0, 2); // A-C
-        am.addUndirectedEdge(0, 3); // A-D
-        am.addUndirectedEdge(1, 4); // B-E
-        am.addUndirectedEdge(2, 3); // C-D
-        am.addUndirectedEdge(3, 4); // D-E
+        
+        // Adding undirected edges
+        am.addUndirectedEdge(0, 1);
+        am.addUndirectedEdge(0, 2);
+        am.addUndirectedEdge(0, 3);
+        am.addUndirectedEdge(1, 4);
+        am.addUndirectedEdge(2, 3);
+        am.addUndirectedEdge(3, 4);
+        
+        // Printing the graph
         System.out.println(am.printGraph());
     }
 }
