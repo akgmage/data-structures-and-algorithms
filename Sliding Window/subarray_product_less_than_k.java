@@ -1,7 +1,20 @@
 /**
- Given an array of integers nums and an integer k, 
- return the number of contiguous subarrays where the product of all the elements in the subarray is 
- strictly less than k.
+     Given an array of integers nums and an integer k, 
+    return the number of contiguous subarrays where the product of all the elements in the subarray is 
+    strictly less than k.
+
+    The provided code defines a Java class Solution with a method numSubarrayProductLessThanK that counts the number 
+    of subarrays in an input array nums whose product is less than a given threshold k. It uses a sliding window 
+    approach to efficiently compute this count.
+
+    Time Complexity:
+
+    The code iterates through the nums array once, using two pointers (startWindow and endWindow) to define the 
+    sliding window. This results in a time complexity of O(N), where N is the length of the input array nums.
+    Space Complexity:
+
+    The code uses a constant amount of additional space to store integer variables (startWindow, product, and count). 
+    Therefore, the space complexity is O(1), which means it is independent of the size of the input array.
  */
 class Solution {
     public int numSubarrayProductLessThanK(int[] nums, int k) {
