@@ -21,18 +21,33 @@ Explanation: The optimal subarray here is [5,2,1] or [1,2,5].
 */
 class Solution {
     public int maximumUniqueSubarray(int[] nums) {
-        int startWindow = 0, windowSum = 0, res = 0;
+        // Initialize pointers, windowSum, and result
+        int startWindow = 0; // The left end of the sliding window
+        int windowSum = 0;   // Sum of elements within the current window
+        int res = 0;         // Result, which represents the maximum unique subarray sum
+
+        // HashMap to store the last index where each element was seen
         HashMap<Integer, Integer> mp = new HashMap<>();
-        for(int endWindow = 0; endWindow < nums.length; endWindow++) {
-            while(mp.containsKey(nums[endWindow])) {
-               mp.remove(nums[startWindow]);
-               windowSum -= nums[startWindow];
-               startWindow++;
+
+        // Iterate through the array using a sliding window approach
+        for (int endWindow = 0; endWindow < nums.length; endWindow++) {
+            // Check if the current element is already in the window
+            while (mp.containsKey(nums[endWindow])) {
+                // Remove the element at the start of the window from the HashMap and update windowSum
+                mp.remove(nums[startWindow]);
+                windowSum -= nums[startWindow];
+                startWindow++;
             }
+
+            // Add the current element to the HashMap and update windowSum
             mp.put(nums[endWindow], 1);
             windowSum += nums[endWindow];
+
+            // Update the result with the maximum unique subarray sum
             res = Math.max(res, windowSum);
         }
+
+        // Return the result, which represents the maximum unique subarray sum
         return res;
     }
 }
