@@ -20,18 +20,34 @@
  */
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> li = new ArrayList<>();
-        Stack<TreeNode> s = new Stack<>();
-        TreeNode curr = root;
-        while(curr != null || !s.isEmpty()) {
-            while(curr != null) {
-                s.push(curr);
-                curr = curr.left;
+        // List to store the in-order traversal result
+        List<Integer> result = new ArrayList<>();
+
+        // Stack to simulate the recursive call stack
+        Stack<TreeNode> stack = new Stack<>();
+
+        // Current node starts from the root
+        TreeNode current = root;
+
+        // Continue traversal until current node is null and stack is empty
+        while (current != null || !stack.isEmpty()) {
+            // Traverse all the way to the leftmost node, pushing each node onto the stack
+            while (current != null) {
+                stack.push(current);
+                current = current.left;
             }
-            curr = s.pop();
-            li.add(curr.val);
-            curr = curr.right;
+
+            // Pop the top node from the stack (current leftmost node)
+            current = stack.pop();
+
+            // Add the value of the current node to the result list
+            result.add(current.val);
+
+            // Move to the right subtree of the current node
+            current = current.right;
         }
-    return li;
+
+        // Return the final in-order traversal result
+        return result;
     }
 }
