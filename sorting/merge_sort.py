@@ -24,14 +24,8 @@ def merge(arr: List[int], start: int, mid: int, end: int) -> None:
     n_right = end - mid
 
     # Create temporary arrays
-    left = [0] * n_left
-    right = [0] * n_right
-
-    # Copy data to temp arrays
-    for i in range(n_left):
-        left[i] = arr[start + i]
-    for j in range(n_right):
-        right[j] = arr[mid + 1 + j]
+    left = arr[start:mid+1]
+    right = arr[mid+1:end+1]
 
     # Merge temp arrays back into arr
     i = j = 0
@@ -45,13 +39,11 @@ def merge(arr: List[int], start: int, mid: int, end: int) -> None:
             j += 1
         k += 1
 
-    # Copy remaining elements of left[], if any
+    # Copy remaining elements, if any
     while i < n_left:
         arr[k] = left[i]
         i += 1
         k += 1
-
-    # Copy remaining elements of right[], if any
     while j < n_right:
         arr[k] = right[j]
         j += 1
